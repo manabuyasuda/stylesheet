@@ -1,0 +1,18 @@
+/*----------------------------------*\
+ #LISTS
+\*----------------------------------*/
+// リストのデフォルトスタイルを指定します。
+ul, ol, dd {
+    padding-left: $indent-base;
+    @include media-query(lg) {
+        padding-left: $indent-large;
+    }
+}
+
+/* ネストされたリストのマージンをリセットする */
+li {
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+}

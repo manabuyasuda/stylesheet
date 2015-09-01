@@ -1,0 +1,26 @@
+/*----------------------------------*\
+ #WRAPPER
+\*----------------------------------*/
+$layout-ns: null !default;
+$layout-max-width: 1200px !default;
+$layout-padding: 15px !default;
+
+/**
+ * コンポーネントのやオブジェクトの横幅を制限します。
+ * デフォルトで左右のパディングが入ります。
+ *
+ * <div class="o-wrapper">
+ *   <div class="o-grid">
+ *     <div class="o-grid__item u-8/12@md"></div>
+ *     <div class="o-grid__item u-4/12@md"></div>
+ *   </div>
+ * </div>
+ */
+.#{$layout-ns}o-wrapper {
+    width: 100%;
+    max-width: $layout-max-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $layout-padding;
+    padding-left: $layout-padding;
+}

@@ -1,0 +1,32 @@
+/*----------------------------------*\
+ #IMAGES
+\*----------------------------------*/
+$image-ns: null !default;
+$image-margin: 1rem !default;
+
+.#{$image-ns}c-image--round {
+    border-radius: $base-round;
+}
+
+.#{$image-ns}c-image__circle {
+    border-radius: 50%;
+}
+
+.#{$image-ns}c-image__center {
+    display: block;
+    margin-right: auto;
+    margin-bottom: $image-margin;
+    margin-left: auto;
+}
+
+.#{$image-ns}c-image__right {
+    float: right;
+    margin-bottom: $image-margin;
+    margin-left: $image-margin;
+}
+
+.#{$image-ns}c-image__left {
+    float: left;
+    margin-right: $image-margin;
+    margin-bottom: $image-margin;
+}

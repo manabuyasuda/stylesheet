@@ -1,0 +1,32 @@
+/*----------------------------------*\
+ #CODES
+\*----------------------------------*/
+// `<code>`タグなどのデフォルトスタイルを指定します。
+code,
+kbd,
+pre,
+samp {
+    font-size: 1rem;
+}
+
+code,
+pre {
+    font-family: $monospace-font-family;
+}
+
+kbd {
+    /* ユーザーに入力を促す要素 */
+    font-family: inherit;
+    > kbd {
+        /* キーボードのキーを示す要素に変化するためボーダーで囲われます */
+        display: inline-block;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 3px 6px;
+        @include rhythm-lines($small-font-size, $lg-small-font-size);
+        line-height: 1;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: $base-round;
+    }
+}

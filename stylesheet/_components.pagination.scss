@@ -1,0 +1,67 @@
+/*----------------------------------*\
+ #PAGINATION
+\*----------------------------------*/
+$pagination-ns: null !default;
+$pagination-padding: 1rem !default;
+$pagination-border: 1px solid #888 !default;
+$pagination-border-width: 1px !default;
+
+/**
+ * ページネーションのコンポーネントです。
+ * `.c-pagination--bordered`を指定するとボーダーで囲われます。
+ *
+ * <ol class="c-pagination [c-pagination--bordered]">
+ *   <li class="c-pagination__item">
+ *     <a href="#" class="c-pagination__link c-pagination__link--prev">Prev</a>
+ *   </li>
+ *   <li class="c-pagination__item">
+ *     <a href="#" class="c-pagination__link">1</a>
+ *   </li>
+ *   <li class="c-pagination__item">
+ *     <a href="#" class="c-pagination__link">2</a>
+ *   </li>
+ *   <li class="c-pagination__item">
+ *     <a href="#" class="c-pagination__link">3</a>
+ *   </li>
+ *   <li class="c-pagination__item">
+ *     <a href="#" class="c-pagination__link c-pagination__link--next">Next</a>
+ *   </li>
+ * </ol>
+ */
+.#{$pagination-ns}c-pagination {
+    padding-left: 0;
+    font-size: 0 !important;
+    line-height: 1;
+    text-align: center;
+}
+
+.#{$pagination-ns}c-pagination__item {
+    display: inline-block;
+    font-size: $base-font-size;
+    @include media-query(lg) {
+        font-size: $lg-font-size;
+    }
+}
+
+.#{$pagination-ns}c-pagination__link {
+    display: inline-block;
+    padding: $pagination-padding;
+}
+
+.#{$pagination-ns}c-pagination__link--prev:before {
+    content: "\003C" "\00A0";
+}
+
+.#{$pagination-ns}c-pagination__link--next:after {
+    content: "\00A0" "\003E";
+}
+
+.#{$pagination-ns}c-pagination--bordered {
+    > .#{$pagination-ns}c-pagination__item {
+        border: $pagination-border;
+        border-right-width: 0;
+        &:last-child {
+            border-right-width: $pagination-border-width;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+/*----------------------------------*\
+ #QUOTES
+\*----------------------------------*/
+// `<blockquote>`タグのデフォルトスタイルを指定します。
+/**
+ * マークアップ例
+ * <blockquote cite="#">
+ *     <p><small></small></p>
+ *     <footer>
+ *         <cite><a href="#"></a></cite>
+ *     </footer>
+ * </blockquote>
+ */
+blockquote {
+    @include rhythm-unit(margin-top, 1);
+    @include rhythm-unit(margin-bottom, 1);
+    @include rhythm-lines($small-font-size, $lg-small-font-size);
+    margin-left: $indent-base;
+    margin-right: 0;
+    padding-left: $indent-base;
+    border-left: 1px solid #888;
+    color: #888;
+    @include media-query(lg) {
+        margin-left: $indent-large;
+        padding-left: $indent-large;
+    }
+    & > :first-child {
+        margin-top: 0;
+    }
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+blockquote {
+    cite {
+        &:before {
+            /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
+            content: '\2014 \00A0';
+        }
+    }
+}

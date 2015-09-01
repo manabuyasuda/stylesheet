@@ -1,0 +1,84 @@
+/*----------------------------------*\
+ #FRAG
+\*----------------------------------*/
+$frag-ns: null !default;
+$frag-gutter: 12px !default;
+
+/**
+ * 垂直方向の変更ができるmediaオブジェクトです。デフォルトは`vertical-align:middle`です。
+ * `.o-frag--rev`を指定すると画像を右側に配置することもできます。
+ * 垂直方向を変更するため、`<img>`は`o-frag__image`で必ずラップします。
+ * マークアップに制限があるため、mediaオブジェクトを優先して使用してください。
+ * http://csswizardry.com/2013/05/the-flag-object/
+ *
+ * <div class="o-frag [o-frag--rev]">
+ *   <figure class="o-frag__image">
+ *     <img">
+ *   </figure>
+ *   <div class="o-frag__body">
+ *     <p></p>
+ *   </div>
+ * </div>
+ */
+.#{$frag-ns}o-frag {
+    display: table;
+    width: 100%;
+}
+
+.#{$frag-ns}o-frag__image {
+    display: table-cell;
+    padding-right: $frag-gutter;
+    vertical-align: middle;
+    > img {
+        display: block;
+        max-width: none;
+    }
+}
+
+.#{$frag-ns}o-frag__body {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* `margin-bottom`を含んだまま、垂直方向が揃うのを防ぐ */
+.#{$frag-ns}o-frag__body > :last-child {
+    margin-bottom: 0;
+}
+
+.#{$frag-ns}o-frag--reverse {
+    /* 文字表記を右から左に変更します。 */
+    direction: rtl;
+    > .#{$frag-ns}o-frag__image,
+    > .#{$frag-ns}o-frag__body {
+        /* IE以外ではテキストが右寄せのままになってしまう */
+        text-align: left;
+        /* derectionプロパティを元に戻します。*/
+        direction: ltr;
+    }
+    > .#{$frag-ns}o-frag__image {
+        padding-right: 0;
+        padding-left: $frag-gutter;
+    }
+}
+
+.#{$frag-ns}o-frag--no-gap {
+    > .#{$frag-ns}o-frag__image {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.#{$frag-ns}o-frag--top {
+    > .#{$frag-ns}o-frag__image,
+    > .#{$frag-ns}o-frag__body {
+        vertical-align: top;
+    }
+}
+
+.#{$frag-ns}o-frag--bottom {
+    > .#{$frag-ns}o-frag__image,
+    > .#{$frag-ns}o-frag__body {
+        vertical-align: bottom;
+    }
+}

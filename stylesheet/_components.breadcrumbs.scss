@@ -1,0 +1,42 @@
+/*----------------------------------*\
+ #BREADCRUMBS
+\*----------------------------------*/
+$breadcrumb-ns: null !default;
+$breadcrumb-margin: 0 0.5rem !default;
+
+/**
+ * パンくずリストのコンポーネントです。
+ * `c-breadcrumb--ellipsis`で末尾のリストを省略できます。
+ *
+ * <ul class="c-breadcrumb c-breadcrumb--ellipsis">
+ *   <li class="c-breadcrumb__item"><a href="#" class="c-breadcrumb__link">home</a></li>
+ *   <li class="c-breadcrumb__item"><a href="#" class="breadcrumb__link">category</a></li>
+ *   <li class="c-breadcrumb__item">content title</li>
+ * </ul>
+ */
+.#{$breadcrumb-ns}c-breadcrumb {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.#{$breadcrumb-ns}c-breadcrumb--ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    & .#{$breadcrumb-ns}c-breadcrumb__item:last-child {
+        display: inline;
+    }
+}
+
+.#{$breadcrumb-ns}c-breadcrumb__item {
+    display: inline-block;
+}
+
+.#{$breadcrumb-ns}c-breadcrumb__link {
+    display: inline-block;
+}
+
+.#{$breadcrumb-ns}c-breadcrumb__item + .#{$breadcrumb-ns}c-breadcrumb__item:before {
+    content: "\003E";
+    margin: $breadcrumb-margin;
+}

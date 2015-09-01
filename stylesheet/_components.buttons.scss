@@ -1,0 +1,56 @@
+/*----------------------------------*\
+ #BUTTONS
+\*----------------------------------*/
+$button-ns: null !default;
+$button-margin: 0 !default;
+$button-padding: 1em !default;
+$button-border: none !default;
+$button-radius: $base-round;
+$button-bg: transparent !default;
+$button-color: #fff !default;
+$button-font-family: null !default;
+$button-font-size: null !default;
+
+/**
+ * ベーシックなボタンコンポーネントです。
+ * `<a>`, `<button>`, `<input>`要素でスタイルをリセットしています。
+ * サイズやスタイルの変更はモディファイアクラスを指定します。
+ *
+ * <div class="l-page-content">
+ *   <a href="#" class="c-button [c-button--full]">First Button</a>
+ *   <button class="c-button [c-button--full]">Second Button</button>
+ *   <input type="button" value="Button" class="c-button [c-button--full]" />
+ * </div>
+ */
+.#{$button-ns}c-button {
+    display: inline-block;
+    margin: $button-margin;
+    padding: $button-padding;
+    border: $button-border;
+    border-radius: $button-radius;
+    color: $button-color;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    background: $button-bg;
+    cursor: pointer;
+    appearance: none !important;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+    &[disabled],
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+.#{$button-ns}c-button--full {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}

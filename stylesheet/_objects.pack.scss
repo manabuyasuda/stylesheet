@@ -1,0 +1,37 @@
+/*----------------------------------*\
+ #PACK
+\*----------------------------------*/
+$pack-ns: null !default;
+$pack-padding: 1rem 0.5rem;
+
+/**
+ * 横幅いっぱいで均等かつ中央揃えのナビゲーションオブジェクトです。
+ *
+ * <ul class="o-pack [o-pack--equal]">
+ *   <li class="o-pack__item"><a href="#" class="o-pack__link"></a></li>
+ *   <li class="o-pack__item"><a href="#" class="o-pack__link"></a></li>
+ *   <li class="o-pack__item"><a href="#" class="o-pack__link"></a></li>
+ *   <li class="o-pack__item"><a href="#" class="o-pack__link"></a></li>
+ * </ul>
+ */
+.#{$pack-ns}o-pack {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.#{$pack-ns}o-pack--equal {
+    table-layout: fixed;
+}
+
+.#{$pack-ns}o-pack__item {
+    display: table-cell;
+}
+
+.#{$pack-ns}o-pack__link {
+    display: block;
+    padding: $pack-padding;
+    text-decoration: none;
+}

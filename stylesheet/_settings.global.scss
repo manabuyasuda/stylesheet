@@ -1,0 +1,61 @@
+///*----------------------------------*\
+//  #GLOBAL
+//\*----------------------------------*/
+
+// @prop {String} keys - keyは呼び出す時のキーワードになります。
+// @prop {String} values - 呼び出されるメディアタイプやキーワードです。
+// @see {Mixin} media-query - @include media-query() で使用されています。
+$breakpoints: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 768px)',
+    'lg': 'screen and (min-width: 1000px)',
+    'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+
+// ベースになるフォントや行の高さを管理します。
+$base-font-size: 15px !default;
+$base-spacing: 24px !default;
+$base-line-height: decimal-round($base-spacing / $base-font-size, 3, ceil) !default;
+
+
+// vertical-rhythmをブレイクポイントに対応させます。
+$lg-vertical-rhythm: true !default;
+$lg-font-size: 17px !default;
+$lg-spacing: 24px !default;
+$lg-line-height: decimal-round($lg-spacing / $lg-font-size, 3, ceil) !default;
+
+
+// ベースになる色を管理します。
+$base-font-color: #333 !default;
+$heading-font-color: null !default;
+$base-background-color: #fff !default;
+$base-link-color: #2b70ba !default;
+$visited-link-color: null !default;
+$hover-link-color: lighten($base-link-color, 15%) !default;
+
+
+// `a`のtext-decorationを管理します。
+$base-link-decoration: none !default;
+$hover-link-decoration: underline !default;
+
+
+// `font-family`を管理します。
+$base-font-family: "Droid Sans", "Lucida Grande", "Helvetica Neue", "Helvetica", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif !default;
+$heading-font-family: null !default;
+$monospace-font-family: Courier, "Courier New", monospace !default;
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+
+// `font-weight`を管理します。
+$base-font-weight: 400 !default;
+$heading-font-weight: 600 !default;
+
+
+// `ul`, `dl`, `blockquote`などのインデントに使用します。
+$indent-base: 1rem !default;
+$indent-large: 2rem !default;
+
+
+// ボタンコンポーネントなどの角丸に使用します。
+$base-round: 3px;

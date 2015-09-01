@@ -1,0 +1,50 @@
+/*----------------------------------*\
+ #MEDIA
+\*----------------------------------*/
+$media-ns: null !default;
+$media-gutter: 12px !default;
+
+/**
+ * 画像とテキストを横並びにするオブジェクトです。
+ * `o-media__image`は`<figure>`でも`<img>`のどちらでも使用できます。
+ * `o-media__image--rev`を指定すると画像を右側に配置することもできます。
+ * `o-media__image`と`o-media__body`は`<img>`と`<p>`に直接マークアップすることもできます。
+ *
+ * <div class="o-media">
+ *   <figure class="o-media__image [o-media__image--rev]">
+ *     <img>
+ *   </figure>
+ *   <div class="o-media__body">
+ *     <p></p>
+ *   </div>
+ * </div>
+ */
+.#{$media-ns}o-media {
+    @include clearfix;
+}
+
+.#{$media-ns}o-media__image {
+    float: left;
+    margin-right: $media-gutter;
+    > img {
+        display: block;
+        max-width: none;
+    }
+}
+
+.#{$media-ns}o-media__body {
+    overflow: hidden;
+}
+
+.#{$media-ns}o-media__image--reverse {
+    float: right;
+    margin-right: 0;
+    margin-left: $media-gutter;
+}
+
+.#{$media-ns}o-media--no-gap {
+    > .#{$media-ns}o-media__image {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

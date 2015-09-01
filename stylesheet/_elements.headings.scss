@@ -1,0 +1,49 @@
+/*----------------------------------*\
+ #HEADINGS
+\*----------------------------------*/
+
+$h1-font-size: 26px !default;
+$h2-font-size: 26px !default;
+$h3-font-size: 20px !default;
+$h4-font-size: 16px !default;
+$h5-font-size: 15px !default;
+$h6-font-size: 13px !default;
+$small-font-size: ($base-font-size - 2px) !default;
+
+$lg-h1-font-size: 28px !default;
+$lg-h2-font-size: 28px !default;
+$lg-h3-font-size: 22px !default;
+$lg-h4-font-size: 18px !default;
+$lg-h5-font-size: 16px !default;
+$lg-h6-font-size: 14px !default;
+$lg-small-font-size: ($lg-font-size - 3px) !default;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    color: $heading-font-color;
+}
+
+h1, .u-h1 {
+    @include rhythm-lines($h1-font-size, $lg-h1-font-size);
+}
+h2, .u-h2 {
+    @include rhythm-lines($h2-font-size, $lg-h2-font-size);
+}
+h3, .u-h3 {
+    @include rhythm-lines($h3-font-size, $lg-h3-font-size);
+}
+h4, .u-h4 {
+    @include rhythm-lines($h4-font-size, $lg-h4-font-size);
+}
+h5, .u-h5 {
+    @include rhythm-lines($h5-font-size, $lg-h5-font-size);
+}
+h6, .u-h6 {
+    @include rhythm-lines($h6-font-size, $lg-h6-font-size);
+}

@@ -1,0 +1,22 @@
+/*----------------------------------*\
+ #SHARED
+\*----------------------------------*/
+/**
+ * Vertical Rhythmを指定しているクラスセレクタをまとめて指定します。
+ * `<blockquote>`は`_elements.quote.scss`で指定しています。
+ */
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+dl,
+table,
+pre,
+address,
+fieldset {
+    margin-top: 0;
+    @include rhythm-unit(margin-bottom, 1);
+}
+
+/**
+ * コンポーネントで同じパターンのスタイルを持つものはここで指定します。
+ */

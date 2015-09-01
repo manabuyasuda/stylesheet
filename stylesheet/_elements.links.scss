@@ -1,0 +1,15 @@
+/*----------------------------------*\
+ #LINKS
+\*----------------------------------*/
+// アンカータグのデフォルトスタイルを指定します。
+a {
+    color: $base-link-color;
+    text-decoration: $base-link-decoration;
+    &:visited {
+        color: $visited-link-color;
+    }
+    &:hover {
+        color: $hover-link-color;
+        text-decoration: $hover-link-decoration;
+    }
+}

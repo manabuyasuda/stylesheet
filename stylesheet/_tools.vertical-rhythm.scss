@@ -1,0 +1,74 @@
+///*----------------------------------*\
+//  #VERTICAL RHYTHM
+//\*----------------------------------*/
+
+// ルートになる要素に`font-size`と`line-height`を指定します。
+@mixin rhythm-root() {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    @if $lg-vertical-rhythm == true {
+        @include media-query(lg) {
+            font-size: $lg-font-size;
+            line-height: $lg-line-height;
+        }
+    }
+}
+
+// @prop {String} $base-size - ベースになるフォントサイズをpxで指定します。
+// @prop {String} $lg-size($font-size) - ブレイクポイント以降のフォントサイズをpxで指定します。
+@mixin rhythm-lines($base-size, $lg-size: $font-size) {
+    font-size: decimal-round($base-size / $base-font-size, 3, ceil) * 1rem;
+    line-height: $base-line-height * (ceil($base-size / $base-spacing) * 1rem);
+    @if $lg-vertical-rhythm == true {
+        @include media-query(lg) {
+            font-size: decimal-round($lg-size / $lg-font-size, 3, ceil) * 1rem;
+            line-height: $lg-line-height * (ceil($lg-size / $lg-spacing) * 1rem);
+        }
+    }
+}
+
+// @prop {String} $prop - 指定するプロパティを指定します。
+// @prop {Number} $rhythm(1) - 値に指定する行数を渡します。
+@mixin rhythm-unit($prop, $rhythm: 1) {
+    #{$prop}: ($base-line-height * $rhythm) * 1rem;
+    @if $lg-vertical-rhythm == true {
+        @include media-query(lg) {
+            #{$prop}: ($lg-line-height * $rhythm) * 1rem;
+        }
+    }
+}
+
+// body {
+//     max-width: 600px;
+//     margin: auto !important;
+//     padding: 0 15px;
+// }
+// .grid {
+//     position: absolute;
+//     z-index: -1;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     .line {
+//         font-size: 1rem;
+//         line-height: $base-line-height;
+//         box-shadow: 0 1px 0 #eee;
+//         @if $lg-vertical-rhythm == true {
+//             @include media-query(lg) {
+//                 line-height: $lg-line-height;
+//             }
+//         }
+//     }
+// }
+// p,
+// ul,
+// ol,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     box-shadow: 0 1px 0 #faa, inset 0 1px 0 #faa;
+// }
