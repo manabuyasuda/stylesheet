@@ -57,7 +57,7 @@
 }
 
 
-// 上下のマージンをremで返すmixinです。
+// 上下のマージンをpxで返すmixinです。
 // @prop {Number} $top(0) - 要素の`margin-top`に指定する行数を指定します。
 // @prop {Number} $bottom(1) - 要素の`margin-bottom`に指定する行数を指定します。
 // @prop {Map} $fs-map($base-font-sizes) - ベースになるフォントサイズをpxで指定します。
