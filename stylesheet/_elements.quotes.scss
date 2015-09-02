@@ -12,9 +12,8 @@
  * </blockquote>
  */
 blockquote {
-    @include rhythm-unit(margin-top, 1);
-    @include rhythm-unit(margin-bottom, 1);
-    @include rhythm-lines($small-font-size, $lg-small-font-size);
+    @include vr(1, 1);
+    @include font-size($small-font-sizes);
     margin-left: $indent-base;
     margin-right: 0;
     padding-left: $indent-base;

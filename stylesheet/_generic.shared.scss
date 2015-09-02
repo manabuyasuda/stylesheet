@@ -13,8 +13,7 @@ table,
 pre,
 address,
 fieldset {
-    margin-top: 0;
-    @include rhythm-unit(margin-bottom, 1);
+    @include vr;
 }
 
 /**

@@ -29,10 +29,7 @@ $grid-gutter: 24px !default;
     display: inline-block;
     width: 100%;
     /* フォントサイズを戻す */
-    font-size: $base-font-size;
-    @include media-query(lg) {
-        font-size: $lg-font-size;
-    }
+    font-size: 1rem;
     vertical-align: top;
 }
 

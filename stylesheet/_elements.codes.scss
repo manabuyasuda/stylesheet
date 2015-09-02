@@ -23,7 +23,7 @@ kbd {
         margin-left: 3px;
         margin-right: 3px;
         padding: 3px 6px;
-        @include rhythm-lines($small-font-size, $lg-small-font-size);
+        @include font-size($small-font-sizes);
         line-height: 1;
         border-width: 1px;
         border-style: solid;

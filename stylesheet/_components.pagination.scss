@@ -37,10 +37,7 @@ $pagination-border-width: 1px !default;
 
 .#{$pagination-ns}c-pagination__item {
     display: inline-block;
-    font-size: $base-font-size;
-    @include media-query(lg) {
-        font-size: $lg-font-size;
-    }
+    font-size: 1rem;
 }
 
 .#{$pagination-ns}c-pagination__link {
