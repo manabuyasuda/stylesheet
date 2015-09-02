@@ -2,73 +2,149 @@
 //  #VERTICAL RHYTHM
 //\*----------------------------------*/
 
-// ルートになる要素に`font-size`と`line-height`を指定します。
-@mixin rhythm-root() {
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    @if $lg-vertical-rhythm == true {
-        @include media-query(lg) {
-            font-size: $lg-font-size;
-            line-height: $lg-line-height;
-        }
-    }
-}
 
-// @prop {String} $base-size - ベースになるフォントサイズをpxで指定します。
-// @prop {String} $lg-size($font-size) - ブレイクポイント以降のフォントサイズをpxで指定します。
-@mixin rhythm-lines($base-size, $lg-size: $font-size) {
-    font-size: decimal-round($base-size / $base-font-size, 3, ceil) * 1rem;
-    line-height: $base-line-height * (ceil($base-size / $base-spacing) * 1rem);
-    @if $lg-vertical-rhythm == true {
-        @include media-query(lg) {
-            font-size: decimal-round($lg-size / $lg-font-size, 3, ceil) * 1rem;
-            line-height: $lg-line-height * (ceil($lg-size / $lg-spacing) * 1rem);
-        }
-    }
-}
 
-// @prop {String} $prop - 指定するプロパティを指定します。
-// @prop {Number} $rhythm(1) - 値に指定する行数を渡します。
-@mixin rhythm-unit($prop, $rhythm: 1) {
-    #{$prop}: ($base-line-height * $rhythm) * 1rem;
-    @if $lg-vertical-rhythm == true {
-        @include media-query(lg) {
-            #{$prop}: ($lg-line-height * $rhythm) * 1rem;
-        }
-    }
-}
-
-// body {
-//     max-width: 600px;
-//     margin: auto !important;
-//     padding: 0 15px;
+// `html`や`h1`などに指定するmixinです。
+// `font-size`(px)と`line-height`(単位なし)をブレイクポイントごとに返します。
+// @prop {Map} $fs-map($font-sizes) - ベースになるフォントサイズをpxで指定します。
+// @prop {Map} $fs-breakpoints($breakpoints) - ブレイクポイントのキーワードを指定します。
+// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
+// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
+// @requires {Mixin} make-font-size - マップからvalueを取得し、`font-size`と`line-height`を返します。
+//
+// @example scss - Usage
+// $base-font-sizes: (
+//     "base": vr(14px, 24px),
+//     "lg": vr(16px, 28px),
+// ) !default;
+//
+// .foo {
+//     @include font-size($base-font-sizes);
 // }
-// .grid {
-//     position: absolute;
-//     z-index: -1;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     .line {
-//         font-size: 1rem;
-//         line-height: $base-line-height;
-//         box-shadow: 0 1px 0 #eee;
-//         @if $lg-vertical-rhythm == true {
-//             @include media-query(lg) {
-//                 line-height: $lg-line-height;
-//             }
-//         }
+//
+// @example css - CSS output
+// .foo {
+//     font-size: 14px;
+//     line-height: 1.715;
+// }
+//
+// @media screen and (min-width: 1000px) {
+//     .foo {
+//         font-size: 16px;
+//         line-height: 1.75;
 //     }
 // }
-// p,
-// ul,
-// ol,
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     box-shadow: 0 1px 0 #faa, inset 0 1px 0 #faa;
+//
+@mixin font-size($fs-map: $base-font-sizes, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint == "base" {
+             @include make-font-size($fs-font-size);
+        } @else {
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+                @media #{unquote(map-get($fs-breakpoints, $fs-breakpoint))} {
+                    @include make-font-size($fs-font-size);
+                }
+            }
+        }
+    }
+}
+
+// @prop {Map} $fs-font-size - ブレイクポイントごとの`font-size`と`line-height`を定義しています。
+// @See {Mixin} font-size - ブレイクポイントを追加するmixinです。
+@mixin make-font-size($fs-font-size) {
+    font-size: nth($fs-font-size, 1);
+    line-height: nth($fs-font-size, 3);
+}
+
+
+// 上下のマージンをremで返すmixinです。
+// @prop {Number} $top(0) - 要素の`margin-top`に指定する行数を指定します。
+// @prop {Number} $bottom(1) - 要素の`margin-bottom`に指定する行数を指定します。
+// @prop {Map} $fs-map($base-font-sizes) - ベースになるフォントサイズをpxで指定します。
+// @prop {Map} $fs-breakpoints($breakpoints) - ブレイクポイントのキーワードを指定します。
+// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
+// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
+//
+// @example scss - Usage
+// .foo {
+//     @include vr;
 // }
+//
+// @example css - CSS output
+// .foo {
+//     margin-top: 0;
+//     margin-bottom: 24px;
+// }
+//
+// @media screen and (min-width: 1000px) {
+//     .foo {
+//         margin-bottom: 28px;
+//     }
+// }
+//
+@mixin vr($top: 0, $bottom: 1, $fs-map: $base-font-sizes, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        // 引数が0なら0を返し、それ以外の場合は行の高さを返す。
+        @if $fs-breakpoint == "base" and $top == 0 {
+            margin-top: 0;
+        } @else if $fs-breakpoint == "base" and $top != 0 {
+            margin-top: nth($fs-font-size, 2) * $top;
+        }
+        // 引数が0なら0を返し、それ以外の場合は行の高さを返す。
+        @if $fs-breakpoint == "base" and $bottom == 0 {
+            margin-bottom: 0;
+        } @else if $fs-breakpoint == "base" and $bottom != 0 {
+            margin-bottom: nth($fs-font-size, 2) * $bottom;
+        }
+        @else {
+            // mapが定義されていたらブレイクポイントを追加する。
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+                @media #{unquote(map-get($fs-breakpoints, $fs-breakpoint))} {
+                    // 引数が0以外の場合は値を返す。
+                    @if $top != 0 {
+                        margin-top: nth($fs-font-size, 2) * $top;
+                    }
+                    // 引数が0以外の場合は値を返す。
+                    @if $bottom != 0 {
+                        margin-bottom: nth($fs-font-size, 2) * $bottom;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+body {
+    max-width: 600px;
+    margin: auto !important;
+    padding: 0 15px;
+}
+.grid {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .line {
+        font-size: 1rem;
+        line-height: 24px;
+        box-shadow: 0 1px 0 #eee;
+            @include media-query(lg) {
+                line-height: 28px;
+            }
+    }
+}
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    box-shadow: 0 1px 0 #faa, inset 0 1px 0 #faa;
+}
