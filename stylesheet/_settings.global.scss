@@ -19,18 +19,21 @@ $breakpoints: (
 // @return {Number} - 第一と第二引数で除算をして、decimal関数で小数点以下を3桁までに制限します。
 // @see {Map} $font-sizes
 @function vr($fz, $lh) {
-    @return ($fz, $lh, decimal-round($lh / $fz, 3, ceil));
+
+    // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
+    $n: 1000;
+    $vr: ceil(($lh / $fz) * $n) / $n;
+
+    @return ($fz, $lh, $vr);
 }
 
-// mapの$breakpointsのkeyと同じkeyを指定します。
-// "base"はfont-sizeなどのmixinで指定されているので、変更しないでください。
-// 第二引数は第一引数より大きくなるように指定します。
-// 行間が詰まり過ぎてしまうので、第二引数の方が常に大きくなるようにします。
-// 第二引数の値の倍数になるように指定します。
+// Vertical Rhythmに使用するフォントサイズと行の高さを定義します。
+// keyには"base"と$breakpointsで定義したkeyを定義します。
+// valueにはフォントサイズと行の高さをpxで定義します。
+// $base-font-sizesの第二引数の値の倍数を各mapに定義します。
 // @prop {String} keys - keyは呼び出す時のキーワードになります。
 // @prop {String} values - 呼び出される`font-size`と`line-height`になります。
-// @see {Map} $breakpoints - ブレイクポイントを管理するマップです。
-// @see {Mixin} vr - mixinの`vr` で使用されています。
+// @see {Map} $breakpoints - ブレイクポイントを管理するmapです。
 $base-font-sizes: (
     "base": vr(14px, 24px),
     "lg": vr(16px, 28px),
@@ -38,17 +41,17 @@ $base-font-sizes: (
 
 $h1-font-sizes: (
     "base": vr(26px, 24px * 2),
-    "lg": vr(28px, 28px * 2),
+    "lg": vr(30px, 28px * 2),
 ) !default;
 
 $h2-font-sizes: (
-    "base": vr(26px, 24px * 2),
+    "base": vr(22px, 24px),
     "lg": vr(26px, 28px),
 ) !default;
 
 $h3-font-sizes: (
     "base": vr(20px, 24px),
-    "lg": vr(22px, 28px),
+    "lg": vr(24px, 28px),
 ) !default;
 
 $h4-font-sizes: (
