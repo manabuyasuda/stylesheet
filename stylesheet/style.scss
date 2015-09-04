@@ -3,12 +3,14 @@
  * Decimal..............`round`, `ceil`, `floor`関数では扱えない小数点をコントロールする関数です。
  * Config...............特定の機能を切り替えるための設定ファイルです。
  * Global...............プロジェクト全体を通して使用される変数です。
+ * Font-size............フォントサイズ用の変数を管理します。
  *
  * TOOLS
  * Z-indexes............z-indexを管理するための変数と関数です。
- * Media-query..........メディアクエリ用の変数とmixinです。
- * Vertical-rhythm......Vertical Rhythmを指定するためのmixinでremを返します。
+ * Media-query..........メディアクエリ用のmixinです。
+ * Vertical-rhythm......Vertical Rhythmを指定するためのmixinです。
  * Clearfix.............`float`を解除する`clearfix`のmixinです。
+ * Debug................検証をするためのデバッグファイルです。
  *
  * GENERIC
  * Normalize.css........Normalize cssのインポートします。
@@ -28,13 +30,14 @@
  * OBJECTS
  * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
  * Grid.................グリッドレイアウトのベーススタイルです。
- * Pac..................子要素を折り返さず、横幅内に収めるオブジェクトです。
+ * Rank.................横並びになるリストオブジェクトです。
+ * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
  * Frag.................垂直方向の指定ができるメディアオブジェクトです。
  * Scroll table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
- * Embed................YouTubeなどの埋め込みのアスペクト比を固定するオブジェクトです。
+ * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  *
  * COMPONENTS
  * Images...............画像コンポーネントです。
@@ -53,11 +56,13 @@
 @import "settings.decimal";
 @import "settings.config";
 @import "settings.global";
+@import "settings.font-size";
 
 @import "tools.z-indexes";
 @import "tools.media-query";
 @import "tools.vertical-rhythm";
 @import 'tools.clearfix';
+@import "tools.debug";
 
 @import 'generic.normalize';
 @import 'generic.reset';
@@ -74,6 +79,7 @@
 
 @import "objects.wrappers";
 @import "objects.grids";
+@import "objects.rank";
 @import "objects.pack";
 @import "objects.stack";
 @import "objects.media";

@@ -1,0 +1,36 @@
+///*----------------------------------*\
+//  #DEBUG
+//\*----------------------------------*/
+
+$debug-vertical-rhythm: true;
+
+@if $debug-vertical-rhythm {
+    body {
+        max-width: 600px;
+        margin: auto !important;
+        padding: 0 15px;
+    }
+    .grid {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        .line {
+            box-shadow: 0 1px 0 #eee;
+
+            @include font-size;
+        }
+    }
+    h1, h2, h3, h4, h5, h6,
+    p,
+    ul, ol,
+    dl,
+    table,
+    pre,
+    address,
+    fieldset {
+        box-shadow: 0 1px 0 #faa, inset 0 1px 0 #faa;
+    }
+}

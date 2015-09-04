@@ -1,0 +1,31 @@
+/*----------------------------------*\
+ #rank
+\*----------------------------------*/
+
+$rank-ns: null !default;
+$rank-padding: 1em 0.5em !default;
+
+/**
+ * 横並び（ranked）になるリストオブジェクトです。
+ *
+ * <ul class="o-rank">
+ *   <li class="o-rank__item"><a href="#" class="o-rank__link">home</a></li>
+ *   <li class="o-rank__item"><a href="#" class="o-rank__link">category</a></li>
+ *   <li class="o-rank__item"><a href="#" class="o-rank__link">category</a></li>
+ * </ul>
+ */
+.#{$rank-ns}o-rank {
+    padding-left: 0;
+    font-size: 0 !important;
+    list-style-type: none;
+}
+
+.#{$rank-ns}o-rank__item {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.#{$rank-ns}o-rank__link {
+    display: inline-block;
+    padding: $rank-padding;
+}

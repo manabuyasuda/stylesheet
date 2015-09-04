@@ -6,7 +6,7 @@ $stack-padding: 1rem 0.5rem;
 $stack-right: 0.5rem;
 
 /**
- * 縦に積み重なる（stack up）シンプルなナビゲーションです。
+ * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
  * `$stack-padding`でリンク内の余白を調整できます。
  * `$stack-right`は`$stack-padding`の左右の余白と合わせるのがベターです。
  * `.o-stack--arrow`を指定すると`>`がリンクの右側に付与されます。

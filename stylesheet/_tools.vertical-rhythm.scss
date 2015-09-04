@@ -136,38 +136,3 @@
         }
     }
 }
-
-
-
-body {
-    max-width: 600px;
-    margin: auto !important;
-    padding: 0 15px;
-}
-.grid {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    .line {
-        font-size: 1rem;
-        line-height: 24px;
-        box-shadow: 0 1px 0 #eee;
-            @include media-query(lg) {
-                line-height: 28px;
-            }
-    }
-}
-p,
-ul,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    box-shadow: 0 1px 0 #faa, inset 0 1px 0 #faa;
-}
