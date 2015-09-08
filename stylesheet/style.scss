@@ -29,13 +29,14 @@
  *
  * OBJECTS
  * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
+ * Generic-box..........マージンを持たないオブジェクトにマージンを与えます。
  * Grid.................グリッドレイアウトのベーススタイルです。
  * Rank.................横並びになるリストオブジェクトです。
  * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
  * Frag.................垂直方向の指定ができるメディアオブジェクトです。
- * Scroll table.........横スクロールに対応したテーブルオブジェクトです。
+ * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  *
@@ -61,11 +62,11 @@
 @import "tools.z-indexes";
 @import "tools.media-query";
 @import "tools.vertical-rhythm";
-@import 'tools.clearfix';
+@import "tools.clearfix";
 @import "tools.debug";
 
-@import 'generic.normalize';
-@import 'generic.reset';
+@import "generic.normalize";
+@import "generic.reset";
 @import "generic.box-sizing";
 @import "generic.shared";
 
@@ -78,6 +79,7 @@
 @import "elements.codes";
 
 @import "objects.wrappers";
+@import "objects.generic-box";
 @import "objects.grids";
 @import "objects.rank";
 @import "objects.pack";

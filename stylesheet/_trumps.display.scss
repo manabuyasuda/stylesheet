@@ -3,7 +3,6 @@
 \*----------------------------------*/
 $display-ns: null !default;
 
-
 .#{$display-ns}u-hide-visually {
     overflow: hidden !important;
     clip: rect(1px, 1px, 1px, 1px) !important;

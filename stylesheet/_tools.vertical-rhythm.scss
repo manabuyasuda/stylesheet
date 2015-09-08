@@ -59,7 +59,7 @@
     // 渡されたmapのvalueの1つ目の値を取得します。
     font-size: nth($fs-map, 1);
 
-    // 渡されたmapのvalueの2つ目の値を取得します。
+    // 渡されたmapのvalueの3つ目の値を取得します。
     line-height: nth($fs-map, 3);
 
 }

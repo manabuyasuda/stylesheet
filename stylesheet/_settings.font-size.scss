@@ -3,17 +3,17 @@
 //\*----------------------------------*/
 
 // `$font-sizes`で使用する、小数点を3桁までに制限する関数です。
-// @prop {Number} $fz - `font-size`に指定する値をpxで指定します。
+// @prop {Number} $fs - `font-size`に指定する値をpxで指定します。
 // @prop {Number} $lh - `line-height`に指定する値をpxで指定します。
 // @return {Number} - 第一と第二引数で除算をして、decimal関数で小数点以下を3桁までに制限します。
 // @see {Map} $font-sizes
-@function vr($fz, $lh) {
+@function vr($fs, $lh) {
 
     // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
     $n: 1000;
-    $vr: ceil(($lh / $fz) * $n) / $n;
+    $vr: ceil(($lh / $fs) * $n) / $n;
 
-    @return ($fz, $lh, $vr);
+    @return ($fs, $lh, $vr);
 }
 
 // Vertical Rhythmに使用するフォントサイズと行の高さを定義します。

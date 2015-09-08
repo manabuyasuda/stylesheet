@@ -35,6 +35,14 @@ $stack-right: 0.5rem;
     padding: $stack-padding;
 }
 
+.#{$stack-ns}o-stack--center {
+    text-align: center;
+}
+
+.#{$stack-ns}o-stack--right {
+    text-align: right;
+}
+
 .#{$stack-ns}o-stack--arrow {
     > .#{$stack-ns}o-stack__item {
         position: relative;

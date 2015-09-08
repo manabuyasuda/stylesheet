@@ -1,0 +1,23 @@
+/*----------------------------------*\
+ #GENERIC-BOX
+\*----------------------------------*/
+$generic-ns: null !default;
+
+/**
+ * マージンを指定した、汎用的なボックスオブジェクトです。
+ * マージンを指定することが推奨されない各オブジェクトにマージンを与えます。
+ *
+ * <div class="o-generic-box [o-generic-box-center">
+ *   <div class="o-media">
+ *   </div>
+ * </div>
+ */
+.#{$generic-ns}o-generic-box {
+    @include clearfix;
+    @include vr(0, 1);
+}
+
+.#{$generic-ns}o-generic-box--center {
+    margin-right: auto;
+    margin-left: auto;
+}
