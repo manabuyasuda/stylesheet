@@ -13,7 +13,6 @@ $generic-ns: null !default;
  * </div>
  */
 .#{$generic-ns}o-generic-box {
-    @include clearfix;
     @include vr(0, 1);
 }
 

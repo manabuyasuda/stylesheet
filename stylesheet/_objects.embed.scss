@@ -32,9 +32,9 @@ $embed-ns: null !default;
 }
 
 .#{$embed-ns}o-embed--16\:9 {
-    padding-bottom: percentage(9 / 16);
+    padding-bottom: percentage(9 / 16) !important;
 }
 
 .#{$embed-ns}o-embed--4\:3 {
-    padding-bottom: percentage(3 / 4);
+    padding-bottom: percentage(3 / 4) !important;
 }

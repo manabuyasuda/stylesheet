@@ -4,12 +4,6 @@
 $button-ns: null !default;
 $button-margin: 0 !default;
 $button-padding: 1em !default;
-$button-border: none !default;
-$button-radius: $base-round;
-$button-bg: transparent !default;
-$button-color: #fff !default;
-$button-font-family: null !default;
-$button-font-size: null !default;
 
 /**
  * ベーシックなボタンコンポーネントです。
@@ -26,17 +20,17 @@ $button-font-size: null !default;
     display: inline-block;
     margin: $button-margin;
     padding: $button-padding;
-    border: $button-border;
-    border-radius: $button-radius;
-    color: $button-color;
-    font-family: $button-font-family;
-    font-size: $button-font-size;
+    border: none;
+    border-radius: $base-round;
+    color: #fff;
+    font-family: null;
+    font-size: null;
     line-height: 1;
     text-align: center;
     text-decoration: none;
-    background: $button-bg;
+    background: transparent;
     cursor: pointer;
-    appearance: none !important;
+    appearance: none;
     &:hover,
     &:active,
     &:focus {
