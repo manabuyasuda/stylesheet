@@ -3,7 +3,8 @@
  */
 $button-ns: null !default;
 $button-margin: 0 !default;
-$button-padding: 1em !default;
+$button-padding-y: 1em !default;
+$button-padding-x: 1em !default;
 
 /**
  * ベーシックなボタンコンポーネントです。
@@ -19,7 +20,7 @@ $button-padding: 1em !default;
 .#{$button-ns}c-button {
     display: inline-block;
     margin: $button-margin;
-    padding: $button-padding;
+    padding: $button-padding-y $button-padding-x;
     border: none;
     border-radius: $base-round;
     color: #fff;

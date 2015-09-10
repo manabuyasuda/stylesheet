@@ -2,8 +2,9 @@
  * #Stack
  */
 $stack-ns: null !default;
-$stack-padding: 1rem 0.5rem;
-$stack-right: 0.5rem;
+$stack-padding-y: 1em !default;
+$stack-padding-x: 0.5em !default;
+$stack-right: 0.5rem !default;
 
 /**
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
@@ -11,7 +12,7 @@ $stack-right: 0.5rem;
  * `$stack-right`は`$stack-padding`の左右の余白と合わせるのがベターです。
  * `.c-stack--arrow`を指定すると`>`がリンクの右側に付与されます。
  *
- * <ul class="c-stack [c-stack--arrow]">
+ * <ul class="c-stack [c-stack--arrow c-stack--size-small]">
  *     <li class="c-stack__item">
  *         <a href="#" class="c-stack__link">
  *            [content]
@@ -32,7 +33,7 @@ $stack-right: 0.5rem;
 
 .#{$stack-ns}c-stack__link {
     display: block;
-    padding: $stack-padding;
+    padding: $stack-padding-y $stack-padding-x;
 }
 
 .#{$stack-ns}c-stack--center {
@@ -52,6 +53,24 @@ $stack-right: 0.5rem;
             content: "\003E";
             position: absolute;
             right: $stack-right;
+        }
+    }
+}
+
+.#{$stack-ns}c-stack--size-small {
+    .#{$stack-ns}c-stack__link {
+        padding: ($stack-padding-y / 2) ($stack-padding-x / 2);
+        &:after {
+            right: ($stack-right / 2);
+        }
+    }
+}
+
+.#{$stack-ns}c-stack--size-large {
+    .#{$stack-ns}c-stack__link {
+        padding: ($stack-padding-y * 2) ($stack-padding-x * 2);
+        &:after {
+            right: ($stack-right * 2);
         }
     }
 }

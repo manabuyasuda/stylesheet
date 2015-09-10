@@ -2,7 +2,8 @@
  * #Pagenation
  */
 $pagination-ns: null !default;
-$pagination-padding: 1rem !default;
+$pagination-padding-y: 1em !default;
+$pagination-padding-x: 1em !default;
 $pagination-border: 1px solid #888 !default;
 $pagination-border-width: 1px !default;
 
@@ -42,7 +43,7 @@ $pagination-border-width: 1px !default;
 
 .#{$pagination-ns}c-pagination__link {
     display: inline-block;
-    padding: $pagination-padding;
+    padding: $pagination-padding-y $pagination-padding-x;
 }
 
 .#{$pagination-ns}c-pagination__link--prev:before {

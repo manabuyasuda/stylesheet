@@ -10,8 +10,8 @@ $grid-gutter: 24px !default;
  * ガターは左側にだけ指定されています。
  * `width`の変更は`_objects.width.scss`のクラスを使用します。
  *
- * <div class="o-wrapper">
- *   <div class="c-grid c-grid--has-gutter">
+ * <div class="c-wrapper">
+ *   <div class="c-grid c-grid--gutter-medium">
  *     <div class="c-grid__item u-8/12@md"></div>
  *     <div class="c-grid__item u-4/12@md"></div>
  *   </div>
@@ -33,10 +33,28 @@ $grid-gutter: 24px !default;
     vertical-align: top;
 }
 
-.#{$grid-ns}c-grid--has-gutter {
+/**
+ * gutterを追加します。サイズは`font-size`のサイズキーワードをベースにします。
+ * xx-small | x-small | small | medium | large | x-large | xx-large
+ */
+.#{$grid-ns}c-grid--gutter-medium {
     margin-left: - $grid-gutter;
     > .#{$grid-ns}c-grid__item {
         padding-left: $grid-gutter;
+    }
+}
+
+.#{$grid-ns}c-grid--gutter-small {
+    margin-left: - ($grid-gutter / 2);
+    > .#{$grid-ns}c-grid__item {
+        padding-left: ($grid-gutter / 2);
+    }
+}
+
+.#{$grid-ns}c-grid--gutter-large {
+    margin-left: - ($grid-gutter * 2);
+    > .#{$grid-ns}c-grid__item {
+        padding-left: ($grid-gutter * 2);
     }
 }
 

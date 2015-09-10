@@ -2,12 +2,13 @@
  * #Rank
  */
 $rank-ns: null !default;
-$rank-padding: 1em 0.5em !default;
+$rank-padding-y: 1em !default;
+$rank-padding-x: 0.5em !default;
 
 /**
  * 横並び（ranked）になるリストオブジェクトです。
  *
- * <ul class="c-rank">
+ * <ul class="c-rank [c-rank--size-small]">
  *   <li class="c-rank__item"><a href="#" class="c-rank__link">home</a></li>
  *   <li class="c-rank__item"><a href="#" class="c-rank__link">category</a></li>
  *   <li class="c-rank__item"><a href="#" class="c-rank__link">category</a></li>
@@ -26,5 +27,17 @@ $rank-padding: 1em 0.5em !default;
 
 .#{$rank-ns}c-rank__link {
     display: inline-block;
-    padding: $rank-padding;
+    padding: $rank-padding-y $rank-padding-x;
+}
+
+.#{$rank-ns}c-rank--size-small {
+    .#{$rank-ns}c-rank__link {
+        padding: ($rank-padding-y / 2) ($rank-padding-x / 2);
+    }
+}
+
+.#{$rank-ns}c-rank--size-large {
+    .#{$rank-ns}c-rank__link {
+        padding: ($rank-padding-y * 2) ($rank-padding-x * 2);
+    }
 }

@@ -2,12 +2,13 @@
  * #Pack
  */
 $pack-ns: null !default;
-$pack-padding: 1rem 0.5rem;
+$pack-padding-y: 1em;
+$pack-padding-x: 0.5em;
 
 /**
  * 横幅いっぱいで均等かつ中央揃えのナビゲーションオブジェクトです。
  *
- * <ul class="c-pack [c-pack--equal]">
+ * <ul class="c-pack [c-pack--equal c-pack--size-small]">
  *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
  *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
  *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
@@ -32,6 +33,18 @@ $pack-padding: 1rem 0.5rem;
 
 .#{$pack-ns}c-pack__link {
     display: block;
-    padding: $pack-padding;
+    padding: $pack-padding-y $pack-padding-x;
     text-decoration: none;
+}
+
+.#{$pack-ns}c-pack--size-small {
+    .#{$pack-ns}c-pack__link {
+        padding: ($pack-padding-y / 2) ($pack-padding-x / 2);
+    }
+}
+
+.#{$pack-ns}c-pack--size-large {
+    .#{$pack-ns}c-pack__link {
+        padding: ($pack-padding-y * 2) ($pack-padding-x * 2);
+    }
 }
