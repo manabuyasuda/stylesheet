@@ -1,0 +1,26 @@
+/**
+ * #Wrapper
+ */
+$wrapper-ns: null !default;
+$wrapper-max-width: 1200px !default;
+$wrapper-padding: 15px !default;
+
+/**
+ * コンポーネントのやオブジェクトの横幅を制限します。
+ * デフォルトで左右のパディングが入ります。
+ *
+ * <div class="c-wrapper">
+ *   <div class="c-grid">
+ *     <div class="c-grid__item u-8/12@md"></div>
+ *     <div class="c-grid__item u-4/12@md"></div>
+ *   </div>
+ * </div>
+ */
+.#{$wrapper-ns}c-wrapper {
+    width: 100%;
+    max-width: $wrapper-max-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $wrapper-padding;
+    padding-left: $wrapper-padding;
+}

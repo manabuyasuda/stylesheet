@@ -1,0 +1,96 @@
+/**
+ * #Grid
+ */
+$grid-ns: null !default;
+$grid-gutter: 24px !default;
+
+/**
+ * グリッドレイアウトをするためのオブジェクトです。
+ * `width`はデフォルトで100%が指定されています。
+ * ガターは左側にだけ指定されています。
+ * `width`の変更は`_objects.width.scss`のクラスを使用します。
+ *
+ * <div class="o-wrapper">
+ *   <div class="c-grid c-grid--has-gutter">
+ *     <div class="c-grid__item u-8/12@md"></div>
+ *     <div class="c-grid__item u-4/12@md"></div>
+ *   </div>
+ * </div>
+ */
+.#{$grid-ns}c-grid {
+    display: block;
+    margin: 0;
+    padding: 0;
+    /* カラム間の余白を除去する */
+    font-size: 0 !important;
+}
+
+.#{$grid-ns}c-grid__item {
+    display: inline-block;
+    width: 100%;
+    /* フォントサイズを戻す */
+    font-size: 1rem;
+    vertical-align: top;
+}
+
+.#{$grid-ns}c-grid--has-gutter {
+    margin-left: - $grid-gutter;
+    > .#{$grid-ns}c-grid__item {
+        padding-left: $grid-gutter;
+    }
+}
+
+.#{$grid-ns}c-grid--middle {
+    > .#{$grid-ns}c-grid__item {
+        vertical-align: middle;
+    }
+}
+
+.#{$grid-ns}c-grid--bottom {
+    > .#{$grid-ns}c-grid__item {
+        vertical-align: bottom;
+    }
+}
+
+/**
+ * カラムをセンタリングします。
+ * 1カラムレイアウトに使用します。
+ *
+ * <div class="c-grid c-grid--center">
+ *   <div class="c-grid__item u-8/12@md"></div>
+ * </div>
+ */
+.#{$grid-ns}c-grid--center {
+    text-align: center;
+    > .#{$grid-ns}c-grid__item {
+        text-align: left;
+    }
+}
+
+.#{$grid-ns}c-grid--right {
+    text-align: right;
+    > .#{$grid-ns}c-grid__item {
+        text-align: left;
+    }
+}
+
+/**
+ * 左を起点とするレイアウトを反転させます。
+ * 左サイドバーの2カラムレイアウトに使用します。
+ * http://www.htmq.com/style/direction.shtml
+ *
+ * <div class="c-grid c-grid--gutter c-grid--rev">
+ *   <div class="c-grid__item u-8/12@md"></div>
+ *   <div class="c-grid__item u-4/12@md"></div>
+ * </div>
+ */
+.#{$grid-ns}c-grid--rev {
+    /* 文字表記を右から左に変更します。 */
+    direction: rtl;
+    > .#{$grid-ns}c-grid__item {
+        /* IE以外ではテキストが右寄せのままになってしまう */
+        text-align: left;
+        /* derectionプロパティを元に戻します。*/
+        direction: ltr;
+    }
+}

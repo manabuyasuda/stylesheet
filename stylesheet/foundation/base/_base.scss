@@ -1,0 +1,217 @@
+/**
+ * #Base
+ */
+
+/**
+ * ボックスモデルを`border-box`にリセットします。
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    @include font-size;
+}
+
+body {
+    color: $base-font-color;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    background-color: $base-background-color;
+    /* アンチエイリアスを指定する */
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    /* メトリクスカーニングを指定する */
+    font-kerning: normal;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+i,
+cite,
+em,
+var,
+address,
+dfn {
+    /* デフォルトスタイルのitalicをリセットする */
+    font-style: normal;
+}
+
+/* プレイスホルダーのcolorを無効化してopacityでコントラストを抑える */
+:-ms-input-placeholder {
+    opacity: .54;
+    color: inherit;
+}
+
+::-webkit-input-placeholder {
+    opacity: .54;
+    color: inherit;
+}
+
+:placeholder-shown {
+  opacity: .54;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    color: $heading-font-color;
+}
+
+h1, .u-h1 {
+    @include font-size($h1-font-sizes);
+}
+h2, .u-h2 {
+    @include font-size($h2-font-sizes);
+}
+h3, .u-h3 {
+    @include font-size($h3-font-sizes);
+}
+h4, .u-h4 {
+    @include font-size($h4-font-sizes);
+}
+h5, .u-h5 {
+    @include font-size($h5-font-sizes);
+}
+h6, .u-h6 {
+    @include font-size($h6-font-sizes);
+}
+
+a {
+    color: $base-link-color;
+    text-decoration: $base-link-decoration;
+    &:visited {
+        color: $visited-link-color;
+    }
+    &:hover {
+        color: $hover-link-color;
+        text-decoration: $hover-link-decoration;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* マージンを持たないブロックとする。 */
+figure {
+    margin: 0;
+}
+
+ul, ol, dd {
+    padding-left: $indent-base;
+    @include media-query(lg) {
+        padding-left: $indent-large;
+    }
+}
+
+/* ネストされたリストのマージンをリセットする */
+li {
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * マークアップ例
+ * <blockquote cite="#">
+ *     <p><small></small></p>
+ *     <footer>
+ *         <cite><a href="#"></a></cite>
+ *     </footer>
+ * </blockquote>
+ */
+blockquote {
+    @include vr(1, 1);
+    @include font-size($small-font-sizes);
+    margin-left: $indent-base;
+    margin-right: 0;
+    padding-left: $indent-base;
+    border-left: 1px solid #888;
+    color: #888;
+    @include media-query(lg) {
+        margin-left: $indent-large;
+        padding-left: $indent-large;
+    }
+    & > :first-child {
+        margin-top: 0;
+    }
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+blockquote {
+    cite {
+        &:before {
+            /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
+            content: '\2014 \00A0';
+        }
+    }
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-size: 1rem;
+}
+
+code,
+pre {
+    font-family: $monospace-font-family;
+}
+
+kbd {
+    /* ユーザーに入力を促す要素 */
+    font-family: inherit;
+    > kbd {
+        /* キーボードのキーを示す要素に変化するためボーダーで囲われます */
+        display: inline-block;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 3px 6px;
+        @include font-size($small-font-sizes);
+        line-height: 1;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: $base-round;
+    }
+}
+
+/**
+ * Vertical Rhythmを指定しているクラスセレクタをまとめて指定します。
+ * `<blockquote>`は`_elements.quote.scss`で指定しています。
+ */
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+dl,
+table,
+pre,
+address,
+fieldset {
+    @include vr;
+}

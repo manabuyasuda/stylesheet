@@ -1,0 +1,35 @@
+//
+// #z-index
+//
+
+// z-indexを管理するためのmapです。ファイルだけで変更することができまｓ。
+// @access private
+// @type Map
+// @prop {String} key - z-indexの数値を呼び出す時のキーワードです。
+// @prop {Number} value - 返される数値です。
+$z-indexes: (
+  'modal': 3,
+  'dropdown': 2,
+  'default': 1,
+  'below': -1,
+);
+
+// キーワードからz-indexの数値を取得します。
+// @access public
+// @param {String} $layer - キーワード
+// @return {Number}
+// @require $z-indexes
+//
+// @example scss - Usage
+// .modal {
+//     z-index: z(modal);
+// }
+//
+// @example css - CSS output
+// .modal {
+//     z-index: 3;
+// }
+//
+@function z($layer) {
+  @return map-get($z-indexes, $layer);
+}

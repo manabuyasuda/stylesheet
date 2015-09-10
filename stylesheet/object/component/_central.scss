@@ -1,0 +1,21 @@
+/**
+ * #Central
+ */
+$central-ns: null !default;
+
+/**
+ * 例えばモーダルのように前後左右の中央配置に利用するオブジェクトです。
+ * `position:relative;`を指定した親要素に対して中央配置されます。
+ *
+ * <div class="absolute">
+ *     <div class="c-central-box">
+ *        [content]
+ *     </div>
+ * </div>
+ */
+.#{$central-ns}c-central-box {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+}

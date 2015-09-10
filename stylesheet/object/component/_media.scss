@@ -1,0 +1,50 @@
+/**
+ * #Media
+ */
+$media-ns: null !default;
+$media-gutter: 12px !default;
+
+/**
+ * 画像とテキストを横並びにするオブジェクトです。
+ * `c-media__image`は`<figure>`でも`<img>`のどちらでも使用できます。
+ * `c-media__image--rev`を指定すると画像を右側に配置することもできます。
+ * `c-media__image`と`c-media__body`は`<img>`と`<p>`に直接マークアップすることもできます。
+ *
+ * <div class="c-media">
+ *   <figure class="c-media__image [c-media__image--rev]">
+ *     <img>
+ *   </figure>
+ *   <div class="c-media__body">
+ *     <p></p>
+ *   </div>
+ * </div>
+ */
+.#{$media-ns}c-media {
+    @include clearfix;
+}
+
+.#{$media-ns}c-media__image {
+    float: left;
+    margin-right: $media-gutter;
+    > img {
+        display: block;
+        max-width: none;
+    }
+}
+
+.#{$media-ns}c-media__body {
+    overflow: hidden;
+}
+
+.#{$media-ns}c-media__image--rev {
+    float: right;
+    margin-right: 0;
+    margin-left: $media-gutter;
+}
+
+.#{$media-ns}c-media--no-gap {
+    > .#{$media-ns}c-media__image {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

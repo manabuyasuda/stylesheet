@@ -1,0 +1,94 @@
+/**
+ * #Width
+ */
+// Preconfigure these settings before the @import of this file.
+// `u-`プレフィックスの前にプロジェクト特有のプレフィックスを付与できます。
+// 例えば`my-`と指定すると`.my-u-1\/2\@sm`のように出力されます。
+$widths-ns: null !default;
+
+// A mixin to spit out our width classes. Pass in the columns we want the widths
+// to have, and an optional suffix for responsive widths. E.g. to create thirds
+// and quarters for a small breakpoint:
+// mixinは`width`を指定するclassを出力します。
+// 分母になる数値を配列として渡します。オプションとして接頭辞付きのレスポンシブ対応クラスが出力できます。
+// 例えば`1`と`2`、`-sm`を渡すと`、
+// `.u-1\/1-sm`, `.u-1\/2-sm`, `.u-2\/2-sm`が生成されます。
+//
+// @include widths(3 4, -sm);
+
+@mixin widths($columns, $breakpoint: null) {
+
+    // Loop through the number of columns for each denominator of our fractions.
+    // 分母の数だけ分子を繰り返します。
+    @each $denominator in $columns {
+
+        // Begin creating a numerator for our fraction up until we hit the
+        // denominator.
+        // 分母の上限まで分数の要領で分子を増やします。
+        @for $numerator from 1 through $denominator {
+
+            // Build a class in the format `.u-3/4`.
+            // `.u-3/4`のような形式でclassを生成します。
+            .#{$widths-ns}u-#{$numerator}\/#{$denominator}#{$breakpoint} {
+                width: ($numerator / $denominator) * 100% !important;
+            }
+
+        }
+
+    }
+
+}
+
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes take a fraction-like format (e.g. `.u-2/3`).
+ * グリッドシステムのようにサイズを変更できるヘルパークラスを使用することができます。
+ * 指定には分数のように`.u-2/3`という形式になります。
+ *
+ * Use these in your markup, e.g.:
+ * マークアップはこのようになります。
+ *
+ * <div class="u-7/12">
+ *
+ */
+
+// Fill an array with our desired breakpoints and their nicknames (e.g. `lg`).
+// 指定したいブレイクポイントと、そのニックネーム（例えば`lg`）を配列として渡します。
+// ※`_tools.media-query.scss`に移動しています。
+// $widths-breakpoints: (
+//     'sm': 'screen and (min-width: 720px)',
+//     'md': 'screen and (min-width: 1024px)',
+//     'lg': 'screen and (min-width: 1280px)',
+//     'xl': 'screen and (min-width: 1440px)',
+// ) !default;
+
+
+// Which columns would we like to generate?
+// 生成したいカラム数を指定します。
+// 例えば`1 2`とすると分母が1/1, 1/2, 2/2のように生成されます。
+// $widths-columns: 1 2 3 4 5 !default;
+$widths-columns: 1 2 3 4 5 12 !default;
+
+// Build our breakpoint-agnostic widths.
+// ブレイクポイントのないwidthクラスを生成します。
+@include widths($widths-columns);
+
+$alias: foo;
+
+// Build each of our breakpoints’ widths.
+// `$widths-breakpoints`に指定したブレイクポイントのwidthクラスを生成します。
+// @each $alias, $condition in $widths-breakpoints {
+
+//     @media #{unquote($condition)} {
+//         @include widths($widths-columns, \@#{$alias});
+//     }
+
+// }
+
+@each $alias, $condition in $breakpoints {
+
+    @media #{unquote($condition)} {
+        @include widths($widths-columns, \@#{$alias});
+    }
+
+}

@@ -1,0 +1,138 @@
+//
+// #Vertical-rhythm
+//
+
+// `font-size`(px)と`line-height`(単位なし)を返します。
+// @prop {Map} $fs-map($base-font-sizes) - フォントサイズと行の高さを取得します。
+// @prop {Map} $fs-breakpoints($breakpoints) - ブレイクポイントのkeyとvalueを取得します。
+// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
+// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
+// @requires {Mixin} make-font-size - mapからvalueを取得し、`font-size`と`line-height`を返します。
+//
+// @example scss - Usage
+// .foo {
+//     @include font-size($base-font-sizes);
+// }
+//
+// @example css - CSS output
+// .foo {
+//     font-size: 14px;
+//     line-height: 1.715;
+// }
+//
+// @media screen and (min-width: 1000px) {
+//     .foo {
+//         font-size: 16px;
+//         line-height: 1.75;
+//     }
+// }
+//
+@mixin font-size($fs-map: $base-font-sizes) {
+
+    // ブレイクポイントを定義したmapを代入します。
+    $fs-breakpoints: $breakpoints;
+
+    // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+
+        // mapのkeyが"base"の場合はそのままmixinにvalueを渡します。
+        @if $fs-breakpoint == "base" {
+             @include make-font-size($fs-font-size);
+
+        } @else {
+            // mapのkeyが"base"以外の場合はブレイクポイントを追加します。
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+
+                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
+                @media #{unquote(map-get($fs-breakpoints, $fs-breakpoint))} {
+                    @include make-font-size($fs-font-size);
+                }
+            }
+        }
+    }
+}
+
+// @prop {Map} $fs-map - ブレイクポイントごとの`font-size`と`line-height`を定義しています。
+// @See {Mixin} font-size - ブレイクポイントを追加するmixinです。
+@mixin make-font-size($fs-map) {
+
+    // 渡されたmapのvalueの1つ目の値を取得します。
+    font-size: nth($fs-map, 1);
+
+    // 渡されたmapのvalueの3つ目の値を取得します。
+    line-height: nth($fs-map, 3);
+
+}
+
+
+// 上下のマージンをpxで返すmixinです。
+// @prop {Number} $top(0) - 要素の`margin-top`に指定する行数を指定します。
+// @prop {Number} $bottom(1) - 要素の`margin-bottom`に指定する行数を指定します。
+// @prop {Map} $vr-map($base-font-sizes) - ベースになるフォントサイズをpxで指定します。
+// @prop {Map} $vr-breakpoints($breakpoints) - ブレイクポイントのキーワードを指定します。
+// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
+// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
+//
+// @example scss - Usage
+// .foo {
+//     @include vr;
+// }
+//
+// @example css - CSS output
+// .foo {
+//     margin-top: 0;
+//     margin-bottom: 24px;
+// }
+//
+// @media screen and (min-width: 1000px) {
+//     .foo {
+//         margin-bottom: 28px;
+//     }
+// }
+//
+@mixin vr($top: 0, $bottom: 1) {
+
+    // ルート要素の行の高さが単位のベースになります。
+    $vr-map: $base-font-sizes;
+
+    // 各mapのkeyに応じたブレイクポイントを取得します。
+    $vr-breakpoints: $breakpoints;
+
+    // ルート要素のmapのkeyとvalueを取得します。
+    @each $vr-breakpoint, $vr-font-size in $vr-map {
+
+        // keyが"base"かつ、引数が0なら0を返し、それ以外の場合は行の高さを返します。
+        @if $vr-breakpoint == "base" and $top == 0 {
+            margin-top: 0;
+        } @else if $vr-breakpoint == "base" and $top != 0 {
+            margin-top: nth($vr-font-size, 2) * $top;
+        }
+
+        // keyが"base"かつ、引数が0なら0を返し、それ以外の場合は行の高さを返します。
+        @if $vr-breakpoint == "base" and $bottom == 0 {
+            margin-bottom: 0;
+        } @else if $vr-breakpoint == "base" and $bottom != 0 {
+            margin-bottom: nth($vr-font-size, 2) * $bottom;
+        }
+
+        @else {
+            // mapのkeyが"base"以外の場合はブレイクポイントを追加します。
+            @if map-has-key($vr-breakpoints, $vr-breakpoint) {
+
+                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
+                @media #{unquote(map-get($vr-breakpoints, $vr-breakpoint))} {
+
+                    // 引数が0以外の場合は行の高さを返します。
+                    @if $top != 0 {
+                        margin-top: nth($vr-font-size, 2) * $top;
+                    }
+
+                    // 引数が0以外の場合は行の高さを返します。
+                    @if $bottom != 0 {
+                        margin-bottom: nth($vr-font-size, 2) * $bottom;
+                    }
+                }
+            }
+        }
+    }
+}

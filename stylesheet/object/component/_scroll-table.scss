@@ -1,0 +1,25 @@
+/**
+ * #Scroll-table
+ */
+$scroll-table-ns: null !default;
+
+/**
+ * 横スクロールに対応した`<table>`をスタイリングします。
+ * `<table>`をラップするようにマークアップします。
+ * `<th>`と`<td>`が改行を禁止されることによってスクロールが可能になります。
+ *
+ * <div class="c-scroll-table">
+ *    <table>
+ *    </table>
+ * </div>
+ */
+.#{$scroll-table-ns}c-scroll-table {
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 0.01%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    th,
+    td {
+        white-space: nowrap;
+    }
+}

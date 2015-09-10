@@ -1,0 +1,57 @@
+/**
+ * #Stack
+ */
+$stack-ns: null !default;
+$stack-padding: 1rem 0.5rem;
+$stack-right: 0.5rem;
+
+/**
+ * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
+ * `$stack-padding`でリンク内の余白を調整できます。
+ * `$stack-right`は`$stack-padding`の左右の余白と合わせるのがベターです。
+ * `.c-stack--arrow`を指定すると`>`がリンクの右側に付与されます。
+ *
+ * <ul class="c-stack [c-stack--arrow]">
+ *     <li class="c-stack__item">
+ *         <a href="#" class="c-stack__link">
+ *            [content]
+ *         </a>
+ *     </li>
+ *     <li class="c-stack__item">
+ *         <a href="#" class="c-stack__link">
+ *            [content]
+ *         </a>
+ *     </li>
+ * </ul>
+ */
+.#{$stack-ns}c-stack {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.#{$stack-ns}c-stack__link {
+    display: block;
+    padding: $stack-padding;
+}
+
+.#{$stack-ns}c-stack--center {
+    text-align: center;
+}
+
+.#{$stack-ns}c-stack--right {
+    text-align: right;
+}
+
+.#{$stack-ns}c-stack--arrow {
+    > .#{$stack-ns}c-stack__item {
+        position: relative;
+    }
+    .#{$stack-ns}c-stack__link {
+        &:after {
+            content: "\003E";
+            position: absolute;
+            right: $stack-right;
+        }
+    }
+}

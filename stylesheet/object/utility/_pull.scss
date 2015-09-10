@@ -1,0 +1,84 @@
+/**
+ * #Pull
+ */
+// `u-`プレフィックスの前にプロジェクト特有のプレフィックスを付与できます。
+// 例えば`my-`と指定すると`.my-u-pull1\/2\@sm`のように出力されます。
+$pulls-ns: null !default;
+
+// mixinは`width`を指定するclassを出力します。
+// 分母になる数値を配列として渡します。オプションとして接頭辞付きのレスポンシブ対応クラスが出力できます。
+// 例えば`1`と`2`、`-sm`を渡すと`、
+// `.u-pull1\/1-sm`, `.u-pull1\/2-sm`, `.u-pull2\/2-sm`が生成されます。
+//
+// @include pushs(3 4, -sm);
+
+@mixin pulls($columns, $breakpoint: null) {
+
+    // 分母の数だけ分子を繰り返します。
+    @each $denominator in $columns {
+
+        // 分母の上限まで分数の要領で分子を増やします。
+        @for $numerator from 1 through $denominator {
+
+            // `.u-pull3/4`のような形式でclassを生成します。
+            .#{$pulls-ns}u-pull#{$numerator}\/#{$denominator}#{$breakpoint} {
+                right: ($numerator / $denominator) * 100% !important;
+            }
+
+        }
+
+    }
+
+}
+
+/**
+ * 要素の配置を変更できるヘルパークラスを使用することができます。
+ * 指定には分数のように`.u-pull2/3`という形式になります。
+ *
+ * マークアップはこのようになります。
+ *
+ * <div class="u-pull7/12">
+ *
+ */
+
+// 指定したいブレイクポイントと、そのニックネーム（例えば`lg`）を配列として渡します。
+// ※`_tools.media-query.scss`に移動しています。
+// $widths-breakpoints: (
+//     'sm': 'screen and (min-width: 720px)',
+//     'md': 'screen and (min-width: 1024px)',
+//     'lg': 'screen and (min-width: 1280px)',
+//     'xl': 'screen and (min-width: 1440px)',
+// ) !default;
+
+
+// 生成したいカラム数を指定します。
+// 例えば`1 2`とすると分母が1/1, 1/2, 2/2のように生成されます。
+// $pushs-columns: 1 2 3 4 5 !default;
+$pulls-columns: 12 !default;
+
+
+[class*="#{$pulls-ns}u-pull"] {
+    position: relative;
+}
+
+// ブレイクポイントのないwidthクラスを生成します。
+@include pulls($pulls-columns);
+
+$alias: foo;
+
+// `$widths-breakpoints`に指定したブレイクポイントのpushクラスを生成します。
+// @each $alias, $condition in $widths-breakpoints {
+
+//     @media #{unquote($condition)} {
+//         @include widths($pushs-columns, \@#{$alias});
+//     }
+
+// }
+
+@each $alias, $condition in $breakpoints {
+
+    @media #{unquote($condition)} {
+        @include pulls($pushs-columns, \@#{$alias});
+    }
+
+}
