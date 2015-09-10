@@ -12,10 +12,10 @@
  * Vertical-rhythm......Vertical Rhythmを指定するためのmixinです。
  * Clearfix.............`float`を解除する`clearfix`のmixinです。
  *
- * VENDER
+ * VENDOR
  * Normalize.css........Normalize cssのインポートします。
  *
- * VENDER-EXTENSION
+ * VENDOR-EXTENSION
  * Normalize.css........Normalize.cssのスタイルを上書きします。
  *
  * BASE
@@ -80,15 +80,15 @@
 @import "foundation/mixin/vertical-rhythm";
 @import "foundation/mixin/clearfix";
 
-/* Vender
+/* Vendor
    ----------------------------------------------------------------- */
 
-@import "foundation/vender/normalize";
+@import "foundation/vendor/normalize";
 
-/* Vender-extension
+/* Vendor-extension
    ----------------------------------------------------------------- */
 
-@import "foundation/vender-extension/normalize";
+@import "foundation/vendor-extension/normalize";
 
 /* Base
    ----------------------------------------------------------------- */
