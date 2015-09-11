@@ -27,3 +27,8 @@ $image-margin: 1rem !default;
     float: left;
     margin-right: $image-margin;
 }
+
+.#{$image-ns}c-image-border {
+    padding: 0.5em;
+    border: 1px solid $base-ui-color;
+}

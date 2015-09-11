@@ -44,6 +44,7 @@
  * Buttons..............ボタンコンポーネントのベーススタイルです。
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
+ * Tag-cloud............タグクラウドのコンポーネントです。
  *
  * PROJECT
  *
@@ -129,6 +130,7 @@
 @import "object/component/button";
 @import "object/component/breadcrumbs";
 @import "object/component/pagination";
+@import "object/component/tag-cloud";
 
 /* Project
    ----------------------------------------------------------------- */

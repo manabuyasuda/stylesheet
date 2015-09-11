@@ -20,7 +20,8 @@ $base-background-color: #fff !default;
 $base-link-color: #2b70ba !default;
 $visited-link-color: null !default;
 $hover-link-color: lighten($base-link-color, 15%) !default;
-
+// UIのベースカラー
+$base-ui-color: #ddd;
 
 // `a`のtext-decorationを管理します。
 $base-link-decoration: none !default;
@@ -45,3 +46,7 @@ $indent-large: 2rem !default;
 
 // ボタンコンポーネントなどの角丸に使用します。
 $base-round: 3px;
+
+
+// アニメーションのベースになる速度です。
+$base-transition-duration: 0.3s;

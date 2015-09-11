@@ -1,0 +1,55 @@
+/**
+ * #Tag-cloud
+ */
+$tag-cloud-ns: null !default;
+$tag-cloud-space: 0.5em !default;
+$tag-cloud-count-font-size: $tag-cloud-space * 1.5 !default;
+$tag-cloud-transition-duration: $base-transition-duration !default;
+
+/**
+ * タグクラウドのコンポーネントです。
+ * ボーダーに囲われた、シンプルなデザインです。
+ *
+ * <ul class="c-tag-cloud">
+ *   <li class="c-tag-cloud__item">
+ *     <a href="" class="c-tag-cloud__link">CSS<span class="c-tag-cloud__count">(20)</span></a>
+ *   </li>
+ *   <li class="c-tag-cloud__item">
+ *     <a href="" class="c-tag-cloud__link">HTML<span class="c-tag-cloud__count">(100)</span></a>
+ *   </li>
+ * </ul>
+ */
+.#{$tag-cloud-ns}c-tag-cloud {
+    margin: 0;
+    margin-left: - $tag-cloud-space;
+    padding-left: 0;
+    font-size: 0;
+    list-style-type: none;
+}
+
+.#{$tag-cloud-ns}c-tag-cloud__item {
+    display: inline-block;
+    margin-bottom: $tag-cloud-space;
+    padding-left: $tag-cloud-space;
+    @include font-size($small-font-sizes);
+}
+
+.#{$tag-cloud-ns}c-tag-cloud__link {
+    display: inline-block;
+    padding: $tag-cloud-space ($tag-cloud-space * 2);
+    border: 1px solid $base-ui-color;
+    border-radius: $base-round;
+    color: inherit;
+    line-height: 1;
+    text-decoration: none;
+    transition-duration: $tag-cloud-transition-duration;
+    &:hover {
+        color: #fff;
+        background-color: $base-link-color;
+    }
+}
+
+.#{$tag-cloud-ns}c-tag-cloud__count {
+    padding-left: $tag-cloud-space;
+    font-size: $tag-cloud-count-font-size;
+}
