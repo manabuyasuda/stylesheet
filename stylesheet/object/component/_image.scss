@@ -32,3 +32,62 @@ $image-margin: 1rem !default;
     padding: 0.5em;
     border: 1px solid $base-ui-color;
 }
+
+/**
+ * 背景画像が縦横比を固定したまま表示領域いっぱいに表示されます。
+ * モディファイアかprojectレイヤーで
+ * `background-image`や`background-position`などを追加してください。
+ *
+ * <div class="c-image-cover [c-image-cover--fixed c-image-cover--black] p-image-example">
+ *   <div class="c-image-cover__unit [c-image-cover--overlay-black__unit] c-central-box">
+ *     <h1></h1>
+ *   </div>
+ * </div>
+ *
+ * .p-image-example {
+ *     position: relative; // 子要素の中央配置の起点となる
+ *     height: 300px; // 高さを固定
+ *     background-position: left top; // 基準位置を指定
+ *     background-image: url("http://placeimg.com/640/300/tech"); // 表示する画像を指定
+ * }
+ */
+.#{$image-ns}c-image-cover {
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.#{$image-ns}c-image-cover__unit {
+    position: absolute;
+    z-index: z(default);
+}
+
+.#{$image-ns}c-image-cover--fixed {
+    @include media-query(lg) {
+        background-attachment: fixed;
+    }
+}
+
+/**
+ * 背景画像の上に透過された黒いレイヤーを覆います。
+ * elementを指定しないと、うまく表示、選択できなくなるので注意してください。
+ */
+.#{$image-ns}c-image-cover--overlay-black {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+    }
+}
+
+.#{$image-ns}c-image-cover--overlay-black__unit {
+    position: absolute;
+    z-index: z(default);
+}
