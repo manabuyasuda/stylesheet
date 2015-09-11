@@ -10,7 +10,7 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
  * タグクラウドのコンポーネントです。
  * モディファイアを指定するとボーダーで囲われます。
  *
- * <ul class="c-tag-cloud [c-tag-cloud--border]">
+ * <ul class="c-tag-cloud [c-tag-cloud--has-border]">
  *   <li class="c-tag-cloud__item">
  *     <a href="" class="c-tag-cloud__link">CSS<span class="c-tag-cloud__count">(20)</span></a>
  *   </li>
@@ -58,7 +58,7 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
     }
 }
 
-.#{$tag-cloud-ns}c-tag-cloud--border {
+.#{$tag-cloud-ns}c-tag-cloud--has-border {
     .#{$tag-cloud-ns}c-tag-cloud__link {
         border: 1px solid $base-ui-color;
         text-decoration: none;

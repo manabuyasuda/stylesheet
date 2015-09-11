@@ -4,14 +4,14 @@
 $pagination-ns: null !default;
 $pagination-padding-y: 1em !default;
 $pagination-padding-x: 1em !default;
-$pagination-border: 1px solid #888 !default;
+$pagination-border: 1px solid $base-ui-color !default;
 $pagination-border-width: 1px !default;
 
 /**
  * ページネーションのコンポーネントです。
- * `.c-pagination--bordered`を指定するとボーダーで囲われます。
+ * モディファイアを指定するとボーダーで囲われます。
  *
- * <ol class="c-pagination [c-pagination--bordered]">
+ * <ol class="c-pagination [c-pagination--has-border]">
  *   <li class="c-pagination__item">
  *     <a href="#" class="c-pagination__link c-pagination__link--prev">Prev</a>
  *   </li>
@@ -54,10 +54,11 @@ $pagination-border-width: 1px !default;
     content: "\00A0" "\003E";
 }
 
-.#{$pagination-ns}c-pagination--bordered {
+.#{$pagination-ns}c-pagination--has-border {
     > .#{$pagination-ns}c-pagination__item {
         border: $pagination-border;
         border-right-width: 0;
+        border-radius: $base-round;
         &:last-child {
             border-right-width: $pagination-border-width;
         }
