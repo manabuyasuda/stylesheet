@@ -10,16 +10,16 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
  * タグクラウドのコンポーネントです。
  * モディファイアを指定するとボーダーで囲われます。
  *
- * <ul class="c-tag-cloud [c-tag-cloud--has-border]">
- *   <li class="c-tag-cloud__item">
- *     <a href="" class="c-tag-cloud__link">CSS<span class="c-tag-cloud__count">(20)</span></a>
+ * <ul class="p-tag-cloud [p-tag-cloud--has-border]">
+ *   <li class="p-tag-cloud__item">
+ *     <a href="" class="p-tag-cloud__link">CSS<span class="p-tag-cloud__count">(20)</span></a>
  *   </li>
- *   <li class="c-tag-cloud__item">
- *     <a href="" class="c-tag-cloud__link">HTML<span class="c-tag-cloud__count">(100)</span></a>
+ *   <li class="p-tag-cloud__item">
+ *     <a href="" class="p-tag-cloud__link">HTML<span class="p-tag-cloud__count">(100)</span></a>
  *   </li>
  * </ul>
  */
-.#{$tag-cloud-ns}c-tag-cloud {
+.#{$tag-cloud-ns}p-tag-cloud {
     margin: 0;
     margin-left: - $tag-cloud-space;
     padding-left: 0;
@@ -27,14 +27,14 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
     list-style-type: none;
 }
 
-.#{$tag-cloud-ns}c-tag-cloud__item {
+.#{$tag-cloud-ns}p-tag-cloud__item {
     display: inline-block;
     margin-bottom: $tag-cloud-space;
     padding-left: $tag-cloud-space;
     @include font-size($small-font-sizes);
 }
 
-.#{$tag-cloud-ns}c-tag-cloud__link {
+.#{$tag-cloud-ns}p-tag-cloud__link {
     display: inline-block;
     padding: $tag-cloud-space ($tag-cloud-space * 2);
     border-radius: $base-round;
@@ -51,15 +51,15 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
  * 投稿数用のラベルです。
  * タグ名との間に半角スペースが入ります。
  */
-.#{$tag-cloud-ns}c-tag-cloud__count {
+.#{$tag-cloud-ns}p-tag-cloud__count {
     font-size: $tag-cloud-count-font-size;
     &:before {
         content: "\00A0";
     }
 }
 
-.#{$tag-cloud-ns}c-tag-cloud--has-border {
-    .#{$tag-cloud-ns}c-tag-cloud__link {
+.#{$tag-cloud-ns}p-tag-cloud--has-border {
+    .#{$tag-cloud-ns}p-tag-cloud__link {
         border: 1px solid $base-ui-color;
         text-decoration: none;
     }
