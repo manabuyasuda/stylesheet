@@ -29,7 +29,7 @@ $image-margin: 1rem !default;
 }
 
 .#{$image-ns}c-image-border {
-    padding: 0.5em;
+    padding: 0.5rem;
     border: 1px solid $base-ui-color;
 }
 
@@ -38,8 +38,8 @@ $image-margin: 1rem !default;
  * モディファイアかprojectレイヤーで
  * `background-image`や`background-position`などを追加してください。
  *
- * <div class="c-image-cover [c-image-cover--fixed c-image-cover--black] p-image-example">
- *   <div class="c-image-cover__unit [c-image-cover--overlay-black__unit] c-central-box">
+ * <div class="c-image-cover [c-image-cover--fixed] [c-image-overlay c-image-overlay--teal] p-image-example">
+ *   <div class="[c-image-overlay__unit] c-central-box">
  *     <h1></h1>
  *   </div>
  * </div>
@@ -58,11 +58,6 @@ $image-margin: 1rem !default;
     background-size: cover;
 }
 
-.#{$image-ns}c-image-cover__unit {
-    position: absolute;
-    z-index: z(default);
-}
-
 .#{$image-ns}c-image-cover--fixed {
     @include media-query(lg) {
         background-attachment: fixed;
@@ -73,7 +68,7 @@ $image-margin: 1rem !default;
  * 背景画像の上に透過された黒いレイヤーを覆います。
  * elementを指定しないと、うまく表示、選択できなくなるので注意してください。
  */
-.#{$image-ns}c-image-cover--overlay-black {
+.#{$image-ns}c-image-overlay {
     position: relative;
     &:after {
         content: "";
@@ -83,11 +78,22 @@ $image-margin: 1rem !default;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.6);
     }
 }
 
-.#{$image-ns}c-image-cover--overlay-black__unit {
+.#{$image-ns}c-image-overlay--black {
+    &:after {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.#{$image-ns}c-image-overlay--teal {
+    &:after {
+        background: linear-gradient(rgba(teal, 0.9), rgba(teal, 0.6));
+    }
+}
+
+.#{$image-ns}c-image-overlay__unit {
     position: absolute;
     z-index: z(default);
 }
