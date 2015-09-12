@@ -64,38 +64,38 @@
 // Function
 // -----------------------------------------------------------------
 
-@import "foundation/function/z-index";
+@import "foundation/function/_z-index";
 
 // -----------------------------------------------------------------
 // Variable
 // -----------------------------------------------------------------
 
-@import "foundation/variable/global";
-@import "foundation/variable/font-size";
+@import "foundation/variable/_global";
+@import "foundation/variable/_font-size";
 
 // -----------------------------------------------------------------
 // Mixin
 // -----------------------------------------------------------------
 
-@import "foundation/mixin/media-query";
-@import "foundation/mixin/vertical-rhythm";
-@import "foundation/mixin/clearfix";
+@import "foundation/mixin/_media-query";
+@import "foundation/mixin/_vertical-rhythm";
+@import "foundation/mixin/_clearfix";
 
 /* Vendor
    ----------------------------------------------------------------- */
 
-@import "foundation/vendor/normalize";
+@import "foundation/vendor/_normalize";
 
 /* Vendor-extension
    ----------------------------------------------------------------- */
 
-@import "foundation/vendor-extension/normalize";
+@import "foundation/vendor-extension/_normalize";
 
 /* Base
    ----------------------------------------------------------------- */
 
-@import "foundation/base/base";
-@import "foundation/base/config";
+@import "foundation/base/_base";
+@import "foundation/base/_config";
 
 
 /* ==========================================================================
@@ -115,33 +115,33 @@
 /* Component
    ----------------------------------------------------------------- */
 
-@import "object/component/wrapper";
-@import "object/component/grid";
-@import "object/component/rank";
-@import "object/component/pack";
-@import "object/component/stack";
-@import "object/component/media";
-@import "object/component/frag";
-@import "object/component/scroll-table";
-@import "object/component/central";
-@import "object/component/embed";
-@import "object/component/image";
-@import "object/component/button";
-@import "object/component/generic-box";
+@import "object/component/_wrapper";
+@import "object/component/_grid";
+@import "object/component/_rank";
+@import "object/component/_pack";
+@import "object/component/_stack";
+@import "object/component/_media";
+@import "object/component/_frag";
+@import "object/component/_scroll-table";
+@import "object/component/_central";
+@import "object/component/_embed";
+@import "object/component/_image";
+@import "object/component/_button";
+@import "object/component/_generic-box";
 
 
 /* Project
    ----------------------------------------------------------------- */
 
-@import "object/project/breadcrumbs";
-@import "object/project/pagination";
-@import "object/project/tag-cloud";
+@import "object/project/_breadcrumbs";
+@import "object/project/_pagination";
+@import "object/project/_tag-cloud";
 
 
 /* Utitlity
    ----------------------------------------------------------------- */
 
-@import "object/utility/width";
-@import "object/utility/push";
-@import "object/utility/pull";
-@import "object/utility/display";
+@import "object/utility/_width";
+@import "object/utility/_push";
+@import "object/utility/_pull";
+@import "object/utility/_display";
