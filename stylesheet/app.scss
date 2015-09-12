@@ -125,15 +125,17 @@
 @import "object/component/scroll-table";
 @import "object/component/central";
 @import "object/component/embed";
-@import "object/component/generic-box";
 @import "object/component/image";
 @import "object/component/button";
-@import "object/component/breadcrumbs";
-@import "object/component/pagination";
-@import "object/component/tag-cloud";
+@import "object/component/generic-box";
+
 
 /* Project
    ----------------------------------------------------------------- */
+
+@import "object/project/breadcrumbs";
+@import "object/project/pagination";
+@import "object/project/tag-cloud";
 
 
 /* Utitlity
