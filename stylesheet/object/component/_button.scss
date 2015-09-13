@@ -3,8 +3,10 @@
  */
 $button-ns: null !default;
 $button-margin: 0 !default;
-$button-padding-y: 1em !default;
-$button-padding-x: 1em !default;
+$button-padding-y: 0.75em !default;
+$button-padding-x: 0.75em !default;
+$button-pill-base: 0 !default;
+$button-pill-round: 3em !default;
 
 /**
  * ベーシックなボタンコンポーネントです。
@@ -23,9 +25,9 @@ $button-padding-x: 1em !default;
     padding: $button-padding-y $button-padding-x;
     border: none;
     border-radius: $base-round;
-    color: #fff;
-    font-family: null;
-    font-size: null;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
     line-height: 1;
     text-align: center;
     text-decoration: none;
@@ -46,6 +48,28 @@ $button-padding-x: 1em !default;
 
 .#{$button-ns}c-button--full {
     width: 100%;
-    padding-right: 0;
-    padding-left: 0;
+}
+
+.#{$button-ns}c-button--circle {
+    border-radius: 50%;
+}
+
+
+/**
+ * カプセル状の錠剤のような形をしたボタンコンポーネントです。
+ */
+.#{$button-ns}c-button--pill {
+    border-radius: $button-pill-round;
+}
+
+.#{$button-ns}c-button--pill-right {
+    border-radius: $button-pill-base $button-pill-round $button-pill-round $button-pill-base;
+}
+
+.#{$button-ns}c-button--pill-center {
+    border-radius: $button-pill-base;
+}
+
+.#{$button-ns}c-button--pill-left {
+    border-radius: $button-pill-round $button-pill-base $button-pill-base $button-pill-round;
 }
