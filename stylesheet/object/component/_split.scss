@@ -1,0 +1,39 @@
+/**
+ * #Split
+ */
+$split-ns: null !default;
+$split-padding: 0.5em !default;
+
+/**
+ * 2つの要素をブロックから横並びにするオブジェクトです。
+ * 定義リストで使用することを想定しています。
+ * デフォルトで`c-split__left`が10文字を越えるとレイアウトが崩れます。
+ *
+ * <dl class="c-split">
+ *   <dt class="c-split__left"></dt>
+ *   <dd class="c-split__right [c-split__right--border]"></dd>
+ * </dl>
+ */
+.#{$split-ns}c-split__left {
+    padding-top: $split-padding;
+}
+
+.#{$split-ns}c-split__right {
+    margin-left: 0;
+    padding-bottom: $split-padding;
+}
+
+.#{$split-ns}c-split__right--border {
+    border-bottom: 1px solid $base-ui-color;
+}
+
+@include media-query(md) {
+    .#{$split-ns}c-split__left {
+        float: left;
+        clear: left;
+        padding: $split-padding;
+    }
+    .#{$split-ns}c-split__right {
+        padding: $split-padding 0 $split-padding 10em;
+    }
+}
