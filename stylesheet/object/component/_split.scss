@@ -9,9 +9,9 @@ $split-padding: 0.5em !default;
  * 定義リストで使用することを想定しています。
  * デフォルトで`c-split__left`が10文字を越えるとレイアウトが崩れます。
  *
- * <dl class="c-split">
+ * <dl class="c-split [c-split--border]">
  *   <dt class="c-split__left"></dt>
- *   <dd class="c-split__right [c-split__right--border]"></dd>
+ *   <dd class="c-split__right"></dd>
  * </dl>
  */
 .#{$split-ns}c-split__left {
@@ -23,15 +23,17 @@ $split-padding: 0.5em !default;
     padding-bottom: $split-padding;
 }
 
-.#{$split-ns}c-split__right--border {
-    border-bottom: 1px solid $base-ui-color;
+.#{$split-ns}c-split--border {
+    border-top: 1px solid $base-ui-color;
+    > .#{$split-ns}c-split__right {
+        border-bottom: 1px solid $base-ui-color;
+    }
 }
 
 @include media-query(md) {
     .#{$split-ns}c-split__left {
         float: left;
         clear: left;
-        padding: $split-padding;
     }
     .#{$split-ns}c-split__right {
         padding: $split-padding 0 $split-padding 10em;
