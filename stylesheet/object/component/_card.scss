@@ -6,8 +6,8 @@ $cord-ns: null !default;
 $cord-padding: 1em !default;
 $cord-border: 1px solid $base-ui-color !default;
 $cord-round: $base-round !default;
-$cord-round-head: $base-round $base-round 0 0 !default;
-$cord-round-foot: 0 0 $base-round $base-round !default;
+$cord-round-head: $cord-round $cord-round 0 0 !default;
+$cord-round-foot: 0 0 $cord-round $cord-round !default;
 
 /**
  * カード型のオブジェクトです。
