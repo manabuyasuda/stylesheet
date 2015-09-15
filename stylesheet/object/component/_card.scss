@@ -1,0 +1,57 @@
+/**
+ * #Card
+ */
+
+$cord-ns: null !default;
+$cord-padding: 1em !default;
+$cord-border: 1px solid $base-ui-color !default;
+$cord-round: $base-round !default;
+$cord-round-head: $base-round $base-round 0 0 !default;
+$cord-round-foot: 0 0 $base-round $base-round !default;
+
+/**
+ * カード型のオブジェクトです。
+ *
+ * <div class="c-card">
+ *   <div class="c-card__head">
+ *     <img>
+ *   </div>
+ *   <div class="c-card__body">
+ *     <h2 class="c-card__title"></h2>
+ *   </div>
+ *   <div class="c-card__foot">
+ *   </div>
+ * </div>
+ */
+.#{$cord-ns}c-card {
+    border: $cord-border;
+    border-radius: $cord-round;
+    background-color: #fff;
+}
+
+.#{$cord-ns}c-card__head {
+    overflow: hidden;
+    border-radius: $cord-round-head;
+}
+
+.#{$cord-ns}c-card__title {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+.#{$cord-ns}c-card__body {
+    padding: ($cord-padding * 2) $cord-padding;
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.#{$cord-ns}c-card__foot {
+    overflow: hidden;
+    padding: $cord-padding;
+    border-top: $cord-border;
+    border-radius: $cord-round-foot;
+    > :last-child {
+        margin-bottom: 0;
+    }
+}

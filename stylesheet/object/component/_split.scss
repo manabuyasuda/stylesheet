@@ -7,35 +7,39 @@ $split-padding: 0.5em !default;
 /**
  * 2つの要素をブロックから横並びにするオブジェクトです。
  * 定義リストで使用することを想定しています。
- * デフォルトで`c-split__left`が10文字を越えるとレイアウトが崩れます。
+ * デフォルトで`c-split__title`が10文字を越えるとレイアウトが崩れます。
  *
  * <dl class="c-split [c-split--border]">
- *   <dt class="c-split__left"></dt>
- *   <dd class="c-split__right"></dd>
+ *   <dt class="c-split__title"></dt>
+ *   <dd class="c-split__disc"></dd>
  * </dl>
  */
-.#{$split-ns}c-split__left {
+.#{$split-ns}c-split {
+
+}
+
+.#{$split-ns}c-split__title {
     padding-top: $split-padding;
 }
 
-.#{$split-ns}c-split__right {
+.#{$split-ns}c-split__disc {
     margin-left: 0;
     padding-bottom: $split-padding;
 }
 
 .#{$split-ns}c-split--border {
     border-top: 1px solid $base-ui-color;
-    > .#{$split-ns}c-split__right {
+    > .#{$split-ns}c-split__disc {
         border-bottom: 1px solid $base-ui-color;
     }
 }
 
 @include media-query(md) {
-    .#{$split-ns}c-split__left {
+    .#{$split-ns}c-split__title {
         float: left;
         clear: left;
     }
-    .#{$split-ns}c-split__right {
+    .#{$split-ns}c-split__disc {
         padding: $split-padding 0 $split-padding 10em;
     }
 }

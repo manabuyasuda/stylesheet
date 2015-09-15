@@ -36,6 +36,7 @@
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
  * Frag.................垂直方向の指定ができるメディアオブジェクトです。
+ * Card.................カード型のオブジェクトです。
  * Split................2つの要素をブロックから横並びにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
@@ -123,6 +124,7 @@
 @import "object/component/_stack";
 @import "object/component/_media";
 @import "object/component/_frag";
+@import "object/component/_card";
 @import "object/component/_split";
 @import "object/component/_scroll-table";
 @import "object/component/_central";
