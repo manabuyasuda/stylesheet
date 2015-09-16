@@ -1,10 +1,17 @@
 //
 // #Clearfix
 //
-@mixin clearfix {
+
+// @prop {Bool}{String} $important(false) - importantを渡すとプロパティに`!important`が付きます。
+@mixin clearfix($important: false) {
+    @if ($important == "important") {
+        $important: unquote("!important");
+    } @else {
+        $important: null;
+    }
     &:after {
-        content: "";
-        display: table;
-        clear: both;
+        content: "" $important;
+        display: table $important;
+        clear: both $important;
     }
 }

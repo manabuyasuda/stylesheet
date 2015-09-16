@@ -36,7 +36,6 @@
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
  * Frag.................垂直方向の指定ができるメディアオブジェクトです。
- * Card.................カード型のオブジェクトです。
  * Split................2つの要素をブロックから横並びにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
@@ -49,12 +48,16 @@
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
+ * Card.................カード型のオブジェクトです。
  *
  * UTILITY
  * Width................レスポンシブに対応した`width`を指定するためのヘルパークラスです。
  * Push.................レスポンシブに対応した`left`を指定するためのヘルパークラスです。
  * Pull.................レスポンシブに対応した`right`を指定するためのヘルパークラスです。
- * Display..............要素の表示を切り替えるクラスです。
+ * Display..............要素の表示を切り替えるヘルパークラスです。
+ * Float................`float`とクリアーフィックスのヘルパークラスです。
+ * Align................`text-aign`と`vertical-align`のヘルパークラスです。
+ * Position.............`position`のヘルパークラスです。
  */
 
 
@@ -124,7 +127,6 @@
 @import "object/component/_stack";
 @import "object/component/_media";
 @import "object/component/_frag";
-@import "object/component/_card";
 @import "object/component/_split";
 @import "object/component/_scroll-table";
 @import "object/component/_central";
@@ -140,6 +142,7 @@
 @import "object/project/_breadcrumbs";
 @import "object/project/_pagination";
 @import "object/project/_tag-cloud";
+@import "object/project/_card";
 
 
 /* Utitlity
@@ -149,3 +152,6 @@
 @import "object/utility/_push";
 @import "object/utility/_pull";
 @import "object/utility/_display";
+@import "object/utility/_float";
+@import "object/utility/_align";
+@import "object/utility/_position";

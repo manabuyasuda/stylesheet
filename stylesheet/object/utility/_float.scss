@@ -1,0 +1,20 @@
+/**
+ * #Float
+ */
+$float-ns: null !default;
+
+.#{$float-ns}u-fr {
+    float: right !important;
+}
+
+.#{$float-ns}u-fl {
+    float: left !important;
+}
+
+.#{$float-ns}u-fn {
+    float: none !important;
+}
+
+.#{$float-ns}u-clearfix {
+    @include clearfix(important);
+}
