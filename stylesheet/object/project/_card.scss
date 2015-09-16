@@ -15,10 +15,10 @@ $cord-round-foot: 0 0 $cord-round $cord-round !default;
  *   <div class="p-card__head">
  *     <img>
  *   </div>
- *   <div class="p-card__body">
+ *   <div class="p-card__body [p-card__body--has-divider]">
  *     <h2 class="p-card__title"></h2>
  *   </div>
- *   <div class="p-card__foot">
+ *   <div class="p-card__foot [p-card__foot--has-divider]">
  *   </div>
  * </div>
  */
