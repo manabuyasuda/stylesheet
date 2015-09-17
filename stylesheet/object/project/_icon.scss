@@ -5,6 +5,7 @@ $icon-ns: null !default;
 
 /**
  * テキストリンクに使用するアローアイコンです。`>`が指定されています。
+ * `>>`と`<<`は`\00BB`と`\00AB`を指定します。
  *
  * <ul class="o-stack">
  *   <li class="o-stack__item">

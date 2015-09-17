@@ -2,8 +2,8 @@
  * #Pack
  */
 $pack-ns: null !default;
-$pack-padding-y: 1em;
-$pack-padding-x: 0.5em;
+$pack-padding-y: 1em !default;
+$pack-padding-x: 0.5em !default;
 
 /**
  * 横幅いっぱいで均等かつ中央揃えのナビゲーションオブジェクトです。

@@ -1,0 +1,34 @@
+/**
+ * #Justify
+ */
+$justify-ns: null !default;
+
+/**
+ * 両端揃えになるオブジェクトです。
+ * 要素の合計が幅の合計に満たない場合は要素間に均等な余白を作り、
+ * 要素の合計が幅の合計を超えた場合はカラム落ちします。
+ * https://github.com/hiloki/kitecss
+ *
+ * <div class="c-justify">
+ *   <div class="c-justify__item"></div>
+ *   <div class="c-justify__item"></div>
+ * </div>
+ */
+.#{$justify-ns}c-justify {
+    display: block;
+    font-size: 0;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.#{$justify-ns}c-justify__item {
+    display: inline-block;
+    margin: 0;
+    font-size: 1rem;
+    text-align: left;
+}
