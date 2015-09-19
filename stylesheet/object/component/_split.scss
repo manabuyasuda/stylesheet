@@ -3,6 +3,7 @@
  */
 $split-ns: null !default;
 $split-padding: 0.5em !default;
+$split-border: 1px solid $base-ui-color !default;
 
 /**
  * 2つの要素をブロックから横並びにするオブジェクトです。
@@ -14,9 +15,7 @@ $split-padding: 0.5em !default;
  *   <dd class="c-split__value"></dd>
  * </dl>
  */
-.#{$split-ns}c-split {
 
-}
 
 .#{$split-ns}c-split__name {
     padding-top: $split-padding;
@@ -28,9 +27,9 @@ $split-padding: 0.5em !default;
 }
 
 .#{$split-ns}c-split--has-border {
-    border-top: 1px solid $base-ui-color;
+    border-top: $split-border;
     > .#{$split-ns}c-split__value {
-        border-bottom: 1px solid $base-ui-color;
+        border-bottom: $split-border;
     }
 }
 

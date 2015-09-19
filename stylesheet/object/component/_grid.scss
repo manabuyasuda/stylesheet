@@ -22,7 +22,7 @@ $grid-gutter: 24px !default;
     margin: 0;
     padding: 0;
     /* カラム間の余白を除去する */
-    font-size: 0 !important;
+    font-size: 0;
 }
 
 .#{$grid-ns}c-grid__item {
@@ -103,6 +103,7 @@ $grid-gutter: 24px !default;
  * </div>
  */
 .#{$grid-ns}c-grid--rev {
+    text-align: left;
     /* 文字表記を右から左に変更します。 */
     direction: rtl;
     > .#{$grid-ns}c-grid__item {

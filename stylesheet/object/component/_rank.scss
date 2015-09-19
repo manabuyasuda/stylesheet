@@ -15,8 +15,9 @@ $rank-padding-x: 0.5em !default;
  * </ul>
  */
 .#{$rank-ns}c-rank {
-    padding-left: 0;
-    font-size: 0 !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
     list-style-type: none;
 }
 
@@ -28,16 +29,17 @@ $rank-padding-x: 0.5em !default;
 .#{$rank-ns}c-rank__link {
     display: inline-block;
     padding: $rank-padding-y $rank-padding-x;
+    line-height: 1;
 }
 
 .#{$rank-ns}c-rank--size-small {
     .#{$rank-ns}c-rank__link {
-        padding: ($rank-padding-y / 2) ($rank-padding-x / 2);
+        padding: ($rank-padding-y / 2) ($rank-padding-x / 1);
     }
 }
 
 .#{$rank-ns}c-rank--size-large {
     .#{$rank-ns}c-rank__link {
-        padding: ($rank-padding-y * 2) ($rank-padding-x * 2);
+        padding: ($rank-padding-y * 2) ($rank-padding-x * 1);
     }
 }

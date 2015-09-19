@@ -28,11 +28,6 @@ $image-margin: 1rem !default;
     margin-right: $image-margin;
 }
 
-.#{$image-ns}c-image-border {
-    padding: 0.5rem;
-    border: 1px solid $base-ui-color;
-}
-
 /**
  * 背景画像が縦横比を固定したまま表示領域いっぱいに表示されます。
  * モディファイアかprojectレイヤーで

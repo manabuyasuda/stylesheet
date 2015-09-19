@@ -4,24 +4,18 @@
 $stack-ns: null !default;
 $stack-padding-y: 1em !default;
 $stack-padding-x: 0.5em !default;
-$stack-right: 0.5em !default;
 
 /**
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
- * `$stack-padding`でリンク内の余白を調整できます。
- * `$stack-right`は`$stack-padding`の左右の余白と合わせるのがベターです。
- * `.c-stack--arrow`を指定すると`>`がリンクの右側に付与されます。
  *
- * <ul class="c-stack [c-stack--arrow c-stack--size-small]">
+ * <ul class="c-stack [c-stack--size-small]">
  *     <li class="c-stack__item">
  *         <a href="#" class="c-stack__link">
  *            [content]
  *         </a>
  *     </li>
  *     <li class="c-stack__item">
- *         <a href="#" class="c-stack__link">
- *            [content]
- *         </a>
+ *          [content]
  *     </li>
  * </ul>
  */
@@ -31,8 +25,13 @@ $stack-right: 0.5em !default;
     list-style-type: none;
 }
 
+.#{$stack-ns}c-stack__item {
+    padding: $stack-padding-y $stack-padding-x;
+}
+
 .#{$stack-ns}c-stack__link {
     display: block;
+    margin: (-$stack-padding-y)  (-$stack-padding-x);
     padding: $stack-padding-y $stack-padding-x;
 }
 
@@ -44,33 +43,22 @@ $stack-right: 0.5em !default;
     text-align: right;
 }
 
-.#{$stack-ns}c-stack--arrow {
-    > .#{$stack-ns}c-stack__item {
-        position: relative;
-    }
-    .#{$stack-ns}c-stack__link {
-        &:after {
-            content: "\003E";
-            position: absolute;
-            right: $stack-right;
-        }
-    }
-}
-
 .#{$stack-ns}c-stack--size-small {
+    > .#{$stack-ns}c-stack__item {
+        padding: ($stack-padding-y / 2) ($stack-padding-x / 1);
+    }
     .#{$stack-ns}c-stack__link {
-        padding: ($stack-padding-y / 2) ($stack-padding-x / 2);
-        &:after {
-            right: ($stack-right / 2);
-        }
+        margin: (-$stack-padding-y / 2)  (-$stack-padding-x / 1);
+        padding: ($stack-padding-y / 2) ($stack-padding-x / 1);
     }
 }
 
 .#{$stack-ns}c-stack--size-large {
+    > .#{$stack-ns}c-stack__item {
+        padding: ($stack-padding-y * 2) ($stack-padding-x * 1);
+    }
     .#{$stack-ns}c-stack__link {
-        padding: ($stack-padding-y * 2) ($stack-padding-x * 2);
-        &:after {
-            right: ($stack-right * 2);
-        }
+        margin: (-$stack-padding-y * 2)  (-$stack-padding-x * 1);
+        padding: ($stack-padding-y * 2) ($stack-padding-x * 1);
     }
 }
