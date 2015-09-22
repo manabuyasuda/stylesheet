@@ -18,7 +18,7 @@ $display-ns: null !default;
   @if $breakpoint != null {
     $pref: \@;
   } @else {
-  	$pref: null;
+    $pref: null;
   }
   .#{$display-ns}u-display-none#{$pref}#{$breakpoint} { display: none !important; }
   .#{$display-ns}u-display-block#{$pref}#{$breakpoint} { display: block !important; }
