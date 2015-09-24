@@ -4,8 +4,7 @@
 $generic-ns: null !default;
 
 /**
- * マージンを指定した、汎用的なボックスオブジェクトです。
- * マージンを指定することが推奨されない各オブジェクトにマージンを与えます。
+ * 汎用的なボックスオブジェクトです。
  *
  * <div class="c-generic-box [c-generic-box-center">
  *   <div class="c-media">
@@ -14,6 +13,8 @@ $generic-ns: null !default;
  */
 .#{$generic-ns}c-generic-box {
     @include vr(0, 1);
+    padding: 1em;
+    border-radius: $base-round;
 }
 
 .#{$generic-ns}c-generic-box--center {
