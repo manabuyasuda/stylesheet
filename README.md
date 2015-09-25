@@ -52,7 +52,7 @@ $hover-link-color: lighten($base-link-color, 15%) !default;
 }
 ```
 
-Vendorはnormalize.cssやBootstrapのような外部のライブラリやフレームワークです。スタイルの上書きはVendor-extensionレイヤーでそれぞれのファイルを作成しておこないます。[Sass Guidelines](http://sass-guidelin.es/#the-7-1-pattern)のVENDORS FOLDERのアイデアを取り入れています。
+Vendorはnormalize.cssやBootstrapのような外部のライブラリやフレームワークです。スタイルの上書きはVendor-extensionレイヤーでそれぞれのファイルを作成しておこないます。これは[Sass Guidelines](http://sass-guidelin.es/#the-7-1-pattern)のVENDORS FOLDERのアイデアを取り入れています。
 
 Baseにはプロジェクトにおける、基本的なベーススタイルを定義します。要素セレクタや属性セレクタなど、詳細度はできるかぎり低く保っておきます。
 
@@ -89,6 +89,8 @@ h6 {
 #page-content {}
 ```
 
+指定するスタイルは最小限度に止め、IDセレクタを親にしたセレクタは指定を禁止します。
+
 クラスで指定するようなグリッドシステムはobject/componentレイヤーで定義します。
 
 ### Object
@@ -99,7 +101,7 @@ h6 {
 
 buttonオブジェクトのベーススタイルや横幅を制限するwrapperオブジェクト、mediaやgridなどのレイアウトパターンがこれに該当します。**OOCSSで言うところの構造の機能を担う**ため、固有の幅や色やボーダーなどはできるだけ含めないようにします。**見た目の部分はProjectレイヤーで指定します**。
 
-モディファイアを定義して、（主に`padding`による）サイズ違いや、配置（`float`や`vertical-align`など）を変更できるようにしておきます。
+モディファイアを定義して、（主に`padding`による）サイズ違いや、配置（`float`や`vertical-align`など）を変更できるようにしておきます。これにはスタイルの重複や肥大化、似たような見た目のデザインをなるべく防ぐという目的もあります。
 
 ```html
 <div class="c-media">
@@ -132,33 +134,107 @@ buttonオブジェクトのベーススタイルや横幅を制限するwrapper�
 #### Project
 プロジェクト固有のパターンで、例えば記事一覧やモーダルといったユーザーインターフェイスが該当します。Componentとしてはスタイル（色やボーダーなど）を多く持っている見た目を定義したオブジェクトと考えます。
 
-Componentのモディファイアで定義するのが適切でない場合はProjectレイヤーでスタイルを追加・上書きすることを許容します。ただし、その場合は詳細度を強くさせないために、Componentのオブジェクトを親セレクタとせず、詳細度ではなくカスケーディング（同じ詳細なら後に記述した方が優先される）によってスタイルを適応させます。
+Componentのモディファイアで定義するのが適切でない場合はProjectレイヤーでスタイルを追加・上書きすることを許容します。ただし、その場合は詳細度を不必要に強くさせないために、Componentのオブジェクトを親セレクタとせず、詳細度ではなくカスケーディング（同じ詳細なら後に記述した方が優先される）によってスタイルを適応させます。
 
 ```html
-<div class="c-media p-related">
-  <figure class="c-media__image p-related__image">
-    <img>
-  </figure>
-  <div class="c-media__body p-related__body">
-    <p></p>
-  </div>
-</div>
+<ol class="c-rank p-pagination">
+  <li class="c-rank__item p-pagination__item">
+    <a href="#" class="c-rank__link p-pagination__link p-pagination__link--prev">Prev</a>
+  </li>
+  <li class="c-rank__item p-pagination__item">
+    <a href="#" class="c-rank__link p-pagination__link">1</a>
+  </li>
+  <li class="c-rank__item p-pagination__item">
+    <a href="#" class="c-rank__link p-pagination__link">2</a>
+  </li>
+  <li class="c-rank__item p-pagination__item">
+    <a href="#" class="c-rank__link p-pagination__link">3</a>
+  </li>
+  <li class="c-rank__item p-pagination__item">
+    <a href="#" class="c-rank__link p-pagination__link p-pagination__link--next">Next</a>
+  </li>
+</ol>
 ```
 
 ```scss
-.#{$media-ns}c-media {
-    @include clearfix;
+// Componentレイヤー
+.#{$rank-ns}c-rank {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    list-style-type: none;
 }
 
-.p-related {
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background-color: #eee;
+.#{$rank-ns}c-rank__item {
+    display: inline-block;
+    padding: $rank-space-y $rank-space-x;
+    font-size: 1rem;
+}
+
+.#{$rank-ns}c-rank__link {
+    display: inline-block;
+    margin: (-$rank-space-y) (-$rank-space-x);
+    padding: $rank-space-y $rank-space-x;
+}
+
+// Projectレイヤー
+.#{$pagination-ns}p-pagination {
+    line-height: 1;
+    text-align: center;
+}
+
+.#{$pagination-ns}p-pagination__link {
+    display: inline-block;
+    padding: $pagination-padding-y $pagination-padding-x;
+}
+
+.#{$pagination-ns}p-pagination__link--prev:before {
+    content: "\003C" "\00A0";
+}
+
+.#{$pagination-ns}p-pagination__link--next:after {
+    content: "\00A0" "\003E";
 }
 ```
 
+基本的にはマルチクラスを想定していますが、@extendを使用したシングルクラスの設計にすることもできます。
+
+```scss
+.#{$pagination-ns}p-pagination {
+    @extend .c-stack;
+    line-height: 1;
+    text-align: center;
+}
+
+.#{$pagination-ns}p-pagination__link {
+    @extend .c-stack__link;
+    display: inline-block;
+    padding: $pagination-padding-y $pagination-padding-x;
+}
+```
+
+コンパイルするとこのようになります。
+
+```css
+.c-stack,
+.p-pagination {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-stack__link,
+.p-pagination__link {
+    display: block;
+    margin: -1em 0;
+    padding: 1em 0;
+}
+```
+
+@extendを使用する注意点として、ComponentレイヤーからProjectレイヤーへの継承、同一ファイル内での継承のみが許容されます。また、シングルクラスとして設計する場合は混乱を避けるため、マルチクラスと併用しないようにします。
+
 #### Utility
-ComponentのモディファイアやProjectのオブジェクトで定義することが適切でない場合はUtilityレイヤーのオブジェクトを使用できます。`width`や`margin`といった単一のスタイルやClearfixのような任意の目的を持つヘルパークラスが定義されています。
+ComponentのモディファイアやProjectのオブジェクトで定義することが適切でない場合はUtilityレイヤーのオブジェクトを使用できます。`width`や`padding`といった単一のスタイルやClearfixのような任意の目的を持つヘルパークラスが定義されています。
 
 例えばgridオブジェクトを使用したグリッドシステムなどに使用します。`u-8/12@md`がUtilityレイヤーのオブジェクトです。
 
