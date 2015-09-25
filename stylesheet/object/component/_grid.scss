@@ -31,6 +31,7 @@ $grid-gutter: 24px !default;
     /* フォントサイズを戻す */
     font-size: 1rem;
     vertical-align: top;
+    list-style-type: none;
 }
 
 /**
@@ -105,11 +106,13 @@ $grid-gutter: 24px !default;
 .#{$grid-ns}c-grid--rev {
     text-align: left;
     /* 文字表記を右から左に変更します。 */
+
     direction: rtl;
     > .#{$grid-ns}c-grid__item {
         /* IE以外ではテキストが右寄せのままになってしまう */
         text-align: left;
         /* derectionプロパティを元に戻します。*/
+
         direction: ltr;
     }
 }

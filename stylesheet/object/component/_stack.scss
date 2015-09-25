@@ -3,7 +3,7 @@
  */
 $stack-ns: null !default;
 $stack-space-y: 1em !default;
-$stack-space-x: 0.5em !default;
+$stack-space-x: 0 !default;
 
 /**
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
