@@ -1,7 +1,6 @@
 /**
  * #Icon
  */
-$icon-ns: null !default;
 
 /**
  * テキストリンクに使用するアローアイコンです。`>`が指定されています。
@@ -16,14 +15,14 @@ $icon-ns: null !default;
  *   </li>
  * </ul>
  */
-.#{$icon-ns}icon--arrow-right {
+.icon--arrow-right {
     position: relative;
     &:after {
         content: "\00A0" "\003E";
     }
 }
 
-.#{$icon-ns}icon--arrow-left {
+.icon--arrow-left {
     position: relative;
     &:before {
         content: "\003E" "\00A0";

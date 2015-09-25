@@ -1,10 +1,6 @@
 /**
  * #Width
  */
-// Preconfigure these settings before the @import of this file.
-// `u-`プレフィックスの前にプロジェクト特有のプレフィックスを付与できます。
-// 例えば`my-`と指定すると`.my-u-1\/2\@sm`のように出力されます。
-$widths-ns: null !default;
 
 // A mixin to spit out our width classes. Pass in the columns we want the widths
 // to have, and an optional suffix for responsive widths. E.g. to create thirds
@@ -29,7 +25,7 @@ $widths-ns: null !default;
 
             // Build a class in the format `.u-3/4`.
             // `.u-3/4`のような形式でclassを生成します。
-            .#{$widths-ns}u-#{$numerator}\/#{$denominator}#{$breakpoint} {
+            .u-#{$numerator}\/#{$denominator}#{$breakpoint} {
                 width: ($numerator / $denominator) * 100% !important;
             }
 

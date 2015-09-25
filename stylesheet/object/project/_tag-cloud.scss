@@ -1,7 +1,6 @@
 /**
  * #Tag-cloud
  */
-$tag-cloud-ns: null !default;
 $tag-cloud-space: 0.5em !default;
 $tag-cloud-count-font-size: $tag-cloud-space * 1.5 !default;
 $tag-cloud-transition-duration: $base-transition-duration !default;
@@ -19,15 +18,15 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
  *   </li>
  * </ul>
  */
-.#{$tag-cloud-ns}p-tag-cloud {
+.p-tag-cloud {
     @include font-size($small-font-sizes);
 }
 
-.#{$tag-cloud-ns}p-tag-cloud__item {
+.p-tag-cloud__item {
     margin-bottom: $tag-cloud-space;
 }
 
-.#{$tag-cloud-ns}p-tag-cloud__link {
+.p-tag-cloud__link {
     padding: $tag-cloud-space ($tag-cloud-space * 2);
     border: 1px solid $base-ui-color;
     border-radius: $base-round;
@@ -45,7 +44,7 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
  * 投稿数用のラベルです。
  * タグ名との間に半角スペースが入ります。
  */
-.#{$tag-cloud-ns}p-tag-cloud__count {
+.p-tag-cloud__count {
     font-size: $tag-cloud-count-font-size;
     &:before {
         content: "\00A0";

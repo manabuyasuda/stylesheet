@@ -1,9 +1,8 @@
 /**
  * #Display
  */
-$display-ns: null !default;
 
-.#{$display-ns}u-hide-visually {
+.u-hide-visually {
     overflow: hidden !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     position: absolute !important;
@@ -20,10 +19,10 @@ $display-ns: null !default;
   } @else {
     $pref: null;
   }
-  .#{$display-ns}u-display-none#{$pref}#{$breakpoint} { display: none !important; }
-  .#{$display-ns}u-display-block#{$pref}#{$breakpoint} { display: block !important; }
-  .#{$display-ns}u-display-inline#{$pref}#{$breakpoint} { display: inline !important; }
-  .#{$display-ns}u-display-inline-block#{$pref}#{$breakpoint} { display: inline-block !important; }
+  .u-display-none#{$pref}#{$breakpoint} { display: none !important; }
+  .u-display-block#{$pref}#{$breakpoint} { display: block !important; }
+  .u-display-inline#{$pref}#{$breakpoint} { display: inline !important; }
+  .u-display-inline-block#{$pref}#{$breakpoint} { display: inline-block !important; }
 }
 
 // ブレイクポイントなしのクラスを生成します。

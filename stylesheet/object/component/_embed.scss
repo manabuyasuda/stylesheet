@@ -1,7 +1,6 @@
 /**
  * #Embed
  */
-$embed-ns: null !default;
 
 /**
  *YouTubeなどのエンベディットコンテンツを埋め込むオブジェクトです。
@@ -11,7 +10,7 @@ $embed-ns: null !default;
  *     <iframe></iframe>
  * </div>
  */
-.#{$embed-ns}c-embed {
+.c-embed {
     display: block;
     overflow: hidden;
     position: relative;
@@ -31,10 +30,10 @@ $embed-ns: null !default;
     }
 }
 
-.#{$embed-ns}c-embed--16\:9 {
+.c-embed--16\:9 {
     padding-bottom: percentage(9 / 16) !important;
 }
 
-.#{$embed-ns}c-embed--4\:3 {
+.c-embed--4\:3 {
     padding-bottom: percentage(3 / 4) !important;
 }

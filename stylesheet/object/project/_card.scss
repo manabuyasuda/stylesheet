@@ -1,7 +1,6 @@
 /**
  * #Card
  */
-$cord-ns: null !default;
 $cord-padding: 1em !default;
 $cord-border: 1px solid $base-ui-color !default;
 $cord-round: $base-round !default;
@@ -22,34 +21,34 @@ $cord-round-foot: 0 0 $cord-round $cord-round !default;
  *   </div>
  * </div>
  */
-.#{$cord-ns}p-card {
+.p-card {
     border: $cord-border;
     border-radius: $cord-round;
     background-color: #fff;
 }
 
-.#{$cord-ns}p-card__head {
+.p-card__head {
     overflow: hidden;
     border-radius: $cord-round-head;
 }
 
-.#{$cord-ns}p-card__title {
+.p-card__title {
     margin: 0;
     font-size: 1.25em;
 }
 
-.#{$cord-ns}p-card__body {
+.p-card__body {
     padding: ($cord-padding * 2) $cord-padding;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
-.#{$cord-ns}p-card__body--has-divider {
+.p-card__body--has-divider {
     border-top: $cord-border;
 }
 
-.#{$cord-ns}p-card__foot {
+.p-card__foot {
     overflow: hidden;
     padding: $cord-padding;
     border-radius: $cord-round-foot;
@@ -58,6 +57,6 @@ $cord-round-foot: 0 0 $cord-round $cord-round !default;
     }
 }
 
-.#{$cord-ns}p-card__foot--has-divider {
+.p-card__foot--has-divider {
     border-top: $cord-border;
 }

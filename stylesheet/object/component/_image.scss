@@ -1,29 +1,28 @@
 /**
  * #Image
  */
-$image-ns: null !default;
 $image-margin: 1rem !default;
 
-.#{$image-ns}c-image-round {
+.c-image-round {
     border-radius: $base-round;
 }
 
-.#{$image-ns}c-image-circle {
+.c-image-circle {
     border-radius: 50%;
 }
 
-.#{$image-ns}c-image-center {
+.c-image-center {
     display: block;
     margin-right: auto;
     margin-left: auto;
 }
 
-.#{$image-ns}c-image-right {
+.c-image-right {
     float: right;
     margin-left: $image-margin;
 }
 
-.#{$image-ns}c-image-left {
+.c-image-left {
     float: left;
     margin-right: $image-margin;
 }
@@ -46,14 +45,14 @@ $image-margin: 1rem !default;
  *     background-image: url("http://placeimg.com/640/300/tech"); // 表示する画像を指定
  * }
  */
-.#{$image-ns}c-image-cover {
+.c-image-cover {
     background-color: inherit;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
-.#{$image-ns}c-image-cover--fixed {
+.c-image-cover--fixed {
     @include media-query(lg) {
         background-attachment: fixed;
     }
@@ -70,7 +69,7 @@ $image-margin: 1rem !default;
  *   </div>
  * </div>
  */
-.#{$image-ns}c-image-overlay {
+.c-image-overlay {
     position: relative;
     &:after {
         content: "";
@@ -83,18 +82,18 @@ $image-margin: 1rem !default;
     }
 }
 
-.#{$image-ns}c-image-overlay__unit {
+.c-image-overlay__unit {
     position: absolute;
     z-index: z(default);
 }
 
-.#{$image-ns}c-image-overlay--black {
+.c-image-overlay--black {
     &:after {
         background: rgba(0, 0, 0, 0.6);
     }
 }
 
-.#{$image-ns}c-image-overlay--teal {
+.c-image-overlay--teal {
     &:after {
         background: linear-gradient(rgba(teal, 0.9), rgba(teal, 0.6));
     }

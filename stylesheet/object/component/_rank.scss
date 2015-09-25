@@ -1,12 +1,12 @@
 /**
  * #Rank
  */
-$rank-ns: null !default;
 $rank-space-y: 1em !default;
 $rank-space-x: 0 !default;
 
 /**
  * 横並び（ranked）になるリストオブジェクトです。
+ * 余白を指定しているため、ナビゲーションで主に使用します。
  *
  * <ul class="c-rank [c-rank--size-small]">
  *   <li class="c-rank__item"><a href="#" class="c-rank__link">home</a></li>
@@ -14,40 +14,40 @@ $rank-space-x: 0 !default;
  *   <li class="c-rank__item"><a href="#" class="c-rank__link">category</a></li>
  * </ul>
  */
-.#{$rank-ns}c-rank {
+.c-rank {
     margin: 0;
     padding: 0;
     font-size: 0;
     list-style-type: none;
 }
 
-.#{$rank-ns}c-rank__item {
+.c-rank__item {
     display: inline-block;
     padding: $rank-space-y $rank-space-x;
     font-size: 1rem;
 }
 
-.#{$rank-ns}c-rank__link {
+.c-rank__link {
     display: inline-block;
     margin: (-$rank-space-y) (-$rank-space-x);
     padding: $rank-space-y $rank-space-x;
 }
 
-.#{$rank-ns}c-rank--size-small {
-    > .#{$rank-ns}c-rank__item {
+.c-rank--size-small {
+    > .c-rank__item {
         padding: ($rank-space-y / 2) ($rank-space-x / 1);
     }
-    .#{$rank-ns}c-rank__link {
+    .c-rank__link {
         margin: (-$rank-space-y / 2) (-$rank-space-x / 1);
         padding: ($rank-space-y / 2) ($rank-space-x / 1);
     }
 }
 
-.#{$rank-ns}c-rank--size-large {
-    > .#{$rank-ns}c-rank__item {
+.c-rank--size-large {
+    > .c-rank__item {
         padding: ($rank-space-y * 2) ($rank-space-x * 1);
     }
-    .#{$rank-ns}c-rank__link {
+    .c-rank__link {
         margin: (-$rank-space-y * 2) (-$rank-space-x * 1);
         padding: ($rank-space-y * 2) ($rank-space-x * 1);
     }

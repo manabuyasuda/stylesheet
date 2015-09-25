@@ -1,7 +1,6 @@
 /**
  * #Frag
  */
-$frag-ns: null !default;
 $frag-gutter: 1em !default;
 
 /**
@@ -20,12 +19,12 @@ $frag-gutter: 1em !default;
  *   </div>
  * </div>
  */
-.#{$frag-ns}c-frag {
+.c-frag {
     display: table;
     width: 100%;
 }
 
-.#{$frag-ns}c-frag__image {
+.c-frag__image {
     display: table-cell;
     padding-right: $frag-gutter;
     vertical-align: middle;
@@ -35,50 +34,50 @@ $frag-gutter: 1em !default;
     }
 }
 
-.#{$frag-ns}c-frag__body {
+.c-frag__body {
     display: table-cell;
     width: 100%;
     vertical-align: middle;
 }
 
 /* `margin-bottom`を含んだまま、垂直方向が揃うのを防ぐ */
-.#{$frag-ns}c-frag__body > :last-child {
+.c-frag__body > :last-child {
     margin-bottom: 0;
 }
 
-.#{$frag-ns}c-frag--rev {
+.c-frag--rev {
     /* 文字表記を右から左に変更します。 */
     direction: rtl;
-    > .#{$frag-ns}c-frag__image,
-    > .#{$frag-ns}c-frag__body {
+    > .c-frag__image,
+    > .c-frag__body {
         /* IE以外ではテキストが右寄せのままになってしまう */
         text-align: left;
         /* derectionプロパティを元に戻します。*/
         direction: ltr;
     }
-    > .#{$frag-ns}c-frag__image {
+    > .c-frag__image {
         padding-right: 0;
         padding-left: $frag-gutter;
     }
 }
 
-.#{$frag-ns}c-frag--no-gap {
-    > .#{$frag-ns}c-frag__image {
+.c-frag--no-gap {
+    > .c-frag__image {
         padding-right: 0;
         padding-left: 0;
     }
 }
 
-.#{$frag-ns}c-frag--top {
-    > .#{$frag-ns}c-frag__image,
-    > .#{$frag-ns}c-frag__body {
+.c-frag--top {
+    > .c-frag__image,
+    > .c-frag__body {
         vertical-align: top;
     }
 }
 
-.#{$frag-ns}c-frag--bottom {
-    > .#{$frag-ns}c-frag__image,
-    > .#{$frag-ns}c-frag__body {
+.c-frag--bottom {
+    > .c-frag__image,
+    > .c-frag__body {
         vertical-align: bottom;
     }
 }

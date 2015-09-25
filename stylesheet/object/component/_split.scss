@@ -1,7 +1,6 @@
 /**
  * #Split
  */
-$split-ns: null !default;
 $split-padding: 0.5em !default;
 $split-border: 1px solid $base-ui-color !default;
 
@@ -15,30 +14,28 @@ $split-border: 1px solid $base-ui-color !default;
  *   <dd class="c-split__value"></dd>
  * </dl>
  */
-
-
-.#{$split-ns}c-split__name {
+.c-split__name {
     padding-top: $split-padding;
 }
 
-.#{$split-ns}c-split__value {
+.c-split__value {
     margin-left: 0;
     padding-bottom: $split-padding;
 }
 
-.#{$split-ns}c-split--has-border {
+.c-split--has-border {
     border-top: $split-border;
-    > .#{$split-ns}c-split__value {
+    > .c-split__value {
         border-bottom: $split-border;
     }
 }
 
 @include media-query(md) {
-    .#{$split-ns}c-split__name {
+    .c-split__name {
         float: left;
         clear: left;
     }
-    .#{$split-ns}c-split__value {
+    .c-split__value {
         padding: $split-padding 0 $split-padding 10em;
     }
 }

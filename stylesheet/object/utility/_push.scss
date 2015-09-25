@@ -1,9 +1,6 @@
 /**
  * #Push
  */
-// `u-`プレフィックスの前にプロジェクト特有のプレフィックスを付与できます。
-// 例えば`my-`と指定すると`.my-u-push1\/2\@sm`のように出力されます。
-$pushs-ns: null !default;
 
 // mixinは`width`を指定するclassを出力します。
 // 分母になる数値を配列として渡します。オプションとして接頭辞付きのレスポンシブ対応クラスが出力できます。
@@ -21,7 +18,7 @@ $pushs-ns: null !default;
         @for $numerator from 1 through $denominator {
 
             // `.u-push3/4`のような形式でclassを生成します。
-            .#{$pushs-ns}u-push#{$numerator}\/#{$denominator}#{$breakpoint} {
+            .u-push#{$numerator}\/#{$denominator}#{$breakpoint} {
                 left: ($numerator / $denominator) * 100% !important;
             }
 
@@ -57,7 +54,7 @@ $pushs-ns: null !default;
 $pushs-columns: 12 !default;
 
 
-[class*="#{$pushs-ns}u-push"] {
+[class*="u-push"] {
     position: relative;
 }
 

@@ -1,20 +1,19 @@
 /**
  * #Float
  */
-$float-ns: null !default;
 
-.#{$float-ns}u-fr {
+.u-fr {
     float: right !important;
 }
 
-.#{$float-ns}u-fl {
+.u-fl {
     float: left !important;
 }
 
-.#{$float-ns}u-fn {
+.u-fn {
     float: none !important;
 }
 
-.#{$float-ns}u-clearfix {
+.u-clearfix {
     @include clearfix(important);
 }

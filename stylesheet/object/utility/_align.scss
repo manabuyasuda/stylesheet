@@ -1,28 +1,27 @@
 /**
  * #Align
  */
-$align-ns: null !default;
 
-.#{$align-ns}u-tar {
+.u-tar {
     text-align: right !important;
 }
 
-.#{$align-ns}u-tac {
+.u-tac {
     text-align: center !important;
 }
 
-.#{$align-ns}u-tal {
+.u-tal {
     text-align: left !important;
 }
 
-.#{$align-ns}u-vat {
+.u-vat {
     vertical-align: top !important;
 }
 
-.#{$align-ns}u-vam {
+.u-vam {
     vertical-align: middle !important;
 }
 
-.#{$align-ns}u-vab {
+.u-vab {
     vertical-align: bottom !important;
 }

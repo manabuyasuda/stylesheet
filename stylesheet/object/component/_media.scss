@@ -1,7 +1,6 @@
 /**
  * #Media
  */
-$media-ns: null !default;
 $media-gutter: 1em !default;
 
 /**
@@ -19,11 +18,11 @@ $media-gutter: 1em !default;
  *   </div>
  * </div>
  */
-.#{$media-ns}c-media {
+.c-media {
     @include clearfix;
 }
 
-.#{$media-ns}c-media__image {
+.c-media__image {
     float: left;
     margin-right: $media-gutter;
     > img {
@@ -32,18 +31,18 @@ $media-gutter: 1em !default;
     }
 }
 
-.#{$media-ns}c-media__body {
+.c-media__body {
     overflow: hidden;
 }
 
-.#{$media-ns}c-media__image--rev {
+.c-media__image--rev {
     float: right;
     margin-right: 0;
     margin-left: $media-gutter;
 }
 
-.#{$media-ns}c-media--no-gap {
-    > .#{$media-ns}c-media__image {
+.c-media--no-gap {
+    > .c-media__image {
         padding-right: 0;
         padding-left: 0;
     }

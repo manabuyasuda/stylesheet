@@ -1,20 +1,19 @@
 /**
  * #Position
  */
-$position-ns: null !default;
 
-.#{$position-ns}u-pos {
+.u-pos {
     position: static !important;
 }
 
-.#{$position-ns}u-por {
+.u-por {
     position: relative !important;
 }
 
-.#{$position-ns}u-poa {
+.u-poa {
     position: absolute !important;
 }
 
-.#{$position-ns}u-pof {
+.u-pof {
     position: fixed !important;
 }

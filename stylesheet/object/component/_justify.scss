@@ -1,7 +1,6 @@
 /**
  * #Justify
  */
-$justify-ns: null !default;
 
 /**
  * 両端揃えになるオブジェクトです。
@@ -14,7 +13,7 @@ $justify-ns: null !default;
  *   <div class="c-justify__item"></div>
  * </div>
  */
-.#{$justify-ns}c-justify {
+.c-justify {
     display: block;
     font-size: 0;
     text-align: justify;
@@ -26,7 +25,7 @@ $justify-ns: null !default;
     }
 }
 
-.#{$justify-ns}c-justify__item {
+.c-justify__item {
     display: inline-block;
     margin: 0;
     font-size: 1rem;

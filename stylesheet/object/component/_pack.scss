@@ -1,7 +1,6 @@
 /**
  * #Pack
  */
-$pack-ns: null !default;
 $pack-padding-y: 1em !default;
 $pack-padding-x: 0.5em !default;
 
@@ -15,7 +14,7 @@ $pack-padding-x: 0.5em !default;
  *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
  * </ul>
  */
-.#{$pack-ns}c-pack {
+.c-pack {
     display: table;
     width: 100%;
     margin: 0;
@@ -23,29 +22,29 @@ $pack-padding-x: 0.5em !default;
     text-align: center;
 }
 
-.#{$pack-ns}c-pack--equal {
+.c-pack--equal {
     table-layout: fixed;
 }
 
-.#{$pack-ns}c-pack__item {
+.c-pack__item {
     display: table-cell;
 }
 
-.#{$pack-ns}c-pack__link {
+.c-pack__link {
     display: block;
     padding: $pack-padding-y $pack-padding-x;
     line-height: 1;
     text-decoration: none;
 }
 
-.#{$pack-ns}c-pack--size-small {
-    .#{$pack-ns}c-pack__link {
+.c-pack--size-small {
+    .c-pack__link {
         padding: ($pack-padding-y / 2) ($pack-padding-x / 1);
     }
 }
 
-.#{$pack-ns}c-pack--size-large {
-    .#{$pack-ns}c-pack__link {
+.c-pack--size-large {
+    .c-pack__link {
         padding: ($pack-padding-y * 2) ($pack-padding-x * 1);
     }
 }

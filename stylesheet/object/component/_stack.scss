@@ -1,7 +1,6 @@
 /**
  * #Stack
  */
-$stack-ns: null !default;
 $stack-space-y: 1em !default;
 $stack-space-x: 0 !default;
 
@@ -19,45 +18,45 @@ $stack-space-x: 0 !default;
  *     </li>
  * </ul>
  */
-.#{$stack-ns}c-stack {
+.c-stack {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.#{$stack-ns}c-stack__item {
+.c-stack__item {
     padding: $stack-space-y $stack-space-x;
 }
 
-.#{$stack-ns}c-stack__link {
+.c-stack__link {
     display: block;
     margin: (-$stack-space-y)  (-$stack-space-x);
     padding: $stack-space-y $stack-space-x;
 }
 
-.#{$stack-ns}c-stack--center {
+.c-stack--center {
     text-align: center;
 }
 
-.#{$stack-ns}c-stack--right {
+.c-stack--right {
     text-align: right;
 }
 
-.#{$stack-ns}c-stack--size-small {
-    > .#{$stack-ns}c-stack__item {
+.c-stack--size-small {
+    > .c-stack__item {
         padding: ($stack-space-y / 2) ($stack-space-x / 1);
     }
-    .#{$stack-ns}c-stack__link {
+    .c-stack__link {
         margin: (-$stack-space-y / 2)  (-$stack-space-x / 1);
         padding: ($stack-space-y / 2) ($stack-space-x / 1);
     }
 }
 
-.#{$stack-ns}c-stack--size-large {
-    > .#{$stack-ns}c-stack__item {
+.c-stack--size-large {
+    > .c-stack__item {
         padding: ($stack-space-y * 2) ($stack-space-x * 1);
     }
-    .#{$stack-ns}c-stack__link {
+    .c-stack__link {
         margin: (-$stack-space-y * 2)  (-$stack-space-x * 1);
         padding: ($stack-space-y * 2) ($stack-space-x * 1);
     }

@@ -1,7 +1,6 @@
 /**
  * #Central
  */
-$central-ns: null !default;
 
 /**
  * 例えばモーダルのように前後左右の中央配置に利用するオブジェクトです。
@@ -13,7 +12,7 @@ $central-ns: null !default;
  *     </div>
  * </div>
  */
-.#{$central-ns}c-central-box {
+.c-central-box {
     position: absolute;
     right: 50%;
     bottom: 50%;

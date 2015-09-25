@@ -1,7 +1,6 @@
 /**
  * #Generic-box
  */
-$generic-ns: null !default;
 
 /**
  * 汎用的なボックスオブジェクトです。
@@ -11,13 +10,13 @@ $generic-ns: null !default;
  *   </div>
  * </div>
  */
-.#{$generic-ns}c-generic-box {
+.c-generic-box {
     @include vr(0, 1);
     padding: 1em;
     border-radius: $base-round;
 }
 
-.#{$generic-ns}c-generic-box--center {
+.c-generic-box--center {
     margin-right: auto;
     margin-left: auto;
 }

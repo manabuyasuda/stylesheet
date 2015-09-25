@@ -1,9 +1,6 @@
 /**
  * #Pull
  */
-// `u-`プレフィックスの前にプロジェクト特有のプレフィックスを付与できます。
-// 例えば`my-`と指定すると`.my-u-pull1\/2\@sm`のように出力されます。
-$pulls-ns: null !default;
 
 // mixinは`width`を指定するclassを出力します。
 // 分母になる数値を配列として渡します。オプションとして接頭辞付きのレスポンシブ対応クラスが出力できます。
@@ -21,7 +18,7 @@ $pulls-ns: null !default;
         @for $numerator from 1 through $denominator {
 
             // `.u-pull3/4`のような形式でclassを生成します。
-            .#{$pulls-ns}u-pull#{$numerator}\/#{$denominator}#{$breakpoint} {
+            .u-pull#{$numerator}\/#{$denominator}#{$breakpoint} {
                 right: ($numerator / $denominator) * 100% !important;
             }
 
@@ -57,7 +54,7 @@ $pulls-ns: null !default;
 $pulls-columns: 12 !default;
 
 
-[class*="#{$pulls-ns}u-pull"] {
+[class*="u-pull"] {
     position: relative;
 }
 
