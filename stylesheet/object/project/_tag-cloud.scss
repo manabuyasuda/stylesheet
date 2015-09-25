@@ -8,38 +8,32 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
 
 /**
  * タグクラウドのコンポーネントです。
- * モディファイアを指定するとボーダーで囲われます。
+ * `list-inline`オブジェクトと組み合わせてマークアップします。
  *
- * <ul class="p-tag-cloud [p-tag-cloud--has-border]">
- *   <li class="p-tag-cloud__item">
- *     <a href="" class="p-tag-cloud__link">CSS<span class="p-tag-cloud__count">(20)</span></a>
+ * <ul class="c-list-inline p-tag-cloud">
+ *   <li class="c-list-inline__item p-tag-cloud__item">
+ *     <a href="" class="c-list-inline__link p-tag-cloud__link">CSS<span class="p-tag-cloud__count">(20)</span></a>
  *   </li>
- *   <li class="p-tag-cloud__item">
- *     <a href="" class="p-tag-cloud__link">HTML<span class="p-tag-cloud__count">(100)</span></a>
+ *   <li class="c-list-inline__item p-tag-cloud__item">
+ *     <a href="" class="c-list-inline__link p-tag-cloud__link">HTML<span class="p-tag-cloud__count">(100)</span></a>
  *   </li>
  * </ul>
  */
 .#{$tag-cloud-ns}p-tag-cloud {
-    margin: 0;
-    margin-left: - $tag-cloud-space;
-    padding-left: 0;
-    font-size: 0;
-    list-style-type: none;
-}
-
-.#{$tag-cloud-ns}p-tag-cloud__item {
-    display: inline-block;
-    margin-bottom: $tag-cloud-space;
-    padding-left: $tag-cloud-space;
     @include font-size($small-font-sizes);
 }
 
+.#{$tag-cloud-ns}p-tag-cloud__item {
+    margin-bottom: $tag-cloud-space;
+}
+
 .#{$tag-cloud-ns}p-tag-cloud__link {
-    display: inline-block;
     padding: $tag-cloud-space ($tag-cloud-space * 2);
+    border: 1px solid $base-ui-color;
     border-radius: $base-round;
     color: inherit;
     line-height: 1;
+    text-decoration: none;
     transition-duration: $tag-cloud-transition-duration;
     &:hover {
         color: #fff;
@@ -55,12 +49,5 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
     font-size: $tag-cloud-count-font-size;
     &:before {
         content: "\00A0";
-    }
-}
-
-.#{$tag-cloud-ns}p-tag-cloud--has-border {
-    .#{$tag-cloud-ns}p-tag-cloud__link {
-        border: 1px solid $base-ui-color;
-        text-decoration: none;
     }
 }

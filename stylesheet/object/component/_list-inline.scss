@@ -1,0 +1,22 @@
+/**
+ * #List-inline
+ */
+$list-inline-ns: null !default;
+$list-inline-space: 0.5em !default;
+
+.#{$list-inline-ns}c-list-inline {
+    @include clearfix;
+    margin: 0 0 0 (-$list-inline-space);
+    padding: 0;
+    list-style-type: none;
+}
+
+.#{$list-inline-ns}c-list-inline__item {
+    display: inline-block;
+    float: left;
+    padding-left: $list-inline-space;
+}
+
+.#{$list-inline-ns}c-list-inline__link {
+    display: inline-block;
+}

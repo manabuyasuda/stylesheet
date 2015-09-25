@@ -4,41 +4,32 @@
 $pagination-ns: null !default;
 $pagination-padding-y: 1em !default;
 $pagination-padding-x: 1em !default;
-$pagination-border: 1px solid $base-ui-color !default;
-$pagination-border-width: 1px !default;
 
 /**
  * ページネーションのコンポーネントです。
- * モディファイアを指定するとボーダーで囲われます。
+ * `c-rank`オブジェクトと組み合わせてマークアップします。
  *
- * <ol class="p-pagination [p-pagination--has-border]">
- *   <li class="p-pagination__item">
- *     <a href="#" class="p-pagination__link p-pagination__link--prev">Prev</a>
+ * <ol class="c-rank p-pagination">
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link p-pagination__link--prev">Prev</a>
  *   </li>
- *   <li class="p-pagination__item">
- *     <a href="#" class="p-pagination__link">1</a>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link">1</a>
  *   </li>
- *   <li class="p-pagination__item">
- *     <a href="#" class="p-pagination__link">2</a>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link">2</a>
  *   </li>
- *   <li class="p-pagination__item">
- *     <a href="#" class="p-pagination__link">3</a>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link">3</a>
  *   </li>
- *   <li class="p-pagination__item">
- *     <a href="#" class="p-pagination__link p-pagination__link--next">Next</a>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link p-pagination__link--next">Next</a>
  *   </li>
  * </ol>
  */
 .#{$pagination-ns}p-pagination {
-    padding-left: 0;
-    font-size: 0;
     line-height: 1;
     text-align: center;
-}
-
-.#{$pagination-ns}p-pagination__item {
-    display: inline-block;
-    font-size: 1rem;
 }
 
 .#{$pagination-ns}p-pagination__link {
@@ -52,15 +43,4 @@ $pagination-border-width: 1px !default;
 
 .#{$pagination-ns}p-pagination__link--next:after {
     content: "\00A0" "\003E";
-}
-
-.#{$pagination-ns}p-pagination--has-border {
-    > .#{$pagination-ns}p-pagination__item {
-        border: $pagination-border;
-        border-right-width: 0;
-        border-radius: $base-round;
-        &:last-child {
-            border-right-width: $pagination-border-width;
-        }
-    }
 }

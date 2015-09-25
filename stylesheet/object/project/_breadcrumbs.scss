@@ -6,9 +6,8 @@ $breadcrumbs-margin: 0 0.5rem !default;
 
 /**
  * パンくずリストのコンポーネントです。
- * `p-breadcrumbs--ellipsis`で末尾のリストを省略できます。
  *
- * <ul class="p-breadcrumbs p-breadcrumbs--ellipsis">
+ * <ul class="p-breadcrumbs">
  *   <li class="p-breadcrumbs__item"><a href="#" class="p-breadcrumbs__link">home</a></li>
  *   <li class="p-breadcrumbs__item"><a href="#" class="p-breadcrumb__link">category</a></li>
  *   <li class="p-breadcrumbs__item">content title</li>
@@ -17,19 +16,16 @@ $breadcrumbs-margin: 0 0.5rem !default;
 .#{$breadcrumbs-ns}p-breadcrumbs {
     padding-left: 0;
     list-style-type: none;
-}
-
-.#{$breadcrumbs-ns}p-breadcrumbs--ellipsis {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    & .#{$breadcrumbs-ns}p-breadcrumbs__item:last-child {
-        display: inline;
-    }
 }
 
 .#{$breadcrumbs-ns}p-breadcrumbs__item {
     display: inline-block;
+    &:last-child {
+        display: inline;
+    }
 }
 
 .#{$breadcrumbs-ns}p-breadcrumbs__link {

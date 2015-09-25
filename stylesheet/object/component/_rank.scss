@@ -3,7 +3,7 @@
  */
 $rank-ns: null !default;
 $rank-space-y: 1em !default;
-$rank-space-x: 0.5em !default;
+$rank-space-x: 0 !default;
 
 /**
  * 横並び（ranked）になるリストオブジェクトです。
@@ -18,7 +18,6 @@ $rank-space-x: 0.5em !default;
     margin: 0;
     padding: 0;
     font-size: 0;
-    line-height: 1;
     list-style-type: none;
 }
 
