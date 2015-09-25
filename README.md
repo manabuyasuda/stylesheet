@@ -115,7 +115,7 @@ buttonオブジェクトのベーススタイルや横幅を制限するwrapper�
 ```
 
 ```scss
-.#{$media-ns}c-media__image {
+.c-media__image {
     float: left;
     margin-right: $media-gutter;
     > img {
@@ -124,7 +124,7 @@ buttonオブジェクトのベーススタイルや横幅を制限するwrapper�
     }
 }
 
-.#{$media-ns}c-media__image--rev {
+.c-media__image--rev {
     float: right; // スタイルの上書き
     margin-right: 0; // スタイルのリセット
     margin-left: $media-gutter; // スタイルの追加
@@ -158,41 +158,41 @@ Componentのモディファイアで定義するのが適切でない場合はPr
 
 ```scss
 // Componentレイヤー
-.#{$rank-ns}c-rank {
+.c-rank {
     margin: 0;
     padding: 0;
     font-size: 0;
     list-style-type: none;
 }
 
-.#{$rank-ns}c-rank__item {
+.c-rank__item {
     display: inline-block;
     padding: $rank-space-y $rank-space-x;
     font-size: 1rem;
 }
 
-.#{$rank-ns}c-rank__link {
+.c-rank__link {
     display: inline-block;
     margin: (-$rank-space-y) (-$rank-space-x);
     padding: $rank-space-y $rank-space-x;
 }
 
 // Projectレイヤー
-.#{$pagination-ns}p-pagination {
+.p-pagination {
     line-height: 1;
     text-align: center;
 }
 
-.#{$pagination-ns}p-pagination__link {
+.p-pagination__link {
     display: inline-block;
     padding: $pagination-padding-y $pagination-padding-x;
 }
 
-.#{$pagination-ns}p-pagination__link--prev:before {
+.p-pagination__link--prev:before {
     content: "\003C" "\00A0";
 }
 
-.#{$pagination-ns}p-pagination__link--next:after {
+.p-pagination__link--next:after {
     content: "\00A0" "\003E";
 }
 ```
@@ -200,13 +200,13 @@ Componentのモディファイアで定義するのが適切でない場合はPr
 基本的にはマルチクラスを想定していますが、@extendを使用したシングルクラスの設計にすることもできます。
 
 ```scss
-.#{$pagination-ns}p-pagination {
+.p-pagination {
     @extend .c-stack;
     line-height: 1;
     text-align: center;
 }
 
-.#{$pagination-ns}p-pagination__link {
+.p-pagination__link {
     @extend .c-stack__link;
     display: inline-block;
     padding: $pagination-padding-y $pagination-padding-x;
