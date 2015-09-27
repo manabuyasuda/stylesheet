@@ -1,7 +1,6 @@
 /**
  * #Button
  */
-$button-margin: 0 !default;
 $button-padding-y: 0.75em !default;
 $button-padding-x: 0.75em !default;
 $button-pill-base: 0 !default;
@@ -20,7 +19,7 @@ $button-pill-round: 3em !default;
  */
 .c-button {
     display: inline-block;
-    margin: $button-margin;
+    margin: 0;
     padding: $button-padding-y $button-padding-x;
     border: none;
     border-radius: $base-round;

@@ -2,8 +2,6 @@
  * #Tag-cloud
  */
 $tag-cloud-space: 0.5em !default;
-$tag-cloud-count-font-size: $tag-cloud-space * 1.5 !default;
-$tag-cloud-transition-duration: $base-transition-duration !default;
 
 /**
  * タグクラウドのコンポーネントです。
@@ -33,7 +31,7 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
     color: inherit;
     line-height: 1;
     text-decoration: none;
-    transition-duration: $tag-cloud-transition-duration;
+    transition-duration: $base-transition-duration;
     &:hover {
         color: #fff;
         background-color: $base-link-color;
@@ -45,7 +43,7 @@ $tag-cloud-transition-duration: $base-transition-duration !default;
  * タグ名との間に半角スペースが入ります。
  */
 .p-tag-cloud__count {
-    font-size: $tag-cloud-count-font-size;
+    font-size: ($tag-cloud-space * 1.5);
     &:before {
         content: "\00A0";
     }

@@ -1,8 +1,6 @@
 /**
  * #Pagenation
  */
-$pagination-padding-y: 1em !default;
-$pagination-padding-x: 1em !default;
 
 /**
  * ページネーションのコンポーネントです。
@@ -33,7 +31,7 @@ $pagination-padding-x: 1em !default;
 
 .p-pagination__link {
     display: inline-block;
-    padding: $pagination-padding-y $pagination-padding-x;
+    padding: 1em;
 }
 
 .p-pagination__link--prev:before {

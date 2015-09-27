@@ -14,6 +14,12 @@ $split-border: 1px solid $base-ui-color !default;
  *   <dd class="c-split__value"></dd>
  * </dl>
  */
+
+.c-split {
+    margin: 0;
+    padding: 0;
+}
+
 .c-split__name {
     padding-top: $split-padding;
 }

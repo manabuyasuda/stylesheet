@@ -1,7 +1,6 @@
 /**
  * #Wrapper
  */
-$wrapper-max-width: 1200px !default;
 $wrapper-padding: 15px !default;
 
 /**
@@ -17,7 +16,7 @@ $wrapper-padding: 15px !default;
  */
 .c-wrapper {
     width: 100%;
-    max-width: $wrapper-max-width;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     padding-right: $wrapper-padding;
