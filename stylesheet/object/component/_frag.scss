@@ -22,6 +22,8 @@ $frag-gutter: 1em !default;
 .c-frag {
     display: table;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .c-frag__image {
@@ -48,11 +50,11 @@ $frag-gutter: 1em !default;
 .c-frag--rev {
     /* 文字表記を右から左に変更します。 */
     direction: rtl;
-    > .c-frag__image,
-    > .c-frag__body {
+    > .c-frag__image, > .c-frag__body {
         /* IE以外ではテキストが右寄せのままになってしまう */
         text-align: left;
         /* derectionプロパティを元に戻します。*/
+
         direction: ltr;
     }
     > .c-frag__image {
@@ -69,15 +71,13 @@ $frag-gutter: 1em !default;
 }
 
 .c-frag--top {
-    > .c-frag__image,
-    > .c-frag__body {
+    > .c-frag__image, > .c-frag__body {
         vertical-align: top;
     }
 }
 
 .c-frag--bottom {
-    > .c-frag__image,
-    > .c-frag__body {
+    > .c-frag__image, > .c-frag__body {
         vertical-align: bottom;
     }
 }

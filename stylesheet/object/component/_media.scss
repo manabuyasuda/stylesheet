@@ -20,6 +20,8 @@ $media-gutter: 1em !default;
  */
 .c-media {
     @include clearfix;
+    margin: 0;
+    padding: 0;
 }
 
 .c-media__image {
