@@ -4,8 +4,9 @@
 $frag-gutter: 1em !default;
 
 /**
- * 垂直方向の変更ができるmediaオブジェクトです。デフォルトは`vertical-align:middle`です。
- * `.c-frag--rev`を指定すると画像を右側に配置することもできます。
+ * 垂直方向の変更ができるmediaオブジェクトです。デフォルトは`vertical-align:middle`が指定されています。
+ * モディファイアで画像を右側に変更したり、
+ * 垂直方向や余白を変更することもできます。
  * 垂直方向を変更するため、`<img>`は`c-frag__image`で必ずラップします。
  * マークアップに制限があるため、mediaオブジェクトを優先して使用してください。
  * http://csswizardry.com/2013/05/the-flag-object/
@@ -48,13 +49,15 @@ $frag-gutter: 1em !default;
 }
 
 .c-frag--rev {
+    /* IE以外ではテキストが右寄せのままになってしまう */
+    text-align: left;
     /* 文字表記を右から左に変更します。 */
     direction: rtl;
-    > .c-frag__image, > .c-frag__body {
+    > .c-frag__image,
+    > .c-frag__body {
         /* IE以外ではテキストが右寄せのままになってしまう */
         text-align: left;
         /* derectionプロパティを元に戻します。*/
-
         direction: ltr;
     }
     > .c-frag__image {
@@ -71,13 +74,15 @@ $frag-gutter: 1em !default;
 }
 
 .c-frag--top {
-    > .c-frag__image, > .c-frag__body {
+    > .c-frag__image,
+    > .c-frag__body {
         vertical-align: top;
     }
 }
 
 .c-frag--bottom {
-    > .c-frag__image, > .c-frag__body {
+    > .c-frag__image,
+    > .c-frag__body {
         vertical-align: bottom;
     }
 }

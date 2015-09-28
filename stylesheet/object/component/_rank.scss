@@ -6,12 +6,16 @@ $rank-space-x: 0 !default;
 
 /**
  * 横並び（ranked）になるリストオブジェクトです。
- * 余白を指定しているため、ナビゲーションで主に使用します。
+ * リンクがない場合でも余白が変わりません。
+ * モディファイアで余白が変更できます。
  *
  * <ul class="c-rank [c-rank--size-small]">
- *   <li class="c-rank__item"><a href="#" class="c-rank__link">home</a></li>
- *   <li class="c-rank__item"><a href="#" class="c-rank__link">category</a></li>
- *   <li class="c-rank__item"><a href="#" class="c-rank__link">category</a></li>
+ *   <li class="c-rank__item">
+ *     <a href="#" class="c-rank__link"></a>
+ *   </li>
+ *   <li class="c-rank__item">
+ *     <a href="#" class="c-rank__link"></a>
+ *   </li>
  * </ul>
  */
 .c-rank {

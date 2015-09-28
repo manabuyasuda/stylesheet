@@ -1,17 +1,21 @@
 /**
  * #Pack
  */
-$pack-padding-y: 1em !default;
-$pack-padding-x: 0.5em !default;
+$pack-space-y: 1em !default;
+$pack-space-x: 0.5em !default;
 
 /**
- * 横幅いっぱいで均等かつ中央揃えのナビゲーションオブジェクトです。
+ * 横幅いっぱいで均等、中央揃えのナビゲーションオブジェクトです。
+ * リンクがない場合でも余白が変わりません。
+ * モディファイアで余白を変更できます。
  *
- * <ul class="c-pack [c-pack--equal c-pack--size-small]">
- *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
- *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
- *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
- *   <li class="c-pack__item"><a href="#" class="c-pack__link"></a></li>
+ * <ul class="c-pack [c-pack--size-small]">
+ *   <li class="c-pack__item">
+ *     <a href="#" class="c-pack__link"></a>
+ *   </li>
+ *   <li class="c-pack__item">
+ *     <a href="#" class="c-pack__link"></a>
+ *   </li>
  * </ul>
  */
 .c-pack {
@@ -20,31 +24,38 @@ $pack-padding-x: 0.5em !default;
     margin: 0;
     padding: 0;
     text-align: center;
-}
-
-.c-pack--equal {
     table-layout: fixed;
 }
 
 .c-pack__item {
     display: table-cell;
+    padding: $pack-space-y $pack-space-x;
+    line-height: 1;
 }
 
 .c-pack__link {
     display: block;
-    padding: $pack-padding-y $pack-padding-x;
-    line-height: 1;
+    margin: (-$pack-space-y) (-$pack-space-x);
+    padding: $pack-space-y $pack-space-x;
     text-decoration: none;
 }
 
 .c-pack--size-small {
+    > .c-pack__item {
+        padding: ($pack-space-y / 2) ($pack-space-x / 1);
+    }
     .c-pack__link {
-        padding: ($pack-padding-y / 2) ($pack-padding-x / 1);
+        margin: (-$pack-space-y / 2) (-$pack-space-x / 1);
+        padding: ($pack-space-y / 2) ($pack-space-x / 1);
     }
 }
 
 .c-pack--size-large {
+    > .c-pack__item {
+        padding: ($pack-space-y * 2) ($pack-space-x * 1);
+    }
     .c-pack__link {
-        padding: ($pack-padding-y * 2) ($pack-padding-x * 1);
+        margin: (-$pack-space-y * 2) (-$pack-space-x * 1);
+        padding: ($pack-space-y * 2) ($pack-space-x * 1);
     }
 }

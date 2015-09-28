@@ -6,6 +6,8 @@ $stack-space-x: 0 !default;
 
 /**
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
+ * リンクがない場合でも余白が変わりません。
+ * モディファイアで余白が変更できます。
  *
  * <ul class="c-stack [c-stack--size-small]">
  *     <li class="c-stack__item">

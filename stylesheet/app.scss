@@ -44,7 +44,6 @@
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
  * Buttons..............ボタンコンポーネントのベーススタイルです。
- * Generic-box..........汎用的なボックスオブジェクトです。
  *
  * PROJECT
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
@@ -138,7 +137,6 @@
 @import "object/component/_embed";
 @import "object/component/_image";
 @import "object/component/_button";
-@import "object/component/_generic-box";
 
 
 /* Project

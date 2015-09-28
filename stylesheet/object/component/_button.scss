@@ -1,14 +1,12 @@
 /**
  * #Button
  */
-$button-padding-y: 0.75em !default;
-$button-padding-x: 0.75em !default;
 $button-pill-base: 0 !default;
 $button-pill-round: 3em !default;
 
 /**
- * ベーシックなボタンコンポーネントです。
- * `<a>`, `<button>`, `<input>`要素でスタイルをリセットしています。
+ * ベーシックなボタンオブジェクトです。
+ * `<a>`, `<button>`, `<input>`要素のスタイルをリセットしています。
  * サイズやスタイルの変更はモディファイアクラスを指定します。
  *
  * <div class="l-page-content">
@@ -20,7 +18,7 @@ $button-pill-round: 3em !default;
 .c-button {
     display: inline-block;
     margin: 0;
-    padding: $button-padding-y $button-padding-x;
+    padding: 0.75em;
     border: none;
     border-radius: $base-round;
     color: inherit;
