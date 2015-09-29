@@ -5,13 +5,7 @@
 // @param {String} $breakpoint - ブレイクポイントのキーワードを指定します。
 // @requires {Map} $breakpoints - キーワードとメディアタイプ等を定義しています。
 @mixin media-query($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media #{unquote(map-get($breakpoints, $breakpoint))} {
-            @content;
-        }
-    }
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
     }
 }

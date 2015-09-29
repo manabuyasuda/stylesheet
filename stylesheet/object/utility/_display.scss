@@ -12,12 +12,10 @@
 
 // レスポンシブに対応したヘルパークラスを生成します。
 // @param {String} breakpoint(null) - ブレイクポイントを示すキーワードになります。
-// @param {String} pref - ブレイクポイントに接頭辞を付けます。
 @mixin display($breakpoint: null) {
+  $pref: null;
   @if $breakpoint != null {
-    $pref: \@;
-  } @else {
-    $pref: null;
+      $pref: \@;
   }
   .u-display-none#{$pref}#{$breakpoint} { display: none !important; }
   .u-display-block#{$pref}#{$breakpoint} { display: block !important; }
@@ -25,16 +23,13 @@
   .u-display-inline-block#{$pref}#{$breakpoint} { display: inline-block !important; }
 }
 
-// ブレイクポイントなしのクラスを生成します。
+// ブレイクポイントのないclassを生成します。
 @include display;
 
-// レスポンシブに対応したヘルパークラスを生成します。
-// @requires {Map} $breakpoints - キーワードとメディアタイプ等を定義しています。
-@for $i from 1 through length($breakpoints) {
-  $allKeys: map-keys($breakpoints);
-  $mapKeys: nth($allKeys, $i);
-
-  @media #{unquote(map-get($breakpoints, $mapKeys))}{
-    @include display($mapKeys);
-  }
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $breakpoint in map-keys($breakpoints) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @include display($breakpoint);
+    }
 }

@@ -4,7 +4,6 @@
 
 // @prop {String} keys - keyは呼び出す時のキーワードになります。
 // @prop {String} values - 呼び出されるメディアタイプやキーワードです。
-// @see {Mixin} media-query - @include media-query() で使用されています。
 $breakpoints: (
     'sm': 'screen and (min-width: 400px)',
     'md': 'screen and (min-width: 768px)',
