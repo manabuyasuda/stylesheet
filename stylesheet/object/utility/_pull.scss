@@ -3,7 +3,7 @@
  */
 
 /**
- * レスポンシブに対応した`push`のヘルパークラスです。
+ * レスポンシブに対応した`pull`のヘルパークラスです。
  * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
@@ -21,7 +21,7 @@
 }
 
 // 取得したいカラム数をリスト形式で指定します。
-// 例えば`1 2`を指定すると1/1, 1/2, 2/2の`push`を取得できます。
+// 例えば`1 2`を指定すると1/1, 1/2, 2/2の`pull`を取得できます。
 $pull-cols: 12 !default;
 
 // @param {Number} $cols - 取得したいカラム数を指定します。
