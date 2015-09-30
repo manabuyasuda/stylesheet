@@ -8,6 +8,14 @@
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
 
+// このようにコンパイルされます。
+// .u-pull11\/12 { right: 91.66667% !important; }
+// .u-pull12\/12 { right: 100% !important; }
+// @media screen and (min-width: 400px) {
+//     .u-pull1\/12\@sm { right: 8.33333% !important; }
+//     .u-pull2\/12\@sm { right: 16.66667% !important; }
+
+
  [class*="u-pull"] {
     position: relative;
 }
@@ -20,17 +28,15 @@ $pull-cols: 12 !default;
 // @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
 // @requires {List} $pull-cols - 取得するカラム数を定義しています。
 @mixin pull($cols, $breakpoint: null) {
-    // 変数もしくはリストを受け取り、取得したいカラム数を格納します。
-    // denominatorは分母の意味。
-    @each $denominator in $cols {
-        // 格納した値の数だけ繰り返して、その回数を変数に格納します。
-        // numeratorは分子の意味。
-        @for $numerator from 1 through $denominator {
-            // .u- + 分子/分母 + ブレイクポイントという命名規則。
+    // 受け取った値を$colに渡し、値の数だけ繰り返します。
+    @each $col in $cols {
+        // 格納した数値を繰り返して、その回数を$iに格納します。
+        @for $i from 1 through $col {
+            // .u- + 分子($i)/分母($col) + ブレイクポイント名という命名規則。
             // バックスラッシュ`\`でスラッシュ`/`をエスケープします。
-            .u-pull#{$numerator}\/#{$denominator}#{$breakpoint} {
+            .u-push#{$i}\/#{$col}#{$breakpoint} {
                 // `percentage()`関数でパーセンテージに変換します。
-                right: percentage($numerator / $denominator) !important;
+                right: percentage($i / $col) !important;
             }
         }
     }
@@ -41,12 +47,9 @@ $pull-cols: 12 !default;
 
 // ブレイクポイント付きのclassを生成します。
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
-// マップに定義されたkeyとvalueのペアの数だけ繰り返します。
-// 取得したkeyは変数に格納します。
-@each $breakpoint in map-keys($breakpoints) {
-    // `map-get()`関数でブレイクポイント用のvalueを取得します。
-    @media #{map-get($breakpoints, $breakpoint)} {
+@each $name, $breakpoint in $breakpoints {
+    @media #{$breakpoint} {
         // @とkeyを第二引数に渡します。
-        @include pull($pull-cols, \@#{$breakpoint})
+        @include pull($pull-cols, \@#{$name})
     }
 }

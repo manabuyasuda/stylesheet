@@ -28,8 +28,8 @@
 
 // ブレイクポイント付きのclassを生成します。
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
-@each $breakpoint in map-keys($breakpoints) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-        @include display($breakpoint);
+@each $name, $breakpoint in $breakpoints {
+    @media #{$breakpoint} {
+        @include display($name);
     }
 }
