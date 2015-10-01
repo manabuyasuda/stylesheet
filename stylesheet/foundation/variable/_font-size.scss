@@ -12,8 +12,9 @@
     // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
     $n: 1000;
     $vr: ceil(($lh / $fs) * $n) / $n;
+    $rem: ceil(($lh / $fs) * $n) / $n * 1rem;
 
-    @return ($fs, $lh, $vr);
+    @return ($fs, $lh, $vr, $rem);
 }
 
 // Vertical Rhythmに使用するフォントサイズと行の高さを定義します。

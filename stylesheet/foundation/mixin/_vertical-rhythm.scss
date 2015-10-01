@@ -37,32 +37,34 @@
 
         // mapのkeyが"base"の場合はそのままmixinにvalueを渡します。
         @if $fs-breakpoint == "base" {
-             @include make-font-size($fs-font-size);
+             font-size: nth($fs-font-size, 1);
+             line-height: nth($fs-font-size, 3);
 
         } @else {
             // mapのkeyが"base"以外の場合はブレイクポイントを追加します。
             @if map-has-key($fs-breakpoints, $fs-breakpoint) {
 
                 // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
-                @media #{unquote(map-get($fs-breakpoints, $fs-breakpoint))} {
-                    @include make-font-size($fs-font-size);
+                @media #{map-get($fs-breakpoints, $fs-breakpoint)} {
+                    font-size: nth($fs-font-size, 1);
+                    line-height: nth($fs-font-size, 3);
                 }
             }
         }
     }
 }
 
-// @prop {Map} $fs-map - ブレイクポイントごとの`font-size`と`line-height`を定義しています。
-// @See {Mixin} font-size - ブレイクポイントを追加するmixinです。
-@mixin make-font-size($fs-map) {
+// // @prop {Map} $fs-map - ブレイクポイントごとの`font-size`と`line-height`を定義しています。
+// // @See {Mixin} font-size - ブレイクポイントを追加するmixinです。
+// @mixin make-font-size($fs-map) {
 
-    // 渡されたmapのvalueの1つ目の値を取得します。
-    font-size: nth($fs-map, 1);
+//     // 渡されたmapのvalueの1つ目の値を取得します。
+//     font-size: nth($fs-map, 1);
 
-    // 渡されたmapのvalueの3つ目の値を取得します。
-    line-height: nth($fs-map, 3);
+//     // 渡されたmapのvalueの3つ目の値を取得します。
+//     line-height: nth($fs-map, 3);
 
-}
+// }
 
 
 // 上下のマージンをpxで返すmixinです。
@@ -120,7 +122,7 @@
             @if map-has-key($vr-breakpoints, $vr-breakpoint) {
 
                 // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
-                @media #{unquote(map-get($vr-breakpoints, $vr-breakpoint))} {
+                @media #{map-get($vr-breakpoints, $vr-breakpoint)} {
 
                     // 引数が0以外の場合は行の高さを返します。
                     @if $top != 0 {
