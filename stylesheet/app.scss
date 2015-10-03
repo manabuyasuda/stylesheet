@@ -56,6 +56,8 @@
  * Width................レスポンシブに対応した`width`を指定するためのヘルパークラスです。
  * Push.................レスポンシブに対応した`left`を指定するためのヘルパークラスです。
  * Pull.................レスポンシブに対応した`right`を指定するためのヘルパークラスです。
+ * Margin...............レスポンシブに対応した`margin`を指定するためのヘルパークラスです。
+ * Padding..............`padding`を指定するためのヘルパークラスです。
  * Display..............要素の表示を切り替えるヘルパークラスです。
  * Float................`float`とクリアーフィックスのヘルパークラスです。
  * Align................`text-aign`と`vertical-align`のヘルパークラスです。
@@ -155,6 +157,7 @@
 @import "object/utility/_width";
 @import "object/utility/_push";
 @import "object/utility/_pull";
+@import "object/utility/_margin";
 @import "object/utility/_padding";
 @import "object/utility/_display";
 @import "object/utility/_float";

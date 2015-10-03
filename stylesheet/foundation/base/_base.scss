@@ -36,11 +36,6 @@ table {
     width: 100%;
 }
 
-hr {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 i,
 cite,
 em,
@@ -102,7 +97,8 @@ a {
     &:visited {
         color: $visited-link-color;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         color: $hover-link-color;
         text-decoration: $hover-link-decoration;
     }
@@ -120,10 +116,7 @@ figure {
 }
 
 ul, ol, dd {
-    padding-left: $indent-base;
-    @include media-query(lg) {
-        padding-left: $indent-large;
-    }
+    @include vertical-rhythm(padding-left, 0.5);
 }
 
 /* ネストされたリストのマージンをリセットする */
@@ -144,17 +137,14 @@ li {
  * </blockquote>
  */
 blockquote {
-    @include vr(1, 1);
+    @include vertical-rhythm(margin-top, 1);
+    @include vertical-rhythm(margin-bottom, 1);
     @include font-size($small-font-sizes);
-    margin-left: $indent-base;
+    @include vertical-rhythm(margin-left, 0.5);
     margin-right: 0;
-    padding-left: $indent-base;
+    @include vertical-rhythm(padding-left, 0.5);
     border-left: 1px solid #888;
     color: #888;
-    @include media-query(lg) {
-        margin-left: $indent-large;
-        padding-left: $indent-large;
-    }
     & > :first-child {
         margin-top: 0;
     }
@@ -213,5 +203,6 @@ table,
 pre,
 address,
 fieldset {
-    @include vr;
+    margin-top: 0;
+    @include vertical-rhythm(margin-bottom, 1);
 }

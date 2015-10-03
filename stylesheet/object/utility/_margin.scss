@@ -1,0 +1,63 @@
+/**
+ * #Margin
+ */
+
+/* padding-0 */
+.u-m0 { margin: 0 !important; }
+.u-mt0 { margin-top: 0 !important; }
+.u-mr0 { margin-right: 0 !important; }
+.u-mb0 { margin-bottom: 0 !important; }
+.u-ml0 { margin-left: 0 !important; }
+.u-my {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.u-mx {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* margin-small */
+.u-ms { @include vertical-rhythm(margin, 0.5, important); }
+.u-mts { @include vertical-rhythm(margin-top, 0.5, important); }
+.u-mrs { @include vertical-rhythm(margin-right, 0.5, important); }
+.u-mbs { @include vertical-rhythm(margin-bottom, 0.5, important); }
+.u-mls { @include vertical-rhythm(margin-left, 0.5, important); }
+.u-mys {
+    @include vertical-rhythm(margin-top, 0.5, important);
+    @include vertical-rhythm(margin-bottom, 0.5, important);
+}
+.u-mxs {
+    @include vertical-rhythm(margin-right, 0.5, important);
+    @include vertical-rhythm(margin-left, 0.5, important);
+}
+
+/* margin-medium */
+.u-mm { @include vertical-rhythm(margin, 1, important); }
+.u-mtm { @include vertical-rhythm(margin-top, 1, important); }
+.u-mrm { @include vertical-rhythm(margin-right, 1, important); }
+.u-mbm { @include vertical-rhythm(margin-bottom, 1, important); }
+.u-mlm { @include vertical-rhythm(margin-left, 1, important); }
+.u-mym {
+    @include vertical-rhythm(margin-top, 1, important);
+    @include vertical-rhythm(margin-bottom, 1, important);
+}
+.u-mxm {
+    @include vertical-rhythm(margin-right, 1, important);
+    @include vertical-rhythm(margin-left, 1, important);
+}
+
+/* margin-large */
+.u-ml { @include vertical-rhythm(margin, 2, important); }
+.u-mtl { @include vertical-rhythm(margin-top, 2, important); }
+.u-mrl { @include vertical-rhythm(margin-right, 2, important); }
+.u-mbl { @include vertical-rhythm(margin-bottom, 2, important); }
+.u-mll { @include vertical-rhythm(margin-left, 2, important); }
+.u-myl {
+    @include vertical-rhythm(margin-top, 2, important);
+    @include vertical-rhythm(margin-bottom, 2, important);
+}
+.u-mxl {
+    @include vertical-rhythm(margin-right, 2, important);
+    @include vertical-rhythm(margin-left, 2, important);
+}
