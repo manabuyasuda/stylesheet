@@ -31,7 +31,7 @@
 
     // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
     @each $name, $unit in $fs {
-        // mapのkeyが"base"の場合はそのままmixinにvalueを渡します。
+        // mapのkeyが"base"の場合はブレイクポイントを指定せず値を渡します。
         @if $name == "base" {
              font-size: nth($unit, 1);
              line-height: nth($unit, 3);
@@ -89,7 +89,7 @@
 
     // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
     @each $name, $unit in $base-font-sizes {
-        // mapのkeyが"base"の場合はそのままmixinにvalueを渡します。
+        // mapのkeyが"base"の場合はブレイクポイントを指定せず値を渡します。
         @if $name == "base" {
             #{$prop}: nth($unit, 2) * $vr $important;
         } @else {
