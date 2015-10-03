@@ -2,7 +2,7 @@
 // #Vertical-rhythm
 //
 
-// `font-size`(px)と`line-height`(単位なし)を返します。
+// Vertical-rhythmに対応した`font-size`(px)と`line-height`(単位なし)を返します。
 // @prop {Map} $fs($base-font-sizes) - フォントサイズと行の高さを取得します。
 // @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
 // @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
@@ -48,7 +48,7 @@
     }
 }
 
-// プロパティごとにvertical-alignに対応した余白を指定します。
+// プロパティごとにvertical-rhythmに対応した余白を指定します。
 // @prop {String} $prop - プロパティ名を指定します。
 // @prop {Number} $vr(1) - 指定したい行数を指定します。
 // @prop {String} $important(false) - `!important`を指定したい場合は`important`を渡します。
