@@ -13,14 +13,10 @@
 // レスポンシブに対応したヘルパークラスを生成します。
 // @param {String} breakpoint(null) - ブレイクポイントを示すキーワードになります。
 @mixin display($breakpoint: null) {
-  $pref: null;
-  @if $breakpoint != null {
-      $pref: \@;
-  }
-  .u-display-none#{$pref}#{$breakpoint} { display: none !important; }
-  .u-display-block#{$pref}#{$breakpoint} { display: block !important; }
-  .u-display-inline#{$pref}#{$breakpoint} { display: inline !important; }
-  .u-display-inline-block#{$pref}#{$breakpoint} { display: inline-block !important; }
+  .u-display-none#{$breakpoint} { display: none !important; }
+  .u-display-block#{$breakpoint} { display: block !important; }
+  .u-display-inline#{$breakpoint} { display: inline !important; }
+  .u-display-inline-block#{$breakpoint} { display: inline-block !important; }
 }
 
 // ブレイクポイントのないclassを生成します。
@@ -30,6 +26,6 @@
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
 @each $name, $breakpoint in $breakpoints {
     @media #{$breakpoint} {
-        @include display($name);
+        @include display(\@#{$name});
     }
 }
