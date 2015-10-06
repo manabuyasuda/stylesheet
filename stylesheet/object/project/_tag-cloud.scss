@@ -26,7 +26,7 @@ $tag-cloud-space: 0.5em !default;
 
 .p-tag-cloud__link {
     padding: $tag-cloud-space ($tag-cloud-space * 2);
-    border: 1px solid $base-ui-color;
+    border: 1px solid colors(ui);
     border-radius: $base-round;
     color: inherit;
     line-height: 1;
@@ -34,7 +34,7 @@ $tag-cloud-space: 0.5em !default;
     transition-duration: $base-transition-duration;
     &:hover {
         color: #fff;
-        background-color: $base-link-color;
+        background-color: colors(link);
     }
 }
 

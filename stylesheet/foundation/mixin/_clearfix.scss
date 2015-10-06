@@ -2,7 +2,27 @@
 // #Clearfix
 //
 
+// クリアーフィックスを指定する@mixinです。
+// -----------------------------------
 // @prop {Bool}{String} $important(false) - importantを渡すとプロパティに`!important`が付きます。
+//
+// @example scss - Usage
+// .foo { @include clearfix; }
+// .bar { @include clearfix(important); }
+//
+// @example css - CSS output
+// .foo:after {
+//     content: "";
+//     display: table;
+//     clear: both;
+// }
+//
+// .bar:after {
+//     content: "" !important;
+//     display: table !important;
+//     clear: both !important;
+// }
+//
 @mixin clearfix($important: false) {
     @if ($important == "important") {
         $important: unquote("!important");

@@ -2,7 +2,7 @@
  * #Split
  */
 $split-padding: 0.5em !default;
-$split-border: 1px solid $base-ui-color !default;
+$split-border: 1px solid colors(ui) !default;
 
 /**
  * 2つの要素をブロックから横並びにするオブジェクトです。

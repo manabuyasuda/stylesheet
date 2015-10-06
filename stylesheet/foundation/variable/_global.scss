@@ -12,16 +12,6 @@ $breakpoints: (
 ) !default;
 
 
-// ベースになる色を管理します。
-$base-font-color: #333 !default;
-$heading-font-color: null !default;
-$base-background-color: #fff !default;
-$base-link-color: #2b70ba !default;
-$visited-link-color: null !default;
-$hover-link-color: lighten($base-link-color, 15%) !default;
-// UIのベースカラー
-$base-ui-color: #ddd;
-
 // `a`のtext-decorationを管理します。
 $base-link-decoration: none !default;
 $hover-link-decoration: underline !default;

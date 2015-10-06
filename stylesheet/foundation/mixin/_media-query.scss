@@ -2,8 +2,29 @@
 // #Media-query
 //
 
+// ブレイクポイントを挿入する@mixinです。
+// ---------------------------------
 // @param {String} $breakpoint - ブレイクポイントのキーワードを指定します。
 // @requires {Map} $breakpoints - キーワードとメディアタイプ等を定義しています。
+//
+// @example scss - Usage
+// .foo {
+//     color: red;
+//     @include media-query(sm) {
+//         color: blue;
+//     }
+// }
+//
+// @example css - CSS output
+// .foo {
+//   color: red;
+// }
+// @media screen and (min-width: 400px) {
+//   .foo {
+//     color: blue;
+//   }
+// }
+//
 @mixin media-query($breakpoint) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;

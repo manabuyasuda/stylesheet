@@ -1,0 +1,64 @@
+// pxの引数を渡して単位なしとremの相対値を返す関数です。
+// ----------------------------------------------
+// @prop {Number} $fs - `font-size`に指定する値をpxで指定します。
+// @prop {Number} $lh - `line-height`に指定する値をpxで指定します。
+// @return {List} - 第一引数, 第二引数, 第二引数と第一引数の除算の単位なしの相対値, 第二引数と第一引数の除算のremの相対値
+// @see {Map} $font-sizes
+//
+// @example scss - Usage
+// vr(14px, 24px) => 14px, 24px, 1.715, 1.715rem
+//
+@function vr($fs, $lh) {
+    // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
+    $n: 1000;
+    $vr: ceil(($lh / $fs) * $n) / $n;
+    $rem: $vr * 1rem;
+    @return ($fs, $lh, $vr, $rem);
+}
+
+
+// マップに定義したvalueを返す関数です。
+// --------------------------------
+// @prop {String} $key - カラーのキーワード
+// @prop {String} $tone(base) - カラーのサブキーワード
+// @see {map} $colors - ベースカラーやUIのカラーを指定しているマップです。
+//
+// @example scss - Usage
+// colors(black, light) => #888
+//
+@function colors($key, $tone: base) {
+    @return map-get( map-get($colors, $key), $tone);
+}
+
+// z-indexを管理するためのmapです。ファイルだけで変更することができます。
+// --------------------------------------------------------------
+// @type Map
+// @prop {String} key - z-indexの数値を呼び出す時のキーワードです。
+// @prop {Number} value - 返される数値です。
+$z-indexes: (
+  'modal': 3,
+  'dropdown': 2,
+  'default': 1,
+  'below': -1,
+);
+
+
+// キーワードからz-indexの数値を取得します。
+// ------------------------------------
+// @param {String} $layer - キーワード
+// @return {Number}
+// @require {Map} - $z-indexes
+//
+// @example scss - Usage
+// .modal {
+//     z-index: z(modal);
+// }
+//
+// @example css - CSS output
+// .modal {
+//     z-index: 3;
+// }
+//
+@function z($layer) {
+  @return map-get($z-indexes, $layer);
+}

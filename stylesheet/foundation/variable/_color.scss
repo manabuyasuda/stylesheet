@@ -1,0 +1,26 @@
+//
+// #Colors
+//
+
+$colors: (
+    black: (
+        base: #333,
+        light: #888,
+        dark: #000,
+    ),
+    link: (
+        base: #2b70ba,
+        visited: null,
+        hover: lighten(#2b70ba, 15%),
+    ),
+    ui: (
+        base: #ddd,
+        light: lighten(#ddd, 10%),
+        dark: darken(#ddd, 10%),
+    ),
+    bg: (
+        base: #fff,
+        light: lighten(#fff, 5%),
+        dark: darken(#fff, 10%),
+    ),
+) !default;

@@ -3,6 +3,7 @@
 //
 
 // Vertical-rhythmに対応した`font-size`(px)と`line-height`(単位なし)を返します。
+// ------------------------------------------------------------------------
 // @prop {Map} $fs($base-font-sizes) - フォントサイズと行の高さを取得します。
 // @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
 // @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
@@ -49,6 +50,7 @@
 }
 
 // プロパティごとにvertical-rhythmに対応した余白を指定します。
+// -----------------------------------------------------
 // @prop {String} $prop - プロパティ名を指定します。
 // @prop {Number} $vr(1) - 指定したい行数を指定します。
 // @prop {String} $important(false) - `!important`を指定したい場合は`important`を渡します。
@@ -97,79 +99,6 @@
                 // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
                 @media #{map-get($bp, $name)} {
                     #{$prop}: nth($unit, 2) * $vr $important;
-                }
-            }
-        }
-    }
-}
-
-
-// 上下のマージンをpxで返すmixinです。
-// @prop {Number} $top(0) - 要素の`margin-top`に指定する行数を指定します。
-// @prop {Number} $bottom(1) - 要素の`margin-bottom`に指定する行数を指定します。
-// @prop {Map} $vr-map($base-font-sizes) - ベースになるフォントサイズをpxで指定します。
-// @prop {Map} $vr-breakpoints($breakpoints) - ブレイクポイントのキーワードを指定します。
-// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
-// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
-//
-// @example scss - Usage
-// .foo {
-//     @include vr;
-// }
-//
-// @example css - CSS output
-// .foo {
-//     margin-top: 0;
-//     margin-bottom: 24px;
-// }
-//
-// @media screen and (min-width: 1000px) {
-//     .foo {
-//         margin-bottom: 28px;
-//     }
-// }
-//
-@mixin vr($top: 0, $bottom: 1) {
-
-    // ルート要素の行の高さが単位のベースになります。
-    $vr-map: $base-font-sizes;
-
-    // 各mapのkeyに応じたブレイクポイントを取得します。
-    $vr-breakpoints: $breakpoints;
-
-    // ルート要素のmapのkeyとvalueを取得します。
-    @each $vr-breakpoint, $vr-font-size in $vr-map {
-
-        // keyが"base"かつ、引数が0なら0を返し、それ以外の場合は行の高さを返します。
-        @if $vr-breakpoint == "base" and $top == 0 {
-            margin-top: 0;
-        } @else if $vr-breakpoint == "base" and $top != 0 {
-            margin-top: nth($vr-font-size, 2) * $top;
-        }
-
-        // keyが"base"かつ、引数が0なら0を返し、それ以外の場合は行の高さを返します。
-        @if $vr-breakpoint == "base" and $bottom == 0 {
-            margin-bottom: 0;
-        } @else if $vr-breakpoint == "base" and $bottom != 0 {
-            margin-bottom: nth($vr-font-size, 2) * $bottom;
-        }
-
-        @else {
-            // mapのkeyが"base"以外の場合はブレイクポイントを追加します。
-            @if map-has-key($vr-breakpoints, $vr-breakpoint) {
-
-                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
-                @media #{map-get($vr-breakpoints, $vr-breakpoint)} {
-
-                    // 引数が0以外の場合は行の高さを返します。
-                    @if $top != 0 {
-                        margin-top: nth($vr-font-size, 2) * $top;
-                    }
-
-                    // 引数が0以外の場合は行の高さを返します。
-                    @if $bottom != 0 {
-                        margin-bottom: nth($vr-font-size, 2) * $bottom;
-                    }
                 }
             }
         }

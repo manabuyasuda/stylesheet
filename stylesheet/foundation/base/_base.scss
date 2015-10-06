@@ -21,10 +21,10 @@ html {
 }
 
 body {
-    color: $base-font-color;
+    color: colors(black);
     font-family: $base-font-family;
     font-weight: $base-font-weight;
-    background-color: $base-background-color;
+    background-color: colors(bg);
     /* アンチエイリアスを指定する */
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
@@ -69,7 +69,6 @@ h5,
 h6 {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
-    color: $heading-font-color;
 }
 
 h1, .u-h1 {
@@ -92,14 +91,14 @@ h6, .u-h6 {
 }
 
 a {
-    color: $base-link-color;
+    color: colors(link);
     text-decoration: $base-link-decoration;
     &:visited {
-        color: $visited-link-color;
+        color: colors(link, visited);
     }
     &:hover,
     &:focus {
-        color: $hover-link-color;
+        color: colors(link, hover);
         text-decoration: $hover-link-decoration;
     }
 }
@@ -138,13 +137,13 @@ li {
  */
 blockquote {
     @include vertical-rhythm(margin-top, 1);
-    @include vertical-rhythm(margin-bottom, 1);
-    @include font-size($small-font-sizes);
-    @include vertical-rhythm(margin-left, 0.5);
     margin-right: 0;
+    @include vertical-rhythm(margin-bottom, 1);
+    @include vertical-rhythm(margin-left, 0.5);
     @include vertical-rhythm(padding-left, 0.5);
-    border-left: 1px solid #888;
-    color: #888;
+    @include font-size($small-font-sizes);
+    border-left: 1px solid colors(black, light);
+    color: colors(black, light);
     & > :first-child {
         margin-top: 0;
     }
@@ -154,11 +153,9 @@ blockquote {
 }
 
 blockquote {
-    cite {
-        &:before {
-            /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
-            content: '\2014 \00A0';
-        }
+    cite:before {
+        /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
+        content: '\2014 \00A0';
     }
 }
 
@@ -193,12 +190,10 @@ kbd {
 
 /**
  * Vertical Rhythmを指定しているクラスセレクタをまとめて指定します。
- * `<blockquote>`は`_elements.quote.scss`で指定しています。
  */
 h1, h2, h3, h4, h5, h6,
 p,
-ul, ol,
-dl,
+ul, ol, dl,
 table,
 pre,
 address,
