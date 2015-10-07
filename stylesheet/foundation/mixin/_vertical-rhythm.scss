@@ -2,11 +2,12 @@
 // #Vertical-rhythm
 //
 
-// Vertical-rhythmに対応した`font-size`(px)と`line-height`(単位なし)を返します。
+// Vertical-rhythmに対応した`font-size`(px)と`line-height`(単位なし)を返すmixinです。
 // ------------------------------------------------------------------------
-// @prop {Map} $fs($base-font-sizes) - フォントサイズと行の高さを取得します。
-// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
-// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
+// @type Mixin
+// @prop {Map} $fs($base-font-sizes) -
+// @requires {Map} $base-font-sizes - rootのフォントサイズと行の高さを定義しているマップです。
+// @requires {Map} $breakpoints - ブレイクポイントを管理するためのmapです。
 //
 // @example scss - Usage
 // .foo {
@@ -49,13 +50,14 @@
     }
 }
 
-// プロパティごとにvertical-rhythmに対応した余白を指定します。
+// Vertical Rhythmに対応した余白を返します。
 // -----------------------------------------------------
-// @prop {String} $prop - プロパティ名を指定します。
-// @prop {Number} $vr(1) - 指定したい行数を指定します。
-// @prop {String} $important(false) - `!important`を指定したい場合は`important`を渡します。
-// @requires {Map} $base-font-sizes - ルート要素のフォントサイズをブレイクポイントごとに定義しています。
-// @requires {Map} $breakpoints - ブレイクポイントごとにkeyとvalueを定義しています。
+// @type Mixin
+// @prop {String} $prop - プロパティ名を渡します。
+// @prop {Number} $vr(1) - 指定したい行数を渡します。
+// @prop {String} $important(false) - `!important`を指定したい場合は文字列`important`を渡します。
+// @requires {Map} $base-font-sizes - rootのフォントサイズと行の高さを定義しているマップです。
+// @requires {Map} $breakpoints - ブレイクポイントを管理するためのmapです。
 //
 // @example scss - Usage
 // .foo {

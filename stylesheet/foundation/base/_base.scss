@@ -18,6 +18,8 @@ html {
 
 html {
     @include font-size;
+    /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
@@ -34,6 +36,10 @@ body {
 
 table {
     width: 100%;
+}
+
+th {
+    text-align: left;
 }
 
 i,
@@ -157,6 +163,13 @@ blockquote {
         /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
         content: '\2014 \00A0';
     }
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 code,

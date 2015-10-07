@@ -4,8 +4,9 @@
 
 // ブレイクポイントを挿入する@mixinです。
 // ---------------------------------
-// @param {String} $breakpoint - ブレイクポイントのキーワードを指定します。
-// @requires {Map} $breakpoints - キーワードとメディアタイプ等を定義しています。
+// @type Mixin
+// @param {String} $breakpoint - `$breakpoints`のkeyを渡します。
+// @requires {Map} $breakpoints - ブレイクポイントを管理するためのmapです。
 //
 // @example scss - Usage
 // .foo {

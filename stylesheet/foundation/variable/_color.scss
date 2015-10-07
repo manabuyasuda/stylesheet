@@ -2,6 +2,12 @@
 // #Colors
 //
 
+// プロジェクトを通して使用される色を管理するためのマップです。
+// --------------------------------------------------------
+// @type Map
+// @prop {String} keys - keyは呼び出す時のキーワードになります。
+// @prop {String} values - 呼び出されるカラー（hexやRGBなど）です。
+// @see {Function} $colors - マップに定義したvalueを返す関数です。
 $colors: (
     black: (
         base: #333,
