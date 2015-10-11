@@ -9,7 +9,7 @@
 // $base-font-sizesの第二引数の値の倍数を各mapに定義します。
 // @prop {String} keys - keyは呼び出す時のキーワードになります。
 // @prop {String} values - 呼び出される`font-size`と`line-height`になります。
-// @requires {Function} $vr - pxの引数を渡して単位なしとremの相対値を返す関数です。
+// @requires {Function} vr - pxの引数を渡して単位なしとremの相対値を返す関数です。
 // @see {Map} $breakpoints - ブレイクポイントを管理するmapです。同じkeyを指定してくだい。
 $base-font-sizes: (
     "base": vr(14px, 24px),

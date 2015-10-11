@@ -4,7 +4,7 @@
 // @prop {Number} $fs - `font-size`に指定する値をpxで指定します。
 // @prop {Number} $lh - `line-height`に指定する値をpxで指定します。
 // @return {List} - 第一引数, 第二引数, 第二引数と第一引数の除算の単位なしの相対値, 第二引数と第一引数の除算のremの相対値
-// @see {Map} $font-sizes - フォントサイズと行の高さを定義しているマップです。
+// @require {Map} $font-sizes - フォントサイズと行の高さを定義しているマップです。
 //
 // @example scss - Usage
 // vr(14px, 24px) => 14px, 24px, 1.715, 1.715rem
@@ -24,7 +24,7 @@
 // @prop {String} $key - カラーのキーワード
 // @prop {String} $tone(base) - カラーのサブキーワード
 // @return {String} - マップで定義しているhex値などを返します。
-// @see {map} $colors - プロジェクトを通して使用される色を管理するためのマップです。
+// @require {Map} $colors - プロジェクトを通して使用される色を管理するためのマップです。
 //
 // @example scss - Usage
 // colors(black, light) => #888

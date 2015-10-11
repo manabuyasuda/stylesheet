@@ -25,14 +25,9 @@ $width-cols: 12 !default;
 // @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
 // @requires {List} $width-cols - 取得するカラム数を定義しています。
 @mixin width($cols, $breakpoint: null) {
-    // 受け取った値を$colに渡し、値の数だけ繰り返します。
     @each $col in $cols {
-        // 格納した数値を繰り返して、その回数を$iに格納します。
         @for $i from 1 through $col {
-            // .u- + 分子($i)/分母($col) + ブレイクポイント名という命名規則。
-            // バックスラッシュ`\`でスラッシュ`/`をエスケープします。
-            .u-#{$i}\/#{$col}#{$breakpoint} {
-                // `percentage()`関数でパーセンテージに変換します。
+            .u-col#{$i}\/#{$col}#{$breakpoint} {
                 width: percentage($i / $col) !important;
             }
         }
@@ -46,7 +41,6 @@ $width-cols: 12 !default;
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
 @each $name, $breakpoint in $breakpoints {
     @media #{$breakpoint} {
-        // @とkeyを第二引数に渡します。
         @include width($width-cols, \@#{$name})
     }
 }

@@ -23,9 +23,9 @@ html {
 }
 
 body {
-    color: colors(black);
-    font-family: $base-font-family;
-    font-weight: $base-font-weight;
+    color: colors(text);
+    font-family: "Helvetica Neue", "Helvetica", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    font-weight: 400;
     background-color: colors(bg);
     /* アンチエイリアスを指定する */
     -webkit-font-smoothing: subpixel-antialiased;
@@ -73,8 +73,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
+    font-family: inherit;
+    font-weight: 600;
 }
 
 h1, .u-h1 {
@@ -98,14 +98,14 @@ h6, .u-h6 {
 
 a {
     color: colors(link);
-    text-decoration: $base-link-decoration;
+    text-decoration: none;
     &:visited {
         color: colors(link, visited);
     }
     &:hover,
     &:focus {
         color: colors(link, hover);
-        text-decoration: $hover-link-decoration;
+        text-decoration: underline;
     }
 }
 
@@ -148,8 +148,8 @@ blockquote {
     @include vertical-rhythm(margin-left, 0.5);
     @include vertical-rhythm(padding-left, 0.5);
     @include font-size($small-font-sizes);
-    border-left: 1px solid colors(black, light);
-    color: colors(black, light);
+    border-left: 1px solid colors(text, light);
+    color: colors(text, light);
     & > :first-child {
         margin-top: 0;
     }
@@ -181,7 +181,7 @@ samp {
 
 code,
 pre {
-    font-family: $monospace-font-family;
+    font-family: Courier, "Courier New", monospace;
 }
 
 kbd {

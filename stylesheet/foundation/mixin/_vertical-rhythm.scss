@@ -28,19 +28,13 @@
 // }
 //
 @mixin font-size($fs: $base-font-sizes) {
-    // ブレイクポイントを定義したmapを代入します。
     $bp: $breakpoints;
-
-    // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
     @each $name, $unit in $fs {
-        // mapのkeyが"base"の場合はブレイクポイントを指定せず値を渡します。
         @if $name == "base" {
              font-size: nth($unit, 1);
              line-height: nth($unit, 3);
         } @else {
-            // mapのkeyが"base"以外の場合はブレイクポイントを追加します。
             @if map-has-key($bp, $name) {
-                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
                 @media #{map-get($bp, $name)} {
                     font-size: nth($unit, 1);
                     line-height: nth($unit, 3);
@@ -87,18 +81,12 @@
     } @else {
         $important: null;
     }
-
-    // ブレイクポイントを定義したmapを代入します。
     $bp: $breakpoints;
-
-    // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
     @each $name, $unit in $base-font-sizes {
-        // mapのkeyが"base"の場合はブレイクポイントを指定せず値を渡します。
         @if $name == "base" {
             #{$prop}: nth($unit, 2) * $vr $important;
         } @else {
             @if map-has-key($bp, $name) {
-                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
                 @media #{map-get($bp, $name)} {
                     #{$prop}: nth($unit, 2) * $vr $important;
                 }

@@ -7,9 +7,9 @@
 // @type Map
 // @prop {String} keys - keyは呼び出す時のキーワードになります。
 // @prop {String} values - 呼び出されるカラー（hexやRGBなど）です。
-// @see {Function} $colors - マップに定義したvalueを返す関数です。
+// @see {Function} colors - マップに定義したvalueを返す関数です。
 $colors: (
-    black: (
+    text: (
         base: #333,
         light: #888,
         dark: #000,

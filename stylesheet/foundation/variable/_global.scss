@@ -27,30 +27,8 @@ $z-indexes: (
   'below': -1,
 );
 
-// `a`のtext-decorationを管理します。
-$base-link-decoration: none !default;
-$hover-link-decoration: underline !default;
-
-
-// `font-family`を管理します。
-$base-font-family: "Helvetica Neue", "Helvetica", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif !default;
-$heading-font-family: null !default;
-$monospace-font-family: Courier, "Courier New", monospace !default;
-
-
-// `font-weight`を管理します。
-$base-font-weight: 400 !default;
-$heading-font-weight: 600 !default;
-
-
-// `ul`, `dl`, `blockquote`などのインデントに使用します。
-$indent-base: 1rem !default;
-$indent-large: 2rem !default;
-
-
 // ボタンコンポーネントなどの角丸に使用します。
 $base-round: 3px;
-
 
 // アニメーションのベースになる速度です。
 $base-transition-duration: 0.3s;
