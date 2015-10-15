@@ -22,6 +22,10 @@ html {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     color: colors(text);
     font-family: "Helvetica Neue", "Helvetica", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
@@ -52,7 +56,10 @@ dfn {
     font-style: normal;
 }
 
-/* プレイスホルダーのcolorを無効化してopacityでコントラストを抑える */
+/**
+ * プレイスホルダーのcolorを無効化してopacityでコントラストを抑える
+ * http://hail2u.net/blog/webdesign/placeholder-normalization.html
+ */
 :-ms-input-placeholder {
     opacity: .54;
     color: inherit;
