@@ -41,9 +41,11 @@
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
+ * Form.................フォームのレイアウトオブジェクトです。
+ * Button..............ボタンコンポーネントのベーススタイルです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
- * Buttons..............ボタンコンポーネントのベーススタイルです。
+
  *
  * PROJECT
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
@@ -137,9 +139,10 @@
 @import "object/component/_justify";
 @import "object/component/_scroll-table";
 @import "object/component/_central";
+@import "object/component/_form";
+@import "object/component/_button";
 @import "object/component/_embed";
 @import "object/component/_image";
-@import "object/component/_button";
 
 
 /* Project

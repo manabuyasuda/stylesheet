@@ -22,6 +22,7 @@ html {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+/* 画面いっぱいに背景画像を表示する際にルート要素に高さの指定が必要 */
 html, body {
     height: 100%;
 }
@@ -38,40 +39,14 @@ body {
     font-kerning: normal;
 }
 
-table {
-    width: 100%;
-}
-
-th {
-    text-align: left;
-}
-
+/* 日本語にitalicは使用されないためリセットする */
 i,
 cite,
 em,
 var,
 address,
 dfn {
-    /* デフォルトスタイルのitalicをリセットする */
     font-style: normal;
-}
-
-/**
- * プレイスホルダーのcolorを無効化してopacityでコントラストを抑える
- * http://hail2u.net/blog/webdesign/placeholder-normalization.html
- */
-:-ms-input-placeholder {
-    opacity: .54;
-    color: inherit;
-}
-
-::-webkit-input-placeholder {
-    opacity: .54;
-    color: inherit;
-}
-
-:placeholder-shown {
-  opacity: .54;
 }
 
 h1,
@@ -82,23 +57,29 @@ h5,
 h6 {
     font-family: inherit;
     font-weight: 600;
+    color: inherit;
 }
 
 h1, .u-h1 {
     @include font-size($h1-font-sizes);
 }
+
 h2, .u-h2 {
     @include font-size($h2-font-sizes);
 }
+
 h3, .u-h3 {
     @include font-size($h3-font-sizes);
 }
+
 h4, .u-h4 {
     @include font-size($h4-font-sizes);
 }
+
 h5, .u-h5 {
     @include font-size($h5-font-sizes);
 }
+
 h6, .u-h6 {
     @include font-size($h6-font-sizes);
 }
@@ -127,6 +108,7 @@ figure {
     margin: 0;
 }
 
+/* `padding-strat: 40px;`の相対値 */
 ul, ol {
     padding-left: 2.5em
 }
@@ -143,8 +125,16 @@ dd {
     margin-left: 0;
 }
 
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
 /**
- * マークアップ例
  * <blockquote cite="#">
  *     <p><small></small></p>
  *     <footer>
@@ -168,18 +158,55 @@ blockquote {
     }
 }
 
-blockquote {
-    cite:before {
-        /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
-        content: '\2014 \00A0';
-    }
+/* `<cite>`の先頭にemダッシュが付く */
+blockquote cite:before {
+    content: '\2014 \00A0';
 }
 
 fieldset {
     min-width: 0;
     margin: 0;
-    padding: 0;
-    border: 0;
+    padding: 1em;
+    background-color: colors(bg);
+}
+
+legend {
+    padding: 0 0.5em;
+    background-color: colors(bg);
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.25em;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+input[type="text"] {
+    padding-left: 0.25em;
+}
+
+textarea {
+    padding: 0.25em 0.5em;
+    resize: vertical;
+}
+
+/**
+ * プレイスホルダーのcolorを無効化してopacityでコントラストを抑える
+ * http://hail2u.net/blog/webdesign/placeholder-normalization.html
+ */
+:-ms-input-placeholder {
+    opacity: .54;
+    color: inherit;
+}
+
+::-webkit-input-placeholder {
+    opacity: .54;
+    color: inherit;
+}
+
+:placeholder-shown {
+  opacity: .54;
 }
 
 code,
@@ -219,8 +246,7 @@ p,
 ul, ol, dl,
 table,
 pre,
-address,
-fieldset {
+address {
     margin-top: 0;
     @include vertical-rhythm(margin-bottom, 1);
 }

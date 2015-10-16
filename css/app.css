@@ -42,9 +42,11 @@
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
+ * Form.................フォームのレイアウトオブジェクトです。
+ * Button..............ボタンコンポーネントのベーススタイルです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
- * Buttons..............ボタンコンポーネントのベーススタイルです。
+
  *
  * PROJECT
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
@@ -512,6 +514,7 @@ html {
     }
 }
 
+/* 画面いっぱいに背景画像を表示する際にルート要素に高さの指定が必要 */
 html,
 body {
     height: 100%;
@@ -530,40 +533,14 @@ body {
     background-color: #fff;
 }
 
-table {
-    width: 100%;
-}
-
-th {
-    text-align: left;
-}
-
+/* 日本語にitalicは使用されないためリセットする */
 i,
 cite,
 em,
 var,
 address,
 dfn {
-    /* デフォルトスタイルのitalicをリセットする */
     font-style: normal;
-}
-
-/**
- * プレイスホルダーのcolorを無効化してopacityでコントラストを抑える
- * http://hail2u.net/blog/webdesign/placeholder-normalization.html
- */
-:-ms-input-placeholder {
-    opacity: 0.54;
-    color: inherit;
-}
-
-::-webkit-input-placeholder {
-    opacity: 0.54;
-    color: inherit;
-}
-
-:placeholder-shown {
-    opacity: 0.54;
 }
 
 h1,
@@ -572,6 +549,7 @@ h3,
 h4,
 h5,
 h6 {
+    color: inherit;
     font-family: inherit;
     font-weight: 600;
 }
@@ -682,6 +660,7 @@ figure {
     margin: 0;
 }
 
+/* `padding-strat: 40px;`の相対値 */
 ul,
 ol {
     padding-left: 2.5em;
@@ -697,8 +676,15 @@ dd {
     margin-left: 0;
 }
 
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
 /**
- * マークアップ例
  * <blockquote cite="#">
  *     <p><small></small></p>
  *     <footer>
@@ -736,16 +722,55 @@ blockquote > :last-child {
     margin-bottom: 0;
 }
 
+/* `<cite>`の先頭にemダッシュが付く */
 blockquote cite:before {
-    /* `<blockquote>`内の`<cite>`の先頭にemダッシュが付く */
     content: "\2014 \00A0";
 }
 
 fieldset {
     min-width: 0;
     margin: 0;
-    padding: 0;
-    border: 0;
+    padding: 1em;
+    background-color: #fff;
+}
+
+legend {
+    padding: 0 0.5em;
+    background-color: #fff;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.25em;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    padding-left: 0.25em;
+}
+
+textarea {
+    padding: 0.25em 0.5em;
+    resize: vertical;
+}
+
+/**
+ * プレイスホルダーのcolorを無効化してopacityでコントラストを抑える
+ * http://hail2u.net/blog/webdesign/placeholder-normalization.html
+ */
+:-ms-input-placeholder {
+    opacity: 0.54;
+    color: inherit;
+}
+
+::-webkit-input-placeholder {
+    opacity: 0.54;
+    color: inherit;
+}
+
+:placeholder-shown {
+    opacity: 0.54;
 }
 
 code,
@@ -801,8 +826,7 @@ ol,
 dl,
 table,
 pre,
-address,
-fieldset {
+address {
     margin-top: 0;
     margin-bottom: 24px;
 }
@@ -820,8 +844,7 @@ fieldset {
     dl,
     table,
     pre,
-    address,
-    fieldset {
+    address {
         margin-bottom: 28px;
     }
 }
@@ -1022,6 +1045,11 @@ fieldset {
 
 .c-list-inline__link {
     display: inline-block;
+}
+
+.c-list-unstyle {
+    margin: 0;
+    list-style-type: none;
 }
 
 /**
@@ -1364,11 +1392,11 @@ fieldset {
 }
 
 .c-split--has-border {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #aaa;
 }
 
 .c-split--has-border > .c-split__value {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #aaa;
 }
 
 @media screen and (min-width: 768px) {
@@ -1468,6 +1496,140 @@ fieldset {
     -webkit-transform: translate(50%, 50%);
         -ms-transform: translate(50%, 50%);
             transform: translate(50%, 50%);
+}
+
+/**
+ * #Form
+ */
+/**
+ * フォーム要素をグルーピングするためのオブジェクトです。
+ *
+ * <fieldset class="c-form-inner">
+ *   <legend></legend>
+ *   <label></label>
+ *   <input />
+ *   <label></label>
+ *   <input />
+ * </fieldset>
+ */
+.c-form-inner {
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 1000px) {
+    .c-form-inner {
+        margin-bottom: 28px;
+    }
+}
+
+/**
+ * labelとテキストエリアを縦に配置するオブジェクトです。
+ *
+ * <ul class="c-form-stack">
+ *   <li class="c-form-stack__unit">
+ *     <label class="c-form-stack__name"></label>
+ *     <input class="c-form-stack__text" />
+ *   </li>
+ * </ul>
+ */
+.c-form-stack {
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    list-style-type: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .c-form-stack {
+        margin-bottom: 28px;
+    }
+}
+
+.c-form-stack__unit {
+    margin-bottom: 12px;
+}
+
+@media screen and (min-width: 1000px) {
+    .c-form-stack__unit {
+        margin-bottom: 14px;
+    }
+}
+
+.c-form-stack__name {
+    display: block;
+}
+
+/**
+ * #Button
+ */
+/**
+ * ベーシックなボタンオブジェクトです。
+ * `<a>`, `<button>`, `<input>`要素のスタイルをリセットしています。
+ * サイズやスタイルの変更はモディファイアクラスを指定します。
+ *
+ * <div class="l-page-content">
+ *   <a href="#" class="c-button [c-button--full]">First Button</a>
+ *   <button class="c-button [c-button--full]">Second Button</button>
+ *   <input type="button" value="Button" class="c-button [c-button--full]" />
+ * </div>
+ */
+.c-button {
+    display: inline-block;
+    margin: 0;
+    padding: 0.75em;
+    border: none;
+    border-radius: 3px;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.c-button:hover,
+.c-button:active,
+.c-button:focus {
+    text-decoration: none;
+}
+
+.c-button[disabled],
+.c-button.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.c-button--full {
+    width: 100%;
+}
+
+.c-button--circle {
+    border-radius: 50%;
+}
+
+/**
+ * カプセル状の錠剤のような形をしたボタンコンポーネントです。
+ */
+.c-button--pill {
+    border-radius: 3em;
+}
+
+.c-button--pill-right {
+    border-radius: 0 3em 3em 0;
+}
+
+.c-button--pill-center {
+    border-radius: 0;
+}
+
+.c-button--pill-left {
+    border-radius: 3em 0 0 3em;
 }
 
 /**
@@ -1607,79 +1769,6 @@ fieldset {
     background: linear-gradient(rgba(0, 128, 128, 0.9), rgba(0, 128, 128, 0.6));
 }
 
-/**
- * #Button
- */
-/**
- * ベーシックなボタンオブジェクトです。
- * `<a>`, `<button>`, `<input>`要素のスタイルをリセットしています。
- * サイズやスタイルの変更はモディファイアクラスを指定します。
- *
- * <div class="l-page-content">
- *   <a href="#" class="c-button [c-button--full]">First Button</a>
- *   <button class="c-button [c-button--full]">Second Button</button>
- *   <input type="button" value="Button" class="c-button [c-button--full]" />
- * </div>
- */
-.c-button {
-    display: inline-block;
-    margin: 0;
-    padding: 0.75em;
-    border: none;
-    border-radius: 3px;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
-    background: transparent;
-    cursor: pointer;
-
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-}
-
-.c-button:hover,
-.c-button:active,
-.c-button:focus {
-    text-decoration: none;
-}
-
-.c-button[disabled],
-.c-button.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.c-button--full {
-    width: 100%;
-}
-
-.c-button--circle {
-    border-radius: 50%;
-}
-
-/**
- * カプセル状の錠剤のような形をしたボタンコンポーネントです。
- */
-.c-button--pill {
-    border-radius: 3em;
-}
-
-.c-button--pill-right {
-    border-radius: 0 3em 3em 0;
-}
-
-.c-button--pill-center {
-    border-radius: 0;
-}
-
-.c-button--pill-left {
-    border-radius: 3em 0 0 3em;
-}
-
 /* Project
    ----------------------------------------------------------------- */
 /**
@@ -1796,7 +1885,7 @@ fieldset {
 
 .p-tag-cloud__link {
     padding: 0.5em 1em;
-    border: 1px solid #ddd;
+    border: 1px solid #aaa;
     border-radius: 3px;
     color: inherit;
     line-height: 1;
@@ -1839,7 +1928,7 @@ fieldset {
  * </div>
  */
 .p-card {
-    border: 1px solid #ddd;
+    border: 1px solid #aaa;
     border-radius: 3px;
     background-color: #fff;
 }
@@ -1863,7 +1952,7 @@ fieldset {
 }
 
 .p-card__body--has-divider {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #aaa;
 }
 
 .p-card__foot {
@@ -1877,7 +1966,7 @@ fieldset {
 }
 
 .p-card__foot--has-divider {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #aaa;
 }
 
 /**
