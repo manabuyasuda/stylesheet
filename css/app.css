@@ -33,6 +33,7 @@
  * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
  * Grid.................グリッドレイアウトのベーススタイルです。
  * List-inline..........横並びになるリストオブジェクトです。
+ * List-block...........縦並びになるリストオブジェクトです。
  * Rank.................横並びになるリストオブジェクトです。アンカータグのクリック範囲が大きく指定されています。
  * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
@@ -42,7 +43,6 @@
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
- * Form.................フォームのレイアウトオブジェクトです。
  * Button..............ボタンコンポーネントのベーススタイルです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
@@ -1065,6 +1065,33 @@ address {
 }
 
 /**
+ * #List-block
+ */
+/**
+ * 縦に配置するオブジェクトです。
+ *
+ * <ul class="c-list-block">
+ *   <li class="c-list-block__unit">
+ *     <label class="c-list-block__item"></label>
+ *     <input class="c-list-block__item" />
+ *   </li>
+ * </ul>
+ */
+.c-list-block {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-list-block__unit {
+    display: block;
+}
+
+.c-list-block__item {
+    display: block;
+}
+
+/**
  * #Rank
  */
 /**
@@ -1508,67 +1535,6 @@ address {
     -webkit-transform: translate(50%, 50%);
         -ms-transform: translate(50%, 50%);
             transform: translate(50%, 50%);
-}
-
-/**
- * #Form
- */
-/**
- * フォーム要素をグルーピングするためのオブジェクトです。
- *
- * <fieldset class="c-form-inner">
- *   <legend></legend>
- *   <label></label>
- *   <input />
- *   <label></label>
- *   <input />
- * </fieldset>
- */
-.c-form-inner {
-    margin-bottom: 24px;
-}
-
-@media screen and (min-width: 1000px) {
-    .c-form-inner {
-        margin-bottom: 28px;
-    }
-}
-
-/**
- * labelとテキストエリアを縦に配置するオブジェクトです。
- *
- * <ul class="c-form-stack">
- *   <li class="c-form-stack__unit">
- *     <label class="c-form-stack__name"></label>
- *     <input class="c-form-stack__text" />
- *   </li>
- * </ul>
- */
-.c-form-stack {
-    margin: 0;
-    margin-bottom: 24px;
-    padding: 0;
-    list-style-type: none;
-}
-
-@media screen and (min-width: 1000px) {
-    .c-form-stack {
-        margin-bottom: 28px;
-    }
-}
-
-.c-form-stack__unit {
-    margin-bottom: 12px;
-}
-
-@media screen and (min-width: 1000px) {
-    .c-form-stack__unit {
-        margin-bottom: 14px;
-    }
-}
-
-.c-form-stack__name {
-    display: block;
 }
 
 /**

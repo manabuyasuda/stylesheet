@@ -32,6 +32,7 @@
  * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
  * Grid.................グリッドレイアウトのベーススタイルです。
  * List-inline..........横並びになるリストオブジェクトです。
+ * List-block...........縦並びになるリストオブジェクトです。
  * Rank.................横並びになるリストオブジェクトです。アンカータグのクリック範囲が大きく指定されています。
  * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
@@ -41,7 +42,6 @@
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
- * Form.................フォームのレイアウトオブジェクトです。
  * Button..............ボタンコンポーネントのベーススタイルです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
@@ -130,6 +130,7 @@
 @import "object/component/_wrapper";
 @import "object/component/_grid";
 @import "object/component/_list-inline";
+@import "object/component/_list-block";
 @import "object/component/_rank";
 @import "object/component/_pack";
 @import "object/component/_stack";
@@ -139,7 +140,6 @@
 @import "object/component/_justify";
 @import "object/component/_scroll-table";
 @import "object/component/_central";
-@import "object/component/_form";
 @import "object/component/_button";
 @import "object/component/_embed";
 @import "object/component/_image";

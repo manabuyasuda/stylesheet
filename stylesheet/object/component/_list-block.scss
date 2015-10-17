@@ -1,0 +1,27 @@
+/**
+ * #List-block
+ */
+
+/**
+ * 縦に配置するオブジェクトです。
+ *
+ * <ul class="c-list-block">
+ *   <li class="c-list-block__unit">
+ *     <label class="c-list-block__item"></label>
+ *     <input class="c-list-block__item" />
+ *   </li>
+ * </ul>
+ */
+.c-list-block {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-list-block__unit {
+    display: block;
+}
+
+.c-list-block__item {
+    display: block;
+}
