@@ -537,7 +537,6 @@ body {
 i,
 cite,
 em,
-var,
 address,
 dfn {
     font-style: normal;
@@ -746,13 +745,26 @@ label {
     cursor: pointer;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
     padding-left: 0.25em;
 }
 
 textarea {
+    width: 100%;
+    min-height: 8rem;
     padding: 0.25em 0.5em;
+    vertical-align: top;
     resize: vertical;
+}
+
+optgroup {
+    font-weight: normal;
+    font-style: normal;
 }
 
 /**
