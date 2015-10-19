@@ -1,7 +1,8 @@
 /**
  * #Card
  */
-$cord-padding: 1em !default;
+$cord-padding-y: 2em !default;
+$cord-padding-x: 1em !default;
 $cord-border: 1px solid colors(ui) !default;
 $cord-round: $base-round !default;
 $cord-round-head: $cord-round $cord-round 0 0 !default;
@@ -11,52 +12,76 @@ $cord-round-foot: 0 0 $cord-round $cord-round !default;
  * カード型のオブジェクトです。
  *
  * <div class="p-card">
- *   <div class="p-card__head">
- *     <img>
- *   </div>
- *   <div class="p-card__body [p-card__body--has-divider]">
+ *   <img class="p-card__image-top">
+ *   <div class="p-card__body">
  *     <h2 class="p-card__title"></h2>
+ *     <p class="p-card__text"></p>
  *   </div>
- *   <div class="p-card__foot [p-card__foot--has-divider]">
+ *   <ul class="p-card__list">
+ *     <li class="p-card__item"></li>
+ *     <li class="p-card__item"></li>
+ *   </ul>
+ *   <div class="p-card__foot">
+ *     <p class="p-card__text"></p>
  *   </div>
  * </div>
  */
 .p-card {
     border: $cord-border;
     border-radius: $cord-round;
-    background-color: #fff;
-}
-
-.p-card__head {
-    overflow: hidden;
-    border-radius: $cord-round-head;
-}
-
-.p-card__title {
-    margin: 0;
-    font-size: 1.25em;
 }
 
 .p-card__body {
-    padding: ($cord-padding * 2) $cord-padding;
+    padding: $cord-padding-y $cord-padding-x;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
-.p-card__body--has-divider {
-    border-top: $cord-border;
+.p-card__head {
+    padding: $cord-padding-x;
+    border-bottom: $cord-border;
+    border-radius: $cord-round-head;
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .p-card__foot {
-    overflow: hidden;
-    padding: $cord-padding;
+    padding: $cord-padding-x;
+    border-top: $cord-border;
     border-radius: $cord-round-foot;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
-.p-card__foot--has-divider {
+.p-card__image-top {
+    border-radius: $cord-round-head;
+}
+
+.p-card__image-bottom {
+    border-radius: $cord-round-foot;
+}
+
+.p-card__title,
+.p-card__text {
+    margin-top: 0;
+}
+
+.p-card__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.p-card__item {
+    padding: $cord-padding-x;
     border-top: $cord-border;
+}
+
+.p-card__link {
+    display: block;
+    margin: -$cord-padding-x;
+    padding: $cord-padding-x;
 }

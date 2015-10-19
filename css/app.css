@@ -1895,30 +1895,23 @@ address {
  * カード型のオブジェクトです。
  *
  * <div class="p-card">
- *   <div class="p-card__head">
- *     <img>
- *   </div>
- *   <div class="p-card__body [p-card__body--has-divider]">
+ *   <img class="p-card__image-top">
+ *   <div class="p-card__body">
  *     <h2 class="p-card__title"></h2>
+ *     <p class="p-card__text"></p>
  *   </div>
- *   <div class="p-card__foot [p-card__foot--has-divider]">
+ *   <ul class="p-card__list">
+ *     <li class="p-card__item"></li>
+ *     <li class="p-card__item"></li>
+ *   </ul>
+ *   <div class="p-card__foot">
+ *     <p class="p-card__text"></p>
  *   </div>
  * </div>
  */
 .p-card {
     border: 1px solid #aaa;
     border-radius: 3px;
-    background-color: #fff;
-}
-
-.p-card__head {
-    overflow: hidden;
-    border-radius: 3px 3px 0 0;
-}
-
-.p-card__title {
-    margin: 0;
-    font-size: 1.25em;
 }
 
 .p-card__body {
@@ -1929,13 +1922,19 @@ address {
     margin-bottom: 0;
 }
 
-.p-card__body--has-divider {
-    border-top: 1px solid #aaa;
+.p-card__head {
+    padding: 1em;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px 3px 0 0;
+}
+
+.p-card__head > :last-child {
+    margin-bottom: 0;
 }
 
 .p-card__foot {
-    overflow: hidden;
     padding: 1em;
+    border-top: 1px solid #aaa;
     border-radius: 0 0 3px 3px;
 }
 
@@ -1943,8 +1942,34 @@ address {
     margin-bottom: 0;
 }
 
-.p-card__foot--has-divider {
+.p-card__image-top {
+    border-radius: 3px 3px 0 0;
+}
+
+.p-card__image-bottom {
+    border-radius: 0 0 3px 3px;
+}
+
+.p-card__title,
+.p-card__text {
+    margin-top: 0;
+}
+
+.p-card__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.p-card__item {
+    padding: 1em;
     border-top: 1px solid #aaa;
+}
+
+.p-card__link {
+    display: block;
+    margin: -1em;
+    padding: 1em;
 }
 
 /**
