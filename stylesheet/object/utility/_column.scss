@@ -1,0 +1,48 @@
+/**
+ * #Column
+ */
+
+/**
+ * Masonryのようなタイル状のレイアウトができるラッパーオブジェクトです。
+ * IE10以上限定で使用可能です。
+ *
+ * <div class="u-column2@md u-column3@lg">
+ *   <div class="u-column__item"></div>
+ *   <div class="u-column__item"></div>
+ *   <div class="u-column__item"></div>
+ * </div>
+ */
+[class^="u-column"] {
+    column-count: 1;
+    column-gap: $card-gap;
+    > .u-column__item {
+        display: inline-block !important;
+        width: 100% !important;
+    }
+}
+
+// 取得したいカラム数をリスト形式で指定します。
+// 例えば`1 2 3`を指定すると1~3のcolumn-count`を取得できます。
+$column-cols: 1 2 3 !default;
+
+// @param {Number} $cols - 取得したいカラム数を指定します。
+// @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
+// @requires {List} $column-cols - 取得するカラム数を定義しています。
+@mixin column($cols, $breakpoint: null) {
+    @each $col in $cols {
+        .u-column#{$col}#{$breakpoint} {
+            column-count: #{$col};
+        }
+    }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include column($column-cols);
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $breakpoints {
+    @media #{$breakpoint} {
+        @include column($column-cols, \@#{$name})
+    }
+}
