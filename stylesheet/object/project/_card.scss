@@ -1,12 +1,13 @@
 /**
  * #Card
  */
-$cord-padding-y: 2em !default;
-$cord-padding-x: 1em !default;
-$cord-border: 1px solid colors(ui) !default;
-$cord-round: $base-round !default;
-$cord-round-head: $cord-round $cord-round 0 0 !default;
-$cord-round-foot: 0 0 $cord-round $cord-round !default;
+$card-gap: 1rem !default;
+$card-padding-y: 2em !default;
+$card-padding-x: 1em !default;
+$card-border: 1px solid colors(ui, light) !default;
+$card-round: $base-round !default;
+$card-round-head: $card-round $card-round 0 0 !default;
+$card-round-foot: 0 0 $card-round $card-round !default;
 
 /**
  * カード型のオブジェクトです。
@@ -27,46 +28,49 @@ $cord-round-foot: 0 0 $cord-round $cord-round !default;
  * </div>
  */
 .p-card {
-    border: $cord-border;
-    border-radius: $cord-round;
+    margin-bottom: $card-gap;
+    border: $card-border;
+    border-radius: $card-round;
 }
 
 .p-card__body {
-    padding: $cord-padding-y $cord-padding-x;
+    padding: $card-padding-y $card-padding-x;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
 .p-card__head {
-    padding: $cord-padding-x;
-    border-bottom: $cord-border;
-    border-radius: $cord-round-head;
+    padding: $card-padding-x;
+    border-radius: $card-round-head;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
 .p-card__foot {
-    padding: $cord-padding-x;
-    border-top: $cord-border;
-    border-radius: $cord-round-foot;
+    padding: $card-padding-x;
+    border-top: $card-border;
+    border-radius: $card-round-foot;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
 .p-card__image-top {
-    border-radius: $cord-round-head;
+    border-radius: $card-round-head;
 }
 
 .p-card__image-bottom {
-    border-radius: $cord-round-foot;
+    border-radius: $card-round-foot;
 }
 
-.p-card__title,
-.p-card__text {
+.p-card__title {
     margin-top: 0;
+}
+
+.p-card__text:last-child {
+    margin-bottom: 0;
 }
 
 .p-card__list {
@@ -76,12 +80,60 @@ $cord-round-foot: 0 0 $cord-round $cord-round !default;
 }
 
 .p-card__item {
-    padding: $cord-padding-x;
-    border-top: $cord-border;
+    padding: $card-padding-x;
+    border-top: $card-border;
 }
 
 .p-card__link {
     display: block;
-    margin: -$cord-padding-x;
-    padding: $cord-padding-x;
+    margin: -$card-padding-x;
+    padding: $card-padding-x;
+}
+
+
+/**
+ * Masonryのようなタイル状のレイアウトができるラッパーオブジェクトです。
+ * IE10以上限定で使用可能です。
+ *
+ * <div class="p-card-column1/2@md p-card-column1/3@lg">
+ *   <div class="p-card"></div>
+ *   <div class="p-card"></div>
+ *   <div class="p-card"></div>
+ * </div>
+ */
+[class^="p-card-column"] {
+    column-count: 1;
+    column-gap: $card-gap;
+    > .p-card {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+// 取得したいカラム数をリスト形式で指定します。
+// 例えば`1 2`を指定すると1/1, 1/2, 2/2の`width`を取得できます。
+$card-cols: 1 2 3 !default;
+
+// @param {Number} $cols - 取得したいカラム数を指定します。
+// @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
+// @requires {List} $card-cols - 取得するカラム数を定義しています。
+@mixin card($cols, $breakpoint: null) {
+    @each $col in $cols {
+        @for $i from 1 through $col {
+            .p-card-column#{$i}\/#{$col}#{$breakpoint} {
+                column-count: #{$col};
+            }
+        }
+    }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include card($card-cols);
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $breakpoints {
+    @media #{$breakpoint} {
+        @include card($card-cols, \@#{$name})
+    }
 }
