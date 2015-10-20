@@ -6,8 +6,6 @@ $card-padding-y: 2em !default;
 $card-padding-x: 1em !default;
 $card-border: 1px solid colors(ui, light) !default;
 $card-round: $base-round !default;
-$card-round-head: $card-round $card-round 0 0 !default;
-$card-round-foot: 0 0 $card-round $card-round !default;
 
 /**
  * カード型のオブジェクトです。
@@ -42,7 +40,6 @@ $card-round-foot: 0 0 $card-round $card-round !default;
 
 .p-card__head {
     padding: $card-padding-x;
-    border-radius: $card-round-head;
     > :last-child {
         margin-bottom: 0;
     }
@@ -51,18 +48,27 @@ $card-round-foot: 0 0 $card-round $card-round !default;
 .p-card__foot {
     padding: $card-padding-x;
     border-top: $card-border;
-    border-radius: $card-round-foot;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
-.p-card__image-top {
-    border-radius: $card-round-head;
+.p-card__head,
+.p-card__image-top,
+.p-card__item--top,
+.p-card__link--top {
+    @if $card-round != null {
+        border-radius: $card-round $card-round 0 0;
+    }
 }
 
-.p-card__image-bottom {
-    border-radius: $card-round-foot;
+.p-card__foot,
+.p-card__image-bottom,
+.p-card__item--bottom,
+.p-card__link--bottom {
+    @if $card-round != null {
+        border-radius: 0 0 $card-round $card-round;
+    }
 }
 
 .p-card__title {

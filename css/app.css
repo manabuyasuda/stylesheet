@@ -1926,7 +1926,6 @@ address {
 
 .p-card__head {
     padding: 1em;
-    border-radius: 3px 3px 0 0;
 }
 
 .p-card__head > :last-child {
@@ -1936,18 +1935,23 @@ address {
 .p-card__foot {
     padding: 1em;
     border-top: 1px solid #d0d0d0;
-    border-radius: 0 0 3px 3px;
 }
 
 .p-card__foot > :last-child {
     margin-bottom: 0;
 }
 
-.p-card__image-top {
+.p-card__head,
+.p-card__image-top,
+.p-card__item--top,
+.p-card__link--top {
     border-radius: 3px 3px 0 0;
 }
 
-.p-card__image-bottom {
+.p-card__foot,
+.p-card__image-bottom,
+.p-card__item--bottom,
+.p-card__link--bottom {
     border-radius: 0 0 3px 3px;
 }
 
