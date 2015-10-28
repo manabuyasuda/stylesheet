@@ -1,7 +1,7 @@
 /**
  * #Image
  */
-$image-margin: 1rem !default;
+$image-margin: 1em !default;
 
 .c-image-round {
     border-radius: $base-round;
@@ -56,6 +56,26 @@ $image-margin: 1rem !default;
     @include media-query(lg) {
         background-attachment: fixed;
     }
+}
+
+/**
+ * 背景画像をフルードイメージのように可変させます。
+ * 画像のURLとアスペクト比を指定するクラスを追加します。
+ *
+ * <div class="c-image-contain p-image-example"></div>
+ *
+ * .p-image-example {
+ *     // 表示画像の高さ ÷ 表示画像の幅 × 100%
+ *     padding-top: (1000 / 400) * 100%;
+ *     background-image: url("http://lorempixel.com/1000/400/");
+ * }
+ */
+.c-image-contain {
+    height: 0;
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
 }
 
 /**
