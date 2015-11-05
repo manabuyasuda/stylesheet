@@ -1,8 +1,8 @@
 /**
  * #Button
  */
-$button-pill-base: 0 !default;
-$button-pill-round: 3em !default;
+$my-button-pill-base: 0 !default;
+$my-button-pill-round: 3em !default;
 
 /**
  * ベーシックなボタンオブジェクトです。
@@ -55,17 +55,17 @@ $button-pill-round: 3em !default;
  * カプセル状の錠剤のような形をしたボタンコンポーネントです。
  */
 .c-button--pill {
-    border-radius: $button-pill-round;
+    border-radius: $my-button-pill-round;
 }
 
 .c-button--pill-right {
-    border-radius: $button-pill-base $button-pill-round $button-pill-round $button-pill-base;
+    border-radius: $my-button-pill-base $my-button-pill-round $my-button-pill-round $my-button-pill-base;
 }
 
 .c-button--pill-center {
-    border-radius: $button-pill-base;
+    border-radius: $my-button-pill-base;
 }
 
 .c-button--pill-left {
-    border-radius: $button-pill-round $button-pill-base $button-pill-base $button-pill-round;
+    border-radius: $my-button-pill-round $my-button-pill-base $my-button-pill-base $my-button-pill-round;
 }

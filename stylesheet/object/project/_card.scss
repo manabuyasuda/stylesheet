@@ -1,11 +1,11 @@
 /**
  * #Card
  */
-$card-gap: 1em !default;
-$card-padding-y: 2em !default;
-$card-padding-x: 1em !default;
-$card-border: 1px solid my-colors(ui, light) !default;
-$card-round: $my-base-round !default;
+$my-card-gap: 1em !default;
+$my-card-padding-y: 2em !default;
+$my-card-padding-x: 1em !default;
+$my-card-border: 1px solid my-colors(ui, light) !default;
+$my-card-round: $my-base-round !default;
 
 /**
  * カード型のオブジェクトです。
@@ -26,28 +26,28 @@ $card-round: $my-base-round !default;
  * </div>
  */
 .p-card {
-    margin-bottom: $card-gap;
-    border: $card-border;
-    border-radius: $card-round;
+    margin-bottom: $my-card-gap;
+    border: $my-card-border;
+    border-radius: $my-card-round;
 }
 
 .p-card__body {
-    padding: $card-padding-y $card-padding-x;
+    padding: $my-card-padding-y $my-card-padding-x;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
 .p-card__head {
-    padding: $card-padding-x;
+    padding: $my-card-padding-x;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
 .p-card__foot {
-    padding: $card-padding-x;
-    border-top: $card-border;
+    padding: $my-card-padding-x;
+    border-top: $my-card-border;
     > :last-child {
         margin-bottom: 0;
     }
@@ -57,8 +57,8 @@ $card-round: $my-base-round !default;
 .p-card__image-top,
 .p-card__item--top,
 .p-card__link--top {
-    @if $card-round != null {
-        border-radius: $card-round $card-round 0 0;
+    @if $my-card-round != null {
+        border-radius: $my-card-round $my-card-round 0 0;
     }
 }
 
@@ -66,8 +66,8 @@ $card-round: $my-base-round !default;
 .p-card__image-bottom,
 .p-card__item--bottom,
 .p-card__link--bottom {
-    @if $card-round != null {
-        border-radius: 0 0 $card-round $card-round;
+    @if $my-card-round != null {
+        border-radius: 0 0 $my-card-round $my-card-round;
     }
 }
 
@@ -86,12 +86,12 @@ $card-round: $my-base-round !default;
 }
 
 .p-card__item {
-    padding: $card-padding-x;
-    border-top: $card-border;
+    padding: $my-card-padding-x;
+    border-top: $my-card-border;
 }
 
 .p-card__link {
     display: block;
-    margin: -$card-padding-x;
-    padding: $card-padding-x;
+    margin: -$my-card-padding-x;
+    padding: $my-card-padding-x;
 }

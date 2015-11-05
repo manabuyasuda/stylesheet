@@ -1,8 +1,8 @@
 /**
  * #Stack
  */
-$stack-space-y: 1em !default;
-$stack-space-x: 0 !default;
+$my-stack-space-y: 1em !default;
+$my-stack-space-x: 0 !default;
 
 /**
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
@@ -27,13 +27,13 @@ $stack-space-x: 0 !default;
 }
 
 .c-stack__item {
-    padding: $stack-space-y $stack-space-x;
+    padding: $my-stack-space-y $my-stack-space-x;
 }
 
 .c-stack__link {
     display: block;
-    margin: (-$stack-space-y)  (-$stack-space-x);
-    padding: $stack-space-y $stack-space-x;
+    margin: (-$my-stack-space-y)  (-$my-stack-space-x);
+    padding: $my-stack-space-y $my-stack-space-x;
 }
 
 .c-stack--center {
@@ -46,20 +46,20 @@ $stack-space-x: 0 !default;
 
 .c-stack--size-small {
     > .c-stack__item {
-        padding: ($stack-space-y / 2) ($stack-space-x / 1);
+        padding: ($my-stack-space-y / 2) ($my-stack-space-x / 1);
     }
     .c-stack__link {
-        margin: (-$stack-space-y / 2)  (-$stack-space-x / 1);
-        padding: ($stack-space-y / 2) ($stack-space-x / 1);
+        margin: (-$my-stack-space-y / 2)  (-$my-stack-space-x / 1);
+        padding: ($my-stack-space-y / 2) ($my-stack-space-x / 1);
     }
 }
 
 .c-stack--size-large {
     > .c-stack__item {
-        padding: ($stack-space-y * 2) ($stack-space-x * 1);
+        padding: ($my-stack-space-y * 2) ($my-stack-space-x * 1);
     }
     .c-stack__link {
-        margin: (-$stack-space-y * 2)  (-$stack-space-x * 1);
-        padding: ($stack-space-y * 2) ($stack-space-x * 1);
+        margin: (-$my-stack-space-y * 2)  (-$my-stack-space-x * 1);
+        padding: ($my-stack-space-y * 2) ($my-stack-space-x * 1);
     }
 }

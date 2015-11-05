@@ -1,7 +1,7 @@
 /**
  * #Wrapper
  */
-$wrapper-padding: 1em !default;
+$my-wrapper-padding: 1em !default;
 
 /**
  * 横幅を制限するラッパーオブジェクトです。
@@ -19,6 +19,6 @@ $wrapper-padding: 1em !default;
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
-    padding-right: $wrapper-padding;
-    padding-left: $wrapper-padding;
+    padding-right: $my-wrapper-padding;
+    padding-left: $my-wrapper-padding;
 }

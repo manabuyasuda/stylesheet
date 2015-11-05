@@ -1,8 +1,8 @@
 /**
  * #Split
  */
-$split-padding: 0.5em !default;
-$split-border: 1px solid my-colors(ui) !default;
+$my-split-padding: 0.5em !default;
+$my-split-border: 1px solid my-colors(ui) !default;
 
 /**
  * 2つの要素をブロックから横並びにするオブジェクトです。
@@ -21,18 +21,18 @@ $split-border: 1px solid my-colors(ui) !default;
 }
 
 .c-split__name {
-    padding-top: $split-padding;
+    padding-top: $my-split-padding;
 }
 
 .c-split__value {
     margin-left: 0;
-    padding-bottom: $split-padding;
+    padding-bottom: $my-split-padding;
 }
 
 .c-split--has-border {
-    border-top: $split-border;
+    border-top: $my-split-border;
     > .c-split__value {
-        border-bottom: $split-border;
+        border-bottom: $my-split-border;
     }
 }
 
@@ -42,6 +42,6 @@ $split-border: 1px solid my-colors(ui) !default;
         clear: left;
     }
     .c-split__value {
-        padding: $split-padding 0 $split-padding 10em;
+        padding: $my-split-padding 0 $my-split-padding 10em;
     }
 }

@@ -1,7 +1,7 @@
 /**
  * #Media
  */
-$media-gutter: 1em !default;
+$my-media-gutter: 1em !default;
 
 /**
  * 画像とテキストを横並びにするオブジェクトです。
@@ -26,7 +26,7 @@ $media-gutter: 1em !default;
 
 .c-media__image {
     float: left;
-    margin-right: $media-gutter;
+    margin-right: $my-media-gutter;
     > img {
         display: block;
         max-width: none;
@@ -40,7 +40,7 @@ $media-gutter: 1em !default;
 .c-media__image--rev {
     float: right;
     margin-right: 0;
-    margin-left: $media-gutter;
+    margin-left: $my-media-gutter;
 }
 
 .c-media--no-gap {

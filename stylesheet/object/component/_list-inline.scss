@@ -1,7 +1,7 @@
 /**
  * #List-inline
  */
-$list-inline-space: 0.5em !default;
+$my-list-inline-space: 0.5em !default;
 
 /**
  * 横並びになるリストオブジェクトです。
@@ -17,7 +17,7 @@ $list-inline-space: 0.5em !default;
  */
 .c-list-inline {
     @include my-clearfix;
-    margin: 0 0 0 (-$list-inline-space);
+    margin: 0 0 0 (-$my-list-inline-space);
     padding: 0;
     list-style-type: none;
 }
@@ -25,7 +25,7 @@ $list-inline-space: 0.5em !default;
 .c-list-inline__item {
     display: inline-block;
     float: left;
-    padding-left: $list-inline-space;
+    padding-left: $my-list-inline-space;
 }
 
 .c-list-inline__link {

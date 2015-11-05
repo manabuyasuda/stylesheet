@@ -14,7 +14,7 @@
  */
 [class^="u-column"] {
     column-count: 1;
-    column-gap: $card-gap;
+    column-gap: $my-card-gap;
     > .u-column__item {
         display: inline-block !important;
         width: 100% !important;

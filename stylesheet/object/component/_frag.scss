@@ -1,7 +1,7 @@
 /**
  * #Frag
  */
-$frag-gutter: 1em !default;
+$my-frag-gutter: 1em !default;
 
 /**
  * 垂直方向の変更ができるmediaオブジェクトです。デフォルトは`vertical-align:middle`が指定されています。
@@ -29,7 +29,7 @@ $frag-gutter: 1em !default;
 
 .c-frag__image {
     display: table-cell;
-    padding-right: $frag-gutter;
+    padding-right: $my-frag-gutter;
     vertical-align: middle;
     > img {
         display: block;
@@ -62,7 +62,7 @@ $frag-gutter: 1em !default;
     }
     > .c-frag__image {
         padding-right: 0;
-        padding-left: $frag-gutter;
+        padding-left: $my-frag-gutter;
     }
 }
 
