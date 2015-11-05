@@ -1,15 +1,14 @@
-// pxの引数を渡して単位なしとremの相対値を返す関数です。
-// ----------------------------------------------
+// @desc - pxの引数を渡して単位なしとremの相対値を返す関数です。
 // @type Funciton
 // @prop {Number} $fs - `font-size`に指定する値をpxで指定します。
 // @prop {Number} $lh - `line-height`に指定する値をpxで指定します。
 // @return {List} - 第一引数, 第二引数, 第二引数と第一引数の除算の単位なしの相対値, 第二引数と第一引数の除算のremの相対値
-// @require {Map} $font-sizes - フォントサイズと行の高さを定義しているマップです。
+// @require {Map} $my-font-sizes - フォントサイズと行の高さを定義しているマップです。
 //
 // @example scss - Usage
-// vr(14px, 24px) => 14px, 24px, 1.715, 1.715rem
+// my-vr(14px, 24px) => 14px, 24px, 1.715, 1.715rem
 //
-@function vr($fs, $lh) {
+@function my-vr($fs, $lh) {
     // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
     $n: 1000;
     $vr: ceil(($lh / $fs) * $n) / $n;
@@ -18,32 +17,30 @@
 }
 
 
-// マップに定義したvalueを返す関数です。
-// --------------------------------
+// @desc - マップに定義したvalueを返す関数です。
 // @type Funciton
 // @prop {String} $key - カラーのキーワード
 // @prop {String} $tone(base) - カラーのサブキーワード
 // @return {String} - マップで定義しているhex値などを返します。
-// @require {Map} $colors - プロジェクトを通して使用される色を管理するためのマップです。
+// @require {Map} $my-colors - プロジェクトを通して使用される色を管理するためのマップです。
 //
 // @example scss - Usage
-// colors(black, light) => #888
+// my-colors(black, light) => #888
 //
-@function colors($key, $tone: base) {
-    @return map-get( map-get($colors, $key), $tone);
+@function my-colors($key, $tone: base) {
+    @return map-get( map-get($my-colors, $key), $tone);
 }
 
 
-// キーワードからz-indexの数値を取得します。
-// ------------------------------------
+// @desc - キーワードからz-indexの数値を取得します。
 // @type Funciton
 // @param {String} $layer - z-indexのキーワード
-// @return {Number} -
-// @require {Map} $z-indexes - z-indexを管理するためのmapです。
+// @return {Number}
+// @require {Map} $my-z-indexes - z-indexを管理するためのmapです。
 //
 // @example scss - Usage
 // .modal {
-//     z-index: z(modal);
+//     z-index: my-z(modal);
 // }
 //
 // @example css - CSS output
@@ -51,6 +48,6 @@
 //     z-index: 3;
 // }
 //
-@function z($layer) {
-  @return map-get($z-indexes, $layer);
+@function my-z($layer) {
+  @return map-get($my-z-indexes, $layer);
 }

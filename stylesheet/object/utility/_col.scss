@@ -19,12 +19,12 @@
 
 // 取得したいカラム数をリスト形式で指定します。
 // 例えば`1 2`を指定すると1/1, 1/2, 2/2の`width`を取得できます。
-$width-cols: 12 !default;
+$my-col-cols: 12 !default;
 
 // @param {Number} $cols - 取得したいカラム数を指定します。
 // @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
-// @requires {List} $width-cols - 取得するカラム数を定義しています。
-@mixin width($cols, $breakpoint: null) {
+// @requires {List} $my-col-cols - 取得するカラム数を定義しています。
+@mixin my-col($cols, $breakpoint: null) {
     @each $col in $cols {
         @for $i from 1 through $col {
             .u-col#{$i}\/#{$col}#{$breakpoint} {
@@ -35,12 +35,12 @@ $width-cols: 12 !default;
 }
 
 // ブレイクポイントのないclassを生成します。
-@include width($width-cols);
+@include my-col($my-col-cols);
 
 // ブレイクポイント付きのclassを生成します。
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
-@each $name, $breakpoint in $breakpoints {
+@each $name, $breakpoint in $my-breakpoints {
     @media #{$breakpoint} {
-        @include width($width-cols, \@#{$name})
+        @include my-col($my-col-cols, \@#{$name})
     }
 }

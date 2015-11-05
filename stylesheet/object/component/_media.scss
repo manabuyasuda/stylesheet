@@ -19,7 +19,7 @@ $media-gutter: 1em !default;
  * </div>
  */
 .c-media {
-    @include clearfix;
+    @include my-clearfix;
     margin: 0;
     padding: 0;
 }

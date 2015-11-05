@@ -17,7 +17,7 @@ $tag-cloud-space: 0.5em !default;
  * </ul>
  */
 .p-tag-cloud {
-    @include font-size($small-font-sizes);
+    @include my-font-size($my-small-font-sizes);
 }
 
 .p-tag-cloud__item {
@@ -26,15 +26,15 @@ $tag-cloud-space: 0.5em !default;
 
 .p-tag-cloud__link {
     padding: $tag-cloud-space ($tag-cloud-space * 2);
-    border: 1px solid colors(ui);
-    border-radius: $base-round;
+    border: 1px solid my-colors(ui);
+    border-radius: $my-base-round;
     color: inherit;
     line-height: 1;
     text-decoration: none;
-    transition-duration: $base-transition-duration;
+    transition-duration: $my-base-transition-duration;
     &:hover {
         color: #fff;
-        background-color: colors(link);
+        background-color: my-colors(link);
     }
 }
 

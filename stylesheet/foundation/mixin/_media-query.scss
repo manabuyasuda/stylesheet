@@ -6,12 +6,12 @@
 // ---------------------------------
 // @type Mixin
 // @param {String} $breakpoint - `$breakpoints`のkeyを渡します。
-// @requires {Map} $breakpoints - ブレイクポイントを管理するためのmapです。
+// @requires {Map} $my-breakpoints - ブレイクポイントを管理するためのmapです。
 //
 // @example scss - Usage
 // .foo {
 //     color: red;
-//     @include media-query(sm) {
+//     @include my-media-query(sm) {
 //         color: blue;
 //     }
 // }
@@ -26,8 +26,8 @@
 //   }
 // }
 //
-@mixin media-query($breakpoint) {
-    @media #{map-get($breakpoints, $breakpoint)} {
+@mixin my-media-query($breakpoint) {
+    @media #{map-get($my-breakpoints, $breakpoint)} {
         @content;
     }
 }

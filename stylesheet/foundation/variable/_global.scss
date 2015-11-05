@@ -2,12 +2,11 @@
 // #Global
 //
 
-// ブレイクポイントを管理するためのmapです。
-// ------------------------------------
+// @desc - ブレイクポイントを管理するためのmapです。
 // @type Map
 // @prop {String} keys - ブレイクポイントのキーワードです。
 // @prop {String} values - メディアクエリの条件です。
-$breakpoints: (
+$my-breakpoints: (
     'sm': 'screen and (min-width: 400px)',
     'md': 'screen and (min-width: 768px)',
     'lg': 'screen and (min-width: 1000px)',
@@ -15,12 +14,11 @@ $breakpoints: (
 ) !default;
 
 
-// z-indexを管理するためのmapです。
-// -----------------------------
+// @desc - z-indexを管理するためのmapです。
 // @type Map
 // @prop {String} key - z-indexの数値を呼び出す時のキーワードです。
 // @prop {Number} value - 数値を返します。
-$z-indexes: (
+$my-z-indexes: (
   'modal': 3,
   'dropdown': 2,
   'default': 1,
@@ -28,7 +26,7 @@ $z-indexes: (
 );
 
 // ボタンコンポーネントなどの角丸に使用します。
-$base-round: 3px;
+$my-base-round: 3px;
 
 // アニメーションのベースになる速度です。
-$base-transition-duration: 0.3s;
+$my-base-transition-duration: 0.3s;

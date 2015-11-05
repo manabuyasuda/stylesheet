@@ -2,7 +2,7 @@
  * #Split
  */
 $split-padding: 0.5em !default;
-$split-border: 1px solid colors(ui) !default;
+$split-border: 1px solid my-colors(ui) !default;
 
 /**
  * 2つの要素をブロックから横並びにするオブジェクトです。
@@ -36,7 +36,7 @@ $split-border: 1px solid colors(ui) !default;
     }
 }
 
-@include media-query(md) {
+@include my-media-query(md) {
     .c-split__name {
         float: left;
         clear: left;

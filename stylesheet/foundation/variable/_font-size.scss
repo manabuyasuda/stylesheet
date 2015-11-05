@@ -2,51 +2,47 @@
 // #Font-size
 //
 
-// フォントサイズと行の高さを定義しているマップです。
-// keyには"base"と$breakpointsで定義したkeyを定義します。
-// valueにはフォントサイズと行の高さをpxで定義します。
-// ---------------------------------------------
-// $base-font-sizesの第二引数の値の倍数を各mapに定義します。
+// @desc - フォントサイズと行の高さを定義しているマップです。
 // @prop {String} keys - keyは呼び出す時のキーワードになります。
 // @prop {String} values - 呼び出される`font-size`と`line-height`になります。
-// @requires {Function} vr - pxの引数を渡して単位なしとremの相対値を返す関数です。
-// @see {Map} $breakpoints - ブレイクポイントを管理するmapです。同じkeyを指定してくだい。
-$base-font-sizes: (
-    'base': vr(14px, 24px),
-    "lg": vr(16px, 28px),
+// @requires {Function} my-vr - pxの引数を渡して単位なしとremの相対値を返す関数です。
+// @see {Map} $my-breakpoints - ブレイクポイントを管理するmapです。同じkeyを指定してくだい。
+$my-base-font-sizes: (
+    'base': my-vr(14px, 24px),
+    "lg": my-vr(16px, 28px),
 ) !default;
 
-$h1-font-sizes: (
-    'base': vr(26px, 24px * 2),
-    'lg': vr(30px, 28px * 2),
+$my-h1-font-sizes: (
+    'base': my-vr(26px, 24px * 2),
+    'lg': my-vr(30px, 28px * 2),
 ) !default;
 
-$h2-font-sizes: (
-    'base': vr(22px, 24px),
-    'lg': vr(26px, 28px),
+$my-h2-font-sizes: (
+    'base': my-vr(22px, 24px),
+    'lg': my-vr(26px, 28px),
 ) !default;
 
-$h3-font-sizes: (
-    'base': vr(20px, 24px),
-    'lg': vr(24px, 28px),
+$my-h3-font-sizes: (
+    'base': my-vr(20px, 24px),
+    'lg': my-vr(24px, 28px),
 ) !default;
 
-$h4-font-sizes: (
-    'base': vr(16px, 24px),
-    'lg': vr(20px, 28px),
+$my-h4-font-sizes: (
+    'base': my-vr(16px, 24px),
+    'lg': my-vr(20px, 28px),
 ) !default;
 
-$h5-font-sizes: (
-    'base': vr(14px, 24px),
-    'lg': vr(16px, 28px),
+$my-h5-font-sizes: (
+    'base': my-vr(14px, 24px),
+    'lg': my-vr(16px, 28px),
 ) !default;
 
-$h6-font-sizes: (
-    'base': vr(12px, 24px),
-    'lg': vr(14px, 28px),
+$my-h6-font-sizes: (
+    'base': my-vr(12px, 24px),
+    'lg': my-vr(14px, 28px),
 ) !default;
 
-$small-font-sizes: (
-    'base': vr(12px, 24px),
-    'lg': vr(14px, 28px),
+$my-small-font-sizes: (
+    'base': my-vr(12px, 24px),
+    'lg': my-vr(14px, 28px),
 ) !default;

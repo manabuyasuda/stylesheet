@@ -2,16 +2,15 @@
 // #Vertical-rhythm
 //
 
-// Vertical-rhythmに対応した`font-size`(px)と`line-height`(単位なし)を返すmixinです。
-// -----------------------------------------------------------------------------
+// @desc - Vertical-rhythmに対応した`font-size`(px)と`line-height`(単位なし)を返すmixinです。
 // @type Mixin
-// @prop {Map} $fs($base-font-sizes) -
-// @requires {Map} $base-font-sizes - rootのフォントサイズと行の高さを定義しているマップです。
-// @requires {Map} $breakpoints - ブレイクポイントを管理するためのmapです。
+// @prop {Map} $fs($my-base-font-sizes) -
+// @requires {Map} $my-base-font-sizes - rootのフォントサイズと行の高さを定義しているマップです。
+// @requires {Map} $my-breakpoints - ブレイクポイントを管理するためのmapです。
 //
 // @example scss - Usage
 // .foo {
-//     @include font-size($base-font-sizes);
+//     @include my-font-size($my-base-font-sizes);
 // }
 //
 // @example css - CSS output
@@ -27,8 +26,8 @@
 //     }
 // }
 //
-@mixin font-size($fs: $base-font-sizes) {
-    $bp: $breakpoints;
+@mixin my-font-size($fs: $my-base-font-sizes) {
+    $bp: $my-breakpoints;
     @each $name, $unit in $fs {
         @if $name == "base" {
              font-size: nth($unit, 1);
@@ -44,19 +43,18 @@
     }
 }
 
-// Vertical Rhythmに対応した余白を返します。
-// -------------------------------------
+// @desc - Vertical Rhythmに対応した余白を返します。
 // @type Mixin
 // @prop {String} $prop - プロパティ名を渡します。
 // @prop {Number} $vr(1) - 指定したい行数を渡します。
 // @prop {String} $important(false) - `!important`を指定したい場合は文字列`important`を渡します。
-// @requires {Map} $base-font-sizes - rootのフォントサイズと行の高さを定義しているマップです。
-// @requires {Map} $breakpoints - ブレイクポイントを管理するためのmapです。
+// @requires {Map} $my-base-font-sizes - rootのフォントサイズと行の高さを定義しているマップです。
+// @requires {Map} $my-breakpoints - ブレイクポイントを管理するためのmapです。
 //
 // @example scss - Usage
 // .foo {
-//   @include vertical-rhythm(margin-top, 1);
-//   @include vertical-rhythm(margin-bottom, 1);
+//   @include my-vertical-rhythm(margin-top, 1);
+//   @include my-vertical-rhythm(margin-bottom, 1);
 // }
 //
 // @example css - CSS output
@@ -75,14 +73,14 @@
 //   }
 // }
 //
-@mixin vertical-rhythm($prop, $vr: 1, $important: false) {
+@mixin my-vertical-rhythm($prop, $vr: 1, $important: false) {
     @if ($important == "important") {
         $important: unquote("!important");
     } @else {
         $important: null;
     }
-    $bp: $breakpoints;
-    @each $name, $unit in $base-font-sizes {
+    $bp: $my-breakpoints;
+    @each $name, $unit in $my-base-font-sizes {
         @if $name == "base" {
             #{$prop}: nth($unit, 2) * $vr $important;
         } @else {

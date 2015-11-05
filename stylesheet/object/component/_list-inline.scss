@@ -16,7 +16,7 @@ $list-inline-space: 0.5em !default;
  * </ul>
  */
 .c-list-inline {
-    @include clearfix;
+    @include my-clearfix;
     margin: 0 0 0 (-$list-inline-space);
     padding: 0;
     list-style-type: none;

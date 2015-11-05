@@ -15,5 +15,5 @@
 }
 
 .u-clearfix {
-    @include clearfix(important);
+    @include my-clearfix(important);
 }

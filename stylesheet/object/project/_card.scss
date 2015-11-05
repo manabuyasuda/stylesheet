@@ -4,8 +4,8 @@
 $card-gap: 1em !default;
 $card-padding-y: 2em !default;
 $card-padding-x: 1em !default;
-$card-border: 1px solid colors(ui, light) !default;
-$card-round: $base-round !default;
+$card-border: 1px solid my-colors(ui, light) !default;
+$card-round: $my-base-round !default;
 
 /**
  * カード型のオブジェクトです。

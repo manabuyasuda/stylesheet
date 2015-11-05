@@ -17,7 +17,7 @@ html {
 }
 
 html {
-    @include font-size;
+    @include my-font-size;
     /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -28,10 +28,10 @@ html, body {
 }
 
 body {
-    color: colors(text);
+    color: my-colors(text);
     font-family: "Helvetica Neue", "Helvetica", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     font-weight: 400;
-    background-color: colors(bg);
+    background-color: my-colors(bg);
     /* アンチエイリアスを指定する */
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
@@ -60,38 +60,38 @@ h6 {
 }
 
 h1, .u-h1 {
-    @include font-size($h1-font-sizes);
+    @include my-font-size($my-h1-font-sizes);
 }
 
 h2, .u-h2 {
-    @include font-size($h2-font-sizes);
+    @include my-font-size($my-h2-font-sizes);
 }
 
 h3, .u-h3 {
-    @include font-size($h3-font-sizes);
+    @include my-font-size($my-h3-font-sizes);
 }
 
 h4, .u-h4 {
-    @include font-size($h4-font-sizes);
+    @include my-font-size($my-h4-font-sizes);
 }
 
 h5, .u-h5 {
-    @include font-size($h5-font-sizes);
+    @include my-font-size($my-h5-font-sizes);
 }
 
 h6, .u-h6 {
-    @include font-size($h6-font-sizes);
+    @include my-font-size($my-h6-font-sizes);
 }
 
 a {
-    color: colors(link);
+    color: my-colors(link);
     text-decoration: none;
     &:visited {
-        color: colors(link, visited);
+        color: my-colors(link, visited);
     }
     &:hover,
     &:focus {
-        color: colors(link, hover);
+        color: my-colors(link, hover);
         text-decoration: underline;
     }
 }
@@ -142,13 +142,13 @@ th {
  * </blockquote>
  */
 blockquote {
-    @include vertical-rhythm(margin-top, 1);
+    @include my-vertical-rhythm(margin-top, 1);
     margin-right: 0;
-    @include vertical-rhythm(margin-bottom, 1);
+    @include my-vertical-rhythm(margin-bottom, 1);
     margin-left: 0;
     padding-left: 1em;
-    border-left: 1px solid colors(text, light);
-    color: colors(text, light);
+    border-left: 1px solid my-colors(text, light);
+    color: my-colors(text, light);
     & > :first-child {
         margin-top: 0;
     }
@@ -166,12 +166,12 @@ fieldset {
     min-width: 0;
     margin: 0;
     padding: 1em;
-    background-color: colors(bg);
+    background-color: my-colors(bg);
 }
 
 legend {
     padding: 0 0.5em;
-    background-color: colors(bg);
+    background-color: my-colors(bg);
 }
 
 label {
@@ -242,11 +242,11 @@ kbd {
         margin-left: 3px;
         margin-right: 3px;
         padding: 3px 6px;
-        @include font-size($small-font-sizes);
+        @include my-font-size($my-small-font-sizes);
         line-height: 1;
         border-width: 1px;
         border-style: solid;
-        border-radius: $base-round;
+        border-radius: $my-base-round;
     }
 }
 
@@ -260,5 +260,5 @@ table,
 pre,
 address {
     margin-top: 0;
-    @include vertical-rhythm(margin-bottom, 1);
+    @include my-vertical-rhythm(margin-bottom, 1);
 }

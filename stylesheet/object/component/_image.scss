@@ -4,7 +4,7 @@
 $image-margin: 1em !default;
 
 .c-image-round {
-    border-radius: $base-round;
+    border-radius: $my-base-round;
 }
 
 .c-image-circle {
@@ -53,7 +53,7 @@ $image-margin: 1em !default;
 }
 
 .c-image-cover--fixed {
-    @include media-query(lg) {
+    @include my-media-query(lg) {
         background-attachment: fixed;
     }
 }

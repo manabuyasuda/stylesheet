@@ -12,7 +12,7 @@
 
 // レスポンシブに対応したヘルパークラスを生成します。
 // @param {String} breakpoint(null) - ブレイクポイントを示すキーワードになります。
-@mixin display($breakpoint: null) {
+@mixin my-display($breakpoint: null) {
   .u-display-none#{$breakpoint} { display: none !important; }
   .u-display-block#{$breakpoint} { display: block !important; }
   .u-display-inline#{$breakpoint} { display: inline !important; }
@@ -20,12 +20,12 @@
 }
 
 // ブレイクポイントのないclassを生成します。
-@include display;
+@include my-display;
 
 // ブレイクポイント付きのclassを生成します。
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
-@each $name, $breakpoint in $breakpoints {
+@each $name, $breakpoint in $my-breakpoints {
     @media #{$breakpoint} {
-        @include display(\@#{$name});
+        @include my-display(\@#{$name});
     }
 }
