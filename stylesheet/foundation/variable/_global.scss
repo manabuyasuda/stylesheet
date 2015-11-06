@@ -25,6 +25,13 @@ $my-z-indexes: (
   'below': -1,
 );
 
+// コンポーネントの余白に使用します。
+$my-base-spacing-unit: 1em;
+$my-base-spacing-unit-tiny: ($my-base-spacing-unit / 4); // 0.25em
+$my-base-spacing-unit-small: ($my-base-spacing-unit / 2); // 0.5em
+$my-base-spacing-unit-large: ($my-base-spacing-unit * 1.5); // 1.5em
+$my-base-spacing-unit-huge: ($my-base-spacing-unit * 2); // 2em
+
 // ボタンコンポーネントなどの角丸に使用します。
 $my-base-round: 3px;
 

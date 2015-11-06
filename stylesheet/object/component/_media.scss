@@ -1,7 +1,7 @@
 /**
  * #Media
  */
-$my-media-gutter: 1em !default;
+$my-media-gutter: $my-base-spacing-unit !default;
 
 /**
  * 画像とテキストを横並びにするオブジェクトです。

@@ -1,7 +1,7 @@
 /**
  * #Image
  */
-$my-image-margin: 1em !default;
+$my-image-margin: $my-base-spacing-unit !default;
 
 .c-image-round {
     border-radius: $my-base-round;

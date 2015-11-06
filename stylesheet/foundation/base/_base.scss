@@ -165,18 +165,18 @@ blockquote cite:before {
 fieldset {
     min-width: 0;
     margin: 0;
-    padding: 1em;
+    padding: $my-base-spacing-unit;
     background-color: my-colors(bg);
 }
 
 legend {
-    padding: 0 0.5em;
+    padding: 0 $my-base-spacing-unit-small;
     background-color: my-colors(bg);
 }
 
 label {
     display: inline-block;
-    margin-bottom: 0.25em;
+    margin-bottom: $my-base-spacing-unit-tiny;
     vertical-align: top;
     cursor: pointer;
 }
@@ -187,13 +187,13 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="url"] {
-    padding-left: 0.25em;
+    padding-left: $my-base-spacing-unit-tiny;
 }
 
 textarea {
     width: 100%;
     min-height: 8rem;
-    padding: 0.25em 0.5em;
+    padding: $my-base-spacing-unit-tiny $my-base-spacing-unit-small;
     vertical-align: top;
     resize: vertical;
 }

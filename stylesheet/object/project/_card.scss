@@ -1,9 +1,9 @@
 /**
  * #Card
  */
-$my-card-gap: 1em !default;
-$my-card-padding-y: 2em !default;
-$my-card-padding-x: 1em !default;
+$my-card-gap: $my-base-spacing-unit !default;
+$my-card-padding-y: $my-base-spacing-unit-huge !default;
+$my-card-padding-x: $my-base-spacing-unit !default;
 $my-card-border: 1px solid my-colors(ui, light) !default;
 $my-card-round: $my-base-round !default;
 

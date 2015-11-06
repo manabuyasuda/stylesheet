@@ -1,7 +1,7 @@
 /**
  * #Split
  */
-$my-split-padding: 0.5em !default;
+$my-split-padding: $my-base-spacing-unit-small !default;
 $my-split-border: 1px solid my-colors(ui) !default;
 
 /**
