@@ -104,7 +104,7 @@ $my-image-margin: $my-base-spacing-unit !default;
 
 .c-image-overlay__unit {
     position: absolute;
-    z-index: z(default);
+    z-index: my-z(default);
 }
 
 .c-image-overlay--black {

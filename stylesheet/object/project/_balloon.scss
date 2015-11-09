@@ -1,0 +1,226 @@
+/**
+ * #Balloon
+ */
+$my-balloon-space: $my-base-spacing-unit !default;
+$my-balloon-width: 12px !default;
+$my-balloon-border-width: 1px !default;
+$my-balloon-border-color: my-colors(ui, light) !default;
+$my-balloon-bg: my-colors(bg) !default;
+
+/**
+ * 吹き出しを作るコンポーネントです。
+ *
+ * <div class="p-balloon p-balloon--left-middle"></div>
+ */
+.p-balloon {
+    display: inline-block;
+    position: relative;
+    padding: $my-balloon-space;
+    border: $my-balloon-border-width solid $my-balloon-border-color;
+    border-radius: $my-base-round;
+    vertical-align: top;
+    box-shadow: 0 1px 2px rgba($my-balloon-border-color, 0.3);
+}
+
+// margin
+.p-balloon--top-center,
+.p-balloon--top-left,
+.p-balloon--top-right {
+    margin-top: $my-balloon-space;
+}
+
+.p-balloon--bottom-center,
+.p-balloon--bottom-left,
+.p-balloon--bottom-right {
+    margin-bottom: $my-balloon-space;
+}
+
+.p-balloon--right-middle,
+.p-balloon--right-top,
+.p-balloon--right-bottom {
+    margin-right: $my-balloon-space;
+}
+
+.p-balloon--left-middle,
+.p-balloon--left-top,
+.p-balloon--left-bottom {
+    margin-left: $my-balloon-space;
+}
+
+// common
+.p-balloon--top-center:before,
+.p-balloon--top-center:after,
+.p-balloon--top-left:before,
+.p-balloon--top-left:after,
+.p-balloon--top-right:before,
+.p-balloon--top-right:after,
+.p-balloon--bottom-center:before,
+.p-balloon--bottom-center:after,
+.p-balloon--bottom-left:before,
+.p-balloon--bottom-left:after,
+.p-balloon--bottom-right:before,
+.p-balloon--bottom-right:after,
+.p-balloon--right-middle:before,
+.p-balloon--right-middle:after,
+.p-balloon--right-top:before,
+.p-balloon--right-top:after,
+.p-balloon--right-bottom:before,
+.p-balloon--right-bottom:after,
+.p-balloon--left-middle:before,
+.p-balloon--left-middle:after,
+.p-balloon--left-top:before,
+.p-balloon--left-top:after,
+.p-balloon--left-bottom:before,
+.p-balloon--left-bottom:after, {
+    content: "";
+    position: absolute;
+    border: $my-balloon-width solid transparent;
+}
+
+// top, botom
+.p-balloon--top-center:before,
+.p-balloon--top-center:after,
+.p-balloon--top-left:before,
+.p-balloon--top-left:after,
+.p-balloon--top-right:before,
+.p-balloon--top-right:after {
+    bottom: 100%;
+    border-bottom-color: $my-balloon-bg;
+}
+
+.p-balloon--bottom-center:before,
+.p-balloon--bottom-center:after,
+.p-balloon--bottom-left:before,
+.p-balloon--bottom-left:after,
+.p-balloon--bottom-right:before,
+.p-balloon--bottom-right:after {
+    top: 100%;
+    border-top-color: $my-balloon-bg;
+}
+
+.p-balloon--top-center:before,
+.p-balloon--top-center:after,
+.p-balloon--bottom-center:before,
+.p-balloon--bottom-center:after {
+    left: 50%;
+    margin-left: -($my-balloon-width);
+}
+
+.p-balloon--top-center:before,
+.p-balloon--bottom-center:before {
+    margin-left: -($my-balloon-width + $my-balloon-border-width);
+    border-width: ($my-balloon-width + $my-balloon-border-width);
+}
+
+.p-balloon--top-center:before {
+    border-bottom-color: $my-balloon-border-color;
+}
+
+.p-balloon--bottom-center:before {
+    border-top-color: $my-balloon-border-color;
+}
+
+.p-balloon--top-left:before,
+.p-balloon--top-left:after,
+.p-balloon--bottom-left:before,
+.p-balloon--bottom-left:after {
+    left: 0;
+    margin-left: (($my-balloon-width * 2) + $my-balloon-border-width);
+}
+
+.p-balloon--top-left:before,
+.p-balloon--bottom-left:before {
+    margin-left: ($my-balloon-width * 2);
+    border-width: ($my-balloon-width + $my-balloon-border-width);
+}
+
+.p-balloon--top-left:before {
+    border-bottom-color: $my-balloon-border-color;
+}
+
+.p-balloon--bottom-left:before {
+    border-top-color: $my-balloon-border-color;
+}
+
+// right, left
+.p-balloon--top-right:before,
+.p-balloon--top-right:after,
+.p-balloon--bottom-right:before,
+.p-balloon--bottom-right:after {
+    right: 0;
+    margin-right: (($my-balloon-width * 2) + $my-balloon-border-width);
+}
+
+.p-balloon--top-right:before,
+.p-balloon--bottom-right:before {
+    margin-right: ($my-balloon-width * 2);
+    border-width: ($my-balloon-width + $my-balloon-border-width);
+}
+
+.p-balloon--top-right:before {
+    border-bottom-color: $my-balloon-border-color;
+}
+
+.p-balloon--bottom-right:before {
+    border-top-color: $my-balloon-border-color;
+}
+
+.p-balloon--right-middle:before,
+.p-balloon--right-middle:after,
+.p-balloon--right-top:before,
+.p-balloon--right-top:after,
+.p-balloon--right-bottom:before,
+.p-balloon--right-bottom:after {
+    left: 100%;
+    border-width: ($my-balloon-width + $my-balloon-border-width);
+    border-left-color: $my-balloon-bg;
+}
+
+.p-balloon--right-middle:before,
+.p-balloon--right-top:before,
+.p-balloon--right-bottom:before {
+    margin-left: $my-balloon-border-width;
+    border-left-color: $my-balloon-border-color;
+}
+
+.p-balloon--right-middle:before,
+.p-balloon--right-middle:after,
+.p-balloon--left-middle:before,
+.p-balloon--left-middle:after {
+    top: 50%;
+    margin-top: (-$my-balloon-width);
+}
+
+.p-balloon--right-top:before,
+.p-balloon--right-top:after,
+.p-balloon--left-top:before,
+.p-balloon--left-top:after {
+    top: 0;
+    margin-top: ($my-balloon-width * 2);
+}
+
+.p-balloon--right-bottom:before,
+.p-balloon--right-bottom:after,
+.p-balloon--left-bottom:before,
+.p-balloon--left-bottom:after {
+    bottom: 0;
+    margin-bottom: ($my-balloon-width * 2);
+}
+
+.p-balloon--left-middle:before,
+.p-balloon--left-middle:after,
+.p-balloon--left-top:before,
+.p-balloon--left-top:after,
+.p-balloon--left-bottom:before,
+.p-balloon--left-bottom:after {
+    right: 100%;
+    border-width: ($my-balloon-width + $my-balloon-border-width);
+    border-right-color: $my-balloon-bg;
+}
+
+.p-balloon--left-middle:before,
+.p-balloon--left-top:before,
+.p-balloon--left-bottom:before {
+    margin-right: $my-balloon-border-width;
+    border-right-color: $my-balloon-border-color;
+}

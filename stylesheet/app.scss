@@ -51,7 +51,8 @@
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
- * Card.................カード型のオブジェクトです。
+ * Card.................カード型のコンポーネントです。
+ * Balloon..............吹き出しのコンポーネントです。
  *
  * UTILITY
  * Col..................レスポンシブに対応した`width`を指定するためのヘルパークラスです。
@@ -152,6 +153,7 @@
 @import "object/project/_pagination";
 @import "object/project/_tag-cloud";
 @import "object/project/_card";
+@import "object/project/_balloon";
 
 
 /* Utitlity

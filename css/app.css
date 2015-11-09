@@ -52,10 +52,11 @@
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
- * Card.................カード型のオブジェクトです。
+ * Card.................カード型のコンポーネントです。
+ * Balloon..............吹き出しのコンポーネントです。
  *
  * UTILITY
- * Width................レスポンシブに対応した`width`を指定するためのヘルパークラスです。
+ * Col..................レスポンシブに対応した`width`を指定するためのヘルパークラスです。
  * Push.................レスポンシブに対応した`left`を指定するためのヘルパークラスです。
  * Pull.................レスポンシブに対応した`right`を指定するためのヘルパークラスです。
  * Column...............レスポンシブに対応した`column-count`を指定するためのヘルパークラスです。
@@ -1997,6 +1998,223 @@ address {
     display: block;
     margin: -1em;
     padding: 1em;
+}
+
+/**
+ * #Balloon
+ */
+/**
+ * 吹き出しを作るコンポーネントです。
+ *
+ * <div class="p-balloon p-balloon--left-middle"></div>
+ */
+.p-balloon {
+    display: inline-block;
+    position: relative;
+    padding: 1em;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    vertical-align: top;
+    box-shadow: 0 1px 2px rgba(208, 208, 208, 0.3);
+}
+
+.p-balloon--top-center,
+.p-balloon--top-left,
+.p-balloon--top-right {
+    margin-top: 1em;
+}
+
+.p-balloon--bottom-center,
+.p-balloon--bottom-left,
+.p-balloon--bottom-right {
+    margin-bottom: 1em;
+}
+
+.p-balloon--right-middle,
+.p-balloon--right-top,
+.p-balloon--right-bottom {
+    margin-right: 1em;
+}
+
+.p-balloon--left-middle,
+.p-balloon--left-top,
+.p-balloon--left-bottom {
+    margin-left: 1em;
+}
+
+.p-balloon--top-center:before,
+.p-balloon--top-center:after,
+.p-balloon--top-left:before,
+.p-balloon--top-left:after,
+.p-balloon--top-right:before,
+.p-balloon--top-right:after,
+.p-balloon--bottom-center:before,
+.p-balloon--bottom-center:after,
+.p-balloon--bottom-left:before,
+.p-balloon--bottom-left:after,
+.p-balloon--bottom-right:before,
+.p-balloon--bottom-right:after,
+.p-balloon--right-middle:before,
+.p-balloon--right-middle:after,
+.p-balloon--right-top:before,
+.p-balloon--right-top:after,
+.p-balloon--right-bottom:before,
+.p-balloon--right-bottom:after,
+.p-balloon--left-middle:before,
+.p-balloon--left-middle:after,
+.p-balloon--left-top:before,
+.p-balloon--left-top:after,
+.p-balloon--left-bottom:before,
+.p-balloon--left-bottom:after {
+    content: "";
+    position: absolute;
+    border: 12px solid transparent;
+}
+
+.p-balloon--top-center:before,
+.p-balloon--top-center:after,
+.p-balloon--top-left:before,
+.p-balloon--top-left:after,
+.p-balloon--top-right:before,
+.p-balloon--top-right:after {
+    bottom: 100%;
+    border-bottom-color: #fff;
+}
+
+.p-balloon--bottom-center:before,
+.p-balloon--bottom-center:after,
+.p-balloon--bottom-left:before,
+.p-balloon--bottom-left:after,
+.p-balloon--bottom-right:before,
+.p-balloon--bottom-right:after {
+    top: 100%;
+    border-top-color: #fff;
+}
+
+.p-balloon--top-center:before,
+.p-balloon--top-center:after,
+.p-balloon--bottom-center:before,
+.p-balloon--bottom-center:after {
+    left: 50%;
+    margin-left: -12px;
+}
+
+.p-balloon--top-center:before,
+.p-balloon--bottom-center:before {
+    margin-left: -13px;
+    border-width: 13px;
+}
+
+.p-balloon--top-center:before {
+    border-bottom-color: #d0d0d0;
+}
+
+.p-balloon--bottom-center:before {
+    border-top-color: #d0d0d0;
+}
+
+.p-balloon--top-left:before,
+.p-balloon--top-left:after,
+.p-balloon--bottom-left:before,
+.p-balloon--bottom-left:after {
+    left: 0;
+    margin-left: 25px;
+}
+
+.p-balloon--top-left:before,
+.p-balloon--bottom-left:before {
+    margin-left: 24px;
+    border-width: 13px;
+}
+
+.p-balloon--top-left:before {
+    border-bottom-color: #d0d0d0;
+}
+
+.p-balloon--bottom-left:before {
+    border-top-color: #d0d0d0;
+}
+
+.p-balloon--top-right:before,
+.p-balloon--top-right:after,
+.p-balloon--bottom-right:before,
+.p-balloon--bottom-right:after {
+    right: 0;
+    margin-right: 25px;
+}
+
+.p-balloon--top-right:before,
+.p-balloon--bottom-right:before {
+    margin-right: 24px;
+    border-width: 13px;
+}
+
+.p-balloon--top-right:before {
+    border-bottom-color: #d0d0d0;
+}
+
+.p-balloon--bottom-right:before {
+    border-top-color: #d0d0d0;
+}
+
+.p-balloon--right-middle:before,
+.p-balloon--right-middle:after,
+.p-balloon--right-top:before,
+.p-balloon--right-top:after,
+.p-balloon--right-bottom:before,
+.p-balloon--right-bottom:after {
+    left: 100%;
+    border-width: 13px;
+    border-left-color: #fff;
+}
+
+.p-balloon--right-middle:before,
+.p-balloon--right-top:before,
+.p-balloon--right-bottom:before {
+    margin-left: 1px;
+    border-left-color: #d0d0d0;
+}
+
+.p-balloon--right-middle:before,
+.p-balloon--right-middle:after,
+.p-balloon--left-middle:before,
+.p-balloon--left-middle:after {
+    top: 50%;
+    margin-top: -12px;
+}
+
+.p-balloon--right-top:before,
+.p-balloon--right-top:after,
+.p-balloon--left-top:before,
+.p-balloon--left-top:after {
+    top: 0;
+    margin-top: 24px;
+}
+
+.p-balloon--right-bottom:before,
+.p-balloon--right-bottom:after,
+.p-balloon--left-bottom:before,
+.p-balloon--left-bottom:after {
+    bottom: 0;
+    margin-bottom: 24px;
+}
+
+.p-balloon--left-middle:before,
+.p-balloon--left-middle:after,
+.p-balloon--left-top:before,
+.p-balloon--left-top:after,
+.p-balloon--left-bottom:before,
+.p-balloon--left-bottom:after {
+    right: 100%;
+    border-width: 13px;
+    border-right-color: #fff;
+}
+
+.p-balloon--left-middle:before,
+.p-balloon--left-top:before,
+.p-balloon--left-bottom:before {
+    margin-right: 1px;
+    border-right-color: #d0d0d0;
 }
 
 /* Utitlity
