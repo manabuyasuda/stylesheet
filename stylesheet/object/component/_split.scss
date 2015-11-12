@@ -8,6 +8,7 @@ $my-split-border: 1px solid my-colors(ui) !default;
  * 2つの要素をブロックから横並びにするオブジェクトです。
  * 定義リストで使用することを想定しています。
  * デフォルトで`c-split__name`が10文字を越えるとレイアウトが崩れます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yzLa898k/)
  *
  * <dl class="c-split [c-split--has-border]">
  *   <dt class="c-split__name"></dt>
