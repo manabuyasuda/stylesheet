@@ -18,46 +18,46 @@
 }
 
 /* margin-small */
-.u-ms { @include my-vertical-rhythm(margin, 0.5, important); }
-.u-mts { @include my-vertical-rhythm(margin-top, 0.5, important); }
-.u-mrs { @include my-vertical-rhythm(margin-right, 0.5, important); }
-.u-mbs { @include my-vertical-rhythm(margin-bottom, 0.5, important); }
-.u-mls { @include my-vertical-rhythm(margin-left, 0.5, important); }
+.u-ms { margin: my-margins(small) !important; }
+.u-mts { margin-top: my-margins(small) !important; }
+.u-mrs { margin-right: my-margins(small) !important; }
+.u-mbs { margin-bottom: my-margins(small) !important; }
+.u-mls { margin-left: my-margins(small) !important; }
 .u-mys {
-    @include my-vertical-rhythm(margin-top, 0.5, important);
-    @include my-vertical-rhythm(margin-bottom, 0.5, important);
+    margin-top: my-margins(small) !important;
+    margin-bottom: my-margins(small) !important;
 }
 .u-mxs {
-    @include my-vertical-rhythm(margin-right, 0.5, important);
-    @include my-vertical-rhythm(margin-left, 0.5, important);
+    margin-right: my-margins(small) !important;
+    margin-left: my-margins(small) !important;
 }
 
 /* margin-medium */
-.u-mm { @include my-vertical-rhythm(margin, 1, important); }
-.u-mtm { @include my-vertical-rhythm(margin-top, 1, important); }
-.u-mrm { @include my-vertical-rhythm(margin-right, 1, important); }
-.u-mbm { @include my-vertical-rhythm(margin-bottom, 1, important); }
-.u-mlm { @include my-vertical-rhythm(margin-left, 1, important); }
+.u-mm { margin: my-margins() !important; }
+.u-mtm { margin-top: my-margins() !important; }
+.u-mrm { margin-right: my-margins() !important; }
+.u-mbm { margin-bottom: my-margins() !important; }
+.u-mlm { margin-left: my-margins() !important; }
 .u-mym {
-    @include my-vertical-rhythm(margin-top, 1, important);
-    @include my-vertical-rhythm(margin-bottom, 1, important);
+    margin-top: my-margins() !important;
+    margin-bottom: my-margins() !important;
 }
 .u-mxm {
-    @include my-vertical-rhythm(margin-right, 1, important);
-    @include my-vertical-rhythm(margin-left, 1, important);
+    margin-right: my-margins() !important;
+    margin-left: my-margins() !important;
 }
 
 /* margin-large */
-.u-ml { @include my-vertical-rhythm(margin, 2, important); }
-.u-mtl { @include my-vertical-rhythm(margin-top, 2, important); }
-.u-mrl { @include my-vertical-rhythm(margin-right, 2, important); }
-.u-mbl { @include my-vertical-rhythm(margin-bottom, 2, important); }
-.u-mll { @include my-vertical-rhythm(margin-left, 2, important); }
+.u-ml { margin: my-margins(large) !important; }
+.u-mtl { margin-top: my-margins(large) !important; }
+.u-mrl { margin-right: my-margins(large) !important; }
+.u-mbl { margin-bottom: my-margins(large) !important; }
+.u-mll { margin-left: my-margins(large) !important; }
 .u-myl {
-    @include my-vertical-rhythm(margin-top, 2, important);
-    @include my-vertical-rhythm(margin-bottom, 2, important);
+    margin-top: my-margins(large) !important;
+    margin-bottom: my-margins(large) !important;
 }
 .u-mxl {
-    @include my-vertical-rhythm(margin-right, 2, important);
-    @include my-vertical-rhythm(margin-left, 2, important);
+    margin-right: my-margins(large) !important;
+    margin-left: my-margins(large) !important;
 }

@@ -1,7 +1,7 @@
 /**
  * #Wrapper
  */
-$my-wrapper-padding: $my-base-spacing-unit !default;
+$my-wrapper-padding: my-paddings() !default;
 
 /**
  * 横幅を制限するラッパーオブジェクトです。

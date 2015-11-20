@@ -1,8 +1,8 @@
 /**
  * #Pack
  */
-$my-pack-space-y: $my-base-spacing-unit !default;
-$my-pack-space-x: $my-base-spacing-unit-small !default;
+$my-pack-space-y: my-paddings() !default;
+$my-pack-space-x: my-paddings(small) !default;
 
 /**
  * 横幅いっぱいで均等、中央揃えのナビゲーションオブジェクトです。

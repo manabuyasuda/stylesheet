@@ -1,21 +1,28 @@
-// @desc - pxの引数を渡して単位なしとremの相対値を返す関数です。
-// @type Funciton
-// @prop {Number} $fs - `font-size`に指定する値をpxで指定します。
-// @prop {Number} $lh - `line-height`に指定する値をpxで指定します。
-// @return {List} - 第一引数, 第二引数, 第二引数と第一引数の除算の単位なしの相対値, 第二引数と第一引数の除算のremの相対値
-// @require {Map} $my-font-sizes - フォントサイズと行の高さを定義しているマップです。
-//
+// @desc - 単位付きの値の単位を削除します。
+// @type Function
+// @prop {Number} - pxやemなどの単位付きの値を渡します。
 // @example scss - Usage
-// my-vr(14px, 24px) => 14px, 24px, 1.715, 1.715rem
+// strip-unit(14px) => 14
 //
-@function my-vr($fs, $lh) {
-    // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
-    $n: 1000;
-    $vr: ceil(($lh / $fs) * $n) / $n;
-    $rem: $vr * 1rem;
-    @return ($fs, $lh, $vr, $rem);
+@function my-strip-unit($n) {
+    @return $n / ($n * 0 + 1);
 }
 
+// @desc - プロジェクト共通のマージンを返します。
+// @type Function
+// @prop {String} $key(base) - 引数を指定しない場合はベースになる値を指定します。
+// @require {Map} $my-margins - プロジェクト共通のマージンをバリエーションごとに定義しています。
+@function my-margins($key: base) {
+    @return map-get($my-margins, $key);
+}
+
+// @desc - プロジェクト共通のパディングを返します。
+// @type Function
+// @prop {String} $key(base) - 引数を指定しない場合はベースになる値を指定します。
+// @require {Map} $my-paddings - プロジェクト共通のマージンをバリエーションごとに定義しています。
+@function my-paddings($key: base) {
+    @return map-get($my-paddings, $key);
+}
 
 // @desc - マップに定義したvalueを返す関数です。
 // @type Funciton
@@ -48,6 +55,6 @@
 //     z-index: 3;
 // }
 //
-@function my-z($layer) {
+@function my-z-indexs($layer) {
   @return map-get($my-z-indexes, $layer);
 }

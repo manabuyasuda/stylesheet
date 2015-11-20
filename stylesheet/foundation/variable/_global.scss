@@ -13,6 +13,28 @@ $my-breakpoints: (
     'xl': 'screen and (min-width: 1200px)',
 ) !default;
 
+// @desc - グローバルに使用されるマージンのベースを定義します。
+$my-base-margin: 1.5rem;
+// @desc - グローバルに使用されるマージンのバリエーションを定義します。要素間の余白に使用されます。
+// @type {Map}
+// @see {Funcition} my-margins
+$my-margins: (
+    base: $my-base-margin,
+    small: ($my-base-margin / 2),
+    large: ($my-base-margin * 2),
+) !default;
+
+
+// @desc - グローバルに使用されるパディングのベースを定義します。
+$my-base-padding: 1em;
+// @desc - グローバルに使用されるパディングのバリエーションを定義します。要素内の余白に使用されます。
+// @type {Map}
+// @see {Funcition} my-paddings
+$my-paddings: (
+    base: $my-base-padding,
+    small: ($my-base-padding / 2),
+    large: ($my-base-padding * 1.5),
+) !default;
 
 // @desc - z-indexを管理するためのmapです。
 // @type Map
@@ -24,13 +46,6 @@ $my-z-indexes: (
   'default': 1,
   'below': -1,
 );
-
-// コンポーネントの余白に使用します。
-$my-base-spacing-unit: 1em;
-$my-base-spacing-unit-tiny: ($my-base-spacing-unit / 4); // 0.25em
-$my-base-spacing-unit-small: ($my-base-spacing-unit / 2); // 0.5em
-$my-base-spacing-unit-large: ($my-base-spacing-unit * 1.5); // 1.5em
-$my-base-spacing-unit-huge: ($my-base-spacing-unit * 2); // 2em
 
 // ボタンコンポーネントなどの角丸に使用します。
 $my-base-round: 3px;

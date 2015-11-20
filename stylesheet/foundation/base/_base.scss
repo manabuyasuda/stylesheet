@@ -17,9 +17,13 @@ html {
 }
 
 html {
-    @include my-font-size;
+    font-size: 14px;
+    line-height: my-strip-unit(my-margins());
     /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    @include my-media-query(lg) {
+        font-size: 16px;
+    }
 }
 
 /* 画面いっぱいに背景画像を表示する際にルート要素に高さの指定が必要 */
@@ -57,30 +61,31 @@ h6 {
     color: inherit;
     font-family: inherit;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 h1, .u-h1 {
-    @include my-font-size($my-h1-font-sizes);
+    font-size: 2rem;
 }
 
 h2, .u-h2 {
-    @include my-font-size($my-h2-font-sizes);
+    font-size: 1.8rem;
 }
 
 h3, .u-h3 {
-    @include my-font-size($my-h3-font-sizes);
+    font-size: 1.6rem;
 }
 
 h4, .u-h4 {
-    @include my-font-size($my-h4-font-sizes);
+    font-size: 1.6rem;
 }
 
 h5, .u-h5 {
-    @include my-font-size($my-h5-font-sizes);
+    font-size: 1.4rem;
 }
 
 h6, .u-h6 {
-    @include my-font-size($my-h6-font-sizes);
+    font-size: 1.2rem;
 }
 
 a {
@@ -142,11 +147,8 @@ th {
  * </blockquote>
  */
 blockquote {
-    @include my-vertical-rhythm(margin-top, 1);
-    margin-right: 0;
-    @include my-vertical-rhythm(margin-bottom, 1);
-    margin-left: 0;
-    padding-left: 1em;
+    margin: my-margins() 0 my-margins() 0;
+    padding-left: my-paddings();
     border-left: 1px solid my-colors(text, light);
     color: my-colors(text, light);
     & > :first-child {
@@ -165,18 +167,18 @@ blockquote cite:before {
 fieldset {
     min-width: 0;
     margin: 0;
-    padding: $my-base-spacing-unit;
+    padding: my-paddings();
     background-color: my-colors(bg);
 }
 
 legend {
-    padding: 0 $my-base-spacing-unit-small;
+    padding: 0 my-paddings(small);
     background-color: my-colors(bg);
 }
 
 label {
     display: inline-block;
-    margin-bottom: $my-base-spacing-unit-tiny;
+    margin-bottom: my-margins();
     vertical-align: top;
     cursor: pointer;
 }
@@ -187,13 +189,13 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="url"] {
-    padding-left: $my-base-spacing-unit-tiny;
+    padding-left: my-paddings();
 }
 
 textarea {
     width: 100%;
     min-height: 8rem;
-    padding: $my-base-spacing-unit-tiny $my-base-spacing-unit-small;
+    padding: my-paddings(large) my-paddings(small);
     vertical-align: top;
     resize: vertical;
 }
@@ -242,7 +244,7 @@ kbd {
         margin-left: 3px;
         margin-right: 3px;
         padding: 3px 6px;
-        @include my-font-size($my-small-font-sizes);
+        font-size: 0.75rem;
         line-height: 1;
         border-width: 1px;
         border-style: solid;
@@ -260,5 +262,5 @@ table,
 pre,
 address {
     margin-top: 0;
-    @include my-vertical-rhythm(margin-bottom, 1);
+    margin-bottom: my-margins();
 }

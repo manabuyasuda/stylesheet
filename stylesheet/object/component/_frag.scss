@@ -1,7 +1,7 @@
 /**
  * #Frag
  */
-$my-frag-gutter: $my-base-spacing-unit !default;
+$my-frag-gutter: my-paddings() !default;
 
 /**
  * 垂直方向の変更ができるmediaオブジェクトです。デフォルトは`vertical-align:middle`が指定されています。

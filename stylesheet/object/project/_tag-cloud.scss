@@ -1,7 +1,7 @@
 /**
  * #Tag-cloud
  */
-$my-tag-cloud-space: $my-base-spacing-unit-small !default;
+$my-tag-cloud-space: my-paddings(small) !default;
 
 /**
  * タグクラウドのコンポーネントです。
@@ -17,7 +17,7 @@ $my-tag-cloud-space: $my-base-spacing-unit-small !default;
  * </ul>
  */
 .p-tag-cloud {
-    @include my-font-size($my-small-font-sizes);
+    font-size: 0.75rem;
 }
 
 .p-tag-cloud__item {

@@ -1,7 +1,7 @@
 /**
  * #Grid
  */
-$my-grid-gutter: $my-base-spacing-unit-large !default;
+$my-grid-gutter: my-paddings(large) !default;
 
 /**
  * グリッドレイアウトオブジェクトです。

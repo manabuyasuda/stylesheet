@@ -4,12 +4,10 @@
  *
  * VARIABLE
  * Global...............プロジェクト全体を通して使用される変数です。
- * Font-size............フォントサイズ用の変数（マップ）を管理します。
  * Color................カラー用の変数（マップ）を管理します。
  *
  * MIXIN
  * Media-query..........メディアクエリ用のmixinです。
- * Vertical-rhythm......Vertical Rhythmを指定するためのmixinです。
  * Clearfix.............`float`を解除する`clearfix`のmixinです。
  *
  * VENDOR
@@ -83,7 +81,6 @@
 // -----------------------------------------------------------------
 
 @import "foundation/variable/_global";
-@import "foundation/variable/_font-size";
 @import "foundation/variable/_color";
 
 // -----------------------------------------------------------------
@@ -91,7 +88,6 @@
 // -----------------------------------------------------------------
 
 @import "foundation/mixin/_media-query";
-@import "foundation/mixin/_vertical-rhythm";
 @import "foundation/mixin/_clearfix";
 
 /* Vendor
@@ -108,7 +104,6 @@
    ----------------------------------------------------------------- */
 
 @import "foundation/base/_base";
-@import "foundation/base/_debug";
 
 
 /* ==========================================================================

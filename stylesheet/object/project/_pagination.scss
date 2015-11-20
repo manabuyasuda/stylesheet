@@ -31,7 +31,7 @@
 
 .p-pagination__link {
     display: inline-block;
-    padding: $my-base-spacing-unit;
+    padding: my-paddings();
 }
 
 .p-pagination__link--prev:before {

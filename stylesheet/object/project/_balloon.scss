@@ -1,7 +1,7 @@
 /**
  * #Balloon
  */
-$my-balloon-space: $my-base-spacing-unit !default;
+$my-balloon-space: my-paddings() !default;
 $my-balloon-width: 12px !default;
 $my-balloon-border-width: 1px !default;
 $my-balloon-border-color: my-colors(ui, light) !default;

@@ -1,7 +1,7 @@
 /**
  * #List-inline
  */
-$my-list-inline-space: $my-base-spacing-unit-small !default;
+$my-list-inline-space: my-paddings(small) !default;
 
 /**
  * 横並びになるリストオブジェクトです。

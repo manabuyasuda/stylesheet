@@ -32,5 +32,5 @@
 
 .p-breadcrumbs__item + .p-breadcrumbs__item:before {
     content: "\003E";
-    margin: 0 $my-base-spacing-unit-small;
+    margin: 0 my-paddings(small);
 }

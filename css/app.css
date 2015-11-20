@@ -5,12 +5,10 @@
  *
  * VARIABLE
  * Global...............プロジェクト全体を通して使用される変数です。
- * Font-size............フォントサイズ用の変数（マップ）を管理します。
  * Color................カラー用の変数（マップ）を管理します。
  *
  * MIXIN
  * Media-query..........メディアクエリ用のmixinです。
- * Vertical-rhythm......Vertical Rhythmを指定するためのmixinです。
  * Clearfix.............`float`を解除する`clearfix`のmixinです。
  *
  * VENDOR
@@ -502,7 +500,7 @@ html {
 
 html {
     font-size: 14px;
-    line-height: 1.715;
+    line-height: 1.5;
     /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
 
     -webkit-tap-highlight-color: transparent;
@@ -511,7 +509,6 @@ html {
 @media screen and (min-width: 1000px) {
     html {
         font-size: 16px;
-        line-height: 1.75;
     }
 }
 
@@ -552,90 +549,37 @@ h6 {
     color: inherit;
     font-family: inherit;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 h1,
 .u-h1 {
-    font-size: 26px;
-    line-height: 1.847;
-}
-
-@media screen and (min-width: 1000px) {
-    h1,
-    .u-h1 {
-        font-size: 30px;
-        line-height: 1.867;
-    }
+    font-size: 2rem;
 }
 
 h2,
 .u-h2 {
-    font-size: 22px;
-    line-height: 1.091;
-}
-
-@media screen and (min-width: 1000px) {
-    h2,
-    .u-h2 {
-        font-size: 26px;
-        line-height: 1.077;
-    }
+    font-size: 1.8rem;
 }
 
 h3,
 .u-h3 {
-    font-size: 20px;
-    line-height: 1.2;
-}
-
-@media screen and (min-width: 1000px) {
-    h3,
-    .u-h3 {
-        font-size: 24px;
-        line-height: 1.167;
-    }
+    font-size: 1.6rem;
 }
 
 h4,
 .u-h4 {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-@media screen and (min-width: 1000px) {
-    h4,
-    .u-h4 {
-        font-size: 20px;
-        line-height: 1.4;
-    }
+    font-size: 1.6rem;
 }
 
 h5,
 .u-h5 {
-    font-size: 14px;
-    line-height: 1.715;
-}
-
-@media screen and (min-width: 1000px) {
-    h5,
-    .u-h5 {
-        font-size: 16px;
-        line-height: 1.75;
-    }
+    font-size: 1.4rem;
 }
 
 h6,
 .u-h6 {
-    font-size: 12px;
-    line-height: 2;
-}
-
-@media screen and (min-width: 1000px) {
-    h6,
-    .u-h6 {
-        font-size: 14px;
-        line-height: 2;
-    }
+    font-size: 1.2rem;
 }
 
 a {
@@ -693,25 +637,10 @@ th {
  * </blockquote>
  */
 blockquote {
-    margin-top: 24px;
-    margin-right: 0;
-    margin-bottom: 24px;
-    margin-left: 0;
+    margin: 1.5rem 0 1.5rem 0;
     padding-left: 1em;
     border-left: 1px solid #666;
     color: #666;
-}
-
-@media screen and (min-width: 1000px) {
-    blockquote {
-        margin-top: 28px;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    blockquote {
-        margin-bottom: 28px;
-    }
 }
 
 blockquote > :first-child {
@@ -741,7 +670,7 @@ legend {
 
 label {
     display: inline-block;
-    margin-bottom: 0.25em;
+    margin-bottom: 1.5rem;
     vertical-align: top;
     cursor: pointer;
 }
@@ -752,13 +681,13 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="url"] {
-    padding-left: 0.25em;
+    padding-left: 1em;
 }
 
 textarea {
     width: 100%;
     min-height: 8rem;
-    padding: 0.25em 0.5em;
+    padding: 1.5em 0.5em;
     vertical-align: top;
     resize: vertical;
 }
@@ -812,16 +741,8 @@ kbd > kbd {
     border-width: 1px;
     border-style: solid;
     border-radius: 3px;
-    font-size: 12px;
-    line-height: 2;
+    font-size: 0.75rem;
     line-height: 1;
-}
-
-@media screen and (min-width: 1000px) {
-    kbd > kbd {
-        font-size: 14px;
-        line-height: 2;
-    }
 }
 
 /**
@@ -841,25 +762,7 @@ table,
 pre,
 address {
     margin-top: 0;
-    margin-bottom: 24px;
-}
-
-@media screen and (min-width: 1000px) {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ul,
-    ol,
-    dl,
-    table,
-    pre,
-    address {
-        margin-bottom: 28px;
-    }
+    margin-bottom: 1.5rem;
 }
 
 /* ==========================================================================
@@ -1072,7 +975,7 @@ address {
  */
 /**
  * 縦に配置するオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/yt8Ly2r8/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/7ebqpj8b/)
  *
  * <ul class="c-list-block">
  *   <li class="c-list-block__unit">
@@ -1102,6 +1005,7 @@ address {
  * 横並び（ranked）になるリストオブジェクトです。
  * リンクがない場合でも余白が変わりません。
  * モディファイアで余白が変更できます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/k93rhad6/)
  *
  * <ul class="c-rank [c-rank--size-small]">
  *   <li class="c-rank__item">
@@ -1156,6 +1060,7 @@ address {
  * 横幅いっぱいで均等、中央揃えのナビゲーションオブジェクトです。
  * リンクがない場合でも余白が変わりません。
  * モディファイアで余白を変更できます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/bnrepy5e/)
  *
  * <ul class="c-pack [c-pack--size-small]">
  *   <li class="c-pack__item">
@@ -1213,6 +1118,7 @@ address {
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
  * リンクがない場合でも余白が変わりません。
  * モディファイアで余白が変更できます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/3rcgp8t6/)
  *
  * <ul class="c-stack [c-stack--size-small]">
  *     <li class="c-stack__item">
@@ -1416,6 +1322,7 @@ address {
  * 2つの要素をブロックから横並びにするオブジェクトです。
  * 定義リストで使用することを想定しています。
  * デフォルトで`c-split__name`が10文字を越えるとレイアウトが崩れます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yzLa898k/)
  *
  * <dl class="c-split [c-split--has-border]">
  *   <dt class="c-split__name"></dt>
@@ -1462,6 +1369,7 @@ address {
  * 要素の合計が親要素の幅の合計に満たない場合は要素間に均等な余白を作り、
  * 要素の合計が幅の合計を超えた場合はカラム落ちします。
  * https://github.com/hiloki/kitecss
+ * [DEMO](https://jsfiddle.net/manabuyasuda/jqb0r8mb/)
  *
  * <div class="c-justify">
  *   <div class="c-justify__item"></div>
@@ -1556,6 +1464,7 @@ address {
  * ベーシックなボタンオブジェクトです。
  * `<a>`, `<button>`, `<input>`要素のスタイルをリセットしています。
  * サイズやスタイルの変更はモディファイアクラスを指定します。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yoLg0g9h/)
  *
  * <div class="l-page-content">
  *   <a href="#" class="c-button [c-button--full]">First Button</a>
@@ -1665,6 +1574,9 @@ address {
 
 /**
  * #Image
+ */
+/**
+ * [DEMO](https://jsfiddle.net/manabuyasuda/wy8b3o6b/)
  */
 .c-image-round {
     border-radius: 3px;
@@ -1878,15 +1790,7 @@ address {
  * </ul>
  */
 .p-tag-cloud {
-    font-size: 12px;
-    line-height: 2;
-}
-
-@media screen and (min-width: 1000px) {
-    .p-tag-cloud {
-        font-size: 14px;
-        line-height: 2;
-    }
+    font-size: 0.75rem;
 }
 
 .p-tag-cloud__item {
@@ -1948,7 +1852,7 @@ address {
 }
 
 .p-card__body {
-    padding: 2em 1em;
+    padding: 1.5em 1em;
 }
 
 .p-card__body > :last-child {
@@ -3027,257 +2931,95 @@ address {
 
 /* margin-small */
 .u-ms {
-    margin: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-ms {
-        margin: 14px !important;
-    }
+    margin: 0.75rem !important;
 }
 
 .u-mts {
-    margin-top: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mts {
-        margin-top: 14px !important;
-    }
+    margin-top: 0.75rem !important;
 }
 
 .u-mrs {
-    margin-right: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mrs {
-        margin-right: 14px !important;
-    }
+    margin-right: 0.75rem !important;
 }
 
 .u-mbs {
-    margin-bottom: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mbs {
-        margin-bottom: 14px !important;
-    }
+    margin-bottom: 0.75rem !important;
 }
 
 .u-mls {
-    margin-left: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mls {
-        margin-left: 14px !important;
-    }
+    margin-left: 0.75rem !important;
 }
 
 .u-mys {
-    margin-top: 12px !important;
-    margin-bottom: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mys {
-        margin-top: 14px !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mys {
-        margin-bottom: 14px !important;
-    }
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
 }
 
 .u-mxs {
-    margin-right: 12px !important;
-    margin-left: 12px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mxs {
-        margin-right: 14px !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mxs {
-        margin-left: 14px !important;
-    }
+    margin-right: 0.75rem !important;
+    margin-left: 0.75rem !important;
 }
 
 /* margin-medium */
 .u-mm {
-    margin: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mm {
-        margin: 28px !important;
-    }
+    margin: 1.5rem !important;
 }
 
 .u-mtm {
-    margin-top: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mtm {
-        margin-top: 28px !important;
-    }
+    margin-top: 1.5rem !important;
 }
 
 .u-mrm {
-    margin-right: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mrm {
-        margin-right: 28px !important;
-    }
+    margin-right: 1.5rem !important;
 }
 
 .u-mbm {
-    margin-bottom: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mbm {
-        margin-bottom: 28px !important;
-    }
+    margin-bottom: 1.5rem !important;
 }
 
 .u-mlm {
-    margin-left: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mlm {
-        margin-left: 28px !important;
-    }
+    margin-left: 1.5rem !important;
 }
 
 .u-mym {
-    margin-top: 24px !important;
-    margin-bottom: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mym {
-        margin-top: 28px !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mym {
-        margin-bottom: 28px !important;
-    }
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .u-mxm {
-    margin-right: 24px !important;
-    margin-left: 24px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mxm {
-        margin-right: 28px !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mxm {
-        margin-left: 28px !important;
-    }
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
 }
 
 /* margin-large */
 .u-ml {
-    margin: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-ml {
-        margin: 56px !important;
-    }
+    margin: 3rem !important;
 }
 
 .u-mtl {
-    margin-top: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mtl {
-        margin-top: 56px !important;
-    }
+    margin-top: 3rem !important;
 }
 
 .u-mrl {
-    margin-right: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mrl {
-        margin-right: 56px !important;
-    }
+    margin-right: 3rem !important;
 }
 
 .u-mbl {
-    margin-bottom: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mbl {
-        margin-bottom: 56px !important;
-    }
+    margin-bottom: 3rem !important;
 }
 
 .u-mll {
-    margin-left: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mll {
-        margin-left: 56px !important;
-    }
+    margin-left: 3rem !important;
 }
 
 .u-myl {
-    margin-top: 48px !important;
-    margin-bottom: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-myl {
-        margin-top: 56px !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .u-myl {
-        margin-bottom: 56px !important;
-    }
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
 }
 
 .u-mxl {
-    margin-right: 48px !important;
-    margin-left: 48px !important;
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mxl {
-        margin-right: 56px !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .u-mxl {
-        margin-left: 56px !important;
-    }
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
 }
 
 /**
