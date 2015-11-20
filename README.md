@@ -6,7 +6,6 @@ FLOCSSをベースにしたオブジェクト指向のスタイルシートで�
 * OOCSSをベースにしたマルチクラス設計。
 * [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)と[BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)をベースにした命名規則。
 * レスポンシブ対応のグリッドシステム。
-* Vertical Rhythmを使用した余白管理。
 
 ## ディレクトリ構成
 FLOCSSの構成にいくつかのレイヤーを足した以下のような構成になっています。
@@ -30,25 +29,33 @@ FLOCSSの構成にいくつかのレイヤーを足した以下のような構�
 FunctionとVariable、MixinにはSassの機能である関数と変数を定義しています。多くの関数や変数を定義する場合は機能ごとにファイルを分割します。特定のmixinやレイヤーでのみ使用する変数や関数は、その特定のファイル内で定義します。
 
 ```scss
-$base-font-color: #333 !default;
-$heading-font-color: null !default;
-$base-background-color: #fff !default;
-$base-link-color: #2b70ba !default;
-$visited-link-color: null !default;
-$hover-link-color: lighten($base-link-color, 15%) !default;
+$my-colors: (
+    text: (
+        base: #333,
+        light: #666,
+        dark: #000,
+    ),
+    link: (
+        base: #2b70ba,
+        visited: null,
+        hover: lighten(#2b70ba, 15%),
+    ),
+    ui: (
+        base: #aaa,
+        light: lighten(#aaa, 15%),
+        dark: darken(#aaa, 15%),
+    ),
+    bg: (
+        base: #fff,
+        light: lighten(#fff, 5%),
+        dark: darken(#fff, 10%),
+    ),
+) !default;
 ```
 
 ```scss
-@mixin media-query($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media #{unquote(map-get($breakpoints, $breakpoint))} {
-            @content;
-        }
-    }
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    }
+@function my-colors($key, $tone: base) {
+    @return map-get( map-get($my-colors, $key), $tone);
 }
 ```
 
@@ -73,9 +80,10 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
-    color: $heading-font-color;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.2;
 }
 ```
 
@@ -383,184 +391,4 @@ ComponentのモディファイアやProjectのオブジェクトで定義する�
 ```html
 /* 1カラム → 2カラム → 3カラム */
 <div class="c-grid__item u-6/12@md u-4/12@lg"></div>
-```
-
-## Vertical Rhythm
-余白の管理にはVertical Rhythmを採用しています（`padding`は`1em`をベースにしています）。mixinは2つ定義されています。
-
-1つ目の@mixinの`font-size`は`font-size`と`line-height`を指定するためのものです。
-
-```scss
-// コンパイル前
-.foo {
-    @include font-size($base-font-sizes);
-}
-
-// コンパイル後
-.foo {
-    font-size: 14px;
-    line-height: 1.715;
-}
-@media screen and (min-width: 1000px) {
-    .foo {
-        font-size: 16px;
-        line-height: 1.75;
-    }
-}
-```
-
-2つ目の@mixinは要素間の余白を指定するものです。プロパティをその都度指定します。
-
-```scss
-// コンパイル前
-.foo {
-  @include vertical-rhythm(margin-top, 1);
-  @include vertical-rhythm(margin-bottom, 1);
-}
-
-// コンパイル後
-.foo {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-@media screen and (min-width: 1000px) {
-  .foo {
-    margin-top: 28px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .foo {
-    margin-bottom: 28px;
-  }
-}
-```
-
-### @mixin
-@mixinは定義しておいた変数（マップ型）を呼び出して自動的にスタイルを生成します。
-
-```scss
-@mixin font-size($fs: $base-font-sizes) {
-    // ブレイクポイントを定義したmapを代入します。
-    $bp: $breakpoints;
-
-    // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
-    @each $name, $unit in $fs {
-        // mapのkeyが"base"の場合はブレイクポイントを指定せず値を渡します。
-        @if $name == "base" {
-             font-size: nth($unit, 1);
-             line-height: nth($unit, 3);
-        } @else {
-            // mapのkeyが"base"以外の場合はブレイクポイントを追加します。
-            @if map-has-key($bp, $name) {
-                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
-                @media #{map-get($bp, $name)} {
-                    font-size: nth($unit, 1);
-                    line-height: nth($unit, 3);
-                }
-            }
-        }
-    }
-}
-
-@mixin vertical-rhythm($prop, $vr: 1, $important: false) {
-    @if ($important == "important") {
-        $important: unquote("!important");
-    } @else {
-        $important: null;
-    }
-
-    // ブレイクポイントを定義したmapを代入します。
-    $bp: $breakpoints;
-
-    // 引数に渡したフォントサイズ用のmapのkeyとvalueを取得します。
-    @each $name, $unit in $base-font-sizes {
-        // mapのkeyが"base"の場合はブレイクポイントを指定せず値を渡します。
-        @if $name == "base" {
-            #{$prop}: nth($unit, 2) * $vr $important;
-        } @else {
-            @if map-has-key($bp, $name) {
-                // mapのkeyをブレイクポイントを定義したmapに渡してvalueを取得します。
-                @media #{map-get($bp, $name)} {
-                    #{$prop}: nth($unit, 2) * $vr $important;
-                }
-            }
-        }
-    }
-}
-```
-
-マップは2つ定義されています。ブレイクポイント用とフォントサイズ用です。
-
-ブレイクポイントのマップは`faundation/variable/_global.scss`で定義されています。
-
-```scss
-$breakpoints: (
-    'sm': 'screen and (min-width: 400px)',
-    'md': 'screen and (min-width: 768px)',
-    'lg': 'screen and (min-width: 1000px)',
-    'xl': 'screen and (min-width: 1200px)',
-) !default;
-```
-
-フォントサイズのマップは`faundation/variable/_font-size.scss`で定義されています。
-
-```scss
-@function vr($fs, $lh) {
-
-    // 小数点以下を3桁までに制限します。100に変更すると2桁に制限できます。
-    $n: 1000;
-    $vr: ceil(($lh / $fs) * $n) / $n;
-    $rem: ceil(($lh / $fs) * $n) / $n * 1rem;
-
-    @return ($fs, $lh, $vr, $rem);
-}
-
-$base-font-sizes: (
-    "base": vr(14px, 24px),
-    "lg": vr(16px, 28px),
-) !default;
-
-$h1-font-sizes: (
-    "base": vr(26px, 24px * 2),
-    "lg": vr(30px, 28px * 2),
-) !default;
-
-$h2-font-sizes: (
-    "base": vr(22px, 24px),
-    "lg": vr(26px, 28px),
-) !default;
-```
-
-マップのkeyにはブレイクポイントのキーワードになる文字列を指定します。`"base"`は必ず含むようにします。
-
-マップのvalueにはフォントサイズと行の高さをpxで指定します。`vr`関数を定義していて、フォントサイズと行の高さの順に渡すと、`フォントサイズ, 行の高さ, 行の高さ（単位なしの相対値）, 行の高さ（remの相対値）, `のようにリスト型で返されます。相対値は小数点以下3桁までに制限されます。
-
-```scss
-vr(14px, 24px) // => (14px, 24px, 1.714, 1.714rem)
-```
-
-同じkeyの行の高さは常に同じ、もしくは倍数になるように指定します。また、行の高さはフォントサイズより大きいように指定します（行間が狭くなりすぎるため）。
-
-```scss
-// OK
-$base-font-sizes: (
-    "base": vr(14px, 24px),
-    "lg": vr(16px, 28px),
-) !default;
-
-$h1-font-sizes: (
-    "base": vr(26px, 24px * 2),
-    "lg": vr(30px, 28px * 2),
-) !default;
-
-// NG
-$base-font-sizes: (
-    "base": vr(14px, 24px),
-    "lg": vr(16px, 28px),
-) !default;
-
-$h1-font-sizes: (
-    "base": vr(26px, 28px), // 24pxに訂正が必要
-    "lg": vr(28px, 28px), // 56(28 * 2)pxに訂正が必要
-) !default;
 ```
