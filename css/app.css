@@ -670,7 +670,6 @@ legend {
 
 label {
     display: inline-block;
-    margin-bottom: 1.5rem;
     vertical-align: top;
     cursor: pointer;
 }
@@ -681,7 +680,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="url"] {
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 
 textarea {

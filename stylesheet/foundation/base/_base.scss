@@ -178,7 +178,6 @@ legend {
 
 label {
     display: inline-block;
-    margin-bottom: my-margins();
     vertical-align: top;
     cursor: pointer;
 }
@@ -189,7 +188,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="url"] {
-    padding-left: my-paddings();
+    padding-left: my-paddings(small);
 }
 
 textarea {
