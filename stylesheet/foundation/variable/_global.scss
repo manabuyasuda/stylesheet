@@ -3,7 +3,7 @@
 //
 
 // @desc - ブレイクポイントを管理するためのmapです。
-// @type Map
+// @type {Map}
 // @prop {String} keys - ブレイクポイントのキーワードです。
 // @prop {String} values - メディアクエリの条件です。
 $my-breakpoints: (
