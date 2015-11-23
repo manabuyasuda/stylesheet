@@ -24,7 +24,6 @@ $my-margins: (
     large: ($my-base-margin * 2),
 ) !default;
 
-
 // @desc - グローバルに使用されるパディングのベースを定義します。
 $my-base-padding: 1em;
 // @desc - グローバルに使用されるパディングのバリエーションを定義します。要素内の余白に使用されます。
@@ -37,9 +36,9 @@ $my-paddings: (
 ) !default;
 
 // @desc - z-indexを管理するためのmapです。
-// @type Map
+// @type {Map}
 // @prop {String} key - z-indexの数値を呼び出す時のキーワードです。
-// @prop {Number} value - 数値を返します。
+// @prop {Number} value - z-indexに指定する数値です。
 $my-z-indexes: (
   'modal': 3,
   'dropdown': 2,

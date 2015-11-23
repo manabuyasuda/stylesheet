@@ -1,6 +1,7 @@
 // @desc - 単位付きの値の単位を削除します。
 // @type {Function}
 // @prop {Number} - pxやemなどの単位付きの値を渡します。
+// @return {Number} - 引数から単位を削除した数値を返します。
 // @example - strip-unit(14px) => 14
 @function my-strip-unit($n) {
     @return $n / ($n * 0 + 1);
@@ -9,6 +10,7 @@
 // @desc - プロジェクト共通のマージンを返します。
 // @type {Function}
 // @prop {String} $key(base) - 引数を指定しない場合はベースになる値を指定します。
+// @return {String} - マップで定義しているmarginを返します。
 // @require {Map} $my-margins - プロジェクト共通のマージンをバリエーションごとに定義しています。
 // @example - my-margins(small) => 0.75rem
 @function my-margins($key: base) {
@@ -18,13 +20,14 @@
 // @desc - プロジェクト共通のパディングを返します。
 // @type {Function}
 // @prop {String} $key(base) - 引数を指定しない場合はベースになる値を指定します。
+// @return {String} - マップで定義しているpaddingを返します。
 // @require {Map} $my-paddings - プロジェクト共通のマージンをバリエーションごとに定義しています。
 // @example - my-paddings(small) => 0.5em
 @function my-paddings($key: base) {
     @return map-get($my-paddings, $key);
 }
 
-// @desc - マップに定義したvalueを返す関数です。
+// @desc - プロジェクト共通のカラーを返します。
 // @type {Funciton}
 // @prop {String} $key - カラーのキーワード
 // @prop {String} $tone(base) - カラーのサブキーワード
