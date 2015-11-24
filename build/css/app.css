@@ -807,7 +807,7 @@ address {
  * `width`はデフォルトで100%が指定されています。
  * ガターは左側にだけ指定されています。
  * `width`の変更は`Utility/_width.scss`のクラスを使用します。
- * [DEMO](https://jsfiddle.net/manabuyasuda/a0r2xcsr/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/a0r2xcsr/3)
  *
  * <div class="c-wrapper">
  *   <div class="c-grid c-grid--gutter-medium">
@@ -915,7 +915,7 @@ address {
  */
 /**
  * 横並びになるリストオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/udbyrfbo/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/udbyrfbo/1)
  *
  * <ul class="c-list-inline">
  *   <li class="c-list-inline__item">
@@ -957,7 +957,7 @@ address {
  */
 /**
  * 縦に配置するオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/7ebqpj8b/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/7ebqpj8b/1)
  *
  * <ul class="c-list-block">
  *   <li class="c-list-block__unit">
@@ -987,7 +987,7 @@ address {
  * 横並び（ranked）になるリストオブジェクトです。
  * リンクがない場合でも余白が変わりません。
  * モディファイアで余白が変更できます。
- * [DEMO](https://jsfiddle.net/manabuyasuda/k93rhad6/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/k93rhad6/2)
  *
  * <ul class="c-rank [c-rank--size-small]">
  *   <li class="c-rank__item">
@@ -1042,7 +1042,7 @@ address {
  * 横幅いっぱいで均等、中央揃えのナビゲーションオブジェクトです。
  * リンクがない場合でも余白が変わりません。
  * モディファイアで余白を変更できます。
- * [DEMO](https://jsfiddle.net/manabuyasuda/bnrepy5e/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/bnrepy5e/1)
  *
  * <ul class="c-pack [c-pack--size-small]">
  *   <li class="c-pack__item">
@@ -1100,7 +1100,7 @@ address {
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
  * リンクがない場合でも余白が変わりません。
  * モディファイアで余白が変更できます。
- * [DEMO](https://jsfiddle.net/manabuyasuda/3rcgp8t6/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/3rcgp8t6/1)
  *
  * <ul class="c-stack [c-stack--size-small]">
  *     <li class="c-stack__item">
@@ -1163,7 +1163,7 @@ address {
  * `c-media__image`は`<figure>`でも`<img>`のどちらでも使用できます。
  * `c-media__image--rev`を指定すると画像を右側に配置することもできます。
  * `c-media__image`と`c-media__body`は`<img>`と`<p>`に直接マークアップすることもできます。
- * [DEMO](https://jsfiddle.net/manabuyasuda/mh9rkg0b/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/mh9rkg0b/1)
  *
  * <div class="c-media">
  *   <figure class="c-media__image [c-media__image--rev]">
@@ -1218,7 +1218,7 @@ address {
  * 垂直方向を変更するため、`<img>`は`c-frag__image`で必ずラップします。
  * マークアップに制限があるため、mediaオブジェクトを優先して使用してください。
  * http://csswizardry.com/2013/05/the-flag-object/
- * [DEMO](https://jsfiddle.net/manabuyasuda/48zwrp45/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/48zwrp45/1)
  *
  * <div class="c-frag [c-frag--rev]">
  *   <figure class="c-frag__image">
@@ -1297,7 +1297,7 @@ address {
  * 2つの要素をブロックから横並びにするオブジェクトです。
  * 定義リストで使用することを想定しています。
  * デフォルトで`c-split__name`が10文字を越えるとレイアウトが崩れます。
- * [DEMO](https://jsfiddle.net/manabuyasuda/yzLa898k/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yzLa898k/1)
  *
  * <dl class="c-split [c-split--has-border]">
  *   <dt class="c-split__name"></dt>
@@ -1343,7 +1343,7 @@ address {
  * 要素の合計が親要素の幅の合計に満たない場合は要素間に均等な余白を作り、
  * 要素の合計が幅の合計を超えた場合はカラム落ちします。
  * https://github.com/hiloki/kitecss
- * [DEMO](https://jsfiddle.net/manabuyasuda/jqb0r8mb/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/jqb0r8mb/1)
  *
  * <div class="c-justify">
  *   <div class="c-justify__item"></div>
@@ -1401,7 +1401,7 @@ address {
  */
 /**
  * 上下左右の中央配置に利用するオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/p479y7hs/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/p479y7hs/1)
  *
  * <div class="c-central-box [c-central-box--full]">
  *     <div class="c-central-box__item">
@@ -1436,7 +1436,7 @@ address {
  * ベーシックなボタンオブジェクトです。
  * `<a>`, `<button>`, `<input>`要素のスタイルをリセットしています。
  * サイズやスタイルの変更はモディファイアクラスを指定します。
- * [DEMO](https://jsfiddle.net/manabuyasuda/yoLg0g9h/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yoLg0g9h/1)
  *
  * <div class="l-page-content">
  *   <a href="#" class="c-button [c-button--full]">First Button</a>
@@ -1545,7 +1545,7 @@ address {
  * #Image
  */
 /**
- * [DEMO](https://jsfiddle.net/manabuyasuda/wy8b3o6b/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/wy8b3o6b/1)
  */
 .c-image-round {
     border-radius: 3px;
@@ -1794,7 +1794,7 @@ address {
  */
 /**
  * カード型のオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/qyspyLg1/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/qyspyLg1/1)
  *
  * <div class="p-card">
  *   <img class="p-card__image-top">
@@ -1883,7 +1883,7 @@ address {
  */
 /**
  * 吹き出しを作るコンポーネントです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/pc237gL3/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/pc237gL3/1)
  *
  * <div class="p-balloon p-balloon--left-middle"></div>
  */

@@ -10,7 +10,7 @@ $my-frag-gutter: my-paddings() !default;
  * 垂直方向を変更するため、`<img>`は`c-frag__image`で必ずラップします。
  * マークアップに制限があるため、mediaオブジェクトを優先して使用してください。
  * http://csswizardry.com/2013/05/the-flag-object/
- * [DEMO](https://jsfiddle.net/manabuyasuda/48zwrp45/)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/48zwrp45/1)
  *
  * <div class="c-frag [c-frag--rev]">
  *   <figure class="c-frag__image">
