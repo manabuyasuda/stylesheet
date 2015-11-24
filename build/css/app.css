@@ -19,7 +19,6 @@
  *
  * BASE
  * Base.................要素セレクタと属性セレクタのデフォルトスタイルです。
- * Debug................
  *
  * LAYOUT
  * Header...............ヘッダーエリアのコンテナブロックのスタイルを指定します。
@@ -44,7 +43,6 @@
  * Button..............ボタンコンポーネントのベーススタイルです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
-
  *
  * PROJECT
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
@@ -86,7 +84,7 @@ html {
     font-family: sans-serif;
     /* 1 */
 
-        -ms-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
@@ -202,7 +200,7 @@ dfn {
  * contexts in Firefox 4+, Safari, and Chrome.
  */
 h1 {
-    margin: 0.67em 0;
+    margin: 0.67em 0; 
     font-size: 2em;
 }
 
@@ -210,7 +208,7 @@ h1 {
  * Address styling not present in IE 8/9.
  */
 mark {
-    color: #000;
+    color: #000; 
     background: #ff0;
 }
 
@@ -365,7 +363,7 @@ html input[disabled] {
  */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    padding: 0;
+    padding: 0; 
     border: 0;
 }
 
@@ -429,7 +427,7 @@ input[type="search"]::-webkit-search-decoration {
  */
 fieldset {
     margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+    padding: 0.35em 0.625em 0.75em; 
     border: 1px solid #c0c0c0;
 }
 
@@ -465,7 +463,7 @@ optgroup {
  * Remove most spacing between table cells.
  */
 table {
-    border-spacing: 0;
+    border-spacing: 0; 
     border-collapse: collapse;
 }
 
@@ -502,10 +500,8 @@ html {
     font-size: 14px;
     line-height: 1.5;
     /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
-
     -webkit-tap-highlight-color: transparent;
 }
-
 @media screen and (min-width: 1000px) {
     html {
         font-size: 16px;
@@ -527,7 +523,7 @@ body {
     -moz-osx-font-smoothing: auto;
     /* メトリクスカーニングを指定する */
     -webkit-font-kerning: normal;
-            font-kerning: normal;
+    font-kerning: normal; 
     background-color: #fff;
 }
 
@@ -586,7 +582,6 @@ a {
     color: #2b70ba;
     text-decoration: none;
 }
-
 a:hover,
 a:focus {
     color: #5997d9;
@@ -642,11 +637,9 @@ blockquote {
     border-left: 1px solid #666;
     color: #666;
 }
-
 blockquote > :first-child {
     margin-top: 0;
 }
-
 blockquote > :last-child {
     margin-bottom: 0;
 }
@@ -730,7 +723,6 @@ kbd {
     /* ユーザーに入力を促す要素 */
     font-family: inherit;
 }
-
 kbd > kbd {
     /* キーボードのキーを示す要素に変化するためボーダーで囲われます */
     display: inline-block;
@@ -739,7 +731,7 @@ kbd > kbd {
     padding: 3px 6px;
     border-width: 1px;
     border-style: solid;
-    border-radius: 3px;
+    border-radius: 3px; 
     font-size: 0.75rem;
     line-height: 1;
 }
@@ -848,7 +840,6 @@ address {
 .c-grid--gutter-medium {
     margin-left: -1.5em;
 }
-
 .c-grid--gutter-medium > .c-grid__item {
     padding-left: 1.5em;
 }
@@ -856,7 +847,6 @@ address {
 .c-grid--gutter-small {
     margin-left: -0.75em;
 }
-
 .c-grid--gutter-small > .c-grid__item {
     padding-left: 0.75em;
 }
@@ -864,7 +854,6 @@ address {
 .c-grid--gutter-large {
     margin-left: -3em;
 }
-
 .c-grid--gutter-large > .c-grid__item {
     padding-left: 3em;
 }
@@ -888,7 +877,6 @@ address {
 .c-grid--center {
     text-align: center;
 }
-
 .c-grid--center > .c-grid__item {
     text-align: left;
 }
@@ -896,7 +884,6 @@ address {
 .c-grid--right {
     text-align: right;
 }
-
 .c-grid--right > .c-grid__item {
     text-align: left;
 }
@@ -914,15 +901,12 @@ address {
 .c-grid--rev {
     text-align: left;
     /* 文字表記を右から左に変更します。 */
-
     direction: rtl;
 }
-
 .c-grid--rev > .c-grid__item {
     /* IE以外ではテキストが右寄せのままになってしまう */
     text-align: left;
     /* derectionプロパティを元に戻します。*/
-
     direction: ltr;
 }
 
@@ -947,7 +931,6 @@ address {
     padding: 0;
     list-style-type: none;
 }
-
 .c-list-inline:after {
     content: "";
     display: table;
@@ -965,7 +948,7 @@ address {
 }
 
 .c-list-unstyle {
-    margin: 0;
+    margin: 0; 
     list-style-type: none;
 }
 
@@ -1195,7 +1178,6 @@ address {
     margin: 0;
     padding: 0;
 }
-
 .c-media:after {
     content: "";
     display: table;
@@ -1206,7 +1188,6 @@ address {
     float: left;
     margin-right: 1em;
 }
-
 .c-media__image > img {
     display: block;
     max-width: none;
@@ -1260,7 +1241,6 @@ address {
     padding-right: 1em;
     vertical-align: middle;
 }
-
 .c-frag__image > img {
     display: block;
     max-width: none;
@@ -1281,19 +1261,15 @@ address {
     /* IE以外ではテキストが右寄せのままになってしまう */
     text-align: left;
     /* 文字表記を右から左に変更します。 */
-
     direction: rtl;
 }
-
 .c-frag--rev > .c-frag__image,
 .c-frag--rev > .c-frag__body {
     /* IE以外ではテキストが右寄せのままになってしまう */
     text-align: left;
     /* derectionプロパティを元に戻します。*/
-
     direction: ltr;
 }
-
 .c-frag--rev > .c-frag__image {
     padding-right: 0;
     padding-left: 1em;
@@ -1345,7 +1321,6 @@ address {
 .c-split--has-border {
     border-top: 1px solid #aaa;
 }
-
 .c-split--has-border > .c-split__value {
     border-bottom: 1px solid #aaa;
 }
@@ -1383,7 +1358,6 @@ address {
     text-align: justify;
     text-justify: distribute-all-lines;
 }
-
 .c-justify:after {
     content: "";
     display: inline-block;
@@ -1417,7 +1391,6 @@ address {
 
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
-
 .c-scroll-table th,
 .c-scroll-table td {
     white-space: nowrap;
@@ -1447,8 +1420,8 @@ address {
     right: 50%;
     bottom: 50%;
     -webkit-transform: translate(50%, 50%);
-        -ms-transform: translate(50%, 50%);
-            transform: translate(50%, 50%);
+    -ms-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
 }
 
 .c-central-box--full {
@@ -1487,16 +1460,14 @@ address {
     cursor: pointer;
 
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
-
 .c-button:hover,
 .c-button:active,
 .c-button:focus {
     text-decoration: none;
 }
-
 .c-button[disabled],
 .c-button.disabled {
     opacity: 0.5;
@@ -1549,7 +1520,6 @@ address {
     margin: 0;
     padding: 0;
 }
-
 .c-embed iframe,
 .c-embed embed,
 .c-embed object,
@@ -1666,7 +1636,6 @@ address {
 .c-image-overlay {
     position: relative;
 }
-
 .c-image-overlay:after {
     content: "";
     position: absolute;
@@ -1708,14 +1677,13 @@ address {
     overflow: hidden;
     padding-left: 0;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
     list-style-type: none;
 }
 
 .p-breadcrumbs__item {
     display: inline-block;
 }
-
 .p-breadcrumbs__item:last-child {
     display: inline;
 }
@@ -1805,7 +1773,6 @@ address {
     text-decoration: none;
     transition-duration: 0.3s;
 }
-
 .p-tag-cloud__link:hover {
     color: #fff;
     background-color: #2b70ba;
@@ -1818,7 +1785,6 @@ address {
 .p-tag-cloud__count {
     font-size: 0.75em;
 }
-
 .p-tag-cloud__count:before {
     content: "\00A0";
 }
@@ -1828,6 +1794,7 @@ address {
  */
 /**
  * カード型のオブジェクトです。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/qyspyLg1/)
  *
  * <div class="p-card">
  *   <img class="p-card__image-top">
@@ -1853,7 +1820,6 @@ address {
 .p-card__body {
     padding: 1.5em 1em;
 }
-
 .p-card__body > :last-child {
     margin-bottom: 0;
 }
@@ -1861,7 +1827,6 @@ address {
 .p-card__head {
     padding: 1em;
 }
-
 .p-card__head > :last-child {
     margin-bottom: 0;
 }
@@ -1870,7 +1835,6 @@ address {
     padding: 1em;
     border-top: 1px solid #d0d0d0;
 }
-
 .p-card__foot > :last-child {
     margin-bottom: 0;
 }
@@ -1919,6 +1883,7 @@ address {
  */
 /**
  * 吹き出しを作るコンポーネントです。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/pc237gL3/)
  *
  * <div class="p-balloon p-balloon--left-middle"></div>
  */
@@ -2792,13 +2757,12 @@ address {
  */
 [class^="u-column"] {
     -webkit-column-count: 1;
-       -moz-column-count: 1;
-            column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
     -webkit-column-gap: 1em;
-       -moz-column-gap: 1em;
-            column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
 }
-
 [class^="u-column"] > .u-column__item {
     display: inline-block !important;
     width: 100% !important;
@@ -2806,91 +2770,91 @@ address {
 
 .u-column1 {
     -webkit-column-count: 1;
-       -moz-column-count: 1;
-            column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
 }
 
 .u-column2 {
     -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
 }
 
 .u-column3 {
     -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
 }
 
 @media screen and (min-width: 400px) {
     .u-column1\@sm {
         -webkit-column-count: 1;
-           -moz-column-count: 1;
-                column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
     }
     .u-column2\@sm {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
-                column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
     }
     .u-column3\@sm {
         -webkit-column-count: 3;
-           -moz-column-count: 3;
-                column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
     }
 }
 
 @media screen and (min-width: 768px) {
     .u-column1\@md {
         -webkit-column-count: 1;
-           -moz-column-count: 1;
-                column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
     }
     .u-column2\@md {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
-                column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
     }
     .u-column3\@md {
         -webkit-column-count: 3;
-           -moz-column-count: 3;
-                column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
     }
 }
 
 @media screen and (min-width: 1000px) {
     .u-column1\@lg {
         -webkit-column-count: 1;
-           -moz-column-count: 1;
-                column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
     }
     .u-column2\@lg {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
-                column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
     }
     .u-column3\@lg {
         -webkit-column-count: 3;
-           -moz-column-count: 3;
-                column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .u-column1\@xl {
         -webkit-column-count: 1;
-           -moz-column-count: 1;
-                column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
     }
     .u-column2\@xl {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
-                column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
     }
     .u-column3\@xl {
         -webkit-column-count: 3;
-           -moz-column-count: 3;
-                column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
     }
 }
 
@@ -3082,7 +3046,7 @@ address {
 }
 
 .u-pxs {
-    padding-right: 0.5em !important;
+    padding-right: 0.5em !important; 
     padding-left: 0.5em !important;
 }
 
@@ -3301,3 +3265,4 @@ address {
 .u-pof {
     position: fixed !important;
 }
+/*# sourceMappingURL=app.css.map */

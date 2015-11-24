@@ -1,0 +1,31 @@
+{
+  "name": "stylesheet",
+  "version": "0.0.0",
+  "description": "This is stylesheet based on the FLOCSS",
+  "keywords": [
+    "css",
+    "scss"
+  ],
+  "author": "manabuyasuda",
+  "scripts": {
+    "gulp sass": "compiled scss",
+    "gulp watch": "gulp watch",
+    "gulp": "comliled and watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manabuyasuda/stylesheet.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manabuyasuda/stylesheet/issues"
+  },
+  "homepage": "https://github.com/manabuyasuda/stylesheet#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
