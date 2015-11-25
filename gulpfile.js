@@ -27,7 +27,7 @@ var build = {
 gulp.task('sass', function(){
   return gulp.src(source.sass)
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 3 versions'],
     }))
