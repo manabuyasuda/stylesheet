@@ -4,6 +4,7 @@
 $my-balloon-space: my-paddings() !default;
 $my-balloon-width: 12px !default;
 $my-balloon-border-width: 1px !default;
+$my-balloon-arrow-width: ($my-balloon-width - $my-balloon-border-width) !default;
 $my-balloon-border-color: my-colors(ui, light) !default;
 $my-balloon-arrow-color: darken($my-balloon-border-color, 15%) !default;
 $my-balloon-bg: my-colors(bg) !default;
@@ -25,165 +26,124 @@ $my-balloon-bg: my-colors(bg) !default;
 }
 
 // margin
-.p-balloon--top-center,
 .p-balloon--top-left,
+.p-balloon--top-center,
 .p-balloon--top-right {
     margin-top: $my-balloon-space;
 }
 
+.p-balloon--bottom-right,
 .p-balloon--bottom-center,
-.p-balloon--bottom-left,
-.p-balloon--bottom-right {
+.p-balloon--bottom-left {
     margin-bottom: $my-balloon-space;
 }
 
-.p-balloon--right-middle,
 .p-balloon--right-top,
+.p-balloon--right-middle,
 .p-balloon--right-bottom {
     margin-right: $my-balloon-space;
 }
 
+.p-balloon--left-bottom,
 .p-balloon--left-middle,
-.p-balloon--left-top,
-.p-balloon--left-bottom {
+.p-balloon--left-top {
     margin-left: $my-balloon-space;
 }
 
-// common
-.p-balloon--top-center,
+// modifier
 .p-balloon--top-left,
+.p-balloon--top-center,
 .p-balloon--top-right,
+.p-balloon--right-top,
+.p-balloon--right-middle,
+.p-balloon--right-bottom,
+.p-balloon--bottom-right,
 .p-balloon--bottom-center,
 .p-balloon--bottom-left,
-.p-balloon--bottom-right,
-.p-balloon--right-middle,
-.p-balloon--right-top,
-.p-balloon--right-bottom,
+.p-balloon--left-bottom,
 .p-balloon--left-middle,
-.p-balloon--left-top,
-.p-balloon--left-bottom {
+.p-balloon--left-top {
     &:before,
     &:after {
         content: "";
         position: absolute;
+        border-collapse: separate;
+    }
+    &:before {
         border: $my-balloon-width solid transparent;
+    }
+    &:after {
+        border: $my-balloon-arrow-width solid transparent;
     }
 }
 
-// top, botom
-.p-balloon--top-center,
 .p-balloon--top-left,
+.p-balloon--top-center,
 .p-balloon--top-right {
     &:before,
     &:after {
         bottom: 100%;
+    }
+    &:before {
+        border-bottom-color: $my-balloon-arrow-color;
+    }
+    &:after {
         border-bottom-color: $my-balloon-bg;
     }
 }
 
-.p-balloon--bottom-center,
-.p-balloon--bottom-left,
-.p-balloon--bottom-right {
-    &:before,
-    &:after {
-        top: 100%;
-        border-top-color: $my-balloon-bg;
-    }
-}
-
-.p-balloon--top-center,
-.p-balloon--bottom-center {
-    &:before,
-    &:after {
-        left: 50%;
-        margin-left: -($my-balloon-width);
-    }
-}
-
-.p-balloon--top-center,
-.p-balloon--bottom-center {
-    &:before {
-        margin-left: -($my-balloon-width + $my-balloon-border-width);
-        border-width: ($my-balloon-width + $my-balloon-border-width);
-    }
-}
-
-.p-balloon--top-center:before {
-    border-bottom-color: $my-balloon-arrow-color;
-}
-
-.p-balloon--bottom-center:before {
-    border-top-color: $my-balloon-arrow-color;
-}
-
-.p-balloon--top-left,
-.p-balloon--bottom-left {
-    &:before,
-    &:after {
-        left: 0;
-        margin-left: (($my-balloon-width * 2) + $my-balloon-border-width);
-    }
-}
-
-.p-balloon--top-left,
-.p-balloon--bottom-left {
-    &:before {
-        margin-left: ($my-balloon-width * 2);
-        border-width: ($my-balloon-width + $my-balloon-border-width);
-    }
-}
-
-.p-balloon--top-left:before {
-    border-bottom-color: $my-balloon-arrow-color;
-}
-
-.p-balloon--bottom-left:before {
-    border-top-color: $my-balloon-arrow-color;
-}
-
-// right, left
-.p-balloon--top-right,
-.p-balloon--bottom-right {
-    &:before,
-    &:after {
-        right: 0;
-        margin-right: (($my-balloon-width * 2) + $my-balloon-border-width);
-    }
-}
-
-.p-balloon--top-right,
-.p-balloon--bottom-right {
-    &:before {
-        margin-right: ($my-balloon-width * 2);
-        border-width: ($my-balloon-width + $my-balloon-border-width);
-    }
-}
-
-.p-balloon--top-right:before {
-    border-bottom-color: $my-balloon-arrow-color;
-}
-
-.p-balloon--bottom-right:before {
-    border-top-color: $my-balloon-arrow-color;
-}
-
-.p-balloon--right-middle,
 .p-balloon--right-top,
+.p-balloon--right-middle,
 .p-balloon--right-bottom {
     &:before,
     &:after {
         left: 100%;
-        border-width: ($my-balloon-width + $my-balloon-border-width);
+    }
+    &:before {
+        border-left-color: $my-balloon-arrow-color;
+    }
+    &:after {
         border-left-color: $my-balloon-bg;
     }
 }
 
-.p-balloon--right-middle,
-.p-balloon--right-top,
-.p-balloon--right-bottom {
+.p-balloon--bottom-right,
+.p-balloon--bottom-center,
+.p-balloon--bottom-left {
+    &:before,
+    &:after {
+        top: 100%;
+    }
     &:before {
-        margin-left: $my-balloon-border-width;
-        border-left-color: $my-balloon-arrow-color;
+        border-top-color: $my-balloon-arrow-color;
+    }
+    &:after {
+        border-top-color: $my-balloon-bg;
+    }
+}
+
+.p-balloon--left-bottom,
+.p-balloon--left-middle,
+.p-balloon--left-top {
+    &:before,
+    &:after {
+        right: 100%;
+    }
+    &:before {
+        border-right-color: $my-balloon-arrow-color;
+    }
+    &:after {
+        border-right-color: $my-balloon-bg;
+    }
+}
+
+.p-balloon--right-top,
+.p-balloon--left-top {
+    &:before {
+        top: $my-balloon-arrow-width;
+    }
+    &:after {
+        top: $my-balloon-width;
     }
 }
 
@@ -192,44 +152,51 @@ $my-balloon-bg: my-colors(bg) !default;
     &:before,
     &:after {
         top: 50%;
-        margin-top: (-$my-balloon-width);
+        margin-top: -$my-balloon-width;
     }
-}
-
-.p-balloon--right-top,
-.p-balloon--left-top {
-    &:before,
     &:after {
-        top: 0;
-        margin-top: ($my-balloon-width * 2);
+        margin-top: -$my-balloon-arrow-width;
     }
 }
 
 .p-balloon--right-bottom,
 .p-balloon--left-bottom {
-    &:before,
-    &:after {
-        bottom: 0;
-        margin-bottom: ($my-balloon-width * 2);
-    }
-}
-
-.p-balloon--left-middle,
-.p-balloon--left-top,
-.p-balloon--left-bottom {
-    &:before,
-    &:after {
-        right: 100%;
-        border-width: ($my-balloon-width + $my-balloon-border-width);
-        border-right-color: $my-balloon-bg;
-    }
-}
-
-.p-balloon--left-middle,
-.p-balloon--left-top,
-.p-balloon--left-bottom {
     &:before {
-        margin-right: $my-balloon-border-width;
-        border-right-color: $my-balloon-arrow-color;
+        bottom: $my-balloon-arrow-width;
+    }
+    &:after {
+        bottom: $my-balloon-width;
+    }
+}
+
+.p-balloon--top-left,
+.p-balloon--bottom-left {
+    &:before {
+        left: $my-balloon-arrow-width;
+    }
+    &:after {
+        left: $my-balloon-width;
+    }
+}
+
+.p-balloon--top-center,
+.p-balloon--bottom-center {
+    &:before,
+    &:after {
+        left: 50%;
+        margin-left: -$my-balloon-width;
+    }
+    &:after {
+        margin-left: -$my-balloon-arrow-width;
+    }
+}
+
+.p-balloon--top-right,
+.p-balloon--bottom-right {
+    &:before {
+        right: $my-balloon-arrow-width;
+    }
+    &:after {
+        right: $my-balloon-width;
     }
 }
