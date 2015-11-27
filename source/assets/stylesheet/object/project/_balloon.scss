@@ -5,6 +5,7 @@ $my-balloon-space: my-paddings() !default;
 $my-balloon-width: 12px !default;
 $my-balloon-border-width: 1px !default;
 $my-balloon-border-color: my-colors(ui, light) !default;
+$my-balloon-arrow-color: darken($my-balloon-border-color, 15%) !default;
 $my-balloon-bg: my-colors(bg) !default;
 
 /**
@@ -108,11 +109,11 @@ $my-balloon-bg: my-colors(bg) !default;
 }
 
 .p-balloon--top-center:before {
-    border-bottom-color: $my-balloon-border-color;
+    border-bottom-color: $my-balloon-arrow-color;
 }
 
 .p-balloon--bottom-center:before {
-    border-top-color: $my-balloon-border-color;
+    border-top-color: $my-balloon-arrow-color;
 }
 
 .p-balloon--top-left,
@@ -133,11 +134,11 @@ $my-balloon-bg: my-colors(bg) !default;
 }
 
 .p-balloon--top-left:before {
-    border-bottom-color: $my-balloon-border-color;
+    border-bottom-color: $my-balloon-arrow-color;
 }
 
 .p-balloon--bottom-left:before {
-    border-top-color: $my-balloon-border-color;
+    border-top-color: $my-balloon-arrow-color;
 }
 
 // right, left
@@ -159,11 +160,11 @@ $my-balloon-bg: my-colors(bg) !default;
 }
 
 .p-balloon--top-right:before {
-    border-bottom-color: $my-balloon-border-color;
+    border-bottom-color: $my-balloon-arrow-color;
 }
 
 .p-balloon--bottom-right:before {
-    border-top-color: $my-balloon-border-color;
+    border-top-color: $my-balloon-arrow-color;
 }
 
 .p-balloon--right-middle,
@@ -182,7 +183,7 @@ $my-balloon-bg: my-colors(bg) !default;
 .p-balloon--right-bottom {
     &:before {
         margin-left: $my-balloon-border-width;
-        border-left-color: $my-balloon-border-color;
+        border-left-color: $my-balloon-arrow-color;
     }
 }
 
@@ -229,6 +230,6 @@ $my-balloon-bg: my-colors(bg) !default;
 .p-balloon--left-bottom {
     &:before {
         margin-right: $my-balloon-border-width;
-        border-right-color: $my-balloon-border-color;
+        border-right-color: $my-balloon-arrow-color;
     }
 }

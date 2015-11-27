@@ -1985,11 +1985,11 @@ address {
 }
 
 .p-balloon--top-center:before {
-    border-bottom-color: #d0d0d0;
+    border-bottom-color: #aaa;
 }
 
 .p-balloon--bottom-center:before {
-    border-top-color: #d0d0d0;
+    border-top-color: #aaa;
 }
 
 .p-balloon--top-left:before,
@@ -2007,11 +2007,11 @@ address {
 }
 
 .p-balloon--top-left:before {
-    border-bottom-color: #d0d0d0;
+    border-bottom-color: #aaa;
 }
 
 .p-balloon--bottom-left:before {
-    border-top-color: #d0d0d0;
+    border-top-color: #aaa;
 }
 
 .p-balloon--top-right:before,
@@ -2029,11 +2029,11 @@ address {
 }
 
 .p-balloon--top-right:before {
-    border-bottom-color: #d0d0d0;
+    border-bottom-color: #aaa;
 }
 
 .p-balloon--bottom-right:before {
-    border-top-color: #d0d0d0;
+    border-top-color: #aaa;
 }
 
 .p-balloon--right-middle:before,
@@ -2051,7 +2051,7 @@ address {
 .p-balloon--right-top:before,
 .p-balloon--right-bottom:before {
     margin-left: 1px;
-    border-left-color: #d0d0d0;
+    border-left-color: #aaa;
 }
 
 .p-balloon--right-middle:before,
@@ -2093,7 +2093,7 @@ address {
 .p-balloon--left-top:before,
 .p-balloon--left-bottom:before {
     margin-right: 1px;
-    border-right-color: #d0d0d0;
+    border-right-color: #aaa;
 }
 
 /* Utitlity
