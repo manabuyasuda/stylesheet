@@ -716,7 +716,7 @@ samp {
 
 code,
 pre {
-    font-family: "Menlo, Consolas", "Courier New", Courier, monospace;
+    font-family: Menlo, Consolas, Courier, monospace;
 }
 
 kbd {
