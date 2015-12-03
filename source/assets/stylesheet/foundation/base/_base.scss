@@ -26,11 +26,6 @@ html {
     }
 }
 
-/* 画面いっぱいに背景画像を表示する際にルート要素に高さの指定が必要 */
-html, body {
-    height: 100%;
-}
-
 body {
     color: my-colors(text);
     font-family: "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -61,7 +56,7 @@ h6 {
     color: inherit;
     font-family: inherit;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.4;
 }
 
 h1, .u-h1 {
@@ -69,23 +64,23 @@ h1, .u-h1 {
 }
 
 h2, .u-h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 h3, .u-h3 {
-    font-size: 1.6rem;
-}
-
-h4, .u-h4 {
-    font-size: 1.6rem;
-}
-
-h5, .u-h5 {
     font-size: 1.4rem;
 }
 
-h6, .u-h6 {
+h4, .u-h4 {
     font-size: 1.2rem;
+}
+
+h5, .u-h5 {
+    font-size: 1rem;
+}
+
+h6, .u-h6 {
+    font-size: 1rem;
 }
 
 a {

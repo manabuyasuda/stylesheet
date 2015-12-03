@@ -498,7 +498,7 @@ html {
 
 html {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.7;
     /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
     -webkit-tap-highlight-color: transparent;
 }
@@ -506,12 +506,6 @@ html {
     html {
         font-size: 16px;
     }
-}
-
-/* 画面いっぱいに背景画像を表示する際にルート要素に高さの指定が必要 */
-html,
-body {
-    height: 100%;
 }
 
 body {
@@ -545,7 +539,7 @@ h6 {
     color: inherit;
     font-family: inherit;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.4;
 }
 
 h1,
@@ -555,27 +549,27 @@ h1,
 
 h2,
 .u-h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 h3,
 .u-h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 h4,
 .u-h4 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 h5,
 .u-h5 {
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 h6,
 .u-h6 {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 a {
@@ -632,7 +626,7 @@ th {
  * </blockquote>
  */
 blockquote {
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 1.7rem 0 1.7rem 0;
     padding-left: 1em;
     border-left: 1px solid #666;
     color: #666;
@@ -753,7 +747,7 @@ table,
 pre,
 address {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.7rem;
 }
 
 /* ==========================================================================
@@ -2941,95 +2935,95 @@ address {
 
 /* margin-small */
 .u-ms {
-    margin: 0.75rem !important;
+    margin: 0.85rem !important;
 }
 
 .u-mts {
-    margin-top: 0.75rem !important;
+    margin-top: 0.85rem !important;
 }
 
 .u-mrs {
-    margin-right: 0.75rem !important;
+    margin-right: 0.85rem !important;
 }
 
 .u-mbs {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.85rem !important;
 }
 
 .u-mls {
-    margin-left: 0.75rem !important;
+    margin-left: 0.85rem !important;
 }
 
 .u-mys {
-    margin-top: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
+    margin-top: 0.85rem !important;
+    margin-bottom: 0.85rem !important;
 }
 
 .u-mxs {
-    margin-right: 0.75rem !important;
-    margin-left: 0.75rem !important;
+    margin-right: 0.85rem !important;
+    margin-left: 0.85rem !important;
 }
 
 /* margin-medium */
 .u-mm {
-    margin: 1.5rem !important;
+    margin: 1.7rem !important;
 }
 
 .u-mtm {
-    margin-top: 1.5rem !important;
+    margin-top: 1.7rem !important;
 }
 
 .u-mrm {
-    margin-right: 1.5rem !important;
+    margin-right: 1.7rem !important;
 }
 
 .u-mbm {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.7rem !important;
 }
 
 .u-mlm {
-    margin-left: 1.5rem !important;
+    margin-left: 1.7rem !important;
 }
 
 .u-mym {
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
+    margin-top: 1.7rem !important;
+    margin-bottom: 1.7rem !important;
 }
 
 .u-mxm {
-    margin-right: 1.5rem !important;
-    margin-left: 1.5rem !important;
+    margin-right: 1.7rem !important;
+    margin-left: 1.7rem !important;
 }
 
 /* margin-large */
 .u-ml {
-    margin: 3rem !important;
+    margin: 3.4rem !important;
 }
 
 .u-mtl {
-    margin-top: 3rem !important;
+    margin-top: 3.4rem !important;
 }
 
 .u-mrl {
-    margin-right: 3rem !important;
+    margin-right: 3.4rem !important;
 }
 
 .u-mbl {
-    margin-bottom: 3rem !important;
+    margin-bottom: 3.4rem !important;
 }
 
 .u-mll {
-    margin-left: 3rem !important;
+    margin-left: 3.4rem !important;
 }
 
 .u-myl {
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
+    margin-top: 3.4rem !important;
+    margin-bottom: 3.4rem !important;
 }
 
 .u-mxl {
-    margin-right: 3rem !important;
-    margin-left: 3rem !important;
+    margin-right: 3.4rem !important;
+    margin-left: 3.4rem !important;
 }
 
 /**
