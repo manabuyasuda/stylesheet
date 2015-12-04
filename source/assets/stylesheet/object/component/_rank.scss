@@ -1,8 +1,8 @@
 /**
  * #Rank
  */
-$my-rank-space-y: my-paddings() !default;
-$my-rank-space-x: 0 !default;
+$my-rank-space-y: my-paddings(small) !default;
+$my-rank-space-x: my-paddings() !default;
 
 /**
  * 横並び（ranked）になるリストオブジェクトです。
@@ -20,16 +20,15 @@ $my-rank-space-x: 0 !default;
  * </ul>
  */
 .c-rank {
+    @include my-clearfix;
     margin: 0;
     padding: 0;
-    font-size: 0;
     list-style-type: none;
 }
 
 .c-rank__item {
-    display: inline-block;
+    float: left;
     padding: $my-rank-space-y $my-rank-space-x;
-    font-size: 1rem;
 }
 
 .c-rank__link {
@@ -40,20 +39,20 @@ $my-rank-space-x: 0 !default;
 
 .c-rank--size-small {
     > .c-rank__item {
-        padding: ($my-rank-space-y / 2) ($my-rank-space-x / 1);
+        padding: 0 ($my-rank-space-x / 2);
     }
     .c-rank__link {
-        margin: (-$my-rank-space-y / 2) (-$my-rank-space-x / 1);
-        padding: ($my-rank-space-y / 2) ($my-rank-space-x / 1);
+        margin: 0 (-$my-rank-space-x / 2);
+        padding: 0 ($my-rank-space-x / 2);
     }
 }
 
 .c-rank--size-large {
     > .c-rank__item {
-        padding: ($my-rank-space-y * 2) ($my-rank-space-x * 1);
+        padding: ($my-rank-space-y * 2) ($my-rank-space-x * 2);
     }
     .c-rank__link {
-        margin: (-$my-rank-space-y * 2) (-$my-rank-space-x * 1);
-        padding: ($my-rank-space-y * 2) ($my-rank-space-x * 1);
+        margin: (-$my-rank-space-y * 2) (-$my-rank-space-x * 2);
+        padding: ($my-rank-space-y * 2) ($my-rank-space-x * 2);
     }
 }
