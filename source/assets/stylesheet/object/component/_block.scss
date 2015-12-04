@@ -1,0 +1,28 @@
+/**
+ * #Block
+ */
+
+/**
+ * 縦に配置するオブジェクトです。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/7ebqpj8b/5)
+ *
+ * <ul class="c-block">
+ *   <li class="c-block__unit">
+ *     <label class="c-block__item"></label>
+ *     <input class="c-block__item" />
+ *   </li>
+ * </ul>
+ */
+.c-block {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-block__unit {
+    display: block;
+}
+
+.c-block__item {
+    display: block;
+}

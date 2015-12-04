@@ -28,8 +28,8 @@
  * COMPONENT
  * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
  * Grid.................グリッドレイアウトのベーススタイルです。
- * List-inline..........横並びになるリストオブジェクトです。
- * List-block...........縦並びになるリストオブジェクトです。
+ * Inline...............横並びになるリストオブジェクトです。
+ * Block................縦並びになるリストオブジェクトです。
  * Rank.................横並びになるリストオブジェクトです。アンカータグのクリック範囲が大きく指定されています。
  * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
@@ -123,8 +123,8 @@
 
 @import "object/component/_wrapper";
 @import "object/component/_grid";
-@import "object/component/_list-inline";
-@import "object/component/_list-block";
+@import "object/component/_inline";
+@import "object/component/_block";
 @import "object/component/_rank";
 @import "object/component/_pack";
 @import "object/component/_stack";
