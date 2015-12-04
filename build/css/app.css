@@ -29,8 +29,8 @@
  * COMPONENT
  * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
  * Grid.................グリッドレイアウトのベーススタイルです。
- * List-inline..........横並びになるリストオブジェクトです。
- * List-block...........縦並びになるリストオブジェクトです。
+ * Inline...............横並びになるリストオブジェクトです。
+ * Block................縦並びになるリストオブジェクトです。
  * Rank.................横並びになるリストオブジェクトです。アンカータグのクリック範囲が大きく指定されています。
  * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
@@ -918,72 +918,67 @@ address {
 }
 
 /**
- * #List-inline
+ * #Inline
  */
 /**
  * 横並びになるリストオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/udbyrfbo/2)
+ * [DEMO](//jsfiddle.net/manabuyasuda/udbyrfbo/5/)
  *
- * <ul class="c-list-inline">
- *   <li class="c-list-inline__item">
- *     <a href="" class="c-list-inline__link"></a>
+ * <ul class="c-inline">
+ *   <li class="c-inline__item">
+ *     <a href="" class="c-inline__link"></a>
  *   </li>
- *   <li class="c-list-inline__item">
- *     <a href="" class="c-list-inline__link"></a>
+ *   <li class="c-inline__item">
+ *     <a href="" class="c-inline__link"></a>
  *   </li>
  * </ul>
  */
-.c-list-inline {
+.c-inline {
     margin: 0 0 0 -0.5em;
     padding: 0;
     list-style-type: none;
 }
-.c-list-inline:after {
+.c-inline:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.c-list-inline__item {
+.c-inline__item {
     display: inline-block;
     float: left;
     padding-left: 0.5em;
 }
 
-.c-list-inline__link {
+.c-inline__link {
     display: inline-block;
 }
 
-.c-list-unstyle {
-    margin: 0; 
-    list-style-type: none;
-}
-
 /**
- * #List-block
+ * #Block
  */
 /**
  * 縦に配置するオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/7ebqpj8b/2)
+ * [DEMO](https://jsfiddle.net/manabuyasuda/7ebqpj8b/5)
  *
- * <ul class="c-list-block">
- *   <li class="c-list-block__unit">
- *     <label class="c-list-block__item"></label>
- *     <input class="c-list-block__item" />
+ * <ul class="c-block">
+ *   <li class="c-block__unit">
+ *     <label class="c-block__item"></label>
+ *     <input class="c-block__item" />
  *   </li>
  * </ul>
  */
-.c-list-block {
+.c-block {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.c-list-block__unit {
+.c-block__unit {
     display: block;
 }
 
-.c-list-block__item {
+.c-block__item {
     display: block;
 }
 
