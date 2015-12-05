@@ -59,8 +59,8 @@
  * Padding..............`padding`を指定するためのヘルパークラスです。
  * Display..............要素の表示を切り替えるヘルパークラスです。
  * Float................`float`とクリアーフィックスのヘルパークラスです。
- * Align................`text-aign`と`vertical-align`のヘルパークラスです。
  * Position.............`position`のヘルパークラスです。
+ * Text.................テキストのスタイルを変更するヘルパークラスです。
  */
 
 
@@ -160,5 +160,5 @@
 @import "object/utility/_padding";
 @import "object/utility/_display";
 @import "object/utility/_float";
-@import "object/utility/_align";
 @import "object/utility/_position";
+@import "object/utility/_text";
