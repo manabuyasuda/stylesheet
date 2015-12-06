@@ -3281,6 +3281,19 @@ address {
 /**
  * #Text
  */
+/* font-weightを指定します。 */
+.u-text-light {
+    font-weight: 300 !important;
+}
+
+.u-text-normal {
+    font-weight: 400 !important;
+}
+
+.u-text-bold {
+    font-weight: 600 !important;
+}
+
 /* 先頭の1文字目を1文字分字下げします。 */
 .u-text-indent {
     text-indent: 1em !important;
@@ -3298,7 +3311,7 @@ address {
 }
 
 /* テキストを改行させます。 */
-.u-text-break {
+.u-text-breakword {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
 }
@@ -3307,6 +3320,11 @@ address {
 .u-text-justify {
     text-align: justify !important;
     text-justify: inter-ideograph !important;
+}
+
+/* 記述した通りに表示します。 */
+.u-text-none {
+    text-transform: none !important;
 }
 
 /* すべての英単語を小文字にします。 */
@@ -3332,9 +3350,6 @@ address {
 /* 縦書きにします。 */
 .u-text-vertical {
     -ms-writing-mode: tb-rl !important;
-    -ms-writing-mode: tb-rl !important;
-
-    writing-mode: tb-rl !important;
     -webkit-writing-mode: vertical-rl !important;
     writing-mode: vertical-rl !important;
     text-orientation: mixed !important;
