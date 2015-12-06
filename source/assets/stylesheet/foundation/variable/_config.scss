@@ -1,0 +1,12 @@
+//
+// #Config
+//
+
+// object/utilityレイヤーにimportantをすべて指定する場合は、
+// trueを、指定しない場合はtrue以外（falseやnullなど）を指定します。
+$use-utility-inportant: true;
+@if $use-utility-inportant == true {
+    $important: !important;
+} @else {
+    $important: null;
+}
