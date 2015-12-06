@@ -31,7 +31,7 @@ $my-pull-cols: 12 !default;
     @each $col in $cols {
         @for $i from 1 through $col {
             .u-push#{$i}\/#{$col}#{$breakpoint} {
-                right: percentage($i / $col) !important;
+                right: percentage($i / $col) $important;
             }
         }
     }

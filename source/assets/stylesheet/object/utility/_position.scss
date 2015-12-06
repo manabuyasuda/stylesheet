@@ -3,17 +3,17 @@
  */
 
 .u-pos {
-    position: static !important;
+    position: static $important;
 }
 
 .u-por {
-    position: relative !important;
+    position: relative $important;
 }
 
 .u-poa {
-    position: absolute !important;
+    position: absolute $important;
 }
 
 .u-pof {
-    position: fixed !important;
+    position: fixed $important;
 }

@@ -3,20 +3,20 @@
  */
 
 .u-hide-visually {
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
+    overflow: hidden $important;
+    clip: rect(1px, 1px, 1px, 1px) $important;
+    position: absolute $important;
+    width: 1px $important;
+    height: 1px $important;
 }
 
 // レスポンシブに対応したヘルパークラスを生成します。
 // @param {String} breakpoint(null) - ブレイクポイントを示すキーワードになります。
 @mixin my-display($breakpoint: null) {
-  .u-display-none#{$breakpoint} { display: none !important; }
-  .u-display-block#{$breakpoint} { display: block !important; }
-  .u-display-inline#{$breakpoint} { display: inline !important; }
-  .u-display-inline-block#{$breakpoint} { display: inline-block !important; }
+  .u-display-none#{$breakpoint} { display: none $important; }
+  .u-display-block#{$breakpoint} { display: block $important; }
+  .u-display-inline#{$breakpoint} { display: inline $important; }
+  .u-display-inline-block#{$breakpoint} { display: inline-block $important; }
 }
 
 // ブレイクポイントのないclassを生成します。

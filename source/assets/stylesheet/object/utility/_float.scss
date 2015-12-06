@@ -3,17 +3,19 @@
  */
 
 .u-fr {
-    float: right !important;
+    float: right $important;
 }
 
 .u-fl {
-    float: left !important;
+    float: left $important;
 }
 
 .u-fn {
-    float: none !important;
+    float: none $important;
 }
 
-.u-clearfix {
-    @include my-clearfix(important);
+.u-clearfix:after {
+    content: "" $important;
+    display: table $important;
+    clear: both $important;
 }

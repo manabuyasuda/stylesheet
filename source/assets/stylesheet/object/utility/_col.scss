@@ -28,7 +28,7 @@ $my-col-cols: 12 !default;
     @each $col in $cols {
         @for $i from 1 through $col {
             .u-col#{$i}\/#{$col}#{$breakpoint} {
-                width: percentage($i / $col) !important;
+                width: percentage($i / $col) $important;
             }
         }
     }
