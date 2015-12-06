@@ -5,6 +5,7 @@
  * VARIABLE
  * Global...............プロジェクト全体を通して使用される変数です。
  * Color................カラー用の変数（マップ）を管理します。
+ * Config...............
  *
  * MIXIN
  * Media-query..........メディアクエリ用のmixinです。
@@ -80,6 +81,7 @@
 
 @import "foundation/variable/_global";
 @import "foundation/variable/_color";
+@import "foundation/variable/_config";
 
 // -----------------------------------------------------------------
 // Mixin
