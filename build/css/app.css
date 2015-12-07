@@ -2397,7 +2397,7 @@ address {
  * #Push
  */
 /**
- * レスポンシブに対応した`push`のヘルパークラスです。
+ * レスポンシブに対応した`left`プロパティを指定するヘルパークラスです。
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
 [class*="u-push"] {
