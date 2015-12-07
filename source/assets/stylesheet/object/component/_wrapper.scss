@@ -9,8 +9,8 @@ $my-wrapper-padding: my-paddings() !default;
  *
  * <div class="c-wrapper [c-wrapper--size-medium]">
  *   <div class="c-grid">
- *     <div class="c-grid__item u-8/12@md"></div>
- *     <div class="c-grid__item u-4/12@md"></div>
+ *     <div class="c-grid__item u-col-8of12-md"></div>
+ *     <div class="c-grid__item u-col-4of12-md"></div>
  *   </div>
  * </div>
  */
