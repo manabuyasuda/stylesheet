@@ -4,16 +4,15 @@
 
 /**
  * レスポンシブに対応した`push`のヘルパークラスです。
- * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
 
 // このようにコンパイルされます。
-// .u-push11\/12 { left: 91.66667% !important; }
-// .u-push12\/12 { left: 100% !important; }
+// .u-push-11of12 { left: 91.66667% !important; }
+// .u-push-12of12 { left: 100% !important; }
 // @media screen and (min-width: 400px) {
-//     .u-push1\/12\@sm { left: 8.33333% !important; }
-//     .u-push2\/12\@sm { left: 16.66667% !important; }
+//     .u-push-1of12-sm { left: 8.33333% !important; }
+//     .u-push-2of12-sm { left: 16.66667% !important; }
 
 
  [class*="u-push"] {
@@ -30,7 +29,7 @@ $my-push-cols: 12 !default;
 @mixin my-push($cols, $breakpoint: null) {
     @each $col in $cols {
         @for $i from 1 through $col {
-            .u-push#{$i}\/#{$col}#{$breakpoint} {
+            .u-push-#{$i}of#{$col}#{$breakpoint} {
                 left: percentage($i / $col) $important;
             }
         }
@@ -44,6 +43,6 @@ $my-push-cols: 12 !default;
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
 @each $name, $breakpoint in $my-breakpoints {
     @media #{$breakpoint} {
-        @include my-push($my-push-cols, \@#{$name})
+        @include my-push($my-push-cols, -#{$name})
     }
 }

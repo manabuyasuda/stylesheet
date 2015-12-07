@@ -2183,213 +2183,212 @@ address {
 /* Utitlity
    ----------------------------------------------------------------- */
 /**
- * #Width
+ * #Col
  */
 /**
- * レスポンシブに対応した`width`のヘルパークラスです。
- * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+ * レスポンシブに対応した`width`プロパティを指定するヘルパークラスです。
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
-.u-col1\/12 {
+.u-col-1of12 {
     width: 8.33333% !important;
 }
 
-.u-col2\/12 {
+.u-col-2of12 {
     width: 16.66667% !important;
 }
 
-.u-col3\/12 {
+.u-col-3of12 {
     width: 25% !important;
 }
 
-.u-col4\/12 {
+.u-col-4of12 {
     width: 33.33333% !important;
 }
 
-.u-col5\/12 {
+.u-col-5of12 {
     width: 41.66667% !important;
 }
 
-.u-col6\/12 {
+.u-col-6of12 {
     width: 50% !important;
 }
 
-.u-col7\/12 {
+.u-col-7of12 {
     width: 58.33333% !important;
 }
 
-.u-col8\/12 {
+.u-col-8of12 {
     width: 66.66667% !important;
 }
 
-.u-col9\/12 {
+.u-col-9of12 {
     width: 75% !important;
 }
 
-.u-col10\/12 {
+.u-col-10of12 {
     width: 83.33333% !important;
 }
 
-.u-col11\/12 {
+.u-col-11of12 {
     width: 91.66667% !important;
 }
 
-.u-col12\/12 {
+.u-col-12of12 {
     width: 100% !important;
 }
 
 @media screen and (min-width: 400px) {
-    .u-col1\/12\@sm {
+    .u-col-1of12-sm {
         width: 8.33333% !important;
     }
-    .u-col2\/12\@sm {
+    .u-col-2of12-sm {
         width: 16.66667% !important;
     }
-    .u-col3\/12\@sm {
+    .u-col-3of12-sm {
         width: 25% !important;
     }
-    .u-col4\/12\@sm {
+    .u-col-4of12-sm {
         width: 33.33333% !important;
     }
-    .u-col5\/12\@sm {
+    .u-col-5of12-sm {
         width: 41.66667% !important;
     }
-    .u-col6\/12\@sm {
+    .u-col-6of12-sm {
         width: 50% !important;
     }
-    .u-col7\/12\@sm {
+    .u-col-7of12-sm {
         width: 58.33333% !important;
     }
-    .u-col8\/12\@sm {
+    .u-col-8of12-sm {
         width: 66.66667% !important;
     }
-    .u-col9\/12\@sm {
+    .u-col-9of12-sm {
         width: 75% !important;
     }
-    .u-col10\/12\@sm {
+    .u-col-10of12-sm {
         width: 83.33333% !important;
     }
-    .u-col11\/12\@sm {
+    .u-col-11of12-sm {
         width: 91.66667% !important;
     }
-    .u-col12\/12\@sm {
+    .u-col-12of12-sm {
         width: 100% !important;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .u-col1\/12\@md {
+    .u-col-1of12-md {
         width: 8.33333% !important;
     }
-    .u-col2\/12\@md {
+    .u-col-2of12-md {
         width: 16.66667% !important;
     }
-    .u-col3\/12\@md {
+    .u-col-3of12-md {
         width: 25% !important;
     }
-    .u-col4\/12\@md {
+    .u-col-4of12-md {
         width: 33.33333% !important;
     }
-    .u-col5\/12\@md {
+    .u-col-5of12-md {
         width: 41.66667% !important;
     }
-    .u-col6\/12\@md {
+    .u-col-6of12-md {
         width: 50% !important;
     }
-    .u-col7\/12\@md {
+    .u-col-7of12-md {
         width: 58.33333% !important;
     }
-    .u-col8\/12\@md {
+    .u-col-8of12-md {
         width: 66.66667% !important;
     }
-    .u-col9\/12\@md {
+    .u-col-9of12-md {
         width: 75% !important;
     }
-    .u-col10\/12\@md {
+    .u-col-10of12-md {
         width: 83.33333% !important;
     }
-    .u-col11\/12\@md {
+    .u-col-11of12-md {
         width: 91.66667% !important;
     }
-    .u-col12\/12\@md {
+    .u-col-12of12-md {
         width: 100% !important;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .u-col1\/12\@lg {
+    .u-col-1of12-lg {
         width: 8.33333% !important;
     }
-    .u-col2\/12\@lg {
+    .u-col-2of12-lg {
         width: 16.66667% !important;
     }
-    .u-col3\/12\@lg {
+    .u-col-3of12-lg {
         width: 25% !important;
     }
-    .u-col4\/12\@lg {
+    .u-col-4of12-lg {
         width: 33.33333% !important;
     }
-    .u-col5\/12\@lg {
+    .u-col-5of12-lg {
         width: 41.66667% !important;
     }
-    .u-col6\/12\@lg {
+    .u-col-6of12-lg {
         width: 50% !important;
     }
-    .u-col7\/12\@lg {
+    .u-col-7of12-lg {
         width: 58.33333% !important;
     }
-    .u-col8\/12\@lg {
+    .u-col-8of12-lg {
         width: 66.66667% !important;
     }
-    .u-col9\/12\@lg {
+    .u-col-9of12-lg {
         width: 75% !important;
     }
-    .u-col10\/12\@lg {
+    .u-col-10of12-lg {
         width: 83.33333% !important;
     }
-    .u-col11\/12\@lg {
+    .u-col-11of12-lg {
         width: 91.66667% !important;
     }
-    .u-col12\/12\@lg {
+    .u-col-12of12-lg {
         width: 100% !important;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .u-col1\/12\@xl {
+    .u-col-1of12-xl {
         width: 8.33333% !important;
     }
-    .u-col2\/12\@xl {
+    .u-col-2of12-xl {
         width: 16.66667% !important;
     }
-    .u-col3\/12\@xl {
+    .u-col-3of12-xl {
         width: 25% !important;
     }
-    .u-col4\/12\@xl {
+    .u-col-4of12-xl {
         width: 33.33333% !important;
     }
-    .u-col5\/12\@xl {
+    .u-col-5of12-xl {
         width: 41.66667% !important;
     }
-    .u-col6\/12\@xl {
+    .u-col-6of12-xl {
         width: 50% !important;
     }
-    .u-col7\/12\@xl {
+    .u-col-7of12-xl {
         width: 58.33333% !important;
     }
-    .u-col8\/12\@xl {
+    .u-col-8of12-xl {
         width: 66.66667% !important;
     }
-    .u-col9\/12\@xl {
+    .u-col-9of12-xl {
         width: 75% !important;
     }
-    .u-col10\/12\@xl {
+    .u-col-10of12-xl {
         width: 83.33333% !important;
     }
-    .u-col11\/12\@xl {
+    .u-col-11of12-xl {
         width: 91.66667% !important;
     }
-    .u-col12\/12\@xl {
+    .u-col-12of12-xl {
         width: 100% !important;
     }
 }
@@ -2399,213 +2398,212 @@ address {
  */
 /**
  * レスポンシブに対応した`push`のヘルパークラスです。
- * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
 [class*="u-push"] {
     position: relative;
 }
 
-.u-push1\/12 {
+.u-push-1of12 {
     left: 8.33333% !important;
 }
 
-.u-push2\/12 {
+.u-push-2of12 {
     left: 16.66667% !important;
 }
 
-.u-push3\/12 {
+.u-push-3of12 {
     left: 25% !important;
 }
 
-.u-push4\/12 {
+.u-push-4of12 {
     left: 33.33333% !important;
 }
 
-.u-push5\/12 {
+.u-push-5of12 {
     left: 41.66667% !important;
 }
 
-.u-push6\/12 {
+.u-push-6of12 {
     left: 50% !important;
 }
 
-.u-push7\/12 {
+.u-push-7of12 {
     left: 58.33333% !important;
 }
 
-.u-push8\/12 {
+.u-push-8of12 {
     left: 66.66667% !important;
 }
 
-.u-push9\/12 {
+.u-push-9of12 {
     left: 75% !important;
 }
 
-.u-push10\/12 {
+.u-push-10of12 {
     left: 83.33333% !important;
 }
 
-.u-push11\/12 {
+.u-push-11of12 {
     left: 91.66667% !important;
 }
 
-.u-push12\/12 {
+.u-push-12of12 {
     left: 100% !important;
 }
 
 @media screen and (min-width: 400px) {
-    .u-push1\/12\@sm {
+    .u-push-1of12-sm {
         left: 8.33333% !important;
     }
-    .u-push2\/12\@sm {
+    .u-push-2of12-sm {
         left: 16.66667% !important;
     }
-    .u-push3\/12\@sm {
+    .u-push-3of12-sm {
         left: 25% !important;
     }
-    .u-push4\/12\@sm {
+    .u-push-4of12-sm {
         left: 33.33333% !important;
     }
-    .u-push5\/12\@sm {
+    .u-push-5of12-sm {
         left: 41.66667% !important;
     }
-    .u-push6\/12\@sm {
+    .u-push-6of12-sm {
         left: 50% !important;
     }
-    .u-push7\/12\@sm {
+    .u-push-7of12-sm {
         left: 58.33333% !important;
     }
-    .u-push8\/12\@sm {
+    .u-push-8of12-sm {
         left: 66.66667% !important;
     }
-    .u-push9\/12\@sm {
+    .u-push-9of12-sm {
         left: 75% !important;
     }
-    .u-push10\/12\@sm {
+    .u-push-10of12-sm {
         left: 83.33333% !important;
     }
-    .u-push11\/12\@sm {
+    .u-push-11of12-sm {
         left: 91.66667% !important;
     }
-    .u-push12\/12\@sm {
+    .u-push-12of12-sm {
         left: 100% !important;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .u-push1\/12\@md {
+    .u-push-1of12-md {
         left: 8.33333% !important;
     }
-    .u-push2\/12\@md {
+    .u-push-2of12-md {
         left: 16.66667% !important;
     }
-    .u-push3\/12\@md {
+    .u-push-3of12-md {
         left: 25% !important;
     }
-    .u-push4\/12\@md {
+    .u-push-4of12-md {
         left: 33.33333% !important;
     }
-    .u-push5\/12\@md {
+    .u-push-5of12-md {
         left: 41.66667% !important;
     }
-    .u-push6\/12\@md {
+    .u-push-6of12-md {
         left: 50% !important;
     }
-    .u-push7\/12\@md {
+    .u-push-7of12-md {
         left: 58.33333% !important;
     }
-    .u-push8\/12\@md {
+    .u-push-8of12-md {
         left: 66.66667% !important;
     }
-    .u-push9\/12\@md {
+    .u-push-9of12-md {
         left: 75% !important;
     }
-    .u-push10\/12\@md {
+    .u-push-10of12-md {
         left: 83.33333% !important;
     }
-    .u-push11\/12\@md {
+    .u-push-11of12-md {
         left: 91.66667% !important;
     }
-    .u-push12\/12\@md {
+    .u-push-12of12-md {
         left: 100% !important;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .u-push1\/12\@lg {
+    .u-push-1of12-lg {
         left: 8.33333% !important;
     }
-    .u-push2\/12\@lg {
+    .u-push-2of12-lg {
         left: 16.66667% !important;
     }
-    .u-push3\/12\@lg {
+    .u-push-3of12-lg {
         left: 25% !important;
     }
-    .u-push4\/12\@lg {
+    .u-push-4of12-lg {
         left: 33.33333% !important;
     }
-    .u-push5\/12\@lg {
+    .u-push-5of12-lg {
         left: 41.66667% !important;
     }
-    .u-push6\/12\@lg {
+    .u-push-6of12-lg {
         left: 50% !important;
     }
-    .u-push7\/12\@lg {
+    .u-push-7of12-lg {
         left: 58.33333% !important;
     }
-    .u-push8\/12\@lg {
+    .u-push-8of12-lg {
         left: 66.66667% !important;
     }
-    .u-push9\/12\@lg {
+    .u-push-9of12-lg {
         left: 75% !important;
     }
-    .u-push10\/12\@lg {
+    .u-push-10of12-lg {
         left: 83.33333% !important;
     }
-    .u-push11\/12\@lg {
+    .u-push-11of12-lg {
         left: 91.66667% !important;
     }
-    .u-push12\/12\@lg {
+    .u-push-12of12-lg {
         left: 100% !important;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .u-push1\/12\@xl {
+    .u-push-1of12-xl {
         left: 8.33333% !important;
     }
-    .u-push2\/12\@xl {
+    .u-push-2of12-xl {
         left: 16.66667% !important;
     }
-    .u-push3\/12\@xl {
+    .u-push-3of12-xl {
         left: 25% !important;
     }
-    .u-push4\/12\@xl {
+    .u-push-4of12-xl {
         left: 33.33333% !important;
     }
-    .u-push5\/12\@xl {
+    .u-push-5of12-xl {
         left: 41.66667% !important;
     }
-    .u-push6\/12\@xl {
+    .u-push-6of12-xl {
         left: 50% !important;
     }
-    .u-push7\/12\@xl {
+    .u-push-7of12-xl {
         left: 58.33333% !important;
     }
-    .u-push8\/12\@xl {
+    .u-push-8of12-xl {
         left: 66.66667% !important;
     }
-    .u-push9\/12\@xl {
+    .u-push-9of12-xl {
         left: 75% !important;
     }
-    .u-push10\/12\@xl {
+    .u-push-10of12-xl {
         left: 83.33333% !important;
     }
-    .u-push11\/12\@xl {
+    .u-push-11of12-xl {
         left: 91.66667% !important;
     }
-    .u-push12\/12\@xl {
+    .u-push-12of12-xl {
         left: 100% !important;
     }
 }
@@ -2614,214 +2612,213 @@ address {
  * #Pull
  */
 /**
- * レスポンシブに対応した`pull`のヘルパークラスです。
- * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+ * レスポンシブに対応した`right`プロパティを指定するヘルパークラスです。
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
 [class*="u-pull"] {
     position: relative;
 }
 
-.u-push1\/12 {
+.u-push-1of12 {
     right: 8.33333% !important;
 }
 
-.u-push2\/12 {
+.u-push-2of12 {
     right: 16.66667% !important;
 }
 
-.u-push3\/12 {
+.u-push-3of12 {
     right: 25% !important;
 }
 
-.u-push4\/12 {
+.u-push-4of12 {
     right: 33.33333% !important;
 }
 
-.u-push5\/12 {
+.u-push-5of12 {
     right: 41.66667% !important;
 }
 
-.u-push6\/12 {
+.u-push-6of12 {
     right: 50% !important;
 }
 
-.u-push7\/12 {
+.u-push-7of12 {
     right: 58.33333% !important;
 }
 
-.u-push8\/12 {
+.u-push-8of12 {
     right: 66.66667% !important;
 }
 
-.u-push9\/12 {
+.u-push-9of12 {
     right: 75% !important;
 }
 
-.u-push10\/12 {
+.u-push-10of12 {
     right: 83.33333% !important;
 }
 
-.u-push11\/12 {
+.u-push-11of12 {
     right: 91.66667% !important;
 }
 
-.u-push12\/12 {
+.u-push-12of12 {
     right: 100% !important;
 }
 
 @media screen and (min-width: 400px) {
-    .u-push1\/12\@sm {
+    .u-push-1of12-sm {
         right: 8.33333% !important;
     }
-    .u-push2\/12\@sm {
+    .u-push-2of12-sm {
         right: 16.66667% !important;
     }
-    .u-push3\/12\@sm {
+    .u-push-3of12-sm {
         right: 25% !important;
     }
-    .u-push4\/12\@sm {
+    .u-push-4of12-sm {
         right: 33.33333% !important;
     }
-    .u-push5\/12\@sm {
+    .u-push-5of12-sm {
         right: 41.66667% !important;
     }
-    .u-push6\/12\@sm {
+    .u-push-6of12-sm {
         right: 50% !important;
     }
-    .u-push7\/12\@sm {
+    .u-push-7of12-sm {
         right: 58.33333% !important;
     }
-    .u-push8\/12\@sm {
+    .u-push-8of12-sm {
         right: 66.66667% !important;
     }
-    .u-push9\/12\@sm {
+    .u-push-9of12-sm {
         right: 75% !important;
     }
-    .u-push10\/12\@sm {
+    .u-push-10of12-sm {
         right: 83.33333% !important;
     }
-    .u-push11\/12\@sm {
+    .u-push-11of12-sm {
         right: 91.66667% !important;
     }
-    .u-push12\/12\@sm {
+    .u-push-12of12-sm {
         right: 100% !important;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .u-push1\/12\@md {
+    .u-push-1of12-md {
         right: 8.33333% !important;
     }
-    .u-push2\/12\@md {
+    .u-push-2of12-md {
         right: 16.66667% !important;
     }
-    .u-push3\/12\@md {
+    .u-push-3of12-md {
         right: 25% !important;
     }
-    .u-push4\/12\@md {
+    .u-push-4of12-md {
         right: 33.33333% !important;
     }
-    .u-push5\/12\@md {
+    .u-push-5of12-md {
         right: 41.66667% !important;
     }
-    .u-push6\/12\@md {
+    .u-push-6of12-md {
         right: 50% !important;
     }
-    .u-push7\/12\@md {
+    .u-push-7of12-md {
         right: 58.33333% !important;
     }
-    .u-push8\/12\@md {
+    .u-push-8of12-md {
         right: 66.66667% !important;
     }
-    .u-push9\/12\@md {
+    .u-push-9of12-md {
         right: 75% !important;
     }
-    .u-push10\/12\@md {
+    .u-push-10of12-md {
         right: 83.33333% !important;
     }
-    .u-push11\/12\@md {
+    .u-push-11of12-md {
         right: 91.66667% !important;
     }
-    .u-push12\/12\@md {
+    .u-push-12of12-md {
         right: 100% !important;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .u-push1\/12\@lg {
+    .u-push-1of12-lg {
         right: 8.33333% !important;
     }
-    .u-push2\/12\@lg {
+    .u-push-2of12-lg {
         right: 16.66667% !important;
     }
-    .u-push3\/12\@lg {
+    .u-push-3of12-lg {
         right: 25% !important;
     }
-    .u-push4\/12\@lg {
+    .u-push-4of12-lg {
         right: 33.33333% !important;
     }
-    .u-push5\/12\@lg {
+    .u-push-5of12-lg {
         right: 41.66667% !important;
     }
-    .u-push6\/12\@lg {
+    .u-push-6of12-lg {
         right: 50% !important;
     }
-    .u-push7\/12\@lg {
+    .u-push-7of12-lg {
         right: 58.33333% !important;
     }
-    .u-push8\/12\@lg {
+    .u-push-8of12-lg {
         right: 66.66667% !important;
     }
-    .u-push9\/12\@lg {
+    .u-push-9of12-lg {
         right: 75% !important;
     }
-    .u-push10\/12\@lg {
+    .u-push-10of12-lg {
         right: 83.33333% !important;
     }
-    .u-push11\/12\@lg {
+    .u-push-11of12-lg {
         right: 91.66667% !important;
     }
-    .u-push12\/12\@lg {
+    .u-push-12of12-lg {
         right: 100% !important;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .u-push1\/12\@xl {
+    .u-push-1of12-xl {
         right: 8.33333% !important;
     }
-    .u-push2\/12\@xl {
+    .u-push-2of12-xl {
         right: 16.66667% !important;
     }
-    .u-push3\/12\@xl {
+    .u-push-3of12-xl {
         right: 25% !important;
     }
-    .u-push4\/12\@xl {
+    .u-push-4of12-xl {
         right: 33.33333% !important;
     }
-    .u-push5\/12\@xl {
+    .u-push-5of12-xl {
         right: 41.66667% !important;
     }
-    .u-push6\/12\@xl {
+    .u-push-6of12-xl {
         right: 50% !important;
     }
-    .u-push7\/12\@xl {
+    .u-push-7of12-xl {
         right: 58.33333% !important;
     }
-    .u-push8\/12\@xl {
+    .u-push-8of12-xl {
         right: 66.66667% !important;
     }
-    .u-push9\/12\@xl {
+    .u-push-9of12-xl {
         right: 75% !important;
     }
-    .u-push10\/12\@xl {
+    .u-push-10of12-xl {
         right: 83.33333% !important;
     }
-    .u-push11\/12\@xl {
+    .u-push-11of12-xl {
         right: 91.66667% !important;
     }
-    .u-push12\/12\@xl {
+    .u-push-12of12-xl {
         right: 100% !important;
     }
 }

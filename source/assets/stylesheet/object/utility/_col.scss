@@ -1,20 +1,19 @@
 /**
- * #Width
+ * #Col
  */
 
 /**
- * レスポンシブに対応した`width`のヘルパークラスです。
- * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+ * レスポンシブに対応した`width`プロパティを指定するヘルパークラスです。
  * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
  */
 
 // @example css - CSS output
 //
-// .u-11\/12 { width: 91.66667% !important; }
-// .u-12\/12 { width: 100% !important; }
+// .u-col-11of12 { width: 91.66667% !important; }
+// .u-col-12of12 { width: 100% !important; }
 // @media screen and (min-width: 400px) {
-//     .u-1\/12\@sm { width: 8.33333% !important; }
-//     .u-2\/12\@sm { width: 16.66667% !important; }
+//     .u-col-1of12-sm { width: 8.33333% !important; }
+//     .u-col-2of12-sm { width: 16.66667% !important; }
 
 
 // 取得したいカラム数をリスト形式で指定します。
@@ -27,7 +26,7 @@ $my-col-cols: 12 !default;
 @mixin my-col($cols, $breakpoint: null) {
     @each $col in $cols {
         @for $i from 1 through $col {
-            .u-col#{$i}\/#{$col}#{$breakpoint} {
+            .u-col-#{$i}of#{$col}#{$breakpoint} {
                 width: percentage($i / $col) $important;
             }
         }
@@ -41,6 +40,6 @@ $my-col-cols: 12 !default;
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
 @each $name, $breakpoint in $my-breakpoints {
     @media #{$breakpoint} {
-        @include my-col($my-col-cols, \@#{$name})
+        @include my-col($my-col-cols, -#{$name})
     }
 }
