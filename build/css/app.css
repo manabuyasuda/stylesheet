@@ -50,6 +50,7 @@
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
  * Card.................カード型のコンポーネントです。
+ * Alert................エラーメッセージなどを表示するコンポーネントです。
  * Balloon..............吹き出しのコンポーネントです。
  *
  * UTILITY
@@ -1882,6 +1883,48 @@ address {
     display: block;
     margin: -1em;
     padding: 1em;
+}
+
+/**
+ * #Alert
+ */
+/**
+ * エラーメッセージなどを表示するコンポーネントです。
+ *
+ * <p class="p-alert [p-alert--success]"></p>
+ */
+.p-alert {
+    padding: 1em;
+    border: 1px solid #e7edf0;
+    border-radius: 3px;
+    color: #47525d;
+    background-color: #f7f9fa;
+}
+
+.p-alert__link {
+    color: currentColor;
+}
+.p-alert__link:hover,
+.p-alert__link:focus {
+    color: inherit;
+}
+
+.p-alert--success {
+    border-color: #d9f4e1;
+    color: #2c683f;
+    background-color: #edfaf1;
+}
+
+.p-alert--warning {
+    border-color: #fffad3;
+    color: #996e00;
+    background-color: #fffdec;
+}
+
+.p-alert--error {
+    border-color: #ffcaca;
+    color: #921515;
+    background-color: #ffe3e3;
 }
 
 /**

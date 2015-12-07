@@ -49,6 +49,7 @@
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
  * Card.................カード型のコンポーネントです。
+ * Alert................エラーメッセージなどを表示するコンポーネントです。
  * Balloon..............吹き出しのコンポーネントです。
  *
  * UTILITY
@@ -148,6 +149,7 @@
 @import "object/project/_pagination";
 @import "object/project/_tag-cloud";
 @import "object/project/_card";
+@import "object/project/_alert";
 @import "object/project/_balloon";
 
 
