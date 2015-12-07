@@ -28,4 +28,24 @@ $my-colors: (
         light: lighten(#fff, 5%),
         dark: darken(#fff, 10%),
     ),
+    neutral: (
+        text: #47525d,
+        bg: #f7f9fa,
+        border: darken(#f7f9fa, 5%),
+        ),
+    success: (
+        text: #2c683f,
+        bg: #edfaf1,
+        border: darken(#edfaf1, 5%),
+        ),
+    warning: (
+        text: #996e00,
+        bg: #fffdec,
+        border: darken(#fffdec, 5%),
+        ),
+    error: (
+        text: #921515,
+        bg: #ffe3e3,
+        border: darken(#ffe3e3, 5%),
+        ),
 ) !default;
