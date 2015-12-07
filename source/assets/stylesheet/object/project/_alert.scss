@@ -1,0 +1,42 @@
+/**
+ * #Alert
+ */
+
+/**
+ * エラーメッセージなどを表示するコンポーネントです。
+ *
+ * <p class="p-alert [p-alert--success]"></p>
+ */
+.p-alert {
+    padding: my-paddings();
+    border: 1px solid my-colors(neutral, border);
+    border-radius: $my-base-round;
+    color: my-colors(neutral, text);
+    background-color: my-colors(neutral, bg);
+}
+
+.p-alert__link {
+    color: currentColor;
+    &:hover,
+    &:focus {
+        color: inherit;
+    }
+}
+
+.p-alert--success {
+    border-color: my-colors(success, border);
+    color: my-colors(success, text);
+    background-color: my-colors(success, bg);
+}
+
+.p-alert--warning {
+    border-color: my-colors(warning, border);
+    color: my-colors(warning , text);
+    background-color: my-colors(warning, bg);
+}
+
+.p-alert--error {
+    border-color: my-colors(error, border);
+    color: my-colors(error, text);
+    background-color: my-colors(error, bg);
+}
