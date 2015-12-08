@@ -880,7 +880,7 @@ address {
  * 1カラムレイアウトに使用します。
  *
  * <div class="c-grid c-grid--center">
- *   <div class="c-grid__item u-8/12@md"></div>
+ *   <div class="c-grid__item u-col-8of12-md"></div>
  * </div>
  */
 .c-grid--center {
@@ -903,8 +903,8 @@ address {
  * http://www.htmq.com/style/direction.shtml
  *
  * <div class="c-grid c-grid--gutter c-grid--rev">
- *   <div class="c-grid__item u-8/12@md"></div>
- *   <div class="c-grid__item u-4/12@md"></div>
+ *   <div class="c-grid__item u-col-8of12-md"></div>
+ *   <div class="c-grid__item u-col-4of12-md"></div>
  * </div>
  */
 .c-grid--rev {
