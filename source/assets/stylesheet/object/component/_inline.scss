@@ -24,7 +24,6 @@ $my-inline-space: my-paddings(small) !default;
 }
 
 .c-inline__item {
-    display: inline-block;
     float: left;
     padding-left: $my-inline-space;
 }

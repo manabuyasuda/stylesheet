@@ -947,7 +947,6 @@ address {
 }
 
 .c-inline__item {
-    display: inline-block;
     float: left;
     padding-left: 0.5em;
 }
