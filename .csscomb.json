@@ -207,6 +207,9 @@
         "table-layout",
         "empty-cells",
         "caption-side",
+        "-webkit-appearance",
+        "-moz-appearance",
+        "appearance",
 
         "list-style",
         "list-style-position",
