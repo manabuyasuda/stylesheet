@@ -6,26 +6,26 @@
  * 上下左右の中央配置に利用するオブジェクトです。
  * [DEMO](https://jsfiddle.net/manabuyasuda/p479y7hs/2)
  *
- * <div class="c-central-box [c-central-box--full]">
- *     <div class="c-central-box__item">
+ * <div class="c-central [c-central--full]">
+ *     <div class="c-central__item">
  *        [content]
  *     </div>
  * </div>
  */
-.c-central-box {
+.c-central {
     position: relative;
     margin: 0;
     padding: 0;
 }
 
-.c-central-box__item {
+.c-central__item {
     position: absolute;
     right: 50%;
     bottom: 50%;
     transform: translate(50%, 50%);
 }
 
-.c-central-box--full {
+.c-central--full {
     width: 100%;
     height: 100%;
 }
