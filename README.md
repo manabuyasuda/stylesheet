@@ -4,7 +4,7 @@ FLOCSSをベースにしたオブジェクト指向のスタイルシートで�
 
 * [FLOCSS](https://github.com/hiloki/flocss)をベースにしたディレクトリ構成。
 * OOCSSをベースにしたマルチクラス設計。
-* [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)と[BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)をベースにした命名規則。
+* [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)をベースにした命名規則。
 * レスポンシブ対応のグリッドシステム。
 
 ## ディレクトリ構成
@@ -167,22 +167,21 @@ Componentのモディファイアで定義するのが適切でない場合はPr
 ```scss
 // Componentレイヤー
 .c-rank {
+    @include my-clearfix;
     margin: 0;
     padding: 0;
-    font-size: 0;
     list-style-type: none;
 }
 
 .c-rank__item {
-    display: inline-block;
-    padding: $rank-space-y $rank-space-x;
-    font-size: 1rem;
+    float: left;
+    padding: $my-rank-space-y $my-rank-space-x;
 }
 
 .c-rank__link {
     display: inline-block;
-    margin: (-$rank-space-y) (-$rank-space-x);
-    padding: $rank-space-y $rank-space-x;
+    margin: (-$my-rank-space-y) (-$my-rank-space-x);
+    padding: $my-rank-space-y $my-rank-space-x;
 }
 
 // Projectレイヤー
@@ -244,26 +243,26 @@ Componentのモディファイアで定義するのが適切でない場合はPr
 #### Utility
 ComponentのモディファイアやProjectのオブジェクトで定義することが適切でない場合はUtilityレイヤーのオブジェクトを使用できます。`width`や`padding`といった単一のスタイルやClearfixのような任意の目的を持つヘルパークラスが定義されています。
 
-例えばgridオブジェクトを使用したグリッドシステムなどに使用します。`u-8/12@md`がUtilityレイヤーのオブジェクトです。
+例えばgridオブジェクトを使用したグリッドシステムなどに使用します。`u-col-8of12-md`がUtilityレイヤーのオブジェクトです。
 
 ```scss
 <div class="c-wrapper">
-  <div class="c-grid c-grid--gutter-medium">
-    <div class="c-grid__item u-8/12@md"></div>
-    <div class="c-grid__item u-4/12@md"></div>
+  <div class="c-grid c-grid--medium">
+    <div class="c-grid__item u-col-8of12-md"></div>
+    <div class="c-grid__item u-col-4of12-md"></div>
   </div>
 </div>
 ```
 
 ```scss
 @media screen and (min-width: 768px) {
-    .u-4\/12\@md {
+    .u-col-4of12-md {
         width: 33.33333% !important;
     }
-    .u-5\/12\@md {
+    .u-col-5of12-md {
         width: 41.66667% !important;
     }
-    .u-6\/12\@md {
+    .u-col-6of12-md {
         width: 50% !important;
     }
 ```
@@ -295,33 +294,33 @@ ComponentのモディファイアやProjectのオブジェクトで定義する�
 ```
 
 ```html
-<div class="c-grid c-grid--gutter-medium">
-  <div class="c-grid__item u-8/12@md"></div>
-  <div class="c-grid__item u-4/12@md"></div>
+<div class="c-grid c-grid--medium">
+  <div class="c-grid__item u-col-8of12-md"></div>
+  <div class="c-grid__item u-col-4of12-md"></div>
 </div>
 ```
 
 デフォルトではガター（要素間の余白）は設定されていませんので、`c-grid`にmodifierで指定します。
 
 ```scss
-.c-grid--gutter-medium {
-    margin-left: - $grid-gutter;
+.c-grid--small {
+    margin-left: - ($my-grid-gutter / 2);
     > .c-grid__item {
-        padding-left: $grid-gutter;
+        padding-left: ($my-grid-gutter / 2);
     }
 }
 
-.c-grid--gutter-small {
-    margin-left: - ($grid-gutter / 2);
+.c-grid--medium {
+    margin-left: - $my-grid-gutter;
     > .c-grid__item {
-        padding-left: ($grid-gutter / 2);
+        padding-left: $my-grid-gutter;
     }
 }
 
-.c-grid--gutter-large {
-    margin-left: - ($grid-gutter * 2);
+.c-grid--large {
+    margin-left: - ($my-grid-gutter * 2);
     > .c-grid__item {
-        padding-left: ($grid-gutter * 2);
+        padding-left: ($my-grid-gutter * 2);
     }
 }
 ```
@@ -376,19 +375,19 @@ ComponentのモディファイアやProjectのオブジェクトで定義する�
 }
 ```
 
-`width`の指定は`object/utility/_width.scss`で@mixinによって定義されています。生成されるCSSはこのようになります。
+`width`プロパティの指定は`object/utility/_col.scss`で@mixinによって定義されています。生成されるCSSはこのようになります。
 
 ```css
-.u-11\/12 { width: 91.66667% !important; }
-.u-12\/12 { width: 100% !important; }
+.u-col-11of12 { width: 91.66667% !important; }
+.u-col-12of12 { width: 100% !important; }
 @media screen and (min-width: 400px) {
-    .u-1\/12\@sm { width: 8.33333% !important; }
-    .u-2\/12\@sm { width: 16.66667% !important; }
+    .u-col-1of12-sm { width: 8.33333% !important; }
+    .u-col-2of12-sm { width: 16.66667% !important; }
 ```
 
-スラッシュ`/`とアットマーク`@`をバックスラッシュ`\`でエスケープしてしますが、マークアップにはエスケープは必要ありません。`c-grid__item`はデフォルトで`width:100%;`が指定されています。
+`c-grid__item`はデフォルトで`width:100%;`が指定されているので、以下のようにマークアップをすると、ブレイクポイントに応じて1カラムから3カラムまで指定することができます。
 
 ```html
 /* 1カラム → 2カラム → 3カラム */
-<div class="c-grid__item u-6/12@md u-4/12@lg"></div>
+<div class="c-grid__item u-col-6of12-md u-col-4of12-lg"></div>
 ```
