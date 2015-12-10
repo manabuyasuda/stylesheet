@@ -345,10 +345,9 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+    -webkit-appearance: button;
     /* 2 */
     cursor: pointer;
-
-    -webkit-appearance: button;
     /* 3 */
 }
 
@@ -409,7 +408,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
     /* 1 */
     box-sizing: content-box;
-
     -webkit-appearance: textfield;
     /* 2 */
 }
@@ -779,7 +777,7 @@ address {
  * 横幅を制限するラッパーオブジェクトです。
  * Modifierで左右のパディングが入ります。
  *
- * <div class="c-wrapper [c-wrapper--size-medium]">
+ * <div class="c-wrapper [c-wrapper--medium]">
  *   <div class="c-grid">
  *     <div class="c-grid__item u-col-8of12-md"></div>
  *     <div class="c-grid__item u-col-4of12-md"></div>
@@ -793,17 +791,17 @@ address {
     margin-left: auto;
 }
 
-.c-wrapper--size-small {
+.c-wrapper--small {
     padding-right: 0.5em;
     padding-left: 0.5em;
 }
 
-.c-wrapper--size-medium {
+.c-wrapper--medium {
     padding-right: 1em;
     padding-left: 1em;
 }
 
-.c-wrapper--size-large {
+.c-wrapper--large {
     padding-right: 2em;
     padding-left: 2em;
 }
@@ -815,11 +813,11 @@ address {
  * グリッドレイアウトオブジェクトです。
  * `width`はデフォルトで100%が指定されています。
  * ガターは左側にだけ指定されています。
- * `width`の変更は`Utility/_width.scss`のクラスを使用します。
+ * `width`の変更は`Utility/_col.scss`のクラスを使用します。
  * [DEMO](https://jsfiddle.net/manabuyasuda/a0r2xcsr/4)
  *
  * <div class="c-wrapper">
- *   <div class="c-grid c-grid--gutter-medium">
+ *   <div class="c-grid c-grid--medium">
  *     <div class="c-grid__item u-col-8of12-md"></div>
  *     <div class="c-grid__item u-col-4of12-md"></div>
  *   </div>
@@ -846,27 +844,35 @@ address {
  * gutterを追加します。サイズは`font-size`のサイズキーワードをベースにします。
  * xx-small | x-small | small | medium | large | x-large | xx-large
  */
-.c-grid--gutter-medium {
-    margin-left: -1.5em;
-}
-.c-grid--gutter-medium > .c-grid__item {
-    padding-left: 1.5em;
-}
-
-.c-grid--gutter-small {
+.c-grid--small {
     margin-left: -0.75em;
 }
-.c-grid--gutter-small > .c-grid__item {
+.c-grid--small > .c-grid__item {
     padding-left: 0.75em;
 }
 
-.c-grid--gutter-large {
+.c-grid--medium {
+    margin-left: -1.5em;
+}
+.c-grid--medium > .c-grid__item {
+    padding-left: 1.5em;
+}
+
+.c-grid--large {
     margin-left: -3em;
 }
-.c-grid--gutter-large > .c-grid__item {
+.c-grid--large > .c-grid__item {
     padding-left: 3em;
 }
 
+/**
+ * デフォルトで`top`に指定されている垂直位置を変更します。
+ *
+ * <div class="c-grid c-grid--gutter c-grid--middle">
+ *   <div class="c-grid__item u-col-8of12-md"></div>
+ *   <div class="c-grid__item u-col-4of12-md"></div>
+ * </div>
+ */
 .c-grid--middle > .c-grid__item {
     vertical-align: middle;
 }
@@ -902,7 +908,7 @@ address {
  * 左サイドバーの2カラムレイアウトに使用します。
  * http://www.htmq.com/style/direction.shtml
  *
- * <div class="c-grid c-grid--gutter c-grid--rev">
+ * <div class="c-grid c-grid--medium c-grid--rev">
  *   <div class="c-grid__item u-col-8of12-md"></div>
  *   <div class="c-grid__item u-col-4of12-md"></div>
  * </div>
@@ -992,7 +998,7 @@ address {
  * モディファイアで余白が変更できます。
  * [DEMO](https://jsfiddle.net/manabuyasuda/k93rhad6/3)
  *
- * <ul class="c-rank [c-rank--size-small]">
+ * <ul class="c-rank [c-rank--small]">
  *   <li class="c-rank__item">
  *     <a href="#" class="c-rank__link"></a>
  *   </li>
@@ -1023,20 +1029,20 @@ address {
     padding: 0.5em 1em;
 }
 
-.c-rank--size-small > .c-rank__item {
+.c-rank--small > .c-rank__item {
     padding: 0 0.5em;
 }
 
-.c-rank--size-small .c-rank__link {
+.c-rank--small .c-rank__link {
     margin: 0 -0.5em;
     padding: 0 0.5em;
 }
 
-.c-rank--size-large > .c-rank__item {
+.c-rank--large > .c-rank__item {
     padding: 1em 2em;
 }
 
-.c-rank--size-large .c-rank__link {
+.c-rank--large .c-rank__link {
     margin: -1em -2em;
     padding: 1em 2em;
 }
@@ -1050,7 +1056,7 @@ address {
  * モディファイアで余白を変更できます。
  * [DEMO](https://jsfiddle.net/manabuyasuda/bnrepy5e/2)
  *
- * <ul class="c-pack [c-pack--size-small]">
+ * <ul class="c-pack [c-pack--small]">
  *   <li class="c-pack__item">
  *     <a href="#" class="c-pack__link"></a>
  *   </li>
@@ -1081,20 +1087,20 @@ address {
     text-decoration: none;
 }
 
-.c-pack--size-small > .c-pack__item {
+.c-pack--small > .c-pack__item {
     padding: 0.5em 0.5em;
 }
 
-.c-pack--size-small .c-pack__link {
+.c-pack--small .c-pack__link {
     margin: -0.5em -0.5em;
     padding: 0.5em 0.5em;
 }
 
-.c-pack--size-large > .c-pack__item {
+.c-pack--large > .c-pack__item {
     padding: 2em 0.5em;
 }
 
-.c-pack--size-large .c-pack__link {
+.c-pack--large .c-pack__link {
     margin: -2em -0.5em;
     padding: 2em 0.5em;
 }
@@ -1108,7 +1114,7 @@ address {
  * モディファイアで余白が変更できます。
  * [DEMO](https://jsfiddle.net/manabuyasuda/3rcgp8t6/2)
  *
- * <ul class="c-stack [c-stack--size-small]">
+ * <ul class="c-stack [c-stack--small]">
  *     <li class="c-stack__item">
  *         <a href="#" class="c-stack__link">
  *            [content]
@@ -1143,20 +1149,20 @@ address {
     text-align: right;
 }
 
-.c-stack--size-small > .c-stack__item {
+.c-stack--small > .c-stack__item {
     padding: 0.5em 0;
 }
 
-.c-stack--size-small .c-stack__link {
+.c-stack--small .c-stack__link {
     margin: -0.5em 0;
     padding: 0.5em 0;
 }
 
-.c-stack--size-large > .c-stack__item {
+.c-stack--large > .c-stack__item {
     padding: 2em 0;
 }
 
-.c-stack--size-large .c-stack__link {
+.c-stack--large .c-stack__link {
     margin: -2em 0;
     padding: 2em 0;
 }
@@ -1409,19 +1415,19 @@ address {
  * 上下左右の中央配置に利用するオブジェクトです。
  * [DEMO](https://jsfiddle.net/manabuyasuda/p479y7hs/2)
  *
- * <div class="c-central-box [c-central-box--full]">
- *     <div class="c-central-box__item">
+ * <div class="c-central [c-central--full]">
+ *     <div class="c-central__item">
  *        [content]
  *     </div>
  * </div>
  */
-.c-central-box {
+.c-central {
     position: relative;
     margin: 0;
     padding: 0;
 }
 
-.c-central-box__item {
+.c-central__item {
     position: absolute;
     right: 50%;
     bottom: 50%;
@@ -1430,7 +1436,7 @@ address {
     transform: translate(50%, 50%);
 }
 
-.c-central-box--full {
+.c-central--full {
     width: 100%;
     height: 100%;
 }
@@ -1463,11 +1469,10 @@ address {
     text-align: center;
     text-decoration: none;
     background: transparent;
-    cursor: pointer;
-
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+    appearance: none; 
+    cursor: pointer;
 }
 .c-button:hover,
 .c-button:active,
@@ -1512,9 +1517,9 @@ address {
  */
 /**
  * YouTubeなどのエンベディットコンテンツを埋め込むオブジェクトです。
- * `.c-embed--16:9`などと指定してアスペクト比を固定します。
+ * `.c-embed--16to9`などと指定してアスペクト比を固定します。
  *
- * <div class="c-embed c-embed--16:9">
+ * <div class="c-embed c-embed--16to9">
  *     <iframe></iframe>
  * </div>
  */
@@ -1539,11 +1544,11 @@ address {
     border: 0;
 }
 
-.c-embed--16\:9 {
+.c-embed--16to9 {
     padding-bottom: 56.25% !important;
 }
 
-.c-embed--4\:3 {
+.c-embed--4to3 {
     padding-bottom: 75% !important;
 }
 
