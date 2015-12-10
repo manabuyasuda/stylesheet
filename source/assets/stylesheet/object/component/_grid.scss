@@ -7,11 +7,11 @@ $my-grid-gutter: my-paddings(large) !default;
  * グリッドレイアウトオブジェクトです。
  * `width`はデフォルトで100%が指定されています。
  * ガターは左側にだけ指定されています。
- * `width`の変更は`Utility/_width.scss`のクラスを使用します。
+ * `width`の変更は`Utility/_col.scss`のクラスを使用します。
  * [DEMO](https://jsfiddle.net/manabuyasuda/a0r2xcsr/4)
  *
  * <div class="c-wrapper">
- *   <div class="c-grid c-grid--gutter-medium">
+ *   <div class="c-grid c-grid--medium">
  *     <div class="c-grid__item u-col-8of12-md"></div>
  *     <div class="c-grid__item u-col-4of12-md"></div>
  *   </div>
@@ -38,27 +38,35 @@ $my-grid-gutter: my-paddings(large) !default;
  * gutterを追加します。サイズは`font-size`のサイズキーワードをベースにします。
  * xx-small | x-small | small | medium | large | x-large | xx-large
  */
-.c-grid--gutter-medium {
-    margin-left: - $my-grid-gutter;
-    > .c-grid__item {
-        padding-left: $my-grid-gutter;
-    }
-}
-
-.c-grid--gutter-small {
+.c-grid--small {
     margin-left: - ($my-grid-gutter / 2);
     > .c-grid__item {
         padding-left: ($my-grid-gutter / 2);
     }
 }
 
-.c-grid--gutter-large {
+.c-grid--medium {
+    margin-left: - $my-grid-gutter;
+    > .c-grid__item {
+        padding-left: $my-grid-gutter;
+    }
+}
+
+.c-grid--large {
     margin-left: - ($my-grid-gutter * 2);
     > .c-grid__item {
         padding-left: ($my-grid-gutter * 2);
     }
 }
 
+/**
+ * デフォルトで`top`に指定されている垂直位置を変更します。
+ *
+ * <div class="c-grid c-grid--gutter c-grid--middle">
+ *   <div class="c-grid__item u-col-8of12-md"></div>
+ *   <div class="c-grid__item u-col-4of12-md"></div>
+ * </div>
+ */
 .c-grid--middle {
     > .c-grid__item {
         vertical-align: middle;
@@ -98,7 +106,7 @@ $my-grid-gutter: my-paddings(large) !default;
  * 左サイドバーの2カラムレイアウトに使用します。
  * http://www.htmq.com/style/direction.shtml
  *
- * <div class="c-grid c-grid--gutter c-grid--rev">
+ * <div class="c-grid c-grid--medium c-grid--rev">
  *   <div class="c-grid__item u-col-8of12-md"></div>
  *   <div class="c-grid__item u-col-4of12-md"></div>
  * </div>

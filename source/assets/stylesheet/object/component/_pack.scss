@@ -10,7 +10,7 @@ $my-pack-space-x: my-paddings(small) !default;
  * モディファイアで余白を変更できます。
  * [DEMO](https://jsfiddle.net/manabuyasuda/bnrepy5e/2)
  *
- * <ul class="c-pack [c-pack--size-small]">
+ * <ul class="c-pack [c-pack--small]">
  *   <li class="c-pack__item">
  *     <a href="#" class="c-pack__link"></a>
  *   </li>
@@ -41,7 +41,7 @@ $my-pack-space-x: my-paddings(small) !default;
     text-decoration: none;
 }
 
-.c-pack--size-small {
+.c-pack--small {
     > .c-pack__item {
         padding: ($my-pack-space-y / 2) ($my-pack-space-x / 1);
     }
@@ -51,7 +51,7 @@ $my-pack-space-x: my-paddings(small) !default;
     }
 }
 
-.c-pack--size-large {
+.c-pack--large {
     > .c-pack__item {
         padding: ($my-pack-space-y * 2) ($my-pack-space-x * 1);
     }

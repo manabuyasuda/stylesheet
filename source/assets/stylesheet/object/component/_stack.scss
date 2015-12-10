@@ -10,7 +10,7 @@ $my-stack-space-x: 0 !default;
  * モディファイアで余白が変更できます。
  * [DEMO](https://jsfiddle.net/manabuyasuda/3rcgp8t6/2)
  *
- * <ul class="c-stack [c-stack--size-small]">
+ * <ul class="c-stack [c-stack--small]">
  *     <li class="c-stack__item">
  *         <a href="#" class="c-stack__link">
  *            [content]
@@ -33,7 +33,7 @@ $my-stack-space-x: 0 !default;
 
 .c-stack__link {
     display: block;
-    margin: (-$my-stack-space-y)  (-$my-stack-space-x);
+    margin: (-$my-stack-space-y) (-$my-stack-space-x);
     padding: $my-stack-space-y $my-stack-space-x;
 }
 
@@ -45,7 +45,7 @@ $my-stack-space-x: 0 !default;
     text-align: right;
 }
 
-.c-stack--size-small {
+.c-stack--small {
     > .c-stack__item {
         padding: ($my-stack-space-y / 2) ($my-stack-space-x / 1);
     }
@@ -55,7 +55,7 @@ $my-stack-space-x: 0 !default;
     }
 }
 
-.c-stack--size-large {
+.c-stack--large {
     > .c-stack__item {
         padding: ($my-stack-space-y * 2) ($my-stack-space-x * 1);
     }

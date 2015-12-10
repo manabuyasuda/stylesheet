@@ -10,7 +10,7 @@ $my-rank-space-x: my-paddings() !default;
  * モディファイアで余白が変更できます。
  * [DEMO](https://jsfiddle.net/manabuyasuda/k93rhad6/3)
  *
- * <ul class="c-rank [c-rank--size-small]">
+ * <ul class="c-rank [c-rank--small]">
  *   <li class="c-rank__item">
  *     <a href="#" class="c-rank__link"></a>
  *   </li>
@@ -37,7 +37,7 @@ $my-rank-space-x: my-paddings() !default;
     padding: $my-rank-space-y $my-rank-space-x;
 }
 
-.c-rank--size-small {
+.c-rank--small {
     > .c-rank__item {
         padding: 0 ($my-rank-space-x / 2);
     }
@@ -47,7 +47,7 @@ $my-rank-space-x: my-paddings() !default;
     }
 }
 
-.c-rank--size-large {
+.c-rank--large {
     > .c-rank__item {
         padding: ($my-rank-space-y * 2) ($my-rank-space-x * 2);
     }

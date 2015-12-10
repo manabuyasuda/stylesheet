@@ -4,9 +4,9 @@
 
 /**
  * YouTubeなどのエンベディットコンテンツを埋め込むオブジェクトです。
- * `.c-embed--16:9`などと指定してアスペクト比を固定します。
+ * `.c-embed--16to9`などと指定してアスペクト比を固定します。
  *
- * <div class="c-embed c-embed--16:9">
+ * <div class="c-embed c-embed--16to9">
  *     <iframe></iframe>
  * </div>
  */
@@ -31,10 +31,10 @@
     }
 }
 
-.c-embed--16\:9 {
+.c-embed--16to9 {
     padding-bottom: percentage(9 / 16) !important;
 }
 
-.c-embed--4\:3 {
+.c-embed--4to3 {
     padding-bottom: percentage(3 / 4) !important;
 }
