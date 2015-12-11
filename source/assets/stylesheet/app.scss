@@ -35,7 +35,6 @@
  * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
  * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
- * Frag.................垂直方向の指定ができるメディアオブジェクトです。
  * Split................2つの要素をブロックから横並びにするオブジェクトです。
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
@@ -132,7 +131,6 @@
 @import "object/component/_pack";
 @import "object/component/_stack";
 @import "object/component/_media";
-@import "object/component/_frag";
 @import "object/component/_split";
 @import "object/component/_justify";
 @import "object/component/_scroll-table";
