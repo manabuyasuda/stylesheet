@@ -5,48 +5,94 @@ $my-media-gutter: my-paddings() !default;
 
 /**
  * 画像とテキストを横並びにするオブジェクトです。
- * `c-media__image`は`<figure>`でも`<img>`のどちらでも使用できます。
- * `c-media__image--rev`を指定すると画像を右側に配置することもできます。
- * `c-media__image`と`c-media__body`は`<img>`と`<p>`に直接マークアップすることもできます。
- * [DEMO](https://jsfiddle.net/manabuyasuda/mh9rkg0b/2)
+ * Modifierで垂直方向の変更、要素の配置順の反転、
+ * 任意の横幅以下で縦に積み重なるレスポンシブ対応にすることができます。
  *
- * <div class="c-media">
- *   <figure class="c-media__image [c-media__image--rev]">
+ * <div class="c-media [c-media--middle c-media--rev c-media--stack-md]">
+ *   <figure class="c-media__unit">
  *     <img>
  *   </figure>
- *   <div class="c-media__body">
+ *   <div class="c-media__unit">
  *     <p></p>
  *   </div>
  * </div>
  */
 .c-media {
-    @include my-clearfix;
+    display: table;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.c-media__image {
-    float: left;
-    margin-right: $my-media-gutter;
-    > img {
-        display: block;
-        max-width: none;
+.c-media__unit {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    &:not(:first-child) {
+        padding-left: $my-media-gutter;
+    }
+    & :first-child {
+        margin-top: 0;
+    }
+    & :last-child {
+        margin-bottom: 0;
     }
 }
 
-.c-media__body {
-    overflow: hidden;
+.c-media__unit > img {
+    display: block;
 }
 
-.c-media__image--rev {
-    float: right;
-    margin-right: 0;
-    margin-left: $my-media-gutter;
+.c-media--middle {
+    > .c-media__unit {
+        vertical-align: middle;
+    }
 }
 
-.c-media--no-gap {
-    > .c-media__image {
-        padding-right: 0;
+.c-media--bottom {
+    > .c-media__unit {
+        vertical-align: bottom;
+    }
+}
+
+.c-media--rev {
+    text-align: left;
+    direction: rtl;
+    .c-media__unit {
+        text-align: left;
+        direction: ltr;
+    }
+    .c-media__unit:not(:first-child) {
+        padding-right: $my-media-gutter;
         padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 399px) {
+    .c-media--stack-sm {
+        > .c-media__unit {
+            display: block;
+        }
+        > .c-media__unit:not(:first-child) {
+            padding: $my-media-gutter 0 0;
+        }
+        > .c-media__unit img {
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .c-media--stack-md {
+        > .c-media__unit {
+            display: block;
+        }
+        > .c-media__unit:not(:first-child) {
+            padding: $my-media-gutter 0 0;
+        }
+        > .c-media__unit img {
+            margin: auto;
+        }
     }
 }
