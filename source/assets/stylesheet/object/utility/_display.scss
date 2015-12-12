@@ -26,6 +26,6 @@
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
 @each $name, $breakpoint in $my-breakpoints {
     @media #{$breakpoint} {
-        @include my-display(\@#{$name});
+        @include my-display(-#{$name});
     }
 }

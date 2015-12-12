@@ -3178,61 +3178,61 @@ address {
 }
 
 @media screen and (min-width: 400px) {
-    .u-display-none\@sm {
+    .u-display-none-sm {
         display: none !important;
     }
-    .u-display-block\@sm {
+    .u-display-block-sm {
         display: block !important;
     }
-    .u-display-inline\@sm {
+    .u-display-inline-sm {
         display: inline !important;
     }
-    .u-display-inline-block\@sm {
+    .u-display-inline-block-sm {
         display: inline-block !important;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .u-display-none\@md {
+    .u-display-none-md {
         display: none !important;
     }
-    .u-display-block\@md {
+    .u-display-block-md {
         display: block !important;
     }
-    .u-display-inline\@md {
+    .u-display-inline-md {
         display: inline !important;
     }
-    .u-display-inline-block\@md {
+    .u-display-inline-block-md {
         display: inline-block !important;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .u-display-none\@lg {
+    .u-display-none-lg {
         display: none !important;
     }
-    .u-display-block\@lg {
+    .u-display-block-lg {
         display: block !important;
     }
-    .u-display-inline\@lg {
+    .u-display-inline-lg {
         display: inline !important;
     }
-    .u-display-inline-block\@lg {
+    .u-display-inline-block-lg {
         display: inline-block !important;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .u-display-none\@xl {
+    .u-display-none-xl {
         display: none !important;
     }
-    .u-display-block\@xl {
+    .u-display-block-xl {
         display: block !important;
     }
-    .u-display-inline\@xl {
+    .u-display-inline-xl {
         display: inline !important;
     }
-    .u-display-inline-block\@xl {
+    .u-display-inline-block-xl {
         display: inline-block !important;
     }
 }
