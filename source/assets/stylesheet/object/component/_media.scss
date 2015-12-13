@@ -9,10 +9,10 @@ $my-media-gutter: my-paddings() !default;
  * 任意の横幅以下で縦に積み重なるレスポンシブ対応にすることができます。
  *
  * <div class="c-media [c-media--middle c-media--rev c-media--stack-md]">
- *   <figure class="c-media__unit">
+ *   <figure class="c-media__item">
  *     <img>
  *   </figure>
- *   <div class="c-media__unit">
+ *   <div class="c-media__item">
  *     <p></p>
  *   </div>
  * </div>
@@ -24,7 +24,7 @@ $my-media-gutter: my-paddings() !default;
     padding: 0;
 }
 
-.c-media__unit {
+.c-media__item {
     display: table-cell;
     margin: 0;
     padding: 0;
@@ -40,18 +40,18 @@ $my-media-gutter: my-paddings() !default;
     }
 }
 
-.c-media__unit > img {
+.c-media__item > img {
     display: block;
 }
 
 .c-media--middle {
-    > .c-media__unit {
+    > .c-media__item {
         vertical-align: middle;
     }
 }
 
 .c-media--bottom {
-    > .c-media__unit {
+    > .c-media__item {
         vertical-align: bottom;
     }
 }
@@ -59,11 +59,11 @@ $my-media-gutter: my-paddings() !default;
 .c-media--rev {
     text-align: left;
     direction: rtl;
-    .c-media__unit {
+    .c-media__item {
         text-align: left;
         direction: ltr;
     }
-    .c-media__unit:not(:first-child) {
+    .c-media__item:not(:first-child) {
         padding-right: $my-media-gutter;
         padding-left: 0;
     }
@@ -71,13 +71,13 @@ $my-media-gutter: my-paddings() !default;
 
 @media screen and (max-width: 399px) {
     .c-media--stack-sm {
-        > .c-media__unit {
+        > .c-media__item {
             display: block;
         }
-        > .c-media__unit:not(:first-child) {
+        > .c-media__item:not(:first-child) {
             padding: $my-media-gutter 0 0;
         }
-        > .c-media__unit img {
+        > .c-media__item img {
             margin: auto;
         }
     }
@@ -85,13 +85,13 @@ $my-media-gutter: my-paddings() !default;
 
 @media screen and (max-width: 767px) {
     .c-media--stack-md {
-        > .c-media__unit {
+        > .c-media__item {
             display: block;
         }
-        > .c-media__unit:not(:first-child) {
+        > .c-media__item:not(:first-child) {
             padding: $my-media-gutter 0 0;
         }
-        > .c-media__unit img {
+        > .c-media__item img {
             margin: auto;
         }
     }

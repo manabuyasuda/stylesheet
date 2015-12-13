@@ -1175,10 +1175,10 @@ address {
  * 任意の横幅以下で縦に積み重なるレスポンシブ対応にすることができます。
  *
  * <div class="c-media [c-media--middle c-media--rev c-media--stack-md]">
- *   <figure class="c-media__unit">
+ *   <figure class="c-media__item">
  *     <img>
  *   </figure>
- *   <div class="c-media__unit">
+ *   <div class="c-media__item">
  *     <p></p>
  *   </div>
  * </div>
@@ -1190,31 +1190,31 @@ address {
     padding: 0;
 }
 
-.c-media__unit {
+.c-media__item {
     display: table-cell;
     margin: 0;
     padding: 0;
     vertical-align: top;
 }
-.c-media__unit:not(:first-child) {
+.c-media__item:not(:first-child) {
     padding-left: 1em;
 }
-.c-media__unit :first-child {
+.c-media__item :first-child {
     margin-top: 0;
 }
-.c-media__unit :last-child {
+.c-media__item :last-child {
     margin-bottom: 0;
 }
 
-.c-media__unit > img {
+.c-media__item > img {
     display: block;
 }
 
-.c-media--middle > .c-media__unit {
+.c-media--middle > .c-media__item {
     vertical-align: middle;
 }
 
-.c-media--bottom > .c-media__unit {
+.c-media--bottom > .c-media__item {
     vertical-align: bottom;
 }
 
@@ -1222,35 +1222,35 @@ address {
     text-align: left;
     direction: rtl;
 }
-.c-media--rev .c-media__unit {
+.c-media--rev .c-media__item {
     text-align: left;
     direction: ltr;
 }
-.c-media--rev .c-media__unit:not(:first-child) {
+.c-media--rev .c-media__item:not(:first-child) {
     padding-right: 1em;
     padding-left: 0;
 }
 
 @media screen and (max-width: 399px) {
-    .c-media--stack-sm > .c-media__unit {
+    .c-media--stack-sm > .c-media__item {
         display: block;
     }
-    .c-media--stack-sm > .c-media__unit:not(:first-child) {
+    .c-media--stack-sm > .c-media__item:not(:first-child) {
         padding: 1em 0 0;
     }
-    .c-media--stack-sm > .c-media__unit img {
+    .c-media--stack-sm > .c-media__item img {
         margin: auto;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .c-media--stack-md > .c-media__unit {
+    .c-media--stack-md > .c-media__item {
         display: block;
     }
-    .c-media--stack-md > .c-media__unit:not(:first-child) {
+    .c-media--stack-md > .c-media__item:not(:first-child) {
         padding: 1em 0 0;
     }
-    .c-media--stack-md > .c-media__unit img {
+    .c-media--stack-md > .c-media__item img {
         margin: auto;
     }
 }
