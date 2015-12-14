@@ -2,13 +2,15 @@
  * #Media
  */
 $my-media-gutter: my-paddings() !default;
+$my-media-gutter-small: ($my-media-gutter / 2) !default;
+$my-media-gutter-large: ($my-media-gutter * 2) !default;
 
 /**
  * 画像とテキストを横並びにするオブジェクトです。
- * Modifierで垂直方向の変更、要素の配置順の反転、
+ * Modifierで余白の変更、垂直方向の変更、要素の配置順の反転、
  * 任意の横幅以下で縦に積み重なるレスポンシブ対応にすることができます。
  *
- * <div class="c-media [c-media--middle c-media--rev c-media--stack-md]">
+ * <div class="c-media [c-media--small c-media--middle c-media--rev c-media--stack-md]">
  *   <figure class="c-media__item">
  *     <img>
  *   </figure>
@@ -32,10 +34,10 @@ $my-media-gutter: my-paddings() !default;
     &:not(:first-child) {
         padding-left: $my-media-gutter;
     }
-    & :first-child {
+    & > :first-child {
         margin-top: 0;
     }
-    & :last-child {
+    & > :last-child {
         margin-bottom: 0;
     }
 }
@@ -59,12 +61,32 @@ $my-media-gutter: my-paddings() !default;
 .c-media--rev {
     text-align: left;
     direction: rtl;
-    .c-media__item {
+    > .c-media__item {
         text-align: left;
         direction: ltr;
     }
-    .c-media__item:not(:first-child) {
+    > .c-media__item:not(:first-child) {
         padding-right: $my-media-gutter;
+        padding-left: 0;
+    }
+}
+
+.c-media--small {
+    > .c-media__item:not(:first-child) {
+        padding-left: $my-media-gutter-small;
+    }
+    &.c-media--rev > .c-media__item:not(:first-child) {
+        padding-right: $my-media-gutter-small;
+        padding-left: 0;
+    }
+}
+
+.c-media--large {
+    > .c-media__item:not(:first-child) {
+        padding-left: $my-media-gutter-large;
+    }
+    &.c-media--rev > .c-media__item:not(:first-child) {
+        padding-right: $my-media-gutter-large;
         padding-left: 0;
     }
 }
@@ -77,8 +99,14 @@ $my-media-gutter: my-paddings() !default;
         > .c-media__item:not(:first-child) {
             padding: $my-media-gutter 0 0;
         }
-        > .c-media__item img {
+        > .c-media__item > img {
             margin: auto;
+        }
+        &.c-media--small > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-small 0 0;
+        }
+        &.c-media--large > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-large 0 0;
         }
     }
 }
@@ -91,8 +119,14 @@ $my-media-gutter: my-paddings() !default;
         > .c-media__item:not(:first-child) {
             padding: $my-media-gutter 0 0;
         }
-        > .c-media__item img {
+        > .c-media__item > img {
             margin: auto;
+        }
+        &.c-media--small > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-small 0 0;
+        }
+        &.c-media--large > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-large 0 0;
         }
     }
 }
