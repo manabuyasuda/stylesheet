@@ -40,7 +40,8 @@
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
- * Button..............ボタンコンポーネントのベーススタイルです。
+ * Button...............ボタンコンポーネントのベーススタイルです。
+ * Card.................カード型のコンポーネントです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
  *
@@ -48,7 +49,6 @@
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
- * Card.................カード型のコンポーネントです。
  * Alert................エラーメッセージなどを表示するコンポーネントです。
  * Balloon..............吹き出しのコンポーネントです。
  *
@@ -1496,6 +1496,97 @@ address {
 }
 
 /**
+ * #Card
+ */
+/**
+ * カード型のオブジェクトです。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/qyspyLg1/2)
+ *
+ * <div class="c-card">
+ *   <img class="c-card__image-top">
+ *   <div class="c-card__body">
+ *     <h2 class="c-card__title"></h2>
+ *     <p class="c-card__text"></p>
+ *   </div>
+ *   <ul class="c-card__list">
+ *     <li class="c-card__item"></li>
+ *     <li class="c-card__item"></li>
+ *   </ul>
+ *   <div class="c-card__foot">
+ *     <p class="c-card__text"></p>
+ *   </div>
+ * </div>
+ */
+.c-card {
+    margin: 0 0 1em;
+    padding: 0;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    list-style-type: none;
+}
+
+.c-card__head {
+    padding: 1em;
+}
+.c-card__head > :last-child {
+    margin-bottom: 0;
+}
+
+.c-card__body {
+    padding: 1.5em 1em;
+}
+.c-card__body > :last-child {
+    margin-bottom: 0;
+}
+
+.c-card__foot {
+    padding: 1em;
+    border-top: 1px solid #d0d0d0;
+}
+.c-card__foot > :last-child {
+    margin-bottom: 0;
+}
+
+.c-card__head,
+.c-card__image-top,
+.c-card__item--top,
+.c-card__link--top {
+    border-radius: 3px 3px 0 0;
+}
+
+.c-card__foot,
+.c-card__image-bottom,
+.c-card__item--bottom,
+.c-card__link--bottom {
+    border-radius: 0 0 3px 3px;
+}
+
+.c-card__title {
+    margin-top: 0;
+}
+
+.c-card__text:last-child {
+    margin-bottom: 0;
+}
+
+.c-card__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-card__item {
+    padding: 1em;
+    border-top: 1px solid #d0d0d0;
+}
+
+.c-card__link {
+    display: block;
+    margin: -1em;
+    padding: 1em;
+}
+
+/**
  * #Embed
  */
 /**
@@ -1781,95 +1872,6 @@ address {
 }
 .p-tag-cloud__count:before {
     content: "\00A0";
-}
-
-/**
- * #Card
- */
-/**
- * カード型のオブジェクトです。
- * [DEMO](https://jsfiddle.net/manabuyasuda/qyspyLg1/2)
- *
- * <div class="p-card">
- *   <img class="p-card__image-top">
- *   <div class="p-card__body">
- *     <h2 class="p-card__title"></h2>
- *     <p class="p-card__text"></p>
- *   </div>
- *   <ul class="p-card__list">
- *     <li class="p-card__item"></li>
- *     <li class="p-card__item"></li>
- *   </ul>
- *   <div class="p-card__foot">
- *     <p class="p-card__text"></p>
- *   </div>
- * </div>
- */
-.p-card {
-    margin-bottom: 1em;
-    border: 1px solid #d0d0d0;
-    border-radius: 3px;
-}
-
-.p-card__body {
-    padding: 1.5em 1em;
-}
-.p-card__body > :last-child {
-    margin-bottom: 0;
-}
-
-.p-card__head {
-    padding: 1em;
-}
-.p-card__head > :last-child {
-    margin-bottom: 0;
-}
-
-.p-card__foot {
-    padding: 1em;
-    border-top: 1px solid #d0d0d0;
-}
-.p-card__foot > :last-child {
-    margin-bottom: 0;
-}
-
-.p-card__head,
-.p-card__image-top,
-.p-card__item--top,
-.p-card__link--top {
-    border-radius: 3px 3px 0 0;
-}
-
-.p-card__foot,
-.p-card__image-bottom,
-.p-card__item--bottom,
-.p-card__link--bottom {
-    border-radius: 0 0 3px 3px;
-}
-
-.p-card__title {
-    margin-top: 0;
-}
-
-.p-card__text:last-child {
-    margin-bottom: 0;
-}
-
-.p-card__list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.p-card__item {
-    padding: 1em;
-    border-top: 1px solid #d0d0d0;
-}
-
-.p-card__link {
-    display: block;
-    margin: -1em;
-    padding: 1em;
 }
 
 /**

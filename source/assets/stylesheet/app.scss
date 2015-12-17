@@ -39,7 +39,8 @@
  * Justify..............子要素を両端揃えにするオブジェクトです。
  * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
- * Button..............ボタンコンポーネントのベーススタイルです。
+ * Button...............ボタンコンポーネントのベーススタイルです。
+ * Card.................カード型のコンポーネントです。
  * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
  * Images...............画像コンポーネントです。
  *
@@ -47,7 +48,6 @@
  * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
- * Card.................カード型のコンポーネントです。
  * Alert................エラーメッセージなどを表示するコンポーネントです。
  * Balloon..............吹き出しのコンポーネントです。
  *
@@ -136,6 +136,7 @@
 @import "object/component/_scroll-table";
 @import "object/component/_central";
 @import "object/component/_button";
+@import "object/component/_card";
 @import "object/component/_embed";
 @import "object/component/_image";
 
@@ -146,7 +147,6 @@
 @import "object/project/_breadcrumbs";
 @import "object/project/_pagination";
 @import "object/project/_tag-cloud";
-@import "object/project/_card";
 @import "object/project/_alert";
 @import "object/project/_balloon";
 

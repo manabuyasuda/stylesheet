@@ -11,42 +11,44 @@ $my-card-round: $my-base-round !default;
  * カード型のオブジェクトです。
  * [DEMO](https://jsfiddle.net/manabuyasuda/qyspyLg1/2)
  *
- * <div class="p-card">
- *   <img class="p-card__image-top">
- *   <div class="p-card__body">
- *     <h2 class="p-card__title"></h2>
- *     <p class="p-card__text"></p>
+ * <div class="c-card">
+ *   <img class="c-card__image-top">
+ *   <div class="c-card__body">
+ *     <h2 class="c-card__title"></h2>
+ *     <p class="c-card__text"></p>
  *   </div>
- *   <ul class="p-card__list">
- *     <li class="p-card__item"></li>
- *     <li class="p-card__item"></li>
+ *   <ul class="c-card__list">
+ *     <li class="c-card__item"></li>
+ *     <li class="c-card__item"></li>
  *   </ul>
- *   <div class="p-card__foot">
- *     <p class="p-card__text"></p>
+ *   <div class="c-card__foot">
+ *     <p class="c-card__text"></p>
  *   </div>
  * </div>
  */
-.p-card {
-    margin-bottom: $my-card-gap;
+.c-card {
+    margin: 0 0 $my-card-gap;
+    padding: 0;
     border: $my-card-border;
     border-radius: $my-card-round;
+    list-style-type: none;
 }
 
-.p-card__body {
+.c-card__head {
+    padding: $my-card-padding-x;
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-card__body {
     padding: $my-card-padding-y $my-card-padding-x;
     > :last-child {
         margin-bottom: 0;
     }
 }
 
-.p-card__head {
-    padding: $my-card-padding-x;
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-.p-card__foot {
+.c-card__foot {
     padding: $my-card-padding-x;
     border-top: $my-card-border;
     > :last-child {
@@ -54,44 +56,44 @@ $my-card-round: $my-base-round !default;
     }
 }
 
-.p-card__head,
-.p-card__image-top,
-.p-card__item--top,
-.p-card__link--top {
+.c-card__head,
+.c-card__image-top,
+.c-card__item--top,
+.c-card__link--top {
     @if $my-card-round != null {
         border-radius: $my-card-round $my-card-round 0 0;
     }
 }
 
-.p-card__foot,
-.p-card__image-bottom,
-.p-card__item--bottom,
-.p-card__link--bottom {
+.c-card__foot,
+.c-card__image-bottom,
+.c-card__item--bottom,
+.c-card__link--bottom {
     @if $my-card-round != null {
         border-radius: 0 0 $my-card-round $my-card-round;
     }
 }
 
-.p-card__title {
+.c-card__title {
     margin-top: 0;
 }
 
-.p-card__text:last-child {
+.c-card__text:last-child {
     margin-bottom: 0;
 }
 
-.p-card__list {
+.c-card__list {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.p-card__item {
+.c-card__item {
     padding: $my-card-padding-x;
     border-top: $my-card-border;
 }
 
-.p-card__link {
+.c-card__link {
     display: block;
     margin: -$my-card-padding-x;
     padding: $my-card-padding-x;
