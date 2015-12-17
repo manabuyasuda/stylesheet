@@ -12,10 +12,10 @@
  * Media-query..........メディアクエリ用のmixinです。
  * Clearfix.............`float`を解除する`clearfix`のmixinです。
  *
- * VENDOR
+ * VENDORS
  * Normalize.css........Normalize cssのインポートします。
  *
- * VENDOR-EXTENSION
+ * VENDORS-EXTENSION
  * Normalize.css........Normalize.cssのスタイルを上書きします。
  *
  * BASE
