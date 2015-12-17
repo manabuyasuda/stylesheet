@@ -2,6 +2,8 @@
  * #Grid
  */
 $my-grid-gutter: my-paddings(large) !default;
+$my-grid-gutter-small: ($my-grid-gutter / 2) !default;
+$my-grid-gutter-large: ($my-grid-gutter * 2) !default;
 
 /**
  * グリッドレイアウトオブジェクトです。
@@ -39,23 +41,23 @@ $my-grid-gutter: my-paddings(large) !default;
  * xx-small | x-small | small | medium | large | x-large | xx-large
  */
 .c-grid--small {
-    margin-left: - ($my-grid-gutter / 2);
+    margin-left: -$my-grid-gutter-small;
     > .c-grid__item {
-        padding-left: ($my-grid-gutter / 2);
+        padding-left: $my-grid-gutter-small;
     }
 }
 
 .c-grid--medium {
-    margin-left: - $my-grid-gutter;
+    margin-left: -$my-grid-gutter;
     > .c-grid__item {
         padding-left: $my-grid-gutter;
     }
 }
 
 .c-grid--large {
-    margin-left: - ($my-grid-gutter * 2);
+    margin-left: -$my-grid-gutter-large;
     > .c-grid__item {
-        padding-left: ($my-grid-gutter * 2);
+        padding-left: $my-grid-gutter-large;
     }
 }
 

@@ -3,6 +3,10 @@
  */
 $my-rank-space-y: my-paddings(small) !default;
 $my-rank-space-x: my-paddings() !default;
+$my-rank-space-y-small: ($my-rank-space-y / 2) !default;
+$my-rank-space-x-small: ($my-rank-space-x / 2) !default;
+$my-rank-space-y-large: ($my-rank-space-y * 2) !default;
+$my-rank-space-x-large: ($my-rank-space-x * 2) !default;
 
 /**
  * 横並び（ranked）になるリストオブジェクトです。
@@ -39,20 +43,20 @@ $my-rank-space-x: my-paddings() !default;
 
 .c-rank--small {
     > .c-rank__item {
-        padding: 0 ($my-rank-space-x / 2);
+        padding: 0 $my-rank-space-x-small;
     }
     .c-rank__link {
-        margin: 0 (-$my-rank-space-x / 2);
-        padding: 0 ($my-rank-space-x / 2);
+        margin: 0 (-$my-rank-space-x-small);
+        padding: 0 ($my-rank-space-x-small);
     }
 }
 
 .c-rank--large {
     > .c-rank__item {
-        padding: ($my-rank-space-y * 2) ($my-rank-space-x * 2);
+        padding: $my-rank-space-y-large $my-rank-space-x-large;
     }
     .c-rank__link {
-        margin: (-$my-rank-space-y * 2) (-$my-rank-space-x * 2);
-        padding: ($my-rank-space-y * 2) ($my-rank-space-x * 2);
+        margin: (-$my-rank-space-y-large) (-$my-rank-space-x-large);
+        padding: $my-rank-space-y-large $my-rank-space-x-large;
     }
 }

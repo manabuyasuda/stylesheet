@@ -2,6 +2,8 @@
  * #Wrapper
  */
 $my-wrapper-padding: my-paddings() !default;
+$my-wrapper-padding-small: ($my-wrapper-padding / 2) !default;
+$my-wrapper-padding-large: ($my-wrapper-padding * 2) !default;
 
 /**
  * 横幅を制限するラッパーオブジェクトです。
@@ -22,8 +24,8 @@ $my-wrapper-padding: my-paddings() !default;
 }
 
 .c-wrapper--small {
-    padding-right: ($my-wrapper-padding / 2);
-    padding-left: ($my-wrapper-padding / 2);
+    padding-right: $my-wrapper-padding-small;
+    padding-left: $my-wrapper-padding-small;
 }
 
 .c-wrapper--medium {
@@ -32,6 +34,6 @@ $my-wrapper-padding: my-paddings() !default;
 }
 
 .c-wrapper--large {
-    padding-right: ($my-wrapper-padding * 2);
-    padding-left: ($my-wrapper-padding * 2);
+    padding-right: $my-wrapper-padding-large;
+    padding-left: $my-wrapper-padding-large;
 }

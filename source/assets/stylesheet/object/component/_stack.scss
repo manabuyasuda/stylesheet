@@ -3,6 +3,10 @@
  */
 $my-stack-space-y: my-paddings() !default;
 $my-stack-space-x: 0 !default;
+$my-stack-space-y-small: ($my-stack-space-y / 2) !default;
+$my-stack-space-x-small: $my-stack-space-x !default;
+$my-stack-space-y-large: ($my-stack-space-y * 2) !default;
+$my-stack-space-x-large: $my-stack-space-x !default;
 
 /**
  * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
@@ -47,20 +51,20 @@ $my-stack-space-x: 0 !default;
 
 .c-stack--small {
     > .c-stack__item {
-        padding: ($my-stack-space-y / 2) ($my-stack-space-x / 1);
+        padding: $my-stack-space-y-small $my-stack-space-x-small;
     }
     .c-stack__link {
-        margin: (-$my-stack-space-y / 2)  (-$my-stack-space-x / 1);
-        padding: ($my-stack-space-y / 2) ($my-stack-space-x / 1);
+        margin: (-$my-stack-space-y-small)  (-$my-stack-space-x-small);
+        padding: $my-stack-space-y-small $my-stack-space-x-small;
     }
 }
 
 .c-stack--large {
     > .c-stack__item {
-        padding: ($my-stack-space-y * 2) ($my-stack-space-x * 1);
+        padding: $my-stack-space-y-large $my-stack-space-x-large;
     }
     .c-stack__link {
-        margin: (-$my-stack-space-y * 2)  (-$my-stack-space-x * 1);
-        padding: ($my-stack-space-y * 2) ($my-stack-space-x * 1);
+        margin: (-$my-stack-space-y-large)  (-$my-stack-space-x-large);
+        padding: $my-stack-space-y-large $my-stack-space-x-large;
     }
 }

@@ -3,6 +3,10 @@
  */
 $my-pack-space-y: my-paddings() !default;
 $my-pack-space-x: my-paddings(small) !default;
+$my-pack-space-y-small: ($my-pack-space-y / 2) !default;
+$my-pack-space-x-small: $my-pack-space-x !default;
+$my-pack-space-y-large: ($my-pack-space-y * 2) !default;
+$my-pack-space-x-large: $my-pack-space-x !default;
 
 /**
  * 横幅いっぱいで均等、中央揃えのナビゲーションオブジェクトです。
@@ -43,20 +47,20 @@ $my-pack-space-x: my-paddings(small) !default;
 
 .c-pack--small {
     > .c-pack__item {
-        padding: ($my-pack-space-y / 2) ($my-pack-space-x / 1);
+        padding: $my-pack-space-y-small $my-pack-space-x-small;
     }
     .c-pack__link {
-        margin: (-$my-pack-space-y / 2) (-$my-pack-space-x / 1);
-        padding: ($my-pack-space-y / 2) ($my-pack-space-x / 1);
+        margin: (-$my-pack-space-y-small) (-$my-pack-space-x-small);
+        padding: $my-pack-space-y-small $my-pack-space-x-small;
     }
 }
 
 .c-pack--large {
     > .c-pack__item {
-        padding: ($my-pack-space-y * 2) ($my-pack-space-x * 1);
+        padding: $my-pack-space-y-large $my-pack-space-x-large;
     }
     .c-pack__link {
-        margin: (-$my-pack-space-y * 2) (-$my-pack-space-x * 1);
-        padding: ($my-pack-space-y * 2) ($my-pack-space-x * 1);
+        margin: (-$my-pack-space-y-large) (-$my-pack-space-x-large);
+        padding: $my-pack-space-y-large $my-pack-space-x-large;
     }
 }
