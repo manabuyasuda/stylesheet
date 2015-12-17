@@ -931,7 +931,7 @@ address {
  * 横並びになるリストオブジェクトです。
  * [DEMO](//jsfiddle.net/manabuyasuda/udbyrfbo/5/)
  *
- * <ul class="c-inline">
+ * <ul class="c-inline [c-inline--small]">
  *   <li class="c-inline__item">
  *     <a href="" class="c-inline__link"></a>
  *   </li>
@@ -958,6 +958,20 @@ address {
 
 .c-inline__link {
     display: inline-block;
+}
+
+.c-inline--small {
+    margin-left: -0.25em;
+}
+.c-inline--small > .c-inline__item {
+    padding-left: 0.25em;
+}
+
+.c-inline--large {
+    margin-left: -1em;
+}
+.c-inline--large > .c-inline__item {
+    padding-left: 1em;
 }
 
 /**

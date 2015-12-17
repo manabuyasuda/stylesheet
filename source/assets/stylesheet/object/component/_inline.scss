@@ -2,12 +2,14 @@
  * #Inline
  */
 $my-inline-space: my-paddings(small) !default;
+$my-inline-space-small: ($my-inline-space / 2) !default;
+$my-inline-space-large: ($my-inline-space * 2) !default;
 
 /**
  * 横並びになるリストオブジェクトです。
  * [DEMO](//jsfiddle.net/manabuyasuda/udbyrfbo/5/)
  *
- * <ul class="c-inline">
+ * <ul class="c-inline [c-inline--small]">
  *   <li class="c-inline__item">
  *     <a href="" class="c-inline__link"></a>
  *   </li>
@@ -30,4 +32,18 @@ $my-inline-space: my-paddings(small) !default;
 
 .c-inline__link {
     display: inline-block;
+}
+
+.c-inline--small {
+    margin-left: (-$my-inline-space-small);
+    > .c-inline__item {
+        padding-left: $my-inline-space-small;
+    }
+}
+
+.c-inline--large {
+    margin-left: (-$my-inline-space-large);
+    > .c-inline__item {
+        padding-left: $my-inline-space-large;
+    }
 }
