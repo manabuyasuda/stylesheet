@@ -2,18 +2,18 @@
  * #Position
  */
 
-.u-pos {
+.u-position-static {
     position: static $important;
 }
 
-.u-por {
+.u-position-relative {
     position: relative $important;
 }
 
-.u-poa {
+.u-position-absolute {
     position: absolute $important;
 }
 
-.u-pof {
+.u-position-fixed {
     position: fixed $important;
 }
