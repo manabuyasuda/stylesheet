@@ -1,64 +1,35 @@
 /**
  * #Padding
  */
-$my-padding-base: my-paddings();
+$my-padding-small: my-paddings(small);
+$my-padding-medium: my-paddings();
+$my-padding-large: my-paddings(large);
 
-/* padding-0 */
-.u-p0 { padding: 0 $important; }
-.u-pt0 { padding-top: 0 $important; }
-.u-pr0 { padding-right: 0 $important; }
-.u-pb0 { padding-bottom: 0 $important; }
-.u-pl0 { padding-left: 0 $important; }
-.u-py0 {
-    padding-top: 0 $important;
-    padding-bottom: 0 $important;
-}
-.u-px0 {
-    padding-right: 0 $important;
-    padding-left: 0 $important;
-}
+/**
+ * m - padding
+ * a - all
+ * t, r, b, l - top, right, bottom, left
+ * x, y - top and bottom, right and left
+ * 0, s, m, l - zero, small, medium, large
+ */
 
-/* padding-small */
-.u-ps { padding: ($my-padding-base / 2) $important; }
-.u-pts { padding-top: ($my-padding-base / 2) $important; }
-.u-prs { padding-right: ($my-padding-base / 2) $important; }
-.u-pbs { padding-bottom: ($my-padding-base / 2) $important; }
-.u-pls { padding-left: ($my-padding-base / 2) $important; }
-.u-pys {
-    padding-top: ($my-padding-base / 2) $important;
-    padding-bottom: ($my-padding-base / 2) $important;
-}
-.u-pxs {
-    padding-left: ($my-padding-base / 2) $important;
-    padding-right: ($my-padding-base / 2) $important;
+@mixin my-padding($name, $value) {
+    .u-ma-#{$name} { padding: $value $important; }
+    .u-mt-#{$name} { padding-top: $value $important; }
+    .u-mr-#{$name} { padding-right: $value $important; }
+    .u-mb-#{$name} { padding-bottom: $value $important; }
+    .u-ml-#{$name} { padding-left: $value $important; }
+    .u-my-#{$name} {
+        padding-top: $value $important;
+        padding-bottom: $value $important;
+    }
+    .u-mx-#{$name} {
+        padding-right: $value $important;
+        padding-left: $value $important;
+    }
 }
 
-/* padding-medium */
-.u-pm { padding: $my-padding-base $important; }
-.u-ptm { padding-top: $my-padding-base $important; }
-.u-prm { padding-right: $my-padding-base $important; }
-.u-pbm { padding-bottom: $my-padding-base $important; }
-.u-plm { padding-left: $my-padding-base $important; }
-.u-pym {
-    padding-top: $my-padding-base $important;
-    padding-bottom: $my-padding-base $important;
-}
-.u-pxm {
-    padding-right: $my-padding-base $important;
-    padding-left: $my-padding-base $important;
-}
-
-/* padding-large */
-.u-pl { padding: ($my-padding-base * 2) $important; }
-.u-ptl { padding-top: ($my-padding-base * 2) $important; }
-.u-prl { padding-right: ($my-padding-base * 2) $important; }
-.u-pbl { padding-bottom: ($my-padding-base * 2) $important; }
-.u-pll { padding-left: ($my-padding-base * 2) $important; }
-.u-pyl {
-    padding-top: ($my-padding-base * 2) $important;
-    padding-bottom: ($my-padding-base * 2) $important;
-}
-.u-pxl {
-    padding-right: ($my-padding-base * 2) $important;
-    padding-left: ($my-padding-base * 2) $important;
-}
+@include my-padding(0, 0);
+@include my-padding(s, $my-padding-small);
+@include my-padding(m, $my-padding-medium);
+@include my-padding(l, $my-padding-large);

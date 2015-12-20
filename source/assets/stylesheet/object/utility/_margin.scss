@@ -1,63 +1,35 @@
 /**
  * #Margin
  */
+$my-margin-small: my-margins(small);
+$my-margin-medium: my-margins();
+$my-margin-large: my-margins(large);
 
-/* margin-0 */
-.u-m0 { margin: 0 $important; }
-.u-mt0 { margin-top: 0 $important; }
-.u-mr0 { margin-right: 0 $important; }
-.u-mb0 { margin-bottom: 0 $important; }
-.u-ml0 { margin-left: 0 $important; }
-.u-my0 {
-    margin-top: 0 $important;
-    margin-bottom: 0 $important;
-}
-.u-mx0 {
-    margin-right: 0 $important;
-    margin-left: 0 $important;
-}
+/**
+ * m - margin
+ * a - all
+ * t, r, b, l - top, right, bottom, left
+ * x, y - top and bottom, right and left
+ * 0, s, m, l - zero, small, medium, large
+ */
 
-/* margin-small */
-.u-ms { margin: my-margins(small) $important; }
-.u-mts { margin-top: my-margins(small) $important; }
-.u-mrs { margin-right: my-margins(small) $important; }
-.u-mbs { margin-bottom: my-margins(small) $important; }
-.u-mls { margin-left: my-margins(small) $important; }
-.u-mys {
-    margin-top: my-margins(small) $important;
-    margin-bottom: my-margins(small) $important;
-}
-.u-mxs {
-    margin-right: my-margins(small) $important;
-    margin-left: my-margins(small) $important;
+@mixin my-margin($name, $value) {
+    .u-ma-#{$name} { margin: $value $important; }
+    .u-mt-#{$name} { margin-top: $value $important; }
+    .u-mr-#{$name} { margin-right: $value $important; }
+    .u-mb-#{$name} { margin-bottom: $value $important; }
+    .u-ml-#{$name} { margin-left: $value $important; }
+    .u-my-#{$name} {
+        margin-top: $value $important;
+        margin-bottom: $value $important;
+    }
+    .u-mx-#{$name} {
+        margin-right: $value $important;
+        margin-left: $value $important;
+    }
 }
 
-/* margin-medium */
-.u-mm { margin: my-margins() $important; }
-.u-mtm { margin-top: my-margins() $important; }
-.u-mrm { margin-right: my-margins() $important; }
-.u-mbm { margin-bottom: my-margins() $important; }
-.u-mlm { margin-left: my-margins() $important; }
-.u-mym {
-    margin-top: my-margins() $important;
-    margin-bottom: my-margins() $important;
-}
-.u-mxm {
-    margin-right: my-margins() $important;
-    margin-left: my-margins() $important;
-}
-
-/* margin-large */
-.u-ml { margin: my-margins(large) $important; }
-.u-mtl { margin-top: my-margins(large) $important; }
-.u-mrl { margin-right: my-margins(large) $important; }
-.u-mbl { margin-bottom: my-margins(large) $important; }
-.u-mll { margin-left: my-margins(large) $important; }
-.u-myl {
-    margin-top: my-margins(large) $important;
-    margin-bottom: my-margins(large) $important;
-}
-.u-mxl {
-    margin-right: my-margins(large) $important;
-    margin-left: my-margins(large) $important;
-}
+@include my-margin(0, 0);
+@include my-margin(s, $my-margin-small);
+@include my-margin(m, $my-margin-medium);
+@include my-margin(l, $my-margin-large);
