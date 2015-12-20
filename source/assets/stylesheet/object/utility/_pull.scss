@@ -29,7 +29,7 @@ $my-pull-cols: 12 !default;
 @mixin my-pull($cols, $breakpoint: null) {
     @each $col in $cols {
         @for $i from 1 through $col {
-            .u-push-#{$i}of#{$col}#{$breakpoint} {
+            .u-pull-#{$i}of#{$col}#{$breakpoint} {
                 right: percentage($i / $col) $important;
             }
         }
