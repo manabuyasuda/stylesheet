@@ -43,6 +43,6 @@ $my-column-cols: 1 2 3 !default;
 // @requires {Map} $breakpoints - ブレイクポイントを定義しています。
 @each $name, $breakpoint in $my-breakpoints {
     @media #{$breakpoint} {
-        @include my-column($my-column-cols, \@#{$name})
+        @include my-column($my-column-cols, -#{$name})
     }
 }
