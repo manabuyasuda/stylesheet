@@ -10,7 +10,7 @@ $my-media-gutter-large: ($my-media-gutter * 2) !default;
  * Modifierで余白の変更、垂直方向の変更、要素の配置順の反転、
  * 任意の横幅以下で縦に積み重なるレスポンシブ対応にすることができます。
  *
- * <div class="c-media [c-media--small c-media--middle c-media--rev c-media--stack-md]">
+ * <div class="c-media [c-media--small c-media--middle c-media--rev c-media--stack-md-down]">
  *   <figure class="c-media__item">
  *     <img>
  *   </figure>
@@ -92,7 +92,7 @@ $my-media-gutter-large: ($my-media-gutter * 2) !default;
 }
 
 @include my-media-query(sm-down) {
-    .c-media--stack-sm {
+    .c-media--stack-sm-down {
         > .c-media__item {
             display: block;
         }
@@ -112,7 +112,7 @@ $my-media-gutter-large: ($my-media-gutter * 2) !default;
 }
 
 @include my-media-query(md-down) {
-    .c-media--stack-md {
+    .c-media--stack-md-down {
         > .c-media__item {
             display: block;
         }
