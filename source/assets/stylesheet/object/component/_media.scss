@@ -91,7 +91,7 @@ $my-media-gutter-large: ($my-media-gutter * 2) !default;
     }
 }
 
-@media screen and (max-width: 399px) {
+@include my-media-query(sm-down) {
     .c-media--stack-sm {
         > .c-media__item {
             display: block;
@@ -111,7 +111,7 @@ $my-media-gutter-large: ($my-media-gutter * 2) !default;
     }
 }
 
-@media screen and (max-width: 767px) {
+@include my-media-query(md-down) {
     .c-media--stack-md {
         > .c-media__item {
             display: block;
