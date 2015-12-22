@@ -7,7 +7,9 @@
 // @prop {String} keys - ブレイクポイントのキーワードです。
 // @prop {String} values - メディアクエリの条件です。
 $my-breakpoints: (
+    'sm-down': 'screen and (max-width: 399px)',
     'sm': 'screen and (min-width: 400px)',
+    'md-down': 'screen and (max-width: 767px)',
     'md': 'screen and (min-width: 768px)',
     'lg': 'screen and (min-width: 1000px)',
     'xl': 'screen and (min-width: 1200px)',
