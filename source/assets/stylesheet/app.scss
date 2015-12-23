@@ -37,7 +37,7 @@
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
  * Split................2つの要素をブロックから横並びにするオブジェクトです。
  * Justify..............子要素を両端揃えにするオブジェクトです。
- * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
+ * Scroll...............横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
  * Button...............ボタンコンポーネントのベーススタイルです。
  * Card.................カード型のコンポーネントです。
@@ -49,6 +49,8 @@
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
  * Alert................エラーメッセージなどを表示するコンポーネントです。
+ * Badge................投稿数のような数値を表示するコンポーネントです。
+ * Label................インラインでメッセージを表示するコンポーネントです。
  * Balloon..............吹き出しのコンポーネントです。
  *
  * UTILITY
@@ -133,7 +135,7 @@
 @import "object/component/_media";
 @import "object/component/_split";
 @import "object/component/_justify";
-@import "object/component/_scroll-table";
+@import "object/component/_scroll";
 @import "object/component/_central";
 @import "object/component/_button";
 @import "object/component/_card";
@@ -148,6 +150,8 @@
 @import "object/project/_pagination";
 @import "object/project/_tag-cloud";
 @import "object/project/_alert";
+@import "object/project/_badge";
+@import "object/project/_label";
 @import "object/project/_balloon";
 
 

@@ -38,7 +38,7 @@
  * Media................画像とテキストを横並びにするために使用するオブジェクトです。
  * Split................2つの要素をブロックから横並びにするオブジェクトです。
  * Justify..............子要素を両端揃えにするオブジェクトです。
- * Scroll-table.........横スクロールに対応したテーブルオブジェクトです。
+ * Scroll...............横スクロールに対応したテーブルオブジェクトです。
  * Central..............上下左右の中央配置オブジェクトです。
  * Button...............ボタンコンポーネントのベーススタイルです。
  * Card.................カード型のコンポーネントです。
@@ -50,6 +50,8 @@
  * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
  * Tag-cloud............タグクラウドのコンポーネントです。
  * Alert................エラーメッセージなどを表示するコンポーネントです。
+ * Badge................投稿数のような数値を表示するコンポーネントです。
+ * Label................インラインでメッセージを表示するコンポーネントです。
  * Balloon..............吹き出しのコンポーネントです。
  *
  * UTILITY
@@ -1381,27 +1383,22 @@ address {
 }
 
 /**
- * #Scroll-table
+ * #Scroll
  */
 /**
- * 横スクロールに対応した`<table>`をスタイリングします。
- * `<table>`をラップするようにマークアップします。
- * `<th>`と`<td>`が改行を禁止されることによってスクロールが可能になります。
+ * `<table>`要素の横スクロールを可能にするオブジェクトです。
  *
- * <div class="c-scroll-table">
- *    <table>
- *    </table>
- * </div>
+ * <table class="c-scroll"></table>
  */
-.c-scroll-table {
+.c-scroll {
+    display: block;
     overflow-x: auto;
-    overflow-y: hidden;
-    min-width: 0.01%;
-
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    max-width: 100%;
+    min-height: 0.01%;
 }
-.c-scroll-table th,
-.c-scroll-table td {
+
+.c-scroll th,
+.c-scroll td {
     white-space: nowrap;
 }
 
@@ -1929,6 +1926,78 @@ address {
     border-color: #ffcaca;
     color: #921515;
     background-color: #ffe3e3;
+}
+
+/**
+ * #Badge
+ */
+/**
+ * 投稿数のような数値を表示するバッジコンポーネントです。
+ *
+ * <span class="p-badge [p-badge--success]"></span>
+ */
+.p-badge {
+    display: inline-block;
+    min-width: 0.75rem;
+    padding: 0.5em;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1;
+    text-align: center;
+    background-color: #2b70ba;
+}
+
+.p-badge--neutral {
+    background-color: #47525d;
+}
+
+.p-badge--success {
+    background-color: #2c683f;
+}
+
+.p-badge--warning {
+    background-color: #996e00;
+}
+
+.p-badge--error {
+    background-color: #921515;
+}
+
+/**
+ * #Label
+ */
+/**
+ * インラインでメッセージを表示するラベルコンポーネントです。
+ *
+ * <span class="p-label [p-label--success]"></span>
+ */
+.p-label {
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #2b70ba;
+}
+
+.p-label--neutral {
+    background-color: #47525d;
+}
+
+.p-label--success {
+    background-color: #2c683f;
+}
+
+.p-label--warning {
+    background-color: #996e00;
+}
+
+.p-label--error {
+    background-color: #921515;
 }
 
 /**
