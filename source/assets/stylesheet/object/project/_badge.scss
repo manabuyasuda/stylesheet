@@ -1,0 +1,37 @@
+/**
+ * #Badge
+ */
+$my-badge-size: 0.75rem;
+
+/**
+ * 投稿数のような数値を表示するバッジコンポーネントです。
+ *
+ * <span class="p-badge [p-badge--success]"></span>
+ */
+.p-badge {
+    display: inline-block;
+    min-width: $my-badge-size;
+    padding: my-paddings(small);
+    border-radius: 50%;
+    color: my-colors(bg);
+    font-size: $my-badge-size;
+    line-height: 1;
+    text-align: center;
+    background-color: my-colors(link);
+}
+
+.p-badge--neutral {
+    background-color: my-colors(neutral, text);
+}
+
+.p-badge--success {
+    background-color: my-colors(success, text);
+}
+
+.p-badge--warning {
+    background-color: my-colors(warning, text);
+}
+
+.p-badge--error {
+    background-color: my-colors(error, text);
+}

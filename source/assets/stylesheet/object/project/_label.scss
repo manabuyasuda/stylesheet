@@ -1,0 +1,36 @@
+/**
+ * #Label
+ */
+
+/**
+ * インラインでメッセージを表示するラベルコンポーネントです。
+ *
+ * <span class="p-label [p-label--success]"></span>
+ */
+.p-label {
+    display: inline-block;
+    padding: my-paddings(small);
+    border-radius: $my-base-round;
+    color: my-colors(bg);
+    font-size: 0.75rem;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: my-colors(link);
+}
+
+.p-label--neutral {
+    background-color: my-colors(neutral, text);
+}
+
+.p-label--success {
+    background-color: my-colors(success, text);
+}
+
+.p-label--warning {
+    background-color: my-colors(warning, text);
+}
+
+.p-label--error {
+    background-color: my-colors(error, text);
+}
