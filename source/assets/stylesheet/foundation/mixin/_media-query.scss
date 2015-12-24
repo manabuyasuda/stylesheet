@@ -3,6 +3,7 @@
 //
 
 // @desc - ブレイクポイントを挿入する@mixinです。
+// @see - http://www.sitepoint.com/managing-responsive-breakpoints-sass/
 // @type Mixin
 // @param {String} $breakpoint - `$breakpoints`のkeyを渡します。
 // @requires {Map} $my-breakpoints - ブレイクポイントを管理するためのmapです。
@@ -26,7 +27,12 @@
 // }
 //
 @mixin my-media-query($breakpoint) {
-    @media #{map-get($my-breakpoints, $breakpoint)} {
-        @content;
+    @if map-has-key($my-breakpoints, $breakpoint) {
+        @media #{inspect(map-get($my-breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$my-breakpoints` map.";
     }
 }
